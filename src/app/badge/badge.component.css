@@ -13,9 +13,8 @@ div.data-list > div.list {
   min-height: 400px;
   min-width: 250px;
   box-shadow: var(--box-shadow);
-
   box-sizing: border-box;
-  padding: 16px;
+  padding: 16px 32px;
 }
 
 div.data-list > div.list > div.img {
@@ -30,4 +29,109 @@ div.data-list > div.list > div.img > img {
 }
 
 div.data-list > div.list > div.name {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "sutregular";
+  font-weight: 600;
+  line-height: 20px;
+  margin: 10px 0 0 0;
+}
+
+div.data-list > div.list > p {
+  width: 100%;
+  text-align: center;
+  color: #848484;
+  font-size: 14px;
+  font-family: "sutregular";
+  margin: 0;
+}
+
+/* //////////  BADGE PERCENT BAR  /////////// */
+
+div.data-list > div.list > div.level-bar {
+  font-family: "sutregular";
+  margin: 25px 0 10px 0;
+  display: flex;
+}
+
+div.data-list > div.list > div.level-bar-disabled {
+  filter: grayscale(100%) !important;
+}
+
+div.data-list > div.list > div.level-bar > div.full-bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-radius: 50px;
+}
+
+div.data-list > div.list > div.level-bar > .full-bar > .percent-bar {
+  box-sizing: border-box;
+  height: 12px;
+  width: 50%;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+div.data-list > div.list > div.level-bar > div.full-bar .gold {
+  background-color: #edb037;
+}
+
+div.data-list > div.list > div.level-bar > .full-bar > .silver {
+  background-color: #999999;
+}
+
+div.data-list > div.list > div.level-bar > div.percent-level {
+  width: fit-content;
+  padding: 0 0 0 10px;
+  display: flex;
+}
+div.data-list > div.list > div.level-bar > div.percent-level > p {
+  margin: auto;
+  font-size: 12px;
+}
+
+div.data-list > div.list > div.level-bar > div.percent-level .gold {
+  color: #edb037;
+}
+
+div.data-list > div.list > div.level-bar > div.percent-level .silver {
+  color: #999999;
+}
+
+div.data-list > div.list > div.detail {
+  height: 50px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "sutregular";
+  font-weight: 100;
+  text-align: center;
+  margin: 10px 0;
+}
+
+div.data-list > div.list > div.button-area {
+  width: 100%;
+  display: flex;
+}
+
+div.data-list > div.list > div.button-area > button {
+  border-radius: 3px;
+  border: none;
+  background-color: #eaf3ff;
+  margin: 15px auto 5px auto;
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 14px;
+  color: #31568d;
+
+  box-sizing: border-box;
+  padding: 4px 24px;
 }

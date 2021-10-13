@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { EllipsisModule } from "ngx-ellipsis";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatMenuModule } from "@angular/material/menu";
@@ -9,11 +10,21 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./component/navbar/navbar.component";
 import { HomeComponent } from "./home/home.component";
-import { TranscriptComponent } from './transcript/transcript.component';
+import { TranscriptComponent } from "./transcript/transcript.component";
+import { AchievementComponent } from "./achievement/achievement.component";
+import { BadgeComponent } from "./badge/badge.component";
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, TranscriptComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    TranscriptComponent,
+    AchievementComponent,
+    BadgeComponent,
+  ],
   imports: [
+    EllipsisModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

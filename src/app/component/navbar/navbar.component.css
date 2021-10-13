@@ -1,0 +1,181 @@
+.navbar-section {
+  height: 55px;
+  max-height: 55px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px 24px;
+  background: linear-gradient(
+    60deg,
+    rgba(0, 44, 103, 1) 30%,
+    rgba(0, 91, 215, 1) 100%
+  );
+  justify-content: space-between;
+}
+
+.navbar-section > div.logo {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  height: 100%;
+}
+
+.navbar-section > div.logo > hr {
+  height: 100%;
+  width: 5px;
+  margin: auto;
+  border: unset;
+  background: linear-gradient(
+    180deg,
+    rgba(242, 158, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.navbar-section > div.logo > div {
+  margin: auto 0;
+}
+.navbar-section > div.logo > div > p {
+  color: #fff;
+  margin: 0;
+  line-height: 18px;
+}
+.navbar-section > div.logo > div > p:first-of-type {
+  font-family: "sutbold";
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.navbar-section > div.logo > div > p:last-of-type {
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  text-indent: 5px;
+}
+
+.navbar-section > div.menu {
+  display: flex;
+}
+.navbar-section > div.menu > button.menu {
+  border: none;
+  background: none;
+  margin: auto 0;
+  display: flex;
+  gap: 5px;
+}
+.navbar-section > div.menu > button.menu > span {
+  color: #fff;
+  font-family: "sutbold";
+  font-size: 18px;
+}
+
+.navbar-section > div.menu > button.menu > i {
+  margin: auto 0;
+  color: #fff;
+}
+
+.navbar-section > div.menu > a.profile {
+}
+.navbar-section > div.menu > a {
+  padding: 0 25px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar-section > div.menu > a:hover {
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-section > div.menu > a.profile {
+  font-family: "sutbold";
+  color: #083a9d;
+  border-left: 2px solid #083a9d;
+}
+
+.navbar-section > div.menu button.login-button {
+  margin: 0 25px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: none;
+  background-color: #083a9d;
+  color: #fff;
+  font-size: 18px;
+  font-family: "sutregular";
+  padding: 4px 16px;
+}
+
+div.sidebar-icon {
+  display: none;
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+div.sidebar {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  /* div.menu {
+    display: none !important;
+  }
+  div.sidebar-icon {
+    display: flex;
+    cursor: pointer;
+  }
+
+  div.sidebar {
+    display: block;
+  }
+
+  div.sidebar {
+    background: #fff;
+    color: #000;
+    position: fixed;
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    min-width: 250px;
+    z-index: 9999;
+    font-family: "sutregular";
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  div.sidebar i {
+    font-size: 40px;
+    padding: 5%;
+  }
+
+  div.sidebar a {
+    font-size: 30px;
+    padding: 1vh 25px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    list-style: none;
+    overflow-y: auto;
+    display: block;
+  }
+
+  div.sidebar a.profile {
+    font-family: "sutbold";
+    color: #083a9d;
+  }
+
+  div.sidebar button.login-button {
+    display: flex;
+    margin: 1em auto;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: none;
+    background-color: #083a9d;
+    color: #fff;
+    font-size: 30px;
+    font-family: "sutregular";
+    padding: 4px 16px;
+  } */
+}

@@ -1,0 +1,150 @@
+section.home-header {
+  box-sizing: border-box;
+  padding: 0 15%;
+  background-color: #fff;
+  box-shadow: 1px 3px 11px 2px rgba(74, 74, 74, 0.1);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.home-header div.profile {
+  display: flex;
+  gap: 15px;
+  margin: auto 0;
+  height: fit-content;
+  width: 100%;
+  /* font-family: "sutregular";
+  font-size: 40px; */
+}
+
+section.home-header div.profile > div.img-profile {
+  width: 50px;
+}
+section.home-header div.profile > div.img-profile > img {
+  width: 100%;
+}
+
+section.home-header div.profile > div.name {
+}
+
+section.home-header div.profile > div.name > p {
+  font-family: "sutregular";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 32px;
+  margin: 0;
+}
+
+section.home-header div.profile > div.name > span {
+  font-family: "sutregular";
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 100;
+  margin: 0;
+}
+
+section.home-header div.menu {
+  width: 100%;
+  height: 50px;
+  /* margin-top: auto; */
+  margin-bottom: -2px;
+}
+
+/* ----- mat-tab ----- */
+
+::ng-deep section.home-header div.menu .mat-tab-label {
+  font-family: "sutregular";
+  font-size: 16px;
+}
+
+.mat-tab-nav-bar,
+::ng-deep .mat-tab-header {
+  border-bottom: unset;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: var(--orange);
+  height: 3px;
+}
+
+::ng-deep .mat-tab-label:focus:not(.mat-tab-disabled),
+::ng-deep .mat-tab-label-active {
+  opacity: 1 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+section.body-section {
+  box-sizing: border-box;
+  padding: 50px 15%;
+}
+
+section.body-section > div.header {
+  width: 100%;
+  background: var(--blue-gradient);
+  border-radius: 3px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 22px;
+  font-family: "sutregular";
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+section.body-section > div.search-area {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 15px;
+  box-sizing: border-box;
+  padding: 25px 0 15px 0;
+}
+
+section.body-section > div.search-area > span {
+  background-color: #fff;
+  display: flex;
+  width: 350px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  min-height: 21px;
+}
+
+section.body-section > div.search-area > span > input {
+  width: 100%;
+  font-size: 16px;
+  font-family: "sutregular";
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  color: #676767;
+}
+section.body-section > div.search-area > span > i.material-icons {
+  margin: auto;
+  padding: 0 5px;
+  font-size: 20px;
+  color: var(--blue);
+}
+
+section.body-section > div.search-area > span > input::placeholder {
+  color: #676767;
+}
+
+section.body-section > div.search-area select {
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: "sutregular";
+  color: #676767;
+  /* min-height: 21px; */
+}
+
+div.search-area input:focus,
+div.search-area select:focus {
+  outline: none;
+}

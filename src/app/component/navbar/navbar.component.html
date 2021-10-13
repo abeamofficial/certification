@@ -1,0 +1,36 @@
+<div class="navbar-section">
+  <div class="logo">
+    <hr />
+    <div>
+      <p>Certificate</p>
+      <p>& Skill-based Transcript</p>
+    </div>
+  </div>
+
+  <div class="menu">
+    <button mat-button [matMenuTriggerFor]="beforeMenu" class="menu">
+      <span>Samita</span> <i class="material-icons">expand_more</i>
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </div>
+</div>
+<!-- <div [@slideInOut]="menuState" class="sidebar">
+  <i (click)="toggleMenu()" class="material-icons">close</i>
+  <a (click)="onNavigateByUrl('/')">หน้าแรก</a>
+  <ng-container *ngIf="isLogOn(); else anonymous">
+    <a (click)="onNavigateByUrl('/mycourse')">คลังหลักสูตรของฉัน</a>
+    <a (click)="onNavigateByUrl('/assessment')"> ประเมินผลการศึกษา</a>
+    <a class="profile" [matMenuTriggerFor]="menu">anonymous</a>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <span>log out</span>
+      </button>
+    </mat-menu>
+  </ng-container>
+  <ng-template #anonymous>
+    <button class="login-button" (click)="openModal()">เข้าสู่ระบบ</button>
+  </ng-template>
+</div> -->

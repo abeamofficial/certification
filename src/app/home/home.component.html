@@ -1,0 +1,25 @@
+<section class="home-header">
+  <div class="profile">
+    <div class="img-profile">
+      <img src="./../../assets/images/person.svg" />
+    </div>
+    <div class="name">
+      <p>K. Samita thavimol</p>
+      <span>เข้าร่วมเมื่อ 2019 / 115 หน่วยกิตสะสม</span>
+    </div>
+  </div>
+  <div class="menu">
+    <mat-tab-group (selectedTabChange)="change($event)" animationDuration="0ms">
+      <mat-tab label="Transcript"></mat-tab>
+      <mat-tab label="Certificate Of Achievement"></mat-tab>
+      <mat-tab label="Badge"></mat-tab>
+      <mat-tab label="Certificate Of Participant"></mat-tab>
+      <mat-tab label="My Course"></mat-tab>
+    </mat-tab-group>
+  </div>
+</section>
+<div>
+  <ng-container *ngIf="menu == 0">
+    <app-transcript></app-transcript>
+  </ng-container>
+</div>

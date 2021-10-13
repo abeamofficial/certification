@@ -1,0 +1,68 @@
+@import url("./../home/home.component.css");
+/* @import url("./../../styles.css"); */
+
+/* ----- data-list ----- */
+div.data-list {
+  display: flex;
+
+  gap: 15px;
+}
+
+div.list {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 3px;
+  padding: 16px;
+  display: flex;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+div.list div.name {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.list div.name > p {
+  margin: 2px 0;
+  font-family: "sutbold";
+  font-size: 20px;
+}
+
+div.list div.name > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+div.list div.detail {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.list div.detail > p {
+  margin: 2px 0;
+  font-family: "sutbold";
+  font-size: 18px;
+  color: #002c67;
+}
+
+div.list div.detail > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+div.list div.detail > span.excellent {
+  font-family: "sutbold";
+  color: var(--excellent);
+}

@@ -148,7 +148,7 @@ div.data-list > div.list > div.button-area > button {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 14px;
-  color: #31568d;
+  color: var(--soft-blue);
 
   box-sizing: border-box;
   padding: 4px 24px;

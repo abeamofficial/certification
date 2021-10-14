@@ -1,6 +1,8 @@
 :root {
+  --soft-black: #2f2f2f;
   --dark-blue: #002c67;
   --blue: #0d67e2;
+  --soft-blue: #31568d;
   --orange: #f29e00;
   --excellent: #00a07b;
   --box-shadow: 1px 3px 11px 2px rgba(85, 85, 85, 0.05);
@@ -52,6 +54,7 @@
 
 html,
 body {
+  min-width: 1000px;
   margin: 0;
   font-family: "sutregular";
   background-color: #fafafa;

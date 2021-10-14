@@ -13,12 +13,20 @@ section.header > div {
   height: fit-content;
 }
 
+section.header > div > span {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
 section.header > div > h1 {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 26px;
   margin: 0;
-  color: #051d3e;
+  color: var(--dark-blue);
 }
 
 section.header > div > p {
@@ -31,7 +39,7 @@ section.header > div > p {
 
 /* ----- END header templare ----- */
 
-/* ----- body templare ----- */
+/* ----- breadcrumb template ----- */
 
 section.breadcrumb {
   padding: 20px 15% 35px 15%;
@@ -56,13 +64,18 @@ section.breadcrumb > p:hover {
   color: var(--blue);
 }
 
-/* ----- END body templare ----- */
+/* ----- END breadcrumb template ----- */
+
+/* ----- body template ----- */
 
 section.body {
   padding: 0 15%;
   width: 100%;
   box-sizing: border-box;
 }
+
+/* ----- END body template ----- */
+
 section.body > div.transcript-level {
   background-image: url("./../../assets/images/transcript-bg.svg");
   background-repeat: no-repeat;
@@ -123,27 +136,42 @@ section.body > div.course > div.course-list > div.list {
   gap: 10px;
 }
 
-div.list div.name {
+section.body > div.course > div.course-list > div.list > div.name {
   width: 50%;
 }
 
-div.list div.name > p {
+section.body > div.course > div.course-list > div.list > div.name > p {
   margin: 0;
   font-family: "sutbold";
   font-weight: 100;
   font-size: 20px;
 }
-div.list div.name > p.link,
-div.list div.detail > span.link {
-  color: #31568d;
+section.body > div.course > div.course-list > div.list > div.name > p.link,
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > span.link {
+  color: var(--soft-blue);
   cursor: pointer;
 }
-div.list div.name > p.link:hover,
-div.list div.detail > span.link:hover {
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.name
+  > p.link:hover,
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > span.link:hover {
   text-decoration: underline;
 }
 
-div.list div.name > span {
+section.body > div.course > div.course-list > div.list > div.name > span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
@@ -151,7 +179,7 @@ div.list div.name > span {
   color: #5a5a5a;
 }
 
-div.list div.detail {
+section.body > div.course > div.course-list > div.list > div.detail {
   width: 15%;
   min-width: fit-content;
   display: flex;
@@ -159,14 +187,13 @@ div.list div.detail {
   flex-direction: column;
 }
 
-div.list div.detail > p {
+section.body > div.course > div.course-list > div.list > div.detail > p {
   margin: 2px 0;
   font-family: "sutbold";
   font-size: 18px;
-  color: #002c67;
+  color: var(--dark-blue);
 }
-
-div.list div.detail > span {
+section.body > div.course > div.course-list > div.list > div.detail > span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;

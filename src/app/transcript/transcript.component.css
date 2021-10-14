@@ -50,7 +50,7 @@ div.list div.detail > p {
   margin: 2px 0;
   font-family: "sutbold";
   font-size: 18px;
-  color: #002c67;
+  color: var(--dark-blue);
 }
 
 div.list div.detail > span {

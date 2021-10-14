@@ -1,0 +1,758 @@
+/* ----- header template ----- */
+section.header {
+  box-sizing: border-box;
+  padding: 0 15%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  height: 150px;
+  display: flex;
+}
+
+section.header > div {
+  margin: auto 0;
+  height: fit-content;
+}
+
+section.header > div > span {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header > div > h1 {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 26px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header > div > p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  color: #3c5981;
+}
+
+/* ----- END header template ----- */
+
+/* ----- breadcrumb template ----- */
+
+section.breadcrumb {
+  padding: 20px 15% 35px 15%;
+  display: flex;
+  gap: 10px;
+}
+
+section.breadcrumb > p,
+section.breadcrumb > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.breadcrumb > p {
+  cursor: pointer;
+}
+
+section.breadcrumb > p:hover {
+  color: var(--blue);
+}
+
+/* ----- END breadcrumb template ----- */
+
+/* ----- body template ----- */
+
+/* ----- END body template ----- */
+
+section.cert {
+  padding: 0 15%;
+  width: 100%;
+  box-sizing: border-box;
+}
+section.cert div.cert {
+  display: flex;
+  min-width: 900px;
+  row-gap: 2.5%;
+  column-gap: 2.5%;
+}
+
+section.cert div.cert > div.cert-paper {
+  width: 70%;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  padding: 20px;
+}
+section.cert div.cert > div.cert-paper > img {
+  width: 100%;
+}
+
+section.cert div.cert > div.cert-detail {
+  width: 30%;
+}
+
+section.cert div.cert > div.cert-detail > div.title {
+  display: flex;
+  height: 35px;
+  /* gap: 10px; */
+}
+
+section.cert div.cert > div.cert-detail > div.title > hr {
+  margin: auto 0;
+  width: 15%;
+  border: 0;
+  border-top: 1px solid #adadad;
+  /* width: 100%; */
+}
+section.cert div.cert > div.cert-detail > div.title > p {
+  margin: auto;
+  text-align: center;
+  font-family: "sutregular";
+  font-size: calc(2px + 1vw);
+  width: 70%;
+}
+
+section.cert div.cert > div.cert-detail > div.name {
+  background-color: #073c83;
+  border-radius: 3px;
+  display: flex;
+  width: 100%;
+  height: 65px;
+}
+
+section.cert div.cert > div.cert-detail > div.name > p {
+  margin: auto;
+  font-family: "sutregular";
+  font-size: calc(12px + 1vw);
+  color: #fff;
+}
+
+section.cert div.cert > div.cert-detail > div.detail {
+  border-radius: 3px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: var(--box-shadow);
+  margin: 15px 0;
+  padding: 20px 25px;
+  width: 100%;
+}
+
+section.cert div.cert > div.cert-detail > div.detail > div {
+  display: flex;
+  gap: 5px;
+}
+
+section.cert div.cert > div.cert-detail > div.detail > div > p {
+  width: 40%;
+  min-width: max-content;
+  margin: 0 0 auto 0;
+  font-family: "sutbold";
+  font-size: 22px;
+  color: var(--dark-blue);
+}
+
+section.cert div.cert > div.cert-detail > div.detail > div > span {
+  margin: 0 0 auto 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 18px;
+  color: var(--soft-black);
+}
+
+section.cert div.cert > div.cert-detail > div.detail > hr {
+  border: 0;
+  border-top: 1px solid #e2e2e2;
+  margin: 15px 0;
+  width: 100%;
+}
+
+section.cert div.cert > div.cert-detail > div.detail > p {
+  font-family: "sutbold";
+  font-size: 22px;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+section.cert div.cert > div.cert-detail > div.detail > span {
+  font-family: "sutregular";
+  font-size: 18px;
+  font-weight: 100;
+}
+section.cert div.cert > div.cert-detail > div.detail > span.link {
+  color: var(--soft-blue);
+  cursor: pointer;
+}
+section.cert div.cert > div.cert-detail > div.detail > span.link:hover {
+  text-decoration: underline;
+}
+
+section.cert div.cert > div.cert-detail > div.detail > span {
+  display: flex;
+  gap: 5px;
+}
+
+section.cert div.cert > div.cert-detail > div.detail > span > span {
+  font-family: "sutregular";
+  font-size: 16px;
+  font-weight: 100;
+}
+
+section.cert div.cert > div.cert-detail > button {
+  display: flex;
+  background-color: #51af5f;
+  color: #ffffff;
+  padding: 6px 24px;
+  border: 0;
+  gap: 5px;
+  border-radius: 3px;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+section.cert div.cert > div.cert-detail > button:hover {
+  background-color: #42a351;
+}
+
+section.cert div.cert > div.cert-detail > button > p {
+  font-family: "sutbold";
+  font-size: 20px;
+  margin: auto 0;
+}
+
+section.cert div.cert > div.cert-detail > button > i {
+  margin: auto;
+  font-size: 20px;
+}
+
+/* ==================== badge of cert ==================== */
+
+section.badge-of-cert {
+  margin: 100px 0;
+  padding: 100px 15%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/*  badge of cert  >  header  */
+
+section.badge-of-cert > div.header {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+section.badge-of-cert > div.header > div {
+  background-color: #f2f1f0;
+  width: 70%;
+  padding: 15px 0 15px 15%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15px;
+}
+
+section.badge-of-cert > div.header > div > hr {
+  height: 90%;
+  width: 4px;
+  margin: auto 0;
+  border: unset;
+  background-color: var(--dark-blue);
+}
+section.badge-of-cert > div.header > div > p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 25px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.badge-of-cert > div.header > div:last-of-type {
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+  margin-left: -1px;
+  width: 200px;
+}
+
+/*  badge of cert  >  body  */
+
+section.badge-of-cert > div.body {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  justify-content: center;
+}
+
+section.badge-of-cert > div.body > div.list {
+  /* background-color: white; */
+  width: 19%;
+  min-height: 400px;
+  min-width: 250px;
+
+  box-sizing: border-box;
+  padding: 16px 32px;
+  position: relative;
+}
+
+section.badge-of-cert > div.body > div.list > div.bg {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+section.badge-of-cert > div.body > div.list.disabled {
+  background-color: #eaeaea !important;
+}
+
+section.badge-of-cert > div.body > div.list.disabled > div.img {
+  filter: grayscale(100%);
+}
+
+section.badge-of-cert > div.body > div.list > div.img {
+  width: 100%;
+  height: 200px;
+  display: flex;
+}
+
+section.badge-of-cert > div.body > div.list > div.img > img {
+  width: auto;
+  margin: 0 auto;
+}
+
+section.badge-of-cert > div.body > div.list > div.name {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "sutregular";
+  font-weight: 600;
+  line-height: 20px;
+  margin: 10px 0 0 0;
+}
+
+section.badge-of-cert > div.body > div.list > p {
+  width: 100%;
+  text-align: center;
+  color: #848484;
+  font-size: 14px;
+  font-family: "sutregular";
+  margin: 0;
+}
+
+/*  badge of cert  >  body  > badge */
+
+section.badge-of-cert > div.body > div.list > div.level-bar {
+  font-family: "sutregular";
+  margin: 25px 0 10px 0;
+  display: flex;
+}
+
+section.badge-of-cert > div.body > div.list > div.level-bar-disabled {
+  filter: grayscale(100%) !important;
+}
+
+section.badge-of-cert > div.body > div.list > div.level-bar > div.full-bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-radius: 50px;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list.disabled
+  > div.level-bar
+  > div.full-bar {
+  background-color: #cccccc;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > .full-bar
+  > .percent-bar {
+  box-sizing: border-box;
+  height: 12px;
+  width: 50%;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > div.full-bar
+  .gold {
+  background-color: #edb037;
+}
+section.badge-of-cert
+  > div.body
+  > div.list.disabled
+  > div.level-bar
+  > div.full-bar
+  .gold {
+  background-color: #b5b5b5;
+}
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > .full-bar
+  > .silver {
+  background-color: #999999;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > div.percent-level {
+  width: fit-content;
+  padding: 0 0 0 10px;
+  display: flex;
+}
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > div.percent-level
+  > p {
+  margin: auto;
+  font-size: 12px;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > div.percent-level
+  .gold {
+  color: #edb037;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list.disabled
+  > div.level-bar
+  > div.percent-level
+  .gold {
+  color: #b5b5b5;
+}
+
+section.badge-of-cert
+  > div.body
+  > div.list
+  > div.level-bar
+  > div.percent-level
+  .silver {
+  color: #999999;
+}
+
+section.badge-of-cert > div.body > div.list > div.detail {
+  height: 50px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "sutregular";
+  font-weight: 100;
+  text-align: center;
+  margin: 10px 0;
+}
+
+section.badge-of-cert > div.body > div.list > div.button-area {
+  width: 100%;
+  display: flex;
+}
+
+section.badge-of-cert > div.body > div.list > div.button-area > button {
+  border-radius: 3px;
+  border: none;
+  background-color: #eaf3ff;
+  margin: 15px auto 5px auto;
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--soft-blue);
+  box-sizing: border-box;
+  padding: 4px 24px;
+}
+
+/* ==================== END badge of cert ==================== */
+
+/* ==================== cert detail ==================== */
+
+section.cert-detail {
+  margin: 100px 0;
+  padding: 100px 15%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/*  cert detail  >  header  */
+
+section.cert-detail > div.header {
+  /* padding-left: 15%; */
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+section.cert-detail > div.header > div {
+  background-color: #f2f1f0;
+  width: 100%;
+  padding-left: 15%;
+}
+
+/* -----  cert detail  >  header  >  mat-tab ----- */
+
+::ng-deep section.cert-detail > div.header > div .mat-tab-label {
+  font-family: "sutregular";
+  font-size: 18px;
+  padding: 30px 24px;
+  box-sizing: border-box;
+  min-width: 160px;
+  font-weight: 100;
+}
+
+.mat-tab-nav-bar,
+::ng-deep section.cert-detail > div.header > div .mat-tab-header {
+  border-bottom: unset;
+}
+
+::ng-deep
+  section.cert-detail
+  > div.header
+  > div
+  .mat-tab-group.mat-primary
+  .mat-ink-bar,
+::ng-deep
+  section.cert-detail
+  > div.header
+  > div
+  .mat-tab-nav-bar.mat-primary
+  .mat-ink-bar {
+  background-color: var(--dark-blue);
+  height: 3px;
+}
+
+::ng-deep
+  section.cert-detail
+  > div.header
+  > div
+  .mat-tab-label:focus:not(.mat-tab-disabled),
+::ng-deep section.cert-detail > div.header > div .mat-tab-label-active {
+  opacity: 1 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+/* -----  cert detail  >  body ----- */
+section.cert-detail > div.body {
+  margin: 50px 0;
+}
+
+section.cert-detail > div.body > h1 {
+  margin: 0 2.5%;
+  font-family: "sutbold";
+  font-size: 25px;
+}
+
+section.cert-detail > div.body > div.plo {
+  margin: 32px 0;
+  width: 100%;
+  padding: 16px 32px;
+}
+section.cert-detail > div.body > div.border {
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+}
+section.cert-detail > div.body > div.check-list,
+section.cert-detail > div.body > div.check-list > span,
+section.cert-detail > div.body > div.normal-detail > div > div.check-list {
+  box-sizing: border-box;
+}
+
+section.cert-detail > div.body > div.normal-detail {
+  margin: 8px 0;
+  padding: 16px 32px;
+  box-sizing: border-box;
+}
+section.cert-detail > div.body > div.normal-detail .text-indent {
+  text-indent: 20px;
+}
+
+section.cert-detail > div.body > div.check-list > h1,
+section.cert-detail > div.body > div.normal-detail > h1 {
+  margin: 0 0 10px 0;
+  font-family: "sutbold";
+  font-size: 20px;
+}
+section.cert-detail > div.body > div.check-list > span > p {
+  font-family: "sutregular";
+  font-weight: 100;
+  margin: 2px 0;
+  font-size: 18px;
+}
+
+section.cert-detail > div.body > div.check-list > p,
+section.cert-detail > div.body > div.normal-detail > div > div.check-list > p {
+  margin: 5px 0;
+  font-size: 18px;
+  text-indent: 10px;
+}
+
+section.cert-detail > div.body > div.check-list > span,
+section.cert-detail > div.body > div.normal-detail > span {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 16px;
+}
+
+section.cert-detail > div.body > div.normal-detail > span > span {
+  display: flex;
+  margin: 2px 16px;
+  font-size: 18px;
+}
+
+section.cert-detail > div.body > div.normal-detail > span > p {
+  margin: 2px 0;
+  font-size: 18px;
+}
+section.cert-detail > div.body > div.normal-detail > p {
+  font-family: "sutregular";
+  font-weight: 100;
+  margin: 10px 25px;
+  font-size: 18px;
+  /* text-indent: 10px; */
+}
+
+section.cert-detail > div.body > div.check-list > p > i,
+section.cert-detail
+  > div.body
+  > div.normal-detail
+  > div
+  > div.check-list
+  > p
+  > i {
+  font-size: 20px;
+  margin: auto 10px auto 0;
+  vertical-align: sub;
+  color: #083a9d;
+}
+
+section.cert-detail > div.body > div.check-list > span > i {
+  font-size: 20px;
+  margin: 5px 16px auto 0;
+  vertical-align: sub;
+  color: #083a9d;
+}
+
+section.cert-detail > div.body > div.check-list > span > i {
+  height: 100%;
+}
+section.cert-detail > div.body > div.normal-detail > div {
+  margin: 5px 25px;
+  font-size: 18px;
+  font-family: "sutregular";
+  font-weight: 100;
+}
+
+section.cert-detail > div.body > div.normal-detail > div > h1 {
+  font-family: "sutbold";
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0;
+}
+
+section.cert-detail > div.body > div.normal-detail > div > h1.link {
+  color: var(--soft-blue);
+}
+
+section.cert-detail > div.body > div.normal-detail > div > p {
+  font-family: "sutregular";
+  font-weight: 100;
+  text-indent: 18px;
+  font-size: 18px;
+  margin: 0;
+}
+
+section.cert-detail
+  > div.body
+  > div.normal-detail
+  > div
+  > h1
+  > span:first-of-type {
+  margin-right: 5px;
+}
+
+section.cert-detail > div.body > div.normal-detail > div > h1 > span.link {
+  color: var(--soft-blue);
+  cursor: pointer;
+}
+
+section.cert-detail
+  > div.body
+  > div.normal-detail
+  > div
+  > h1
+  > span.link:hover {
+  text-decoration: underline;
+}
+section.cert-detail > div.body > div.normal-detail > div > div {
+  font-family: "sutregular";
+  font-weight: 100;
+  margin: 0 20px;
+  font-size: 18px;
+}
+
+section.cert-detail > div.body > div.normal-detail > div > span {
+  display: block;
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 18px;
+}
+section.cert-detail > div.body > div.normal-detail > div > span.link {
+  color: var(--soft-blue);
+  cursor: pointer;
+}
+
+section.cert-detail > div.body > div.normal-detail > div > span.link:hover {
+  text-decoration: underline;
+}
+
+section.cert-detail > div.body > div.normal-detail > ul {
+  font-family: "sutregular";
+  font-weight: 100;
+  margin: 10px 25px;
+  padding-inline-start: 25px;
+  font-size: 18px;
+}
+
+section.cert-detail
+  > div.body
+  > div.normal-detail
+  > div
+  > img.institution-logo {
+  height: 175px;
+  margin: 10px 0;
+}

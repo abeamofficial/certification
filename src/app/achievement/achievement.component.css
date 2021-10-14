@@ -18,6 +18,18 @@ div.data-list > div.list {
   display: flex;
 }
 
+div.data-list > div.list.disabled {
+  background-color: #eaeaea !important;
+}
+
+div.data-list > div.list.disabled > div.img > img {
+  filter: grayscale(100%);
+}
+
+div.data-list > div.list.disabled > div.detail > div.tag {
+  background-color: #dedede !important;
+}
+
 div.data-list > div.list > div.img {
   width: 300px;
   min-width: 150px;

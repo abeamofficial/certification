@@ -11,7 +11,7 @@ div.list {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   border-radius: 3px;
-  padding: 16px;
+  padding: 16px 24px;
   margin: 10px 0;
   display: flex;
   box-sizing: border-box;

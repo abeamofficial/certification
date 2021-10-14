@@ -18,6 +18,7 @@
   gap: 10px;
   width: fit-content;
   height: 100%;
+  cursor: pointer;
 }
 
 .navbar-section > div.logo > hr {

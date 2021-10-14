@@ -10,39 +10,22 @@ div.data-list > div.list {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   border-radius: 3px;
-  padding: 16px;
+  padding: 16px 24px;
   margin: 10px 0;
   box-sizing: border-box;
   cursor: pointer;
   gap: 15px;
-  display: flex;
+  /* display: flex; */
 }
 
-div.data-list > div.list > div.img {
-  width: 300px;
-  min-width: 150px;
-  display: flex;
-}
-
-div.data-list > div.list > div.img > img {
-  margin: auto;
-  width: 100%;
-}
-
-div.data-list > div.list > div.detail {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-}
-
-div.data-list > div.list > div.detail > p {
+div.data-list > div.list > p {
   font-family: "sutbold";
   font-size: 18px;
   margin: 0;
   flex: 0 1 auto;
 }
 
-div.data-list > div.list > div.detail > div.tag {
+div.data-list > div.list > div.tag {
   border-radius: 3px;
   background-color: #eeeeee;
   padding: 2px 16px;
@@ -54,21 +37,17 @@ div.data-list > div.list > div.detail > div.tag {
   flex: 0 1 auto;
 }
 
-div.data-list > div.list > div.detail > div.date {
-  box-sizing: border-box;
-  flex: 1 1 auto;
+div.data-list > div.list > div.detail {
   display: flex;
+  height: 35px;
+  box-sizing: border-box;
+  gap: 15px;
 }
 
-div.data-list > div.list > div.detail > div.date > span {
-  display: block;
+div.data-list > div.list > div.detail > span {
   margin-top: auto;
   font-family: "sutregular";
   font-weight: 100;
   font-size: 14px;
   color: #2f2f2f;
-}
-
-div.data-list > div.list > div.detail > div.date > span > p {
-  margin: 0;
 }

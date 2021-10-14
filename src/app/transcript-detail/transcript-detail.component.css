@@ -1,0 +1,175 @@
+/* ----- header templare ----- */
+section.header {
+  box-sizing: border-box;
+  padding: 0 15%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  height: 150px;
+  display: flex;
+}
+
+section.header > div {
+  margin: auto 0;
+  height: fit-content;
+}
+
+section.header > div > h1 {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 26px;
+  margin: 0;
+  color: #051d3e;
+}
+
+section.header > div > p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  color: #3c5981;
+}
+
+/* ----- END header templare ----- */
+
+/* ----- body templare ----- */
+
+section.breadcrumb {
+  padding: 20px 15% 35px 15%;
+  display: flex;
+  gap: 10px;
+}
+
+section.breadcrumb > p,
+section.breadcrumb > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.breadcrumb > p {
+  cursor: pointer;
+}
+
+section.breadcrumb > p:hover {
+  color: var(--blue);
+}
+
+/* ----- END body templare ----- */
+
+section.body {
+  padding: 0 15%;
+  width: 100%;
+  box-sizing: border-box;
+}
+section.body > div.transcript-level {
+  background-image: url("./../../assets/images/transcript-bg.svg");
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-position: center;
+  width: 100%;
+  height: 175px;
+  box-sizing: border-box;
+  padding: 15px 20%;
+  border-radius: 3px;
+}
+
+section.body > div.transcript-level > p {
+  margin: 0;
+  color: #212121;
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 24px;
+}
+
+section.body > div.transcript-level > h1 {
+  font-family: "sutbold";
+  font-size: 85px;
+  margin: -10px auto;
+  width: fit-content;
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.25);
+}
+
+section.body > div.transcript-level > h1.excellent {
+  color: #009e7b;
+}
+
+section.body > div.course {
+  margin: 35px 0;
+}
+
+section.body > div.course > p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 22px;
+  margin: auto;
+}
+
+section.body > div.course > div.course-list {
+  margin: 15px 0;
+}
+
+section.body > div.course > div.course-list > div.list {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 3px;
+  padding: 16px 24px;
+  margin: 10px 0;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 3px;
+  gap: 10px;
+}
+
+div.list div.name {
+  width: 50%;
+}
+
+div.list div.name > p {
+  margin: 0;
+  font-family: "sutbold";
+  font-weight: 100;
+  font-size: 20px;
+}
+div.list div.name > p.link,
+div.list div.detail > span.link {
+  color: #31568d;
+  cursor: pointer;
+}
+div.list div.name > p.link:hover,
+div.list div.detail > span.link:hover {
+  text-decoration: underline;
+}
+
+div.list div.name > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+div.list div.detail {
+  width: 15%;
+  min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.list div.detail > p {
+  margin: 2px 0;
+  font-family: "sutbold";
+  font-size: 18px;
+  color: #002c67;
+}
+
+div.list div.detail > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 16px;
+  color: #5a5a5a;
+}

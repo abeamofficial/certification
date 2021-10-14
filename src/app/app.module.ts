@@ -13,6 +13,9 @@ import { HomeComponent } from "./home/home.component";
 import { TranscriptComponent } from "./transcript/transcript.component";
 import { AchievementComponent } from "./achievement/achievement.component";
 import { BadgeComponent } from "./badge/badge.component";
+import { ParticipantComponent } from './participant/participant.component';
+import { MyCourseComponent } from './my-course/my-course.component';
+import { TranscriptDetailComponent } from './transcript-detail/transcript-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { BadgeComponent } from "./badge/badge.component";
     TranscriptComponent,
     AchievementComponent,
     BadgeComponent,
+    ParticipantComponent,
+    MyCourseComponent,
+    TranscriptDetailComponent,
   ],
   imports: [
     EllipsisModule,

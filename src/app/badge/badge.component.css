@@ -17,6 +17,14 @@ div.data-list > div.list {
   padding: 16px 32px;
 }
 
+div.data-list > div.list.disabled {
+  background-color: #eaeaea !important;
+}
+
+div.data-list > div.list.disabled > div.img {
+  filter: grayscale(100%);
+}
+
 div.data-list > div.list > div.img {
   width: 100%;
   height: 200px;
@@ -69,6 +77,10 @@ div.data-list > div.list > div.level-bar > div.full-bar {
   border-radius: 50px;
 }
 
+div.data-list > div.list.disabled > div.level-bar > div.full-bar {
+  background-color: #cccccc;
+}
+
 div.data-list > div.list > div.level-bar > .full-bar > .percent-bar {
   box-sizing: border-box;
   height: 12px;
@@ -84,7 +96,9 @@ div.data-list > div.list > div.level-bar > .full-bar > .percent-bar {
 div.data-list > div.list > div.level-bar > div.full-bar .gold {
   background-color: #edb037;
 }
-
+div.data-list > div.list.disabled > div.level-bar > div.full-bar .gold {
+  background-color: #b5b5b5;
+}
 div.data-list > div.list > div.level-bar > .full-bar > .silver {
   background-color: #999999;
 }
@@ -101,6 +115,10 @@ div.data-list > div.list > div.level-bar > div.percent-level > p {
 
 div.data-list > div.list > div.level-bar > div.percent-level .gold {
   color: #edb037;
+}
+
+div.data-list > div.list.disabled > div.level-bar > div.percent-level .gold {
+  color: #b5b5b5;
 }
 
 div.data-list > div.list > div.level-bar > div.percent-level .silver {

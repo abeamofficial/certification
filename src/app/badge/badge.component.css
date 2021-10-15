@@ -152,4 +152,10 @@ div.data-list > div.list > div.button-area > button {
 
   box-sizing: border-box;
   padding: 4px 24px;
+
+  cursor: pointer;
+}
+
+div.data-list > div.list > div.button-area > button:hover {
+  background-color: #d7e3f1;
 }

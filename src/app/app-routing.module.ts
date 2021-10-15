@@ -4,6 +4,7 @@ import { HomeComponent } from "./home/home.component";
 import { TranscriptDetailComponent } from "./transcript-detail/transcript-detail.component";
 import { AchievementCertDetailComponent } from "./achievement-cert-detail/achievement-cert-detail.component";
 import { BadgeDetailComponent } from "./badge-detail/badge-detail.component";
+import { ParticipantCertDetailComponent } from "./participant-cert-detail/participant-cert-detail.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: "badge-detail",
     component: BadgeDetailComponent,
+  },
+  {
+    path: "participant-cert-detail",
+    component: ParticipantCertDetailComponent,
   },
 ];
 

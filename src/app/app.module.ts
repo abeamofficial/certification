@@ -17,6 +17,7 @@ import { ParticipantComponent } from './participant/participant.component';
 import { MyCourseComponent } from './my-course/my-course.component';
 import { TranscriptDetailComponent } from './transcript-detail/transcript-detail.component';
 import { AchievementCertDetailComponent } from './achievement-cert-detail/achievement-cert-detail.component';
+import { BadgeDetailComponent } from './badge-detail/badge-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AchievementCertDetailComponent } from './achievement-cert-detail/achiev
     MyCourseComponent,
     TranscriptDetailComponent,
     AchievementCertDetailComponent,
+    BadgeDetailComponent,
   ],
   imports: [
     EllipsisModule,

@@ -1,0 +1,272 @@
+/* ----- header template ----- */
+section.header {
+  box-sizing: border-box;
+  padding: 0 15%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  height: 150px;
+  display: flex;
+}
+
+section.header > div {
+  margin: auto 0;
+  height: fit-content;
+}
+
+section.header > div > span {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header > div > h1 {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 26px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header > div > p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  color: #3c5981;
+}
+
+/* ----- END header template ----- */
+
+/* ----- breadcrumb template ----- */
+
+section.breadcrumb {
+  padding: 20px 15% 35px 15%;
+  display: flex;
+  gap: 10px;
+}
+
+section.breadcrumb > p,
+section.breadcrumb > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.breadcrumb > p {
+  cursor: pointer;
+}
+
+section.breadcrumb > p:hover {
+  color: var(--blue);
+}
+
+/* ----- END breadcrumb template ----- */
+
+/* ==================== badge  ==================== */
+
+section.body {
+  padding: 0 15%;
+}
+
+div.badge {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  box-sizing: border-box;
+  padding: 24px 48px;
+  gap: 48px;
+}
+
+div.badge > hr {
+  margin: 0;
+  border: 0;
+  border-left: 1px solid #eaeaea;
+}
+
+/*   badge  >  badge-paper    */
+
+div.badge > div.badge-paper {
+  width: 25%;
+  min-width: 25%;
+  box-sizing: border-box;
+  /* padding: 16px; */
+}
+
+div.badge > div.badge-paper > img {
+  text-align: center;
+  width: 100%;
+}
+
+div.badge > div.badge-paper > div.badge-info,
+div.badge > div.badge-detail > div.badge-info {
+  margin: 20px 0;
+}
+div.badge > div.badge-paper > div.badge-info > p,
+div.badge > div.badge-detail > div.badge-info > p {
+  margin: 0;
+  font-family: "sutbold";
+  font-size: 22px;
+}
+
+div.badge > div.badge-paper > div.badge-info > p {
+  color: var(--dark-blue);
+}
+
+div.badge > div.badge-detail > div.badge-info > p {
+  color: #000;
+}
+
+div.badge > div.badge-paper > div.badge-info > span,
+div.badge > div.badge-detail > div.badge-info > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 18px;
+  color: #2f2f2f;
+  display: flex;
+  gap: 5px;
+}
+
+div.badge > div.badge-detail > div.badge-info > p.link,
+div.badge > div.badge-paper > div.badge-info > span.link {
+  color: var(--soft-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+div.badge > div.badge-detail > div.badge-info > p.link:hover,
+div.badge > div.badge-paper > div.badge-info > span.link:hover {
+  text-decoration: underline;
+}
+
+div.badge > div.badge-paper > div.badge-info > span > span {
+  font-size: 16px;
+}
+
+div.badge > div.badge-detail > div.badge-info span.text {
+  text-indent: 24px;
+}
+div.badge > div.badge-detail > div.badge-info div.skill {
+  display: flex;
+  gap: 10px;
+  margin: 2px 0;
+}
+div.badge > div.badge-detail > div.badge-info div.skill > div.skill-tag {
+  padding: 4px 16px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--soft-blue);
+}
+
+/*   badge  >  level bar    */
+
+div.badge > div.badge-paper > div.badge-info > div.level-bar {
+  font-family: "sutregular";
+  margin: 0;
+  display: flex;
+}
+
+div.badge > div.badge-paper > div.badge-info > div.level-bar-disabled {
+  filter: grayscale(100%) !important;
+}
+
+div.badge > div.badge-paper > div.badge-info > div.level-bar > div.full-bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-radius: 50px;
+  height: calc(5px + 0.5vw);
+}
+
+div.badge
+  > div.badge-paper.disabled
+  > div.badge-info
+  > div.level-bar
+  > div.full-bar {
+  background-color: #cccccc;
+}
+
+div.badge
+  > div.badge-paper
+  > div.badge-info
+  > div.level-bar
+  > .full-bar
+  > .percent-bar {
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: calc(5px + 0.5vw);
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+div.badge
+  > div.badge-paper
+  > div.badge-info
+  > div.level-bar
+  > div.full-bar
+  .gold {
+  background-color: #edb037;
+}
+div.badge
+  > div.badge-paper.disabled
+  > div.badge-info
+  > div.level-bar
+  > div.full-bar
+  .gold {
+  background-color: #b5b5b5;
+}
+div.badge
+  > div.badge-paper
+  > div.badge-info
+  > div.level-bar
+  > .full-bar
+  > .silver {
+  background-color: #999999;
+}
+
+div.badge
+  > div.badge-paper
+  > div.badge-info
+  > div.level-bar
+  > div.percent-level {
+  width: fit-content;
+  padding: 0 0 0 10px;
+  display: flex;
+}
+div.badge
+  > div.badge-paper
+  > div.badge-info
+  > div.level-bar
+  > div.percent-level
+  > p {
+  margin: auto;
+  font-size: 12px;
+}
+
+div.badge > div.badge-paper > div.badge-info > span.gold {
+  color: #edb037;
+  font-family: "sutbold";
+}
+
+div.badge > div.badge-paper.disabled > div.badge-info > span.gold {
+  color: #b5b5b5;
+  font-family: "sutbold";
+}
+
+div.badge > div.badge-paper > div.badge-info > span.silver {
+  color: #999999;
+  font-family: "sutbold";
+}

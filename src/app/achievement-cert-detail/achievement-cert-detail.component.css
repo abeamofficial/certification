@@ -178,23 +178,28 @@ section.cert div.cert > div.cert-detail > div.detail > p {
   color: var(--dark-blue);
   margin: 0;
 }
-
 section.cert div.cert > div.cert-detail > div.detail > span {
+  display: flex;
+  gap: 5px;
+}
+section.cert div.cert > div.cert-detail > div.detail > span > p {
   font-family: "sutregular";
   font-size: 18px;
   font-weight: 100;
+  margin: 0;
 }
 section.cert div.cert > div.cert-detail > div.detail > span.link {
   color: var(--soft-blue);
   cursor: pointer;
 }
-section.cert div.cert > div.cert-detail > div.detail > span.link:hover {
+section.cert div.cert > div.cert-detail > div.detail > span.link:hover > p {
   text-decoration: underline;
 }
 
-section.cert div.cert > div.cert-detail > div.detail > span {
-  display: flex;
-  gap: 5px;
+section.cert div.cert > div.cert-detail > div.detail > span.link > p > i {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-bottom: 2px;
 }
 
 section.cert div.cert > div.cert-detail > div.detail > span > span {
@@ -736,13 +741,20 @@ section.cert-detail > div.body > div.normal-detail > div > span {
   font-weight: 100;
   font-size: 18px;
 }
-section.cert-detail > div.body > div.normal-detail > div > span.link {
+section.cert-detail > div.body > div.normal-detail > div > span.link > p {
+  margin: 0;
   color: var(--soft-blue);
   cursor: pointer;
 }
 
-section.cert-detail > div.body > div.normal-detail > div > span.link:hover {
+section.cert-detail > div.body > div.normal-detail > div > span.link:hover > p {
   text-decoration: underline;
+}
+
+section.cert-detail > div.body > div.normal-detail > div > span.link > p > i {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-bottom: 2px;
 }
 
 section.cert-detail > div.body > div.normal-detail > ul {

@@ -306,13 +306,25 @@ section.course-detail > div.body > div.normal-detail > div > span {
   font-weight: 100;
   font-size: 18px;
 }
-section.course-detail > div.body > div.normal-detail > div > span.link {
+section.course-detail > div.body > div.normal-detail > div > span.link > p {
+  margin: 0;
   color: var(--soft-blue);
   cursor: pointer;
 }
 
-section.course-detail > div.body > div.normal-detail > div > span.link:hover {
+section.course-detail
+  > div.body
+  > div.normal-detail
+  > div
+  > span.link:hover
+  > p {
   text-decoration: underline;
+}
+
+section.course-detail > div.body > div.normal-detail > div > span.link > p > i {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-bottom: 2px;
 }
 
 section.course-detail > div.body > div.normal-detail > ul {

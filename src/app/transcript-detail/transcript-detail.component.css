@@ -126,7 +126,6 @@ section.body > div.course > div.course-list {
 section.body > div.course > div.course-list > div.list {
   width: 100%;
   background-color: #fff;
-  box-shadow: var(--box-shadow);
   border-radius: 3px;
   padding: 16px 24px;
   margin: 10px 0;
@@ -146,13 +145,25 @@ section.body > div.course > div.course-list > div.list > div.name > p {
   font-weight: 100;
   font-size: 20px;
 }
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > span.link
+  > p {
+  margin: 0;
+}
+
 section.body > div.course > div.course-list > div.list > div.name > p.link,
 section.body
   > div.course
   > div.course-list
   > div.list
   > div.detail
-  > span.link {
+  > span.link
+  > p {
   color: var(--soft-blue);
   cursor: pointer;
 }
@@ -167,8 +178,21 @@ section.body
   > div.course-list
   > div.list
   > div.detail
-  > span.link:hover {
+  > span.link
+  p:hover {
   text-decoration: underline;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > span.link
+  > p
+  > i {
+  font-size: 16px;
+  vertical-align: middle;
 }
 
 section.body > div.course > div.course-list > div.list > div.name > span {

@@ -119,6 +119,9 @@ div.badge > div.badge-paper > div.badge-info > p {
 div.badge > div.badge-detail > div.badge-info > p {
   color: #000;
 }
+div.badge > div.badge-paper > div.badge-info > span {
+  display: flex;
+}
 
 div.badge > div.badge-paper > div.badge-info > span,
 div.badge > div.badge-detail > div.badge-info > span {
@@ -131,16 +134,21 @@ div.badge > div.badge-detail > div.badge-info > span {
   gap: 5px;
 }
 
-div.badge > div.badge-detail > div.badge-info > p.link,
-div.badge > div.badge-paper > div.badge-info > span.link {
+div.badge > div.badge-paper > div.badge-info > span.link > p,
+div.badge > div.badge-detail > div.badge-info > p.link {
   color: var(--soft-blue);
   font-weight: 600;
   cursor: pointer;
+  margin: 0;
+}
+div.badge > div.badge-paper > div.badge-info > span.link:hover > p,
+div.badge > div.badge-detail > div.badge-info > p.link:hover {
+  text-decoration: underline;
 }
 
-div.badge > div.badge-detail > div.badge-info > p.link:hover,
-div.badge > div.badge-paper > div.badge-info > span.link:hover {
-  text-decoration: underline;
+div.badge > div.badge-paper > div.badge-info > span.link > p > i {
+  font-size: 16px;
+  vertical-align: middle;
 }
 
 div.badge > div.badge-paper > div.badge-info > span > span {

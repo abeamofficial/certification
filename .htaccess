@@ -5,8 +5,8 @@ RewriteRule ^ - [L]
 
 RewriteCond %{REMOTE_ADDR} !=127.0.0.1
 RewriteCond %{REQUEST_URI} ^/dev/
-RewriteRule ^ /dev/certificate/index.html
+RewriteRule ^ /dev/certification/index.html
 
 RewriteCond %{REMOTE_ADDR} !=127.0.0.1
 RewriteCond %{REQUEST_URI} !^/dev/
-RewriteRule ^ /certificate/index.html
+RewriteRule ^ /certification/index.html

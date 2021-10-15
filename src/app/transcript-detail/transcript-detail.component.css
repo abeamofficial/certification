@@ -77,7 +77,7 @@ section.body {
 /* ----- END body template ----- */
 
 section.body > div.transcript-level {
-  background-image: url("./../../assets/images/transcript-bg.svg");
+  background-image: url("./assets/images/transcript-bg.svg");
   background-repeat: no-repeat;
   background-attachment: initial;
   background-position: center;

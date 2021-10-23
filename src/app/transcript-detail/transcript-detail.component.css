@@ -132,11 +132,11 @@ section.body > div.course > div.course-list > div.list {
   display: flex;
   box-sizing: border-box;
   border-radius: 3px;
-  gap: 10px;
+  gap: 5%;
 }
 
 section.body > div.course > div.course-list > div.list > div.name {
-  width: 50%;
+  width: 35%;
 }
 
 section.body > div.course > div.course-list > div.list > div.name > p {
@@ -204,10 +204,10 @@ section.body > div.course > div.course-list > div.list > div.name > span {
 }
 
 section.body > div.course > div.course-list > div.list > div.detail {
-  width: 15%;
-  min-width: fit-content;
+  /* width: 10%; */
+  /* min-width: 100px; */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
 }
 
@@ -223,4 +223,139 @@ section.body > div.course > div.course-list > div.list > div.detail > span {
   font-weight: 100;
   font-size: 16px;
   color: #5a5a5a;
+  /* width: max-content; */
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > span.gold {
+  font-family: "sutbold";
+  color: #edb037;
+}
+
+/* //////////  BADGE PERCENT BAR  /////////// */
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar {
+  font-family: "sutregular";
+  margin: 5px 0 0 0;
+  display: flex;
+  max-width: 175px;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > div.full-bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-radius: 50px;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > .full-bar
+  > .percent-bar {
+  box-sizing: border-box;
+  height: 12px;
+  width: 50%;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > div.full-bar
+  .gold {
+  background-color: #edb037;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > .full-bar
+  > .silver {
+  background-color: #999999;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > div.percent-level {
+  width: fit-content;
+  padding: 0 0 0 10px;
+  display: flex;
+}
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > div.percent-level
+  > p {
+  margin: auto;
+  font-size: 12px;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > div.percent-level
+  .gold {
+  color: #edb037;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  div.detail
+  > span
+  > div.level-bar
+  > div.percent-level
+  .silver {
+  color: #999999;
 }

@@ -3,7 +3,6 @@
 
 /* ----- data-list ----- */
 div.data-list {
-  gap: 15px;
 }
 
 div.list {
@@ -16,10 +15,11 @@ div.list {
   display: flex;
   box-sizing: border-box;
   cursor: pointer;
+  gap: 5%;
 }
 
 div.list div.name {
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -40,9 +40,9 @@ div.list div.name > span {
 }
 
 div.list div.detail {
-  width: 15%;
+  /* width: 15%; */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
 }
 
@@ -61,7 +61,63 @@ div.list div.detail > span {
   color: #5a5a5a;
 }
 
-div.list div.detail > span.excellent {
+/* div.list div.detail > span.excellent {
   font-family: "sutbold";
   color: var(--excellent);
+} */
+
+/* //////////  BADGE PERCENT BAR  /////////// */
+
+div.list div.detail > span > div.level-bar {
+  font-family: "sutregular";
+  margin: 5px 0 0 0;
+  display: flex;
+  max-width: 175px;
+}
+
+div.list div.detail > span > div.level-bar > div.full-bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-radius: 50px;
+}
+
+div.list div.detail > span > div.level-bar > .full-bar > .percent-bar {
+  box-sizing: border-box;
+  height: 12px;
+  width: 50%;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+div.list div.detail > span > div.level-bar > div.full-bar .gold {
+  background-color: #edb037;
+}
+
+div.list div.detail > span > div.level-bar > .full-bar > .silver {
+  background-color: #999999;
+}
+
+div.list div.detail > span > div.level-bar > div.percent-level {
+  width: fit-content;
+  padding: 0 0 0 10px;
+  display: flex;
+}
+div.list div.detail > span > div.level-bar > div.percent-level > p {
+  margin: auto;
+  font-size: 12px;
+}
+
+div.list div.detail > span > div.level-bar > div.percent-level .gold {
+  color: #edb037;
+}
+
+div.list div.detail > span > div.level-bar > div.percent-level .silver {
+  color: #999999;
 }

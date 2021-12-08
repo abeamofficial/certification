@@ -1,32 +1,34 @@
 <section class="header">
   <div>
     <h1>
-      LO Explain concepts or theories related to digital technology research
+      {{ "LO " + value.name_en }}
     </h1>
     <p>
-      อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศได้
+      {{ value.name_th }}
     </p>
   </div>
 </section>
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>LO Explain concepts or theories related to digital technology research</p>
+  <p>{{ "LO " + value.name_en }}</p>
 </section>
 
 <section class="body">
   <div class="transcript-level">
     <p>Your level is</p>
-    <h1 class="excellent">Excellent</h1>
+    <h1 class="excellent">
+      {{ getCompetencyLevel(getAverage(value.course)) }}
+    </h1>
   </div>
 
   <div class="course">
     <p>Earned from</p>
 
-    <div class="course-list">
+    <div *ngFor="let item of value.course" class="course-list">
       <div class="list">
         <div class="name">
-          <p class="link">ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ</p>
+          <p class="link">{{ item.name_th }}</p>
         </div>
         <div class="detail">
           <!-- <div class="detail">

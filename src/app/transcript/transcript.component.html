@@ -9,18 +9,20 @@
     </select>
   </div>
   <div class="data-list">
-    <div class="list" [routerLink]="['/transcript-detail']">
+    <div
+      *ngFor="let item of value.earn_lo"
+      class="list"
+      [routerLink]="['/transcript-detail/' + item.id]"
+    >
       <div class="name">
         <p>
-          LO Explain concepts or theories related to digital technology research
+          {{ "LO " + item.name_en }}
         </p>
-        <span
-          >อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศได้</span
-        >
+        <span> {{ item.name_th }}</span>
       </div>
       <div class="detail">
         <p>Earned in</p>
-        <span>1 courses</span>
+        <span>{{ item.course.length }} courses</span>
       </div>
       <div class="detail">
         <p>Competency Level</p>
@@ -28,40 +30,17 @@
           <!-- percent bar -->
           <div class="level-bar">
             <div class="full-bar">
-              <div class="percent-bar gold" style="width: 90%">90%</div>
+              <div
+                class="percent-bar gold"
+                [ngStyle]="{ width: getAverage(item.course) + '%' }"
+              >
+                {{ getAverage(item.course) }}%
+              </div>
             </div>
             <div class="percent-level">
-              <p class="gold">Excellent</p>
-            </div>
-          </div>
-        </span>
-      </div>
-    </div>
-    <div class="list" [routerLink]="['/transcript-detail']">
-      <div class="name">
-        <p>
-          LO Apply statistical, mathematics and digital technology in research
-          or professional practicum
-        </p>
-        <span
-          >ประยุกต์ใช้เทคนิคทางสถิติคณิตศาสตร์และเทคโนโลยีดิจิทัลในการวิจัย
-          การปฏิบัติวิชาชีพ หรือการถ่ายทอดความรู้ได้</span
-        >
-      </div>
-      <div class="detail">
-        <p>Earned in</p>
-        <span>1 courses</span>
-      </div>
-      <div class="detail">
-        <p>Competency Level</p>
-        <span>
-          <!-- percent bar -->
-          <div class="level-bar">
-            <div class="full-bar">
-              <div class="percent-bar gold" style="width: 84%">84%</div>
-            </div>
-            <div class="percent-level">
-              <p class="gold">Excellent</p>
+              <p class="gold">
+                {{ getCompetencyLevel(getAverage(item.course)) }}
+              </p>
             </div>
           </div>
         </span>

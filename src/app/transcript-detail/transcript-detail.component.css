@@ -132,11 +132,27 @@ section.body > div.course > div.course-list > div.list {
   display: flex;
   box-sizing: border-box;
   border-radius: 3px;
-  gap: 5%;
+  justify-content: space-between;
 }
 
 section.body > div.course > div.course-list > div.list > div.name {
   width: 35%;
+}
+
+section.body > div.course > div.course-list > div.list > div.detail {
+  display: flex;
+  width: 65%;
+  justify-content: flex-end;
+  gap: 10%;
+}
+
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > div.detail {
+  width: max-content;
 }
 
 section.body > div.course > div.course-list > div.list > div.name > p {
@@ -151,6 +167,7 @@ section.body
   > div.course-list
   > div.list
   > div.detail
+  > div.detail
   > span.link
   > p {
   margin: 0;
@@ -161,6 +178,7 @@ section.body
   > div.course
   > div.course-list
   > div.list
+  > div.detail
   > div.detail
   > span.link
   > p {
@@ -178,6 +196,7 @@ section.body
   > div.course-list
   > div.list
   > div.detail
+  > div.detail
   > span.link
   p:hover {
   text-decoration: underline;
@@ -187,6 +206,7 @@ section.body
   > div.course
   > div.course-list
   > div.list
+  > div.detail
   > div.detail
   > span.link
   > p
@@ -203,7 +223,12 @@ section.body > div.course > div.course-list > div.list > div.name > span {
   color: #5a5a5a;
 }
 
-section.body > div.course > div.course-list > div.list > div.detail {
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > div.detail {
   /* width: 10%; */
   /* min-width: 100px; */
   display: flex;
@@ -211,25 +236,40 @@ section.body > div.course > div.course-list > div.list > div.detail {
   flex-direction: column;
 }
 
-section.body > div.course > div.course-list > div.list > div.detail > p {
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > div.detail
+  > p {
   margin: 2px 0;
   font-family: "sutbold";
   font-size: 18px;
   color: var(--dark-blue);
+  width: max-content;
 }
-section.body > div.course > div.course-list > div.list > div.detail > span {
+section.body
+  > div.course
+  > div.course-list
+  > div.list
+  > div.detail
+  > div.detail
+  > span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
   font-size: 16px;
   color: #5a5a5a;
-  /* width: max-content; */
+  display: flex;
+  width: max-content;
 }
 
 section.body
   > div.course
   > div.course-list
   > div.list
+  > div.detail
   > div.detail
   > span.gold {
   font-family: "sutbold";
@@ -243,6 +283,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar {
   font-family: "sutregular";
@@ -256,6 +297,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > div.full-bar {
@@ -272,6 +314,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > .full-bar
@@ -292,6 +335,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > div.full-bar
@@ -304,6 +348,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > .full-bar
@@ -316,6 +361,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > div.percent-level {
@@ -328,6 +374,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > div.percent-level
@@ -341,6 +388,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > div.percent-level
@@ -353,6 +401,7 @@ section.body
   > div.course-list
   > div.list
   div.detail
+  > div.detail
   > span
   > div.level-bar
   > div.percent-level

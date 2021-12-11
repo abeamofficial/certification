@@ -316,6 +316,10 @@ section.badge-of-cert > div.body > div.list > div.bg {
 }
 
 section.badge-of-cert > div.body > div.list.disabled {
+  /* background-color: #eaeaea !important; */
+}
+
+section.badge-of-cert > div.body > div.list.disabled > div.bg {
   background-color: #eaeaea !important;
 }
 
@@ -330,7 +334,8 @@ section.badge-of-cert > div.body > div.list > div.img {
 }
 
 section.badge-of-cert > div.body > div.list > div.img > img {
-  width: auto;
+  width: 100%;
+  height: fit-content;
   margin: 0 auto;
 }
 

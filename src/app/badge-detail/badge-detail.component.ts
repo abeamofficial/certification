@@ -33,4 +33,8 @@ export class BadgeDetailComponent implements OnInit {
     });
     return competency_name;
   }
+
+  onNavigate(url) {
+    window.location.href = url;
+  }
 }

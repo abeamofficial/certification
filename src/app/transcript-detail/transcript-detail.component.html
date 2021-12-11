@@ -1,7 +1,7 @@
 <section class="header">
   <div>
     <h1>
-      {{ "LO " + value.name_en }}
+      {{ "PLO " + value.name_en }}
     </h1>
     <p>
       {{ value.name_th }}
@@ -11,7 +11,7 @@
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>{{ "LO " + value.name_en }}</p>
+  <p>{{ "PLO " + value.name_en }}</p>
 </section>
 
 <section class="body">
@@ -28,7 +28,9 @@
     <div *ngFor="let item of value.course" class="course-list">
       <div class="list">
         <div class="name">
-          <p class="link">{{ item.name_th }}</p>
+          <p class="link" [routerLink]="['/course-detail/' + item.id]">
+            {{ "วิชา" + item.name_th }}
+          </p>
         </div>
         <div class="detail">
           <!-- <div class="detail">
@@ -50,7 +52,7 @@
         </div> -->
           <div class="detail">
             <p>Date Earned</p>
-            <span>21/12/2019</span>
+            <span>{{ item.date_earned | date: "dd/MM/yyyy" }}</span>
           </div>
           <div class="detail">
             <p>Offered By</p>

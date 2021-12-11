@@ -32,7 +32,8 @@ div.data-list > div.list > div.img {
 }
 
 div.data-list > div.list > div.img > img {
-  width: auto;
+  width: 100%;
+  height: fit-content;
   margin: 0 auto;
 }
 

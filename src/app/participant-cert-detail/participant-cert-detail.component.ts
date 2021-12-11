@@ -8,6 +8,7 @@ import { data, competency_level } from "src/assets/models/data";
   styleUrls: ["./participant-cert-detail.component.css"],
 })
 export class ParticipantCertDetailComponent implements OnInit {
+  data = data;
   value;
   module_detail;
 
@@ -20,9 +21,30 @@ export class ParticipantCertDetailComponent implements OnInit {
           (item) => item.id == params.id
         );
         this.module_detail = data.module.find(
-          (item) => item.id == this.value.course_id
+          (item) => item.id == this.value.module_id
         );
       }
     });
+  }
+
+  onNavigate(url) {
+    window.location.href = url;
+  }
+
+  scrollToId($event) {
+    const element = document.getElementById(
+      $event.index == 0 ? "about" : $event.index == 1 ? "course" : "institution"
+    );
+    const offset = 100;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+    // document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   }
 }

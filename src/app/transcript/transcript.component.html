@@ -21,29 +21,34 @@
         <span> {{ item.name_th }}</span>
       </div>
       <div class="detail">
-        <p>Earned in</p>
-        <span>{{ item.course.length }} courses</span>
-      </div>
-      <div class="detail">
-        <p>Competency Level</p>
-        <span>
-          <!-- percent bar -->
-          <div class="level-bar">
-            <div class="full-bar">
-              <div
-                class="percent-bar gold"
-                [ngStyle]="{ width: getAverage(item.course) + '%' }"
-              >
-                {{ getAverage(item.course) }}%
+        <div>
+          <p>Earned in</p>
+          <span>{{ item.course.length }} courses</span>
+        </div>
+        <div>
+          <p>Competency Level</p>
+          <span>
+            <!-- percent bar -->
+            <div class="level-bar">
+              <div class="full-bar">
+                <div
+                  class="percent-bar"
+                  [ngClass]="getAverage(item.course) >= 80 ? 'gold' : 'silver'"
+                  [ngStyle]="{ width: getAverage(item.course) + '%' }"
+                >
+                  {{ getAverage(item.course) }}%
+                </div>
+              </div>
+              <div class="percent-level">
+                <p
+                  [ngClass]="getAverage(item.course) >= 80 ? 'gold' : 'silver'"
+                >
+                  {{ getCompetencyLevel(getAverage(item.course)) }}
+                </p>
               </div>
             </div>
-            <div class="percent-level">
-              <p class="gold">
-                {{ getCompetencyLevel(getAverage(item.course)) }}
-              </p>
-            </div>
-          </div>
-        </span>
+          </span>
+        </div>
       </div>
     </div>
   </div>

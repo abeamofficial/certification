@@ -140,7 +140,7 @@ section.course-detail > div.body {
 }
 
 section.course-detail > div.body > h1 {
-  margin: 0;
+  margin: 0 2.5%;
   font-family: "sutbold";
   font-size: 25px;
 }

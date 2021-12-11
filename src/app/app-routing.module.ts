@@ -7,6 +7,7 @@ import { AchievementCertDetailComponent } from "./achievement-cert-detail/achiev
 import { BadgeDetailComponent } from "./badge-detail/badge-detail.component";
 import { ParticipantCertDetailComponent } from "./participant-cert-detail/participant-cert-detail.component";
 import { CourseDetailComponent } from "./course-detail/course-detail.component";
+import { ModuleDetailComponent } from "./module-detail/module-detail.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -50,10 +51,22 @@ const routes: Routes = [
       { path: ":id", component: CourseDetailComponent },
     ],
   },
+  {
+    path: "module-detail",
+    // component: CourseDetailComponent,
+    children: [
+      { path: "", component: HomeComponent },
+      { path: ":id", component: ModuleDetailComponent },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: "top",
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

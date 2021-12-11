@@ -1,14 +1,14 @@
 <section class="header">
   <div>
     <span>Certificate of Achievement in</span>
-    <h1>Business Insight Analytics</h1>
-    <p>สัมฤทธิบัตรการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ</p>
+    <h1>{{ value.name_en }}</h1>
+    <p>สัมฤทธิบัตร{{ value.name_th }}</p>
   </div>
 </section>
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>Certificate of Achievement in Business Insight Analytics</p>
+  <p>Certificate of Achievement in {{ value.name_en }}</p>
 </section>
 
 <section class="cert">
@@ -23,20 +23,30 @@
         <hr />
       </div>
       <div class="name">
-        <p>Samita thavimol</p>
+        <p>{{ data.first_name + " " + data.last_name }}</p>
       </div>
       <div class="detail">
         <div>
           <p>Approved By</p>
           <span>Digitech @ SUT</span>
         </div>
-        <div>
-          <p>Approved Date</p>
-          <span>Dec 21 2019</span>
-        </div>
+
+        <ng-container *ngIf="value.expired_date; else approvedDate">
+          <div>
+            <p>Date Expired</p>
+            <span>{{ value.expired_date | date: "MMM d, y" }}</span>
+          </div>
+        </ng-container>
+        <ng-template #approvedDate>
+          <div>
+            <p>Approved Date</p>
+            <span>{{ value.approved_date | date: "MMM d, y" }}</span>
+          </div>
+        </ng-template>
+
         <hr />
         <p>Offered By</p>
-        <span class="link">
+        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
           <p>
             Suranaree University of Technology
             <i class="material-icons">open_in_new</i>
@@ -64,37 +74,43 @@
     <div></div>
   </div>
 
-  <div class="body">
-    <div class="list" *ngFor="let item of [1, 2, 3, 4]">
+  <div class="body" id="about">
+    <div
+      class="list"
+      *ngFor="let item of badge_detail"
+      [ngClass]="{ disabled: item.isExpired }"
+    >
       <div class="bg"></div>
-      <div class="img"><img src="./assets/images/badge.svg" /></div>
+      <div class="img"><img src="./assets/images/badge/{{ item.img }}" /></div>
       <div class="name" ellipsis>
-        Business Intelligence and Information Visualization
+        {{ item.name_en }}
       </div>
-      <p>( 2 credits )</p>
+      <p>( {{ item.credit }} credits )</p>
 
       <!-- percent bar -->
       <div class="level-bar">
         <div class="full-bar">
-          <div class="percent-bar gold" style="width: 85%">85%</div>
+          <div
+            class="percent-bar"
+            [ngClass]="item.score >= 80 ? 'gold' : 'silver'"
+            [ngStyle]="{ width: item.score + '%' }"
+          >
+            {{ item.score }}%
+          </div>
         </div>
         <div class="percent-level">
-          <p class="gold">Excellent</p>
+          <p [ngClass]="item.score >= 80 ? 'gold' : 'silver'">
+            {{ getCompetencyLevel(item.score) }}
+          </p>
         </div>
       </div>
 
       <div class="detail" ellipsis>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {{ item.detail_th }}
       </div>
 
       <div class="button-area">
-        <button [routerLink]="['/badge-detail']">Detail</button>
+        <button [routerLink]="['/badge-detail/' + item.id]">Detail</button>
       </div>
     </div>
   </div>
@@ -103,7 +119,10 @@
 <section class="cert-detail">
   <div class="header">
     <div>
-      <mat-tab-group animationDuration="0ms">
+      <mat-tab-group
+        animationDuration="0ms"
+        (selectedTabChange)="scrollToId($event)"
+      >
         <mat-tab label="ข้อมูลชุดวิชา"></mat-tab>
         <mat-tab label="รายวิชาในชุดวิชา"></mat-tab>
         <mat-tab label="เกี่ยวกับสถาบัน"></mat-tab>
@@ -111,34 +130,20 @@
     </div>
   </div>
 
-  <div class="body">
-    <h1>ชุดวิชาการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ</h1>
-    <h1>Business Insight Analytics Module</h1>
+  <div class="body" id="about">
+    <h1>{{ module_detail.name_en }} Module</h1>
+    <h1>ชุดวิชา{{ module_detail.name_th }}</h1>
 
     <div id="about" class="plo check-list border">
       <h1>สิ่งที่คุณจะได้เรียนรู้ (Program Learning Outcome)</h1>
-      <span>
+      <span *ngFor="let item of module_detail.plo">
         <i class="material-icons">check</i>
-        <p>เขียนโปรแกรมเชิงอ็อบเจกต์เพื่อออกแบบโครงสร้างข้อมูลได้</p>
-      </span>
-      <span>
-        <i class="material-icons">check</i>
-        <p>สื่อสารแนวคิดด้วยภาษาไทยและภาษาอังกฤษได้อย่างมีประสิทธิภาพ</p>
-      </span>
-      <span>
-        <i class="material-icons">check</i>
-        <p>
-          ค้นคว้าหาความรู้เชิงวิชาการและวิชาชีพด้านเทคโนโลยีดิจิทัลได้ด้วยตนเอง
-        </p>
-      </span>
-      <span>
-        <i class="material-icons">check</i>
-        <p>อธิบายแนวทางหรือวิธีการพัฒนาและดูแลระบบคอมพิวเตอร์ได้</p>
+        <p>{{ item.name_th }}</p>
       </span>
     </div>
     <div class="normal-detail">
       <h1>จำนวนชั่วโมงการเรียนรู้</h1>
-      <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 285 ชั่วโมง</p>
+      <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 60 ชั่วโมง</p>
     </div>
 
     <div class="normal-detail">
@@ -150,57 +155,15 @@
 
     <div class="normal-detail" id="course">
       <h1>รายวิชาในชุดวิชา</h1>
-      <div>
+      <div *ngFor="let item of module_detail.course; let i = index">
         <h1>
-          <span>1.</span>
-          <span class="link"
-            >การเขียนโปรแกรมเชิงโครงสร้างและโครงสร้างข้อมูล (Structured
-            Programming and Data Structures)</span
+          <span>{{ i + 1 }}.</span>
+          <span class="link" [routerLink]="['/course-detail/' + item.id]">
+            {{ "วิชา" + item.name_th + " (" + item.name_en + ")" }}</span
           >
         </h1>
         <div>
-          ขั้นตอนและระเบียบวิธีการโปรแกรมด้วยภาษาคอมพิวเตอร์ระดับสูง อาทิ ภาษาซี
-          การควบคุมการไหลของโปรแกรมแบบมีโครงสร้าง
-          ฟังก์ชันและการส่งผ่านพารามิเตอร์ แนวคิดเกี่ยวกับโครงสร้างข้อมูล
-          การออกแบบโครงสร้างข้อมูล โครงสร้างข้อมูลแบบแถวลำดับและแบบตัวชี้
-          โครงสร้างข้อมูลแบบลิงค์ลิสต์ สแตค คิว ทรี กราฟ
-          การเรียงลำดับและการค้นหาข้อมูล การวิเคราะห์ขั้นตอนวิธี
-          ความซับซ้อนในการคำนวณ
-          การประยุกต์ใช้การจัดการโครงสร้างข้อมูลในระบบสารสนเทศ
-        </div>
-      </div>
-      <div>
-        <h1>
-          <span>2.</span>
-          <span class="link"
-            >การเขียนโปรแกรมเชิงอ็อบเจกต์ (Object-Oriented Programming)</span
-          >
-        </h1>
-        <div>
-          ความรู้เบื้องต้นเกี่ยวกับแนวคิดเชิงอ็อบเจกต์ แนวคิดเชิงอ็อบเจกต์
-          ได้แก่ แนวคิดการเขียนโปรแกรมเชิงวัตถุ แนวคิดการห่อหุ้ม
-          แนวคิดการทำเป็นโมดูล แนวคิดการสร้างลำดับชั้น แนวคิดการสืบทอด
-          แนวคิดการมีหลายรูปแบบ แนวคิดความเกี่ยวข้องกัน และแนวคิดกรอบการทำงาน
-          การวิเคราะห์และออกแบบระบบด้วยแนวคิดเชิงอ็อบเจกต์
-          การโปรแกรมด้วยภาษาเชิงอ็อบเจกต์ เช่น ภาษาจาวา ชนิดข้อมูลและตัวกระทำ
-          นิพจน์และการควบคุม การออกแบบคลาส เมท็อด และส่วนต่อประสาน
-          การจัดการกับความผิดปกติ สายโยงใย
-          การใช้และการสร้างส่วนต่อประสานโปรแกรมประยุกต์ (เอพีไอ)
-          การเข้าถึงฐานข้อมูล การพัฒนาโปรแกรมประยุกต์สำหรับระบบ
-        </div>
-      </div>
-      <div>
-        <h1>
-          <span>3.</span>
-          <span class="link"
-            >โครงงานการเขียนโปรแกรมเชิงอ็อบเจกต์และโครงสร้างข้อมูล (Project in
-            Object-Oriented Programming and Data Structures)
-          </span>
-        </h1>
-        <div>
-          การพัฒนาโครงงานตามหัวข้อที่กำหนดด้านการพัฒนาซอฟต์แวร์เชิงวัตถุ
-          บนพื้นฐานของความคิดสร้างสรรค์หรือการคิดเชิงออกแบบ เช่น
-          การพัฒนาซอฟต์แวร์สำหรับองค์กร การพัฒนาซอฟต์แวร์เพื่อวัตถุประสงค์เฉพาะ
+          {{ item.detail_th }}
         </div>
       </div>
     </div>
@@ -208,7 +171,7 @@
     <div class="normal-detail">
       <h1>อาจารย์ผู้รับผิดชอบ</h1>
       <ul>
-        <li>รศ. ดร.จิติมนต์ อั่งสกุล</li>
+        <li>อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร</li>
       </ul>
     </div>
 
@@ -216,13 +179,14 @@
       <h1>หลักสูตรที่เกี่ยวข้อง</h1>
       <ul>
         <li>
-          หลักสูตรวิทยาการสารสนเทศบัณฑิตสาขาวิชาเทคโนโลยีดิจิทัล
+          หลักสูตรวิทยาการสารสนเทศมหาบัณฑิต
+          สาขาวิชาเทคโนโลยีดิจิทัลและนิเทศศาสตร์ดิจิทัล,
           มหาวิทยาลัยเทคโนโลยีสุรนารี
         </li>
       </ul>
     </div>
 
-    <div class="normal-detail">
+    <div class="normal-detail" id="institution">
       <h1>สถาบัน</h1>
       <div>
         <img class="institution-logo" src="./assets/images/sut-logo.svg" />
@@ -243,7 +207,7 @@
       </div>
 
       <div style="margin-top: 15px">
-        <span class="link">
+        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
           <p>http://www.sut.ac.th/<i class="material-icons">open_in_new</i></p>
         </span>
         <span>

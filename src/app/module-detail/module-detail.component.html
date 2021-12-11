@@ -1,61 +1,17 @@
 <section class="header">
   <div>
-    <span>Certificate of Participant in</span>
-    <h1>{{ value.name_en }}</h1>
-    <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ value.name_th }}</p>
+    <span>Certificate of Achievement in</span>
+    <h1>Business Insight Analytics</h1>
+    <p>สัมฤทธิบัตรการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ</p>
   </div>
 </section>
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>Certificate of Participant in {{ value.name_en }}</p>
-</section>
-<section class="cert">
-  <div class="cert">
-    <div class="cert-paper">
-      <img src="./assets/images/diploma.svg" />
-    </div>
-    <div class="cert-detail">
-      <div class="title">
-        <hr />
-        <p>This certificate is awarded to</p>
-        <hr />
-      </div>
-      <div class="name">
-        <p>{{ data.first_name + " " + data.last_name }}</p>
-      </div>
-      <div class="detail">
-        <div>
-          <p>Approved By</p>
-          <span>Digitech @ SUT</span>
-        </div>
-        <div>
-          <p>Approved Date</p>
-          <span>{{ value.approved_date | date: "MMM d, y" }}</span>
-        </div>
-        <hr />
-        <p>Offered By</p>
-        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-          <p>
-            Suranaree University of Technology
-            <i class="material-icons">open_in_new</i>
-          </p>
-        </span>
-        <span>
-          <span>Nakhon ratchasima</span>
-          <span>•</span>
-          <span>Thailand</span>
-        </span>
-      </div>
-      <button>
-        <p>Download</p>
-        <i class="material-icons">file_download</i>
-      </button>
-    </div>
-  </div>
+  <p>Certificate of Achievement in Business Insight Analytics</p>
 </section>
 
-<section class="cert-detail">
+<section class="course-detail">
   <div class="header">
     <div>
       <mat-tab-group
@@ -70,19 +26,19 @@
   </div>
 
   <div class="body" id="about">
-    <h1>{{ module_detail.name_en }} Module</h1>
-    <h1>ชุดวิชา{{ module_detail.name_th }}</h1>
+    <h1>{{ value.name_en }} Module</h1>
+    <h1>ชุดวิชา{{ value.name_th }}</h1>
 
     <div id="about" class="plo check-list border">
       <h1>สิ่งที่คุณจะได้เรียนรู้ (Program Learning Outcome)</h1>
-      <span *ngFor="let item of module_detail.plo">
+      <span *ngFor="let item of value.plo">
         <i class="material-icons">check</i>
         <p>{{ item.name_th }}</p>
       </span>
     </div>
     <div class="normal-detail">
       <h1>จำนวนชั่วโมงการเรียนรู้</h1>
-      <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 120 ชั่วโมง</p>
+      <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 60 ชั่วโมง</p>
     </div>
 
     <div class="normal-detail">
@@ -94,7 +50,7 @@
 
     <div class="normal-detail" id="course">
       <h1>รายวิชาในชุดวิชา</h1>
-      <div *ngFor="let item of module_detail.course; let i = index">
+      <div *ngFor="let item of value.course; let i = index">
         <h1>
           <span>{{ i + 1 }}.</span>
           <span class="link" [routerLink]="['/course-detail/' + item.id]">
@@ -110,7 +66,7 @@
     <div class="normal-detail">
       <h1>อาจารย์ผู้รับผิดชอบ</h1>
       <ul>
-        <li>รศ. ดร.จิติมนต์ อั่งสกุล</li>
+        <li>อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร</li>
       </ul>
     </div>
 

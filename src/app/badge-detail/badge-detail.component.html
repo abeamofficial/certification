@@ -16,11 +16,14 @@
       <img src="./assets/images/badge/{{ value.img }}" />
       <div class="badge-info">
         <p>Level</p>
-        <span class="gold">{{ getCompetencyLevel(value.score) }}</span>
+        <span [ngClass]="value.score >= 80 ? 'gold' : 'silver'">{{
+          getCompetencyLevel(value.score)
+        }}</span>
         <div class="level-bar">
           <div class="full-bar">
             <div
-              class="percent-bar gold"
+              class="percent-bar"
+              [ngClass]="value.score >= 80 ? 'gold' : 'silver'"
               [ngStyle]="{ width: value.score + '%' }"
             >
               {{ value.score }}%
@@ -28,13 +31,22 @@
           </div>
         </div>
       </div>
-      <div class="badge-info">
-        <p>Date Earned</p>
-        <span>21/12/2019</span>
-      </div>
+      <ng-container *ngIf="value.expired_date; else dateEarned">
+        <div class="badge-info">
+          <p>Date Expired</p>
+          <span>{{ value.expired_date | date: "dd/MM/yyyy" }}</span>
+        </div>
+      </ng-container>
+      <ng-template #dateEarned>
+        <div class="badge-info">
+          <p>Date Earned</p>
+          <span>{{ value.date_earned | date: "dd/MM/yyyy" }}</span>
+        </div>
+      </ng-template>
+
       <div class="badge-info">
         <p>Offered By</p>
-        <span class="link">
+        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
           <p>
             Suranaree University of Technology
             <i class="material-icons">open_in_new</i>
@@ -50,7 +62,9 @@
     <hr />
     <div class="badge-detail">
       <div class="badge-info">
-        <p class="link">{{ course_detail.name_th }}</p>
+        <p class="link" [routerLink]="['/course-detail/' + value.course_id]">
+          {{ "วิชา" + course_detail.name_th }}
+        </p>
       </div>
       <div class="badge-info">
         <p>Description</p>

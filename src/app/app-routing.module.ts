@@ -14,25 +14,41 @@ const routes: Routes = [
     path: "transcript-detail",
     // component: TranscriptDetailComponent
     children: [
-      { path: "", component: TranscriptComponent },
+      { path: "", component: HomeComponent },
       { path: ":id", component: TranscriptDetailComponent },
     ],
   },
   {
     path: "achievement-cert-detail",
-    component: AchievementCertDetailComponent,
+    // component: AchievementCertDetailComponent,
+    children: [
+      { path: "", component: HomeComponent },
+      { path: ":id", component: AchievementCertDetailComponent },
+    ],
   },
   {
     path: "badge-detail",
-    component: BadgeDetailComponent,
+    // component: BadgeDetailComponent,
+    children: [
+      { path: "", component: HomeComponent },
+      { path: ":id", component: BadgeDetailComponent },
+    ],
   },
   {
     path: "participant-cert-detail",
-    component: ParticipantCertDetailComponent,
+    // component: ParticipantCertDetailComponent,
+    children: [
+      { path: "", component: HomeComponent },
+      { path: ":id", component: ParticipantCertDetailComponent },
+    ],
   },
   {
     path: "course-detail",
-    component: CourseDetailComponent,
+    // component: CourseDetailComponent,
+    children: [
+      { path: "", component: HomeComponent },
+      { path: ":id", component: CourseDetailComponent },
+    ],
   },
 ];
 

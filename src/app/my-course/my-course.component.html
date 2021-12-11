@@ -10,15 +10,19 @@
   </div>
 
   <div class="data-list">
-    <div class="list" [routerLink]="['/course-detail']">
-      <p>Object-Oriented Programming and Data Structures Module</p>
-      <p>ชุดวิชาการเขียนโปรแกรมเชิงอ็อบเจกต์และโครงสร้างข้อมูล</p>
+    <div
+      class="list"
+      *ngFor="let item of value"
+      [routerLink]="['/course-detail/' + item.id]"
+    >
+      <p>{{ item.name_en }}</p>
+      <p>{{ item.name_th }}</p>
       <div class="tag">Specialist</div>
 
       <div class="detail">
-        <span>3 courses</span>
+        <span>{{ item.course.length }} courses</span>
         <span>|</span>
-        <span>10 credits</span>
+        <span>{{ item.trimester_credit }} credits</span>
         <span>|</span>
         <span>started date 21/12/2019</span>
       </div>

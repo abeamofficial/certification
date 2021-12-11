@@ -21,7 +21,7 @@ export class TranscriptDetailComponent implements OnInit {
   getAverage(ary) {
     let total = 0;
     for (var i = 0; i < ary.length; i++) {
-      total += ary[i].badge_level;
+      total += ary[i].score;
     }
     return Number((total / ary.length).toFixed(0));
   }

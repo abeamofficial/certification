@@ -1,25 +1,30 @@
 <section class="header">
   <div>
     <span>Badge in</span>
-    <h1>Business Insight Analytics</h1>
-    <p>ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ</p>
+    <h1>{{ value.name_en }}</h1>
+    <p>{{ value.name_th }}</p>
   </div>
 </section>
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>Badge in Business Intelligence and Information Visualization</p>
+  <p>Badge in {{ value.name_en }}</p>
 </section>
 <section class="body">
   <div class="badge">
     <div class="badge-paper">
-      <img src="./assets/images/badge.svg" />
+      <img src="./assets/images/badge/{{ value.img }}" />
       <div class="badge-info">
         <p>Level</p>
-        <span class="gold">Excellent</span>
+        <span class="gold">{{ getCompetencyLevel(value.score) }}</span>
         <div class="level-bar">
           <div class="full-bar">
-            <div class="percent-bar gold" style="width: 85%">85%</div>
+            <div
+              class="percent-bar gold"
+              [ngStyle]="{ width: value.score + '%' }"
+            >
+              {{ value.score }}%
+            </div>
           </div>
         </div>
       </div>
@@ -45,47 +50,31 @@
     <hr />
     <div class="badge-detail">
       <div class="badge-info">
-        <p class="link">ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ</p>
+        <p class="link">{{ course_detail.name_th }}</p>
       </div>
       <div class="badge-info">
         <p>Description</p>
         <span class="text">
-          แนวคิดเกี่ยวกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ ซึ่งประกอบไปด้วย
-          กระบวนการตัดสินใจโดยการใช้ข้อมูล ประเภทและ กระบวนการตัดสินใจ
-          ลักษณะสารสนเทศสำหรับธุรกิจอัจฉริยะและเพื่อสนับสนุนการตัดสินใจ
-          กรณีศึกษาธุรกิจอัจฉริยะและระบบสนับสนุน การตัดสินใจในองค์กร
-          ระบบสารสนเทศสำหรับผู้จัดการระดับสูงและระบบผู้เชี่ยวชาญ
-          ซอฟต์แวร์ด้านธุรกิจอัจฉริยะและระบบสนับสนุนการ ตัดสินใจ
-          การกำหนดมุมมองการวิเคราะห์
-          การออกแบบจินตทัศน์สารสนเทศเพื่อสนับสนุนการตัดสินใจ
-          การเล่าเรื่องราวด้วยข้อมูล แนวทางการพัฒนาระบบสนับสนุนการตัดสินใจ
+          {{ course_detail.detail_th }}
         </span>
         <span class="text">
-          Concepts of business intelligence and information visualization;
-          data-driven decision making process, types and processes of decision
-          making; information characteristics for business intelligence and
-          decision making support, case studies of business intelligence and
-          decision making support systems in organizations, executive
-          information systems and expert systems, software of business
-          intelligence and decision making support system, information
-          visualization design, storytelling with data, business intelligence
-          system implementation
+          {{ course_detail.detail_en }}
         </span>
       </div>
 
       <div class="badge-info">
         <p>Earned credits</p>
-        <span>2 Credits</span>
+        <span> {{ course_detail.trimester_credit }} Credits</span>
       </div>
 
-      <div class="badge-info">
+      <!-- <div class="badge-info">
         <p>Skills</p>
         <div class="skill">
           <div class="skill-tag">Data Analysis</div>
           <div class="skill-tag">Business Knowledge</div>
           <div class="skill-tag">Communication</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

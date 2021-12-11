@@ -9,13 +9,17 @@
     </select>
   </div>
   <div class="data-list">
-    <div class="list" [routerLink]="['/participant-cert-detail']">
+    <div
+      class="list"
+      *ngFor="let item of value"
+      [routerLink]="['/participant-cert-detail/' + item.id]"
+    >
       <div class="img">
         <img src="./assets/images/diploma.svg" />
       </div>
       <div class="detail">
-        <p>Certificate in Internet of Things</p>
-        <p>หนังสือรับรองการเข้าร่วมหลักสูตรอินเทอร์เน็ตของสรรพสิ่ง</p>
+        <p>Certificate in {{ item.name_en }}</p>
+        <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ item.name_th }}</p>
         <div class="tag">Intermediate</div>
 
         <div class="date">

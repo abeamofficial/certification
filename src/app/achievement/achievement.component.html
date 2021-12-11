@@ -9,7 +9,28 @@
     </select>
   </div>
   <div class="data-list">
-    <div class="list" [routerLink]="['/achievement-cert-detail']">
+    <div
+      class="list"
+      *ngFor="let item of value"
+      [ngClass]="{ disabled: item.isExpired }"
+      [routerLink]="['/achievement-cert-detail/' + item.id]"
+    >
+      <div class="img">
+        <img src="./assets/images/cert.svg" />
+      </div>
+      <div class="detail">
+        <p>Certificate in {{ item.name_en }}</p>
+        <p>สัมฤทธิบัตร{{ item.name_th }}</p>
+        <div class="tag">Intermediate</div>
+        <div class="date">
+          <span>
+            <p>Approved by : Digitech @ SUT</p>
+            <p>Approved date : 21/12/2019</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="list disabled">
       <div class="img">
         <img src="./assets/images/cert.svg" />
       </div>
@@ -25,23 +46,6 @@
           </span>
         </div>
       </div>
-    </div>
-    <div class="list disabled">
-      <div class="img">
-        <img src="./assets/images/cert.svg" />
-      </div>
-      <div class="detail">
-        <p>Certificate in Business Insight Analytics</p>
-        <p>สัมฤทธิบัตรการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ</p>
-        <div class="tag">Intermediate</div>
-
-        <div class="date">
-          <span>
-            <p>Approved by : Digitech @ SUT</p>
-            <p>Approved date : 21/12/2019</p>
-          </span>
-        </div>
-      </div>
-    </div>
+    </div> -->
   </div>
 </section>

@@ -4,40 +4,24 @@ export const data = {
   join_date: "2020",
   credit: "",
   earn_lo: [
-    // {
-    //   id: "",
-    //   name_th: "",
-    //   name_en: "",
-    //   course: [
-    //     {
-    //       id: "",
-    //       name_th: "",
-    //       name_en: "",
-    //       date_earned: "",
-    //       offered_by: "",
-    //       badge_level: "",
-    //     },
-    //   ],
-    //   competency_level: "",
-    // },
-    // {
-    //   id: "plo1",
-    //   name_th: "แสดงออกถึงภาวะผู้นำในการส่งเสริมความมีคุณธรรม จริยธรรม",
-    //   name_en: "Demonstrates leadership in promoting morality and ethics",
-    //   course: [
-    //     {
-    //       id: "1131074",
-    //       name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
-    //       name_en: "Project in Business Insight Analytics",
-    //       date_earned: "",
-    //       offered_by: "",
-    //       badge_level: "",
-    //     },
-    //   ],
-    //   competency_level: "",
-    // },
     {
-      id: "plo3",
+      id: "PLO1",
+      name_th: "แสดงออกถึงภาวะผู้นำในการส่งเสริมความมีคุณธรรม จริยธรรม",
+      name_en: "Demonstrates leadership in promoting morality and ethics",
+      course: [
+        {
+          id: "1131074",
+          name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+          name_en: "Project in Business Insight Analytics",
+          date_earned: "11/12/2021",
+          offered_by: "",
+          score: 100,
+        },
+      ],
+      competency_level: "",
+    },
+    {
+      id: "PLO3",
       name_th: "แสดงออกถึงการมีความรับผิดชอบในการทำงาน",
       name_en: "Express being responsible for work",
       course: [
@@ -45,59 +29,155 @@ export const data = {
           id: "1131071",
           name_th: "ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ",
           name_en: "Business Intelligence and Information Visualization",
-          date_earned: "",
+          date_earned: "11/12/2021",
           offered_by: "",
-          badge_level: 100,
+          score: 100,
         },
         {
           id: "1131074",
           name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
           name_en: "Project in Business Insight Analytics",
-          date_earned: "",
+          date_earned: "11/12/2021",
           offered_by: "",
-          badge_level: 100,
+          score: 100,
+        },
+        {
+          id: "1131021",
+          name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+          name_en: "Introduction to Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131022",
+          name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+          name_en: "Agile Development using DevOps",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131023",
+          name_th: "การคิดเชิงออกแบบสำหรับนวัตกรรมดิจิทัล",
+          name_en: "Design Thinking for Digital Innovation",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131024",
+          name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+          name_en: "Project in Modern Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131031",
+          name_th: "การคิดเชิงออกแบบ",
+          name_en: "Design Thinking",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131032",
+          name_th: "การพัฒนาโปรแกรมประยุกต์บนเว็บ",
+          name_en: "Web Application Development",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131033",
+          name_th: "การพัฒนาโปรแกรมประยุกต์ข้ามแพลตฟอร์ม",
+          name_en: "Cross-Platform Application Development",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131034",
+          name_th: "โครงงานโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที",
+          name_en: "Project in Mobile Application",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 100,
         },
       ],
       competency_level: "",
     },
-    // {
-    //   id: "plo4",
-    //   name_th: "แสดงออกถึงการทำงานเป็นทีมร่วมกับผู้อื่นได้อย่างมีประสิทธิภาพ",
-    //   name_en: "Express how to work effectively with others",
-    //   course: [
-    //     {
-    //       id: "1131074",
-    //       name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
-    //       name_en: "Project in Business Insight Analytics",
-    //       date_earned: "",
-    //       offered_by: "",
-    //       badge_level: "",
-    //     },
-    //   ],
-    //   competency_level: "",
-    // },
-    // {
-    //   id: "plo5",
-    //   name_th:
-    //     "ค้นคว้าหาความรู้เชิงวิชาการและวิชาชีพด้านเทคโนโลยีดิจิทัลได้ด้วยตนเอง",
-    //   name_en:
-    //     "Find academic and professional knowledge in digital technology by yourself.",
-    //   course: [
-    //     {
-    //       id: "1131074",
-    //       name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
-    //       name_en: "Project in Business Insight Analytics",
-    //       date_earned: "",
-    //       offered_by: "",
-    //       badge_level: "",
-    //     },
-    //   ],
-    //   competency_level: "",
-    // },
     {
-      id: "plo6",
+      id: "PLO4",
+      name_th: "แสดงออกถึงการทำงานเป็นทีมร่วมกับผู้อื่นได้อย่างมีประสิทธิภาพ",
+      name_en: "Express how to work effectively with others",
+      course: [
+        {
+          id: "1131074",
+          name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+          name_en: "Project in Business Insight Analytics",
+          date_earned: "11/12/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131024",
+          name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+          name_en: "Project in Modern Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131034",
+          name_th: "โครงงานโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที",
+          name_en: "Project in Mobile Application",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 100,
+        },
+      ],
+      competency_level: "",
+    },
+    {
+      id: "PLO5",
       name_th:
-        "อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศได้",
+        "ค้นคว้าหาความรู้เชิงวิชาการและวิชาชีพด้านเทคโนโลยีดิจิทัลได้ด้วยตนเอง",
+      name_en:
+        "Find academic and professional knowledge in digital technology by yourself.",
+      course: [
+        {
+          id: "1131074",
+          name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+          name_en: "Project in Business Insight Analytics",
+          date_earned: "11/12/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131024",
+          name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+          name_en: "Project in Modern Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131034",
+          name_th: "โครงงานโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที",
+          name_en: "Project in Mobile Application",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 100,
+        },
+      ],
+      competency_level: "",
+    },
+    {
+      id: "PLO6",
+      name_th:
+        "อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับงานวิจัยด้านเทคโนโลยีดิจิทัลได้",
       name_en:
         "Explain concepts or theories related to digital technology research",
       course: [
@@ -105,17 +185,65 @@ export const data = {
           id: "1131071",
           name_th: "ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ",
           name_en: "Business Intelligence and Information Visualization",
-          date_earned: "",
+          date_earned: "11/12/2021",
           offered_by: "",
-          badge_level: 90.71,
+          score: 90.71,
+        },
+        {
+          id: "1131021",
+          name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+          name_en: "Introduction to Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 81,
+        },
+        {
+          id: "1131022",
+          name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+          name_en: "Agile Development using DevOps",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 82,
+        },
+        {
+          id: "1131023",
+          name_th: "การคิดเชิงออกแบบสำหรับนวัตกรรมดิจิทัล",
+          name_en: "Design Thinking for Digital Innovation",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 70,
+        },
+        {
+          id: "1131031",
+          name_th: "การคิดเชิงออกแบบ",
+          name_en: "Design Thinking",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 69,
+        },
+        {
+          id: "1131032",
+          name_th: "การพัฒนาโปรแกรมประยุกต์บนเว็บ",
+          name_en: "Web Application Development",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 78,
+        },
+        {
+          id: "1131033",
+          name_th: "การพัฒนาโปรแกรมประยุกต์ข้ามแพลตฟอร์ม",
+          name_en: "Cross-Platform Application Development",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 70,
         },
       ],
       competency_level: "",
     },
     {
-      id: "plo7",
+      id: "PLO7",
       name_th:
-        "ประยุกต์ใช้เทคนิคทางสถิติคณิตศาสตร์และเทคโนโลยีดิจิทัลในการวิจัย การปฏิบัติวิชาชีพ หรือการถ่ายทอดความรู้ได้",
+        "ประยุกต์ใช้เทคนิคทางสถิติ คณิตศาสตร์ และเทคโนโลยีดิจิทัลในการวิจัย หรือการปฏิบัติวิชาชีพได้",
       name_en:
         "Apply statistical, mathematics and digital technology in research or professional practicum",
       course: [
@@ -123,43 +251,123 @@ export const data = {
           id: "1131071",
           name_th: "ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ",
           name_en: "Business Intelligence and Information Visualization",
-          date_earned: "",
+          date_earned: "11/12/2021",
           offered_by: "",
-          badge_level: 84.8,
+          score: 84.8,
+        },
+        {
+          id: "1131021",
+          name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+          name_en: "Introduction to Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 81,
+        },
+        {
+          id: "1131022",
+          name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+          name_en: "Agile Development using DevOps",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 83,
+        },
+        {
+          id: "1131023",
+          name_th: "การคิดเชิงออกแบบสำหรับนวัตกรรมดิจิทัล",
+          name_en: "Design Thinking for Digital Innovation",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 71,
+        },
+        {
+          id: "1131031",
+          name_th: "การคิดเชิงออกแบบ",
+          name_en: "Design Thinking",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 56,
+        },
+        {
+          id: "1131032",
+          name_th: "การพัฒนาโปรแกรมประยุกต์บนเว็บ",
+          name_en: "Web Application Development",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 65,
+        },
+        {
+          id: "1131033",
+          name_th: "การพัฒนาโปรแกรมประยุกต์ข้ามแพลตฟอร์ม",
+          name_en: "Cross-Platform Application Development",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 64,
         },
       ],
       competency_level: "",
     },
-    // {
-    //   id: "plo8",
-    //   name_th:
-    //     "สื่อสารแนวคิด ทฤษฎี และงานวิจัยทางด้านเทคโนโลยีดิทิจัล ด้วยภาษาไทยและภาษาอังกฤษได้อย่างมีประสิทธิภาพ",
-    //   name_en:
-    //     "Communicate ideas, theories and research in digital technology With Thai and English languages",
-    //   course: [
-    //     {
-    //       id: "1131074",
-    //       name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
-    //       name_en: "Project in Business Insight Analytics",
-    //       date_earned: "",
-    //       offered_by: "",
-    //       badge_level: "",
-    //     },
-    //   ],
-    //   competency_level: "",
-    // },
     {
-      id: "plo10",
-      name_th: "พัฒนาแนวทางการแก้ปัญหาทางด้านเทคโนโลยีดิจิทัลได้",
+      id: "PLO8",
+      name_th:
+        "สื่อสารแนวคิด ทฤษฎี และงานวิจัยทางด้านเทคโนโลยีดิทิจัล ด้วยภาษาไทยและภาษาอังกฤษได้อย่างมีประสิทธิภาพ",
+      name_en:
+        "Communicate ideas, theories and research in digital technology With Thai and English languages",
+      course: [
+        {
+          id: "1131074",
+          name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+          name_en: "Project in Business Insight Analytics",
+          date_earned: "11/12/2021",
+          offered_by: "",
+          score: 100,
+        },
+        {
+          id: "1131024",
+          name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+          name_en: "Project in Modern Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 85,
+        },
+        {
+          id: "1131034",
+          name_th: "โครงงานโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที",
+          name_en: "Project in Mobile Application",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 65,
+        },
+      ],
+      competency_level: "",
+    },
+    {
+      id: "PLO10",
+      name_th: "ตัดสินใจแก้ปัญหาทางด้านเทคโนโลยีดิจิทัลได้",
       name_en: "Decide to solve digital technology problems",
       course: [
         {
           id: "1131074",
           name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
           name_en: "Project in Business Insight Analytics",
-          date_earned: "",
+          date_earned: "11/12/2021",
           offered_by: "",
-          badge_level: 84.15,
+          score: 84.15,
+        },
+        {
+          id: "1131024",
+          name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+          name_en: "Project in Modern Software Project Management",
+          date_earned: "15/07/2021",
+          offered_by: "",
+          score: 73.5,
+        },
+        {
+          id: "1131034",
+          name_th: "โครงงานโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที",
+          name_en: "Project in Mobile Application",
+          date_earned: "07/10/2021",
+          offered_by: "",
+          score: 64,
         },
       ],
       competency_level: "",
@@ -167,301 +375,565 @@ export const data = {
   ],
   course: [
     {
-      id: "",
-      course_id: "",
-      root_module_id: "module-",
-      name_th: "",
-      name_en: "",
-      detail_th: "",
-      detail_en: "",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-2-1",
-      course_id: "1101011",
-      root_module_id: "module-2",
-      name_th: "เทคโนโลยีดิจิทัลเบื้องต้น",
-      name_en: "Digital Technology Foundation",
+      id: "course-1",
+      name_th: "ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ",
+      name_en: "Business Intelligence and Information Visualization",
+      course_id: "1131071",
       detail_th:
-        "ความรู้เบื้องต้นเกี่ยวกับเทคโนโลยีดิจิทัล คณิตศาสตร์สำหรับคอมพิวเตอร์ การคิดเชิงคำนวณสำหรับการแก้ปัญหา กระบวนการและเครื่องมือในการพัฒนาซอฟต์แวร์ การจัดการโครงการ ปฏิสัมพันธ์ระหว่างมนุษย์และคอมพิวเตอร์ การจัดการข้อมูล เครือข่ายคอมพิวเตอร์ เทคโนโลยีเว็บ ระบบไซเบอร์-กายภาพ การบริการคลาวด์",
+        "แนวคิดเกี่ยวกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ ซึ่งประกอบไปด้วย กระบวนการตัดสินใจ โดยการใช้ข้อมูล ประเภทและกระบวนการตัดสินใจ ลักษณะสารสนเทศสำหรับธุรกิจอัจฉริยะและเพื่อสนับสนุนการตัดสินใจ กรณีศึกษาธุรกิจอัจฉริยะและระบบสนับสนุนการตัดสินใจในองค์กร ระบบสารสนเทศสำหรับผู้จัดการระดับสูงและระบบผู้เชี่ยวชาญ ซอฟต์แวร์ด้านธุรกิจอัจฉริยะและระบบสนับสนุนการตัดสินใจ การกำหนดมุมมองการวิเคราะห์ การออกแบบจินตทัศน์สารสนเทศเพื่อสนับสนุนการตัดสินใจ การเล่าเรื่องราวด้วยข้อมูล แนวทางการพัฒนาระบบสนับสนุนการตัดสินใจ",
       detail_en:
-        "Introduction to digital technology; mathematics for computer; computational thinking for problem solving; software development processes and tools; project management; human-computer interaction; data management; computer networks; web technology; cyber-physical systems; cloud services",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
+        "Concepts of business intelligence and information visualization; data-driven decision making process, types and processes of decision making; information characteristics for business intelligence and decision making support, case studies of business intelligence and decision making support systems in organizations, executive information systems and expert systems, software of business intelligence and decision making support system, information visualization design, storytelling with data, business intelligence system implementation",
+      open_date: null,
+      closed_date: null,
+      first_semester: true,
+      second_semester: false,
+      first_trimester: false,
+      second_trimester: false,
+      third_trimester: false,
+      semester_credit: "1.6",
+      trimester_credit: "2",
+      institution: "2",
+      smlo: ["SPLO2", "SPLO5", "SPLO6"],
     },
     {
-      id: "course-2-2",
-      course_id: "1101012",
-      root_module_id: "module-2",
-      name_th: "การจัดการเทคโนโลยีดิจิทัล",
-      name_en: "Digital Technology Management",
+      id: "course-2",
+      name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+      name_en: "Project in Business Insight Analytics",
+      course_id: "1131074",
       detail_th:
-        "โปรแกรมประยุกต์สำหรับวิสาหกิจ การแก้ปัญหาด้วยเทคโนโลยีดิจิทัล นโยบายด้านเทคโนโลยีดิจิทัล เทคโนโลยีสน้างความพลิกผัน การเปลี่ยนแปลงทางดิจิทัล ความเป็นส่วนตัว ผลกระทบของคอมพิวเตอร์ต่อบุคคล องค์กรและสังคม จริยธรรม จรรยาบรรณและกฎหมายในวิชาชีพเทคโนโลยีดิจิทัล เช่น ทรัพย์สินทางปัญญา การใช้งานคอมพิวเตอร์ที่ผิดวัตถุประสงค์ อาชญากรรมทางไซเบอร์",
+        "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ การเข้าใจปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
       detail_en:
-        "Enterprise application; digital technology-based solutions; digital technology policies; disruptive technology; digital transformation; privacy; impact of computing on individuals, organizations, and society; ethics, conduct and laws in digital technology profession: intellectual properties, computer abuse, cybercrime",
+        "Project design and development in business insight analytics; empathize problems; define problems; creative thinking; prototype; test",
+
+      open_date: null,
+      closed_date: null,
+      first_semester: true,
+      second_semester: false,
+      first_trimester: false,
+      second_trimester: false,
+      third_trimester: false,
       semester_credit: 1.6,
       trimester_credit: 2,
       institution: 2,
+      smlo: ["SPLO1", "SPLO2", "SPLO3", "SPLO4", "SPLO7", "SPLO8"],
     },
     {
-      id: "course-2-3",
-      course_id: "1101013",
-      root_module_id: "module-2",
-      name_th: "การบริการเทคโนโลยีดิจิทัล",
-      name_en: "Digital Technology Services",
+      id: "course-3",
+      course_id: "1131021",
+      name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+      name_en: "Introduction to Software Project Management",
       detail_th:
-        "ส่วนประกอบของคอมพิวเตอร์และเกณฑ์การเลือกซื้อ การประกอบเครื่องคอมพิวเตอร์  การติดตั้งระบบปฏิบัติการ การแบ่งพาร์ติชันและการจัดการอุปกรณ์จัดเก็บข้อมูล การปรับแต่งระบบ  การติดตั้งฮาร์ดแวร์ การติดตั้งซอฟต์แวร์ การติดตั้งเครือข่ายคอมพิวเตอร์ การติดตั้งโปรแกรมบริการ  การสำรองและการกู้ข้อมูล การวางแผนการบริการ การวิเคราะห์และแก้ไขปัญหาคอมพิวเตอร์ ข้อตกลงระดับการบริการ ความคาดหวังของผู้รับบริการ การจัดการความรู้ในงานบริการ การสื่อสารในงานบริการ การจัดการประเด็น",
+        "แนวคิดการจัดการโครงการซอฟต์แวร์การบริหารขอบเขตของโครงการ การบริหารเวลาของโครงการ การบริหารต้นทุนของโครงการ การบริหารคุณภาพของโครงการ การบริหารทรัพยากรบุคคลของ โครงการ การบริหารการสื่อสารของโครงการ การบริหารความเสี่ยงของโครงการ การประเมินโครงการ กรณีศึกษาในการจัดการโครงการซอฟต์แวร์",
       detail_en:
-        "Computer components and buying criteria; computer assembling; operating system installation; data storage partitioning and management; system configuration; hardware installation; software installation; computer network installation; server program installation; data backup and recovery; service planning; computer troubleshooting; service level agreement; user expectation; knowledge management in services; communication in services; issues management",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
+        "Software project management concepts; project scope management; project time management; project cost management; project quality management; project human resource management; project communications management; project risk management; project evaluation; case studies of software project management",
     },
     {
-      id: "course-3-1",
-      course_id: "1131131",
-      root_module_id: "module-3",
-      name_th: "หลักการออกแบบวิชวล",
-      name_en: "Principles of Visual Design",
+      id: "course-4",
+      course_id: "1131022",
+      name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+      name_en: "Agile Development using DevOps",
       detail_th:
-        "การใช้เทคโนโลยีสมัยใหม่เพื่อการออกแบบและการผลิตวิชวล ด้วยระบบดิจิทัล ขั้นตอนก่อนการผลิต ขั้นตอนการผลิต และขั้นตอนหลังการผลิต การใช้โปรแกรมสําเร็จรูปเพื่อการออกแบบวิชวล ข้อดีและข้อจํากัดของแต่ละโปรแกรม การฝึกทักษะในการใช้เทคโนโลยีเพื่อการออกแบบวิชวล",
+        "แนวคิดการจัดการโครงการแบบคล่องตัว กระบวนการทางความคิดแบบคล่องตัว หลักการแบบคล่องตัว กระบวนการน้ำตก กรอบการทำงานแบบสครัม คุณค่าของสครัม บทบาทในกรอบการทำงานแบบสครัม เช่น เจ้าของผลิตภัณฑ์ ผู้นำสครัม ทีมนักพัฒนา เครื่องมือในกรอบการทำงานแบบสครัม เช่น งานค้าง สปรินท์ การประชุมรายวัน แนวคิดเดฟออปส์ การไหลและการป้อนผลย้อนกลับ การรวมและส่งมอบอย่างต่อเนื่อง เครื่องมือจัดการซอฟต์แวร์เดฟออปส์ เช่น กิด ด็อกเกอร์ เจนกินส์ วาแกรนต์ เชฟแองซิเบิล คูเบอร์เน็ต",
       detail_en:
-        "Definitions and significance of visual message design; process of visual message design and creation: study and research, outline design, revision and improvement, and running; photography, communication by photo and alphabet; code of ethics",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
+        "Agile project management concepts; agile mindset; agile principles; waterfall process; scrum framework; scrum values; scrum roles: product owner, scrum master, development team; scrum tools: backlog, sprint, daily scrum meeting; DevOps concepts; flow and feedback; continuous integration and continuous development; DevOps software management tools: Git, Docker, Jenkins, Vagrant, Chef, Ansible, Kubernetes ",
     },
     {
-      id: "course-3-2",
-      course_id: "1131132",
-      root_module_id: "module-",
-      name_th: "เทคโนโลยีในการออกแบบวิชวล",
-      name_en: "Technology in Visual Design",
+      id: "course-5",
+      course_id: "1131023",
+      name_th: "การคิดเชิงออกแบบสำหรับนวัตกรรมดิจิทัล",
+      name_en: "Design Thinking for Digital Innovation",
       detail_th:
-        "การใช้เทคโนโลยีสมัยใหม่เพื่อการออกแบบและการผลิตวิชวล ด้วยระบบดิจิทัล ขั้นตอนก่อนการผลิต ขั้นตอนการผลิต และขั้นตอนหลังการผลิต การใช้โปรแกรมสําเร็จรูปเพื่อการออกแบบวิชวล ข้อดีและข้อจํากัดของแต่ละโปรแกรม การฝึกทักษะในการใช้เทคโนโลยีเพื่อการออกแบบวิชวล",
-      detail_en:
-        "Using up-to-date technologies for visual design and production in digital system; pre-production, production, and post-production processes; ready-to-use programs utilization for visual design; advantages and disadvantages of each program; hands-on practice by using technologies for visual design",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-3-3",
-      course_id: "1131133",
-      root_module_id: "module-3",
-      name_th: "การออกแบบวิชวลเพื่ออาชีพในยุคดิจิทัล",
-      name_en: "Visual Design for Careers in the Digital Age",
-      detail_th:
-        "การประยุกต์ใช้ทักษะในการออกแบบและการผลิตวิชวลในการประกอบอาชีพ ขั้นตอนก่อนการผลิต ขั้นตอนการผลิต และขั้นตอนหลังการผลิตของการออกแบบวิชวลในอาชีพต่างๆ  ลักษณะเฉพาะของอาชีพในยุคดิจิทัลที่เกี่ยวกับวิชวล  ประสบการณ์จริงจากบริษัท ผู้ประกอบการและผู้ประกอบวิชาชีพ",
-      detail_en:
-        "Application of skills in visual design and production for careers; pre-production, production, and post-production processes of visual design in each career; characteristics of each visual design related careers in the digital age; real experiences from enterprises, entrepreneurs, and professionals",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-3-4",
-      course_id: "1131134",
-      root_module_id: "module-3",
-      name_th: "โครงงานนวัตกรรมการสร้างสรรค์วิชวล",
-      name_en: "Innovative Visual Creation Project",
-      detail_th: "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับหลักสูตรที่ศึกษา",
-      detail_en: "Project design and development in the program of study",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-4-1",
-      course_id: "1131141",
-      root_module_id: "module-4",
-      name_th: "หลักการออกแบบและการสร้างสาร",
-      name_en: "Principles of Message Design and Creation",
-      detail_th:
-        "การประยุกต์ใช้ทักษะในการออกแบบและการผลิตวิชวลในการประกอบอาชีพ ขั้นตอนก่อนการผลิต ขั้นตอนการผลิต และขั้นตอนหลังการผลิตของการออกแบบวิชวลในอาชีพต่างๆ  ลักษณะเฉพาะของอาชีพในยุคดิจิทัลที่เกี่ยวกับวิชวล  ประสบการณ์จริงจากบริษัท ผู้ประกอบการและผู้ประกอบวิชาชีพ",
-      detail_en:
-        "Definitions and significance of message design and creation; process of message design and creation: study and research, outline design, revision and improvement, and running; photography, communication by photo; communication by text; content design; code of ethics",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-4-2",
-      course_id: "",
-      root_module_id: "module-4",
-      name_th: "เทคโนโลยีการผลิตเนื้อหาออนไลน์",
-      name_en: "Technology of Online Content Production",
-      detail_th:
-        "การใช้เทคโนโลยีสมัยใหม่ในระบบดิจิทัลเพื่อการออกแบบและการผลิตเนื้อหาออนไลน์ ขั้นตอนก่อนการผลิต ขั้นตอนการผลิต และขั้นตอนหลังการผลิต การฝึกทักษะในการใช้เทคโนโลยีในระบบดิจิทัลเพื่อการผลิตเนื้อหาออนไลน์",
-      detail_en:
-        "Using up-to-date digital system technologies for design and production of online content; pre-production, production, and postproduction processes; hands-on practice by using digital system technologies for online content production",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-4-3",
-      course_id: "1131143",
-      root_module_id: "module-4",
-      name_th: "การสร้างสรรค์เนื้อหาออนไลน์เพื่อการสื่อสารการตลาดดิจิทัล",
-      name_en: "Online Content Creation for Digital Marketing Communication",
-      detail_th:
-        "บทบาทหน้าที่นักสร้างสรรค์ การสื่อความหมายของสื่อดิจิทัล หลักการสร้างสรรค์เนื้อหาให้สอดคล้องกับคุณลักษณะของสื่อดิจิทัลและการสื่อสารการตลาดดิจิทัล การวิเคราะห์ผู้ใช้สื่อดิจิทัล แนวคิด หลักการ และวิธีการของการสื่อสารการตลาดเชิงบูรณาการ การวางแผน การกำหนด กลยุทธ์ และปัจจัยในการสื่อสารการตลาดดิจิทัล การกำหนดกลยุทธ์และเครื่องมือการสื่อสารการตลาดดิจิทัล กฎหมายและจรรยาบรรณที่เกี่ยวข้องกับสร้างสรรค์เนื้อหาออนไลน์เพื่อการสื่อสารการตลาดดิจิทัล",
-      detail_en:
-        "Role of creative; conveying the meaning of digital media; principles of content creation to conform with the attributes of digital media and digital marketing communication; digital media users analysis; concepts, principles and methods of digital marketing communications; planning, setting strategies and factors in digital marketing communication; laws and ethics related to online content creation for digital marketing communication",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-4-4",
-      course_id: "1131144",
-      root_module_id: "module-4",
-      name_th: "โครงงานนวัตกรรมการสร้างสรรค์เนื้อหาออนไลน์",
-      name_en: "Project in Innovative Online Content Creation",
-      detail_th: "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับหลักสูตรที่ศึกษา",
-      detail_en: "Project design and development in the program of study",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-5-1",
-      course_id: "1131041",
-      root_module_id: "module-5",
-      name_th: "ไมโครคอนโทรลเลอร์",
-      name_en: "Microcontroller",
-      detail_th:
-        "ความรู้พื้นฐานเกี่ยวกับอิเล็กทรอนิกส์ สัญญาณดิจิทัลและแอนะล็อก สถาปัตยกรรมไมโครคอนโทรเลอร์ การใช้งานตัวรับรู้และอุปกรณ์ การเขียนโปรแกรมในระบบฝังตัว",
-      detail_en:
-        "Fundamental knowledge about electronics; digital and analog signals; microcontroller architecture; sensors and devices usage; embedded system programming",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-5-2",
-      course_id: "1131042",
-      root_module_id: "module-5",
-      name_th: "การเขียนโปรแกรมเว็บเซอร์วิส",
-      name_en: "Web Service Programming",
-      detail_th:
-        "การออกแบบและพัฒนาเว็บไซต์ การเขียนโปรแกรมภาษาสคริปต์ รูปแบบสำหรับการแลกเปลี่ยนข้อมูลคอมพิวเตอร์ การเชื่อมต่อฐานข้อมูล การสร้างเว็บเซอร์วิส",
-      detail_en:
-        "Website design and development; scripting language programming; format for computer data exchange; database connection; web service creation",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-5-3",
-      course_id: "1131043",
-      root_module_id: "module-5",
-      name_th: "อินเทอร์เน็ตของสรรพสิ่ง",
-      name_en: "Internet of Things",
-      detail_th:
-        "ความรู้พื้นฐานเกี่ยวกับอินเทอร์เน็ตของสรรพสิ่ง มาตรฐานที่เกี่ยวข้อง ส่วนต่อประสานคลาวด์ โพรโทคอลสื่อสาร การประยุกต์ใช้งาน",
-      detail_en:
-        "Fundamental knowledge about internet of things; relevant standards; cloud interface; communication protocols; internet of things applications",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-5-4",
-      course_id: "1131044",
-      root_module_id: "module-5",
-      name_th: "โครงงานอินเทอร์เน็ตของสรรพสิ่ง",
-      name_en: "Project in Internet of Things",
-      detail_th:
-        "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับหลักสูตรที่ศึกษาด้วยกระบวนการคิดเชิงออกแบบ แนวคิดเกี่ยวกับการคิดเชิงออกแบบ การเข้าใจปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
-      detail_en:
-        "Project design and development in the program of study using design thinking process; design thinking concept; empathize; define; creative thinking; prototype; test",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
-    },
-    {
-      id: "course-0-1",
-      course_id: "1131031",
-      root_module_id: null,
-      name_th: "การคิดเชิงออกแบบ",
-      name_en: "Design Thinking",
-      detail_th:
-        "การคิดอย่างสร้างสรรค์ การตั้งโจทย์และการแก้ไขปัญหา การระดมความคิดและการออกแบบโดยผู้ใช้เป็นศูนย์กลาง การออกแบบประสบการณ์ผู้ใช้งานและส่วนต่อประสานกับผู้ใช้ การสร้างต้นแบบ การปรับใช้นวัตกรรมอย่างเหมาะสม การถอดบทเรียน",
+        "การคิดอย่างสร้างสรรค์ การตั้งโจทย์และการแก้ไขปัญหา การระดมความคิดและการออกแบบ โดยผู้ใช้เป็นศูนย์กลาง การออกแบบประสบการณ์ผู้ใช้งานและส่วนต่อประสานกับผู้ใช้ การสร้างต้นแบบการปรับใช้นวัตกรรมอย่างเหมาะสม การถอดบทเรียน",
       detail_en:
         "Creative thinking; questioning and problem-solving; brainstorming and user-centered design; UX/UI design; prototyping; appropriate application of innovation; lesson learned",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
     },
     {
-      id: "course-0-2",
-      course_id: "1131032",
-      root_module_id: null,
-      name_th: "การพัฒนาโปรแกรมประยุกต์บนเว็บ",
-      name_en: "Web Application Development",
+      id: "course-6",
+      course_id: "1131024",
+      name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+      name_en: "Project in Modern Software Project Management",
       detail_th:
-        "ความสำคัญ องค์ประกอบ และสถาปัตยกรรมของการเขียนโปรแกรมบนเบราว์เซอร์  การสร้างเว็บเพจขั้นพื้นฐาน การเขียนโปรแกรมบนเบราว์เซอร์แบบต่าง ๆ วิธีการหาข้อผิดพลาดและการแก้ไขข้อผิดพลาดรวมทั้งการประยุกต์ใช้งานกับฐานข้อมูล",
+        "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับการจัดการโครงการซอฟต์แวร์สมัยใหม่ การเข้าใจ ปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
       detail_en:
-        "Significance, components and architecture of browser programming; fundamental web base development; types of browser programming; methodology of finding and correcting errors and its applications to database",
-      semester_credit: 1.6,
-      trimester_credit: 2,
-      institution: 2,
+        "Project design and development in mobile applications; empathize problems; define problems; creative thinking; prototype; test",
     },
   ],
   module: [
     {
-      id: "module-2",
-      module_id: "1101010",
-      name_th: "การบริหารเทคโนโลยีดิจิทัล",
-      name_en: "Digital Technology Administration",
+      id: "module-1",
+      name_th: "การวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+      name_en: "Business Insight Analytics",
+      module_id: "1131070",
       detail_th: null,
       detail_en: null,
-      degree: "1",
+      degree: "2",
+      institution: "2",
+      semester_credit: "3.2",
+      trimester_credit: "4",
+      objectType: "module",
+      plo: [
+        {
+          id: "PLO1",
+          name_th: "แสดงออกถึงภาวะผู้นำในการส่งเสริมความมีคุณธรรม จริยธรรม",
+          name_en: "Demonstrates leadership in promoting morality and ethics",
+        },
+        {
+          id: "PLO3",
+          name_th: "แสดงออกถึงการมีความรับผิดชอบในการทำงาน",
+          name_en: "Express being responsible for work",
+        },
+        {
+          id: "PLO4",
+          name_th:
+            "แสดงออกถึงการทำงานเป็นทีมร่วมกับผู้อื่นได้อย่างมีประสิทธิภาพ",
+          name_en: "Express how to work effectively with others",
+        },
+        {
+          id: "PLO5",
+          name_th:
+            "ค้นคว้าหาความรู้เชิงวิชาการและวิชาชีพด้านเทคโนโลยีดิจิทัลได้ด้วยตนเอง",
+          name_en:
+            "Find academic and professional knowledge in digital technology by yourself.",
+        },
+        {
+          id: "PLO6",
+          name_th:
+            "อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับงานวิจัยด้านเทคโนโลยีดิจิทัลได้",
+          name_en:
+            "Explain concepts or theories related to digital technology research",
+        },
+        {
+          id: "PLO7",
+          name_th:
+            "ประยุกต์ใช้เทคนิคทางสถิติ คณิตศาสตร์ และเทคโนโลยีดิจิทัลในการวิจัย หรือการปฏิบัติวิชาชีพได้",
+          name_en:
+            "Apply statistical, mathematics and digital technology in research or professional practicum",
+        },
+        {
+          id: "PLO8",
+          name_th:
+            "สื่อสารแนวคิด ทฤษฎี และงานวิจัยทางด้านเทคโนโลยีดิทิจัล ด้วยภาษาไทยและภาษาอังกฤษได้อย่างมีประสิทธิภาพ",
+          name_en:
+            "Communicate ideas, theories and research in digital technology With Thai and English languages",
+        },
+        {
+          id: "PLO10",
+          name_th: "ตัดสินใจแก้ปัญหาทางด้านเทคโนโลยีดิจิทัลได้",
+          name_en: "Decide to solve digital technology problems",
+        },
+      ],
+      course: [
+        {
+          id: "course-1",
+          name_th: "ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ",
+          name_en: "Business Intelligence and Information Visualization",
+          course_id: "1131071",
+          detail_th:
+            "แนวคิดเกี่ยวกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ ซึ่งประกอบไปด้วย กระบวนการตัดสินใจ โดยการใช้ข้อมูล ประเภทและกระบวนการตัดสินใจ ลักษณะสารสนเทศสำหรับธุรกิจอัจฉริยะและเพื่อสนับสนุนการตัดสินใจ กรณีศึกษาธุรกิจอัจฉริยะและระบบสนับสนุนการตัดสินใจในองค์กร ระบบสารสนเทศสำหรับผู้จัดการระดับสูงและระบบผู้เชี่ยวชาญ ซอฟต์แวร์ด้านธุรกิจอัจฉริยะและระบบสนับสนุนการตัดสินใจ การกำหนดมุมมองการวิเคราะห์ การออกแบบจินตทัศน์สารสนเทศเพื่อสนับสนุนการตัดสินใจ การเล่าเรื่องราวด้วยข้อมูล แนวทางการพัฒนาระบบสนับสนุนการตัดสินใจ",
+          detail_en:
+            "Concepts of business intelligence and information visualization; data-driven decision making process, types and processes of decision making; information characteristics for business intelligence and decision making support, case studies of business intelligence and decision making support systems in organizations, executive information systems and expert systems, software of business intelligence and decision making support system, information visualization design, storytelling with data, business intelligence system implementation",
+          open_date: null,
+          closed_date: null,
+          first_semester: true,
+          second_semester: false,
+          first_trimester: false,
+          second_trimester: false,
+          third_trimester: false,
+          semester_credit: "1.6",
+          trimester_credit: "2",
+          institution: "2",
+        },
+        {
+          id: "course-2",
+          name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+          name_en: "Project in Business Insight Analytics",
+          course_id: "1131074",
+          detail_th:
+            "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ การเข้าใจปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
+          detail_en:
+            "Project design and development in business insight analytics; empathize problems; define problems; creative thinking; prototype; test",
+          open_date: null,
+          closed_date: null,
+          first_semester: true,
+          second_semester: false,
+          first_trimester: false,
+          second_trimester: false,
+          third_trimester: false,
+          semester_credit: 1.6,
+          trimester_credit: 2,
+          institution: 2,
+        },
+      ],
+    },
+    {
+      id: "module-2",
+      name_th: "การจัดการโครงการซอฟต์แวร์สมัยใหม่",
+      name_en: "Modern Software Project Management",
+      module_id: "1131020",
+      detail_th: null,
+      detail_en: null,
+      degree: "2",
+      institution: "2",
       semester_credit: "8",
       trimester_credit: "10",
+      plo: [
+        {
+          id: "PLO3",
+          name_th: "แสดงออกถึงการมีความรับผิดชอบในการทำงาน",
+          name_en: "Express being responsible for work",
+        },
+        {
+          id: "PLO4",
+          name_th:
+            "แสดงออกถึงการทำงานเป็นทีมร่วมกับผู้อื่นได้อย่างมีประสิทธิภาพ",
+          name_en: "Express how to work effectively with others",
+        },
+        {
+          id: "PLO5",
+          name_th:
+            "ค้นคว้าหาความรู้เชิงวิชาการและวิชาชีพด้านเทคโนโลยีดิจิทัลได้ด้วยตนเอง",
+          name_en:
+            "Find academic and professional knowledge in digital technology by yourself.",
+        },
+        {
+          id: "PLO6",
+          name_th:
+            "อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับงานวิจัยด้านเทคโนโลยีดิจิทัลได้",
+          name_en:
+            "Explain concepts or theories related to digital technology research",
+        },
+        {
+          id: "PLO7",
+          name_th:
+            "ประยุกต์ใช้เทคนิคทางสถิติ คณิตศาสตร์ และเทคโนโลยีดิจิทัลในการวิจัย หรือการปฏิบัติวิชาชีพได้",
+          name_en:
+            "Apply statistical, mathematics and digital technology in research or professional practicum",
+        },
+        {
+          id: "PLO8",
+          name_th:
+            "สื่อสารแนวคิด ทฤษฎี และงานวิจัยทางด้านเทคโนโลยีดิทิจัล ด้วยภาษาไทยและภาษาอังกฤษได้อย่างมีประสิทธิภาพ",
+          name_en:
+            "Communicate ideas, theories and research in digital technology With Thai and English languages",
+        },
+        {
+          id: "PLO10",
+          name_th: "ตัดสินใจแก้ปัญหาทางด้านเทคโนโลยีดิจิทัลได้",
+          name_en: "Decide to solve digital technology problems",
+        },
+      ],
+      course: [
+        {
+          id: "course-3",
+          course_id: "1131021",
+          name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+          name_en: "Introduction to Software Project Management",
+          detail_th:
+            "แนวคิดการจัดการโครงการซอฟต์แวร์การบริหารขอบเขตของโครงการ การบริหารเวลาของโครงการ การบริหารต้นทุนของโครงการ การบริหารคุณภาพของโครงการ การบริหารทรัพยากรบุคคลของ โครงการ การบริหารการสื่อสารของโครงการ การบริหารความเสี่ยงของโครงการ การประเมินโครงการ กรณีศึกษาในการจัดการโครงการซอฟต์แวร์",
+          detail_en:
+            "Software project management concepts; project scope management; project time management; project cost management; project quality management; project human resource management; project communications management; project risk management; project evaluation; case studies of software project management",
+        },
+        {
+          id: "course-4",
+          course_id: "1131022",
+          name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+          name_en: "Agile Development using DevOps",
+          detail_th:
+            "แนวคิดการจัดการโครงการแบบคล่องตัว กระบวนการทางความคิดแบบคล่องตัว หลักการแบบคล่องตัว กระบวนการน้ำตก กรอบการทำงานแบบสครัม คุณค่าของสครัม บทบาทในกรอบการทำงานแบบสครัม เช่น เจ้าของผลิตภัณฑ์ ผู้นำสครัม ทีมนักพัฒนา เครื่องมือในกรอบการทำงานแบบสครัม เช่น งานค้าง สปรินท์ การประชุมรายวัน แนวคิดเดฟออปส์ การไหลและการป้อนผลย้อนกลับ การรวมและส่งมอบอย่างต่อเนื่อง เครื่องมือจัดการซอฟต์แวร์เดฟออปส์ เช่น กิด ด็อกเกอร์ เจนกินส์ วาแกรนต์ เชฟแองซิเบิล คูเบอร์เน็ต",
+          detail_en:
+            "Agile project management concepts; agile mindset; agile principles; waterfall process; scrum framework; scrum values; scrum roles: product owner, scrum master, development team; scrum tools: backlog, sprint, daily scrum meeting; DevOps concepts; flow and feedback; continuous integration and continuous development; DevOps software management tools: Git, Docker, Jenkins, Vagrant, Chef, Ansible, Kubernetes ",
+        },
+        {
+          id: "course-5",
+          course_id: "1131023",
+          name_th: "การคิดเชิงออกแบบสำหรับนวัตกรรมดิจิทัล",
+          name_en: "Design Thinking for Digital Innovation",
+          detail_th:
+            "การคิดอย่างสร้างสรรค์ การตั้งโจทย์และการแก้ไขปัญหา การระดมความคิดและการออกแบบ โดยผู้ใช้เป็นศูนย์กลาง การออกแบบประสบการณ์ผู้ใช้งานและส่วนต่อประสานกับผู้ใช้ การสร้างต้นแบบการปรับใช้นวัตกรรมอย่างเหมาะสม การถอดบทเรียน",
+          detail_en:
+            "Creative thinking; questioning and problem-solving; brainstorming and user-centered design; UX/UI design; prototyping; appropriate application of innovation; lesson learned",
+        },
+        {
+          id: "course-6",
+          course_id: "1131024",
+          name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+          name_en: "Project in Modern Software Project Management",
+          detail_th:
+            "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับการจัดการโครงการซอฟต์แวร์สมัยใหม่ การเข้าใจ ปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
+          detail_en:
+            "Project design and development in mobile applications; empathize problems; define problems; creative thinking; prototype; test",
+        },
+      ],
     },
     {
       id: "module-3",
-      module_id: "1131130",
-      name_th: "การออกแบบวิชวลสำหรับสื่อดิจิทัล",
-      name_en: "Visual Design for Digital Media",
+      name_th: "โปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที่",
+      name_en: "Mobile Application Module",
+      module_id: "1131030",
       detail_th: null,
       detail_en: null,
       degree: "2",
+      institution: "2",
       semester_credit: "8",
       trimester_credit: "10",
-    },
-    {
-      id: "module-4",
-      module_id: "1131140",
-      name_th: "การสร้างสรรค์เนื้อหาออนไลน์",
-      name_en: "Online Content Creation",
-      detail_th: null,
-      detail_en: null,
-      degree: "2",
-      semester_credit: "8",
-      trimester_credit: "10",
-    },
-    {
-      id: "module-5",
-      module_id: "1131040",
-      name_th: "อินเทอร์เน็ตของสรรพสิ่ง",
-      name_en: "Internet of Things",
-      detail_th: null,
-      detail_en: null,
-      degree: "2",
-      semester_credit: "8",
-      trimester_credit: "10",
+      plo: [
+        {
+          id: "PLO3",
+          name_th: "แสดงออกถึงการมีความรับผิดชอบในการทำงาน",
+          name_en: "Express being responsible for work",
+        },
+        {
+          id: "PLO4",
+          name_th:
+            "แสดงออกถึงการทำงานเป็นทีมร่วมกับผู้อื่นได้อย่างมีประสิทธิภาพ",
+          name_en: "Express how to work effectively with others",
+        },
+        {
+          id: "PLO5",
+          name_th:
+            "ค้นคว้าหาความรู้เชิงวิชาการและวิชาชีพด้านเทคโนโลยีดิจิทัลได้ด้วยตนเอง",
+          name_en:
+            "Find academic and professional knowledge in digital technology by yourself.",
+        },
+        {
+          id: "PLO6",
+          name_th:
+            "อธิบายแนวคิดหรือทฤษฎีที่เกี่ยวข้องกับงานวิจัยด้านเทคโนโลยีดิจิทัลได้",
+          name_en:
+            "Explain concepts or theories related to digital technology research",
+        },
+        {
+          id: "PLO7",
+          name_th:
+            "ประยุกต์ใช้เทคนิคทางสถิติ คณิตศาสตร์ และเทคโนโลยีดิจิทัลในการวิจัย หรือการปฏิบัติวิชาชีพได้",
+          name_en:
+            "Apply statistical, mathematics and digital technology in research or professional practicum",
+        },
+        {
+          id: "PLO8",
+          name_th:
+            "สื่อสารแนวคิด ทฤษฎี และงานวิจัยทางด้านเทคโนโลยีดิทิจัล ด้วยภาษาไทยและภาษาอังกฤษได้อย่างมีประสิทธิภาพ",
+          name_en:
+            "Communicate ideas, theories and research in digital technology With Thai and English languages",
+        },
+        {
+          id: "PLO10",
+          name_th: "ตัดสินใจแก้ปัญหาทางด้านเทคโนโลยีดิจิทัลได้",
+          name_en: "Decide to solve digital technology problems",
+        },
+      ],
+      course: [
+        {
+          id: "course-7",
+          course_id: "1131031",
+          name_th: "การคิดเชิงออกแบบ",
+          name_en: "Design Thinking",
+          detail_th:
+            "การคิดอย่างสร้างสรรค์ การตั้งโจทย์และการแก้ไขปัญหา การระดมความคิดและการออกแบบโดยผู้ใช้เป็นศูนย์กลาง การออกแบบประสบการณ์ผู้ใช้งานและส่วนต่อประสานกับผู้ใช้ การสร้างต้นแบบการปรับใช้นวัตกรรมอย่างเหมาะสม การถอดบทเรียน",
+          detail_en:
+            "Creative thinking; questioning and problem-solving; brainstorming and user-centered design; UX/UI design; prototyping; appropriate application of innovation; lesson learned",
+        },
+        {
+          id: "course-8",
+          course_id: "1131032",
+          name_th: "การพัฒนาโปรแกรมประยุกต์บนเว็บ",
+          name_en: "Web Application Development",
+          detail_th:
+            "ความสำคัญ องค์ประกอบ และสถาปัตยกรรมของการเขียนโปรแกรมบนเบราว์เซอร์ การสร้างเว็บ เพจขั้นพื้นฐาน การเขียนโปรแกรมบนเบราว์เซอร์แบบต่าง ๆ วิธีการหาข้อผิดพลาดและการแก้ไข ข้อผิดพลาดรวมทั้งการประยุกต์ใช้งานกับฐานข้อมูล กรณีศึกษาเกี่ยวกับการพัฒนาโปรแกรมประยุกต์บนเว็บ",
+          detail_en:
+            "Significance, components and architecture of browser programming; fundamental web base development; types of browser programming; methodology of finding andcorrecting errors and its applications to database; case studies of web application development",
+        },
+        {
+          id: "course-9",
+          course_id: "1131033 ",
+          name_th: "การพัฒนาโปรแกรมประยุกต์ข้ามแพลตฟอร์ม",
+          name_en: "Cross-Platform Application Development",
+          detail_th:
+            "ความรู้พื้นฐานเกี่ยวกับการพัฒนาโปรแกรมประยุกต์ข้ามแพลตฟอร์ม สถาปัตยกรรมการพัฒนาข้ามแพลตฟอร์ม การติดตั้งและใช้งานเฟรมเวิร์ค โปรแกรมประยุกต์แบบลูกผสม โปรแกรมประยุกต์บนเว็บแบบก้าวหน้า (พีดับเบิ้ลยูเอ) ส่วนติดต่อกับผู้ใช้ การเชื่อมต่อกับบริการ กรณีศึกษาเกี่ยวกับการพัฒนาโปรแกรม ประยุกต์ข้ามแพลตฟอร์ม",
+          detail_en:
+            "Fundamental knowledge about cross-platform application development; architecture for cross-platform development; framework installation and usage; hybrid application; Progressive Web Application (PWA); user interface; interface with services; case studies of cross-platform application development",
+        },
+        {
+          id: "course-10",
+          course_id: "1131034",
+          name_th: "โครงงานโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที",
+          name_en: "Project in Mobile Application",
+          detail_th:
+            "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับโปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที่ การเข้าใจ ปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
+          detail_en:
+            "Project design and development in mobile applications; empathize problems; define problems; creative thinking; prototype; test",
+        },
+      ],
     },
   ],
-  badge: [],
-  achievement_certificate: [],
-  participant_certificate: [],
+  badge: [
+    {
+      id: "badge-1",
+      img: "Badges-Design_FINAL-GOLD_BIA1.png",
+      name_th: "ธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ",
+      name_en: "Business Intelligence and Information Visualization",
+      course_id: "course-1",
+      detail_th:
+        "แนวคิดเกี่ยวกับธุรกิจอัจฉริยะและจินตทัศน์สารสนเทศ ซึ่งประกอบไปด้วย กระบวนการตัดสินใจ โดยการใช้ข้อมูล ประเภทและกระบวนการตัดสินใจ ลักษณะสารสนเทศสำหรับธุรกิจอัจฉริยะและเพื่อสนับสนุนการตัดสินใจ กรณีศึกษาธุรกิจอัจฉริยะและระบบสนับสนุนการตัดสินใจในองค์กร ระบบสารสนเทศสำหรับผู้จัดการระดับสูงและระบบผู้เชี่ยวชาญ ซอฟต์แวร์ด้านธุรกิจอัจฉริยะและระบบสนับสนุนการตัดสินใจ การกำหนดมุมมองการวิเคราะห์ การออกแบบจินตทัศน์สารสนเทศเพื่อสนับสนุนการตัดสินใจ การเล่าเรื่องราวด้วยข้อมูล แนวทางการพัฒนาระบบสนับสนุนการตัดสินใจ",
+      detail_en:
+        "Concepts of business intelligence and information visualization; data-driven decision making process, types and processes of decision making; information characteristics for business intelligence and decision making support, case studies of business intelligence and decision making support systems in organizations, executive information systems and expert systems, software of business intelligence and decision making support system, information visualization design, storytelling with data, business intelligence system implementation",
+      credit: 2,
+      score: 88.94,
+      date_earned: "11/12/2021",
+      isExpired: false,
+    },
+    {
+      id: "badge-2",
+      img: "Badges-Design_FINAL-GOLD_BIA4.png",
+      name_th: "โครงงานการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+      name_en: "Project in Business Insight Analytics",
+      course_id: "course-2",
+      detail_th:
+        "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับการวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ การเข้าใจปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
+      detail_en:
+        "Project design and development in business insight analytics; empathize problems; define problems; creative thinking; prototype; test",
+      credit: 2,
+      score: 84.15,
+      date_earned: "11/12/2021",
+      isExpired: false,
+    },
+    {
+      id: "badge-3",
+      img: "Badges-Design_FINAL-GOLD_MS1.png",
+      credit: 2,
+      score: 92,
+      course_id: "course-3",
+      name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+      name_en: "Introduction to Software Project Management",
+      detail_th:
+        "แนวคิดการจัดการโครงการซอฟต์แวร์การบริหารขอบเขตของโครงการ การบริหารเวลาของโครงการ การบริหารต้นทุนของโครงการ การบริหารคุณภาพของโครงการ การบริหารทรัพยากรบุคคลของ โครงการ การบริหารการสื่อสารของโครงการ การบริหารความเสี่ยงของโครงการ การประเมินโครงการ กรณีศึกษาในการจัดการโครงการซอฟต์แวร์",
+      detail_en:
+        "Software project management concepts; project scope management; project time management; project cost management; project quality management; project human resource management; project communications management; project risk management; project evaluation; case studies of software project management",
+      date_earned: "15/07/2021",
+      isExpired: false,
+    },
+    {
+      id: "badge-4",
+      img: "Badges-Design_FINAL-GOLD_MS3.png",
+      credit: 2,
+      score: 85,
+      course_id: "course-4",
+      name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+      name_en: "Agile Development using DevOps",
+      detail_th:
+        "แนวคิดการจัดการโครงการแบบคล่องตัว กระบวนการทางความคิดแบบคล่องตัว หลักการแบบคล่องตัว กระบวนการน้ำตก กรอบการทำงานแบบสครัม คุณค่าของสครัม บทบาทในกรอบการทำงานแบบสครัม เช่น เจ้าของผลิตภัณฑ์ ผู้นำสครัม ทีมนักพัฒนา เครื่องมือในกรอบการทำงานแบบสครัม เช่น งานค้าง สปรินท์ การประชุมรายวัน แนวคิดเดฟออปส์ การไหลและการป้อนผลย้อนกลับ การรวมและส่งมอบอย่างต่อเนื่อง เครื่องมือจัดการซอฟต์แวร์เดฟออปส์ เช่น กิด ด็อกเกอร์ เจนกินส์ วาแกรนต์ เชฟแองซิเบิล คูเบอร์เน็ต",
+      detail_en:
+        "Agile project management concepts; agile mindset; agile principles; waterfall process; scrum framework; scrum values; scrum roles: product owner, scrum master, development team; scrum tools: backlog, sprint, daily scrum meeting; DevOps concepts; flow and feedback; continuous integration and continuous development; DevOps software management tools: Git, Docker, Jenkins, Vagrant, Chef, Ansible, Kubernetes ",
+      date_earned: "15/07/2021",
+      isExpired: false,
+    },
+    {
+      id: "badge-5",
+      img: "Badges-Design_FINAL-SILVER_MS3.png",
+      credit: 3,
+      score: 71,
+      course_id: "course-5",
+      name_th: "การคิดเชิงออกแบบสำหรับนวัตกรรมดิจิทัล",
+      name_en: "Design Thinking for Digital Innovation",
+      detail_th:
+        "การคิดอย่างสร้างสรรค์ การตั้งโจทย์และการแก้ไขปัญหา การระดมความคิดและการออกแบบ โดยผู้ใช้เป็นศูนย์กลาง การออกแบบประสบการณ์ผู้ใช้งานและส่วนต่อประสานกับผู้ใช้ การสร้างต้นแบบการปรับใช้นวัตกรรมอย่างเหมาะสม การถอดบทเรียน",
+      detail_en:
+        "Creative thinking; questioning and problem-solving; brainstorming and user-centered design; UX/UI design; prototyping; appropriate application of innovation; lesson learned",
+      date_earned: "15/07/2021",
+      isExpired: false,
+    },
+    {
+      id: "badge-6",
+      img: "Badges-Design_FINAL-SILVER_MS4.png",
+      credit: 3,
+      score: 74,
+      course_id: "course-6",
+      name_th: "โครงงานการจัดการโครงการซอฟต์แวร์สมัยใหม่",
+      name_en: "Project in Modern Software Project Management",
+      detail_th:
+        "การออกแบบและพัฒนาโครงงานที่เกี่ยวข้องกับการจัดการโครงการซอฟต์แวร์สมัยใหม่ การเข้าใจ ปัญหา การระบุปัญหา การสร้างสรรค์ความคิด การสร้างตัวแบบ การทดสอบ",
+      detail_en:
+        "Project design and development in mobile applications; empathize problems; define problems; creative thinking; prototype; test",
+      date_earned: "15/07/2021",
+      isExpired: false,
+    },
+    {
+      id: "badge-7",
+      img: "Badges-Design_FINAL-SILVER_MS1.png",
+      credit: 2,
+      score: 73,
+      course_id: "course-3",
+      name_th: "การจัดการโครงการซอฟต์แวร์เบื้องต้น",
+      name_en: "Introduction to Software Project Management",
+      detail_th:
+        "แนวคิดการจัดการโครงการซอฟต์แวร์การบริหารขอบเขตของโครงการ การบริหารเวลาของโครงการ การบริหารต้นทุนของโครงการ การบริหารคุณภาพของโครงการ การบริหารทรัพยากรบุคคลของ โครงการ การบริหารการสื่อสารของโครงการ การบริหารความเสี่ยงของโครงการ การประเมินโครงการ กรณีศึกษาในการจัดการโครงการซอฟต์แวร์",
+      detail_en:
+        "Software project management concepts; project scope management; project time management; project cost management; project quality management; project human resource management; project communications management; project risk management; project evaluation; case studies of software project management",
+      isExpired: true,
+    },
+    {
+      id: "badge-8",
+      img: "Badges-Design_FINAL-SILVER_MS2.png",
+      credit: 2,
+      score: 77,
+      course_id: "course-4",
+      name_th: "การพัฒนาแบบคล่องตัวโดยใช้เดฟออปส์",
+      name_en: "Agile Development using DevOps",
+      detail_th:
+        "แนวคิดการจัดการโครงการแบบคล่องตัว กระบวนการทางความคิดแบบคล่องตัว หลักการแบบคล่องตัว กระบวนการน้ำตก กรอบการทำงานแบบสครัม คุณค่าของสครัม บทบาทในกรอบการทำงานแบบสครัม เช่น เจ้าของผลิตภัณฑ์ ผู้นำสครัม ทีมนักพัฒนา เครื่องมือในกรอบการทำงานแบบสครัม เช่น งานค้าง สปรินท์ การประชุมรายวัน แนวคิดเดฟออปส์ การไหลและการป้อนผลย้อนกลับ การรวมและส่งมอบอย่างต่อเนื่อง เครื่องมือจัดการซอฟต์แวร์เดฟออปส์ เช่น กิด ด็อกเกอร์ เจนกินส์ วาแกรนต์ เชฟแองซิเบิล คูเบอร์เน็ต",
+      detail_en:
+        "Agile project management concepts; agile mindset; agile principles; waterfall process; scrum framework; scrum values; scrum roles: product owner, scrum master, development team; scrum tools: backlog, sprint, daily scrum meeting; DevOps concepts; flow and feedback; continuous integration and continuous development; DevOps software management tools: Git, Docker, Jenkins, Vagrant, Chef, Ansible, Kubernetes ",
+      date_earned: "04/02/2021",
+      isExpired: true,
+    },
+  ],
+  achievement_certificate: [
+    {
+      id: "cert-1",
+      name_th: "การวิเคราะห์ข้อมูลเชิงลึกทางธุรกิจ",
+      name_en: "Business Insight Analytics",
+      approved_by: "",
+      approved_date: "11/12/2021",
+      offered_by: "",
+      badge: ["badge-1", "badge-2"],
+      module_id: "module-1",
+      isExpired: false,
+    },
+    {
+      id: "cert-2",
+      name_th: "การจัดการโครงการซอฟต์แวร์สมัยใหม่",
+      name_en: "Modern Software Project Management",
+      approved_by: "",
+      approved_date: "15/07/2021",
+      offered_by: "",
+      badge: ["badge-3", "badge-4", "badge-5", "badge-6"],
+      module_id: "module-2",
+      isExpired: false,
+    },
+    {
+      id: "cert-3",
+      name_th: "การจัดการโครงการซอฟต์แวร์สมัยใหม่",
+      name_en: "Modern Software Project Management",
+      approved_by: "",
+      approved_date: "04/02/2021",
+      offered_by: "",
+      badge: ["badge-7", "badge-8", "badge-5", "badge-6"],
+      module_id: "module-2",
+      isExpired: true,
+    },
+  ],
+  participant_certificate: [
+    {
+      id: "diploma-1",
+      img: "",
+      name_th: "โปรแกรมประยุกต์บนอุปกรณ์เคลื่อนที่",
+      name_en: "Mobile Application Module",
+      approved_by: "",
+      approved_date: "10/10/2021",
+      offered_by: "",
+      module_id: "module-3",
+    },
+  ],
 };
 export const competency_level = {
   Excellent: {

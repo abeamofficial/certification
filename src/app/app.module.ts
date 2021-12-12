@@ -22,6 +22,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ParticipantCertDetailComponent } from './participant-cert-detail/participant-cert-detail.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { ModuleDetailComponent } from './module-detail/module-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ModuleDetailComponent } from './module-detail/module-detail.component';
     ParticipantCertDetailComponent,
     CourseDetailComponent,
     ModuleDetailComponent,
+    LoginComponent,
   ],
   imports: [
     EllipsisModule,

@@ -15,12 +15,12 @@
       [routerLink]="['/participant-cert-detail/' + item.id]"
     >
       <div class="img">
-        <img src="./assets/images/diploma.svg" />
+        <img src="./assets/images/certificate/{{ item.img }}" />
       </div>
       <div class="detail">
         <p>Certificate in {{ item.name_en }}</p>
         <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ item.name_th }}</p>
-        <div class="tag">Intermediate</div>
+        <div class="tag">Specialist</div>
 
         <div class="date">
           <span>

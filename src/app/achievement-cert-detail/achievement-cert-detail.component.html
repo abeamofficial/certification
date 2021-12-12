@@ -14,7 +14,7 @@
 <section class="cert">
   <div class="cert">
     <div class="cert-paper">
-      <img src="./assets/images/cert.svg" />
+      <img src="./assets/images/certificate/{{ value.img }}" />
     </div>
     <div class="cert-detail">
       <div class="title">
@@ -33,8 +33,10 @@
 
         <ng-container *ngIf="value.expired_date; else approvedDate">
           <div>
-            <p>Date Expired</p>
-            <span>{{ value.expired_date | date: "MMM d, y" }}</span>
+            <p style="color: red">Date Expired</p>
+            <span style="color: red">{{
+              value.expired_date | date: "MMM d, y"
+            }}</span>
           </div>
         </ng-container>
         <ng-template #approvedDate>

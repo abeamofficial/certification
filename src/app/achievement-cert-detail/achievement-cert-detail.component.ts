@@ -1,3 +1,4 @@
+import { HttpHeaders } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { data, competency_level } from "src/assets/models/data";
@@ -58,5 +59,11 @@ export class AchievementCertDetailComponent implements OnInit {
       behavior: "smooth",
     });
     // document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }
+
+  onDownloadFile(filePath) {
+    // let headers = new HttpHeaders();
+    // headers = headers.set('Accept', 'application/pdf');
+    // return this.http.get(filePath, { headers: headers, responseType: 'blob' });
   }
 }

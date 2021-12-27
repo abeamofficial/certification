@@ -9,6 +9,14 @@ import { ParticipantCertDetailComponent } from "./participant-cert-detail/partic
 import { CourseDetailComponent } from "./course-detail/course-detail.component";
 import { ModuleDetailComponent } from "./module-detail/module-detail.component";
 import { LoginComponent } from "./login/login.component";
+import { CertificateDataComponent } from "./management/certificate-data/certificate-data.component";
+import { CertificateDataDialogComponent } from "./management/dialog/certificate-data-dialog/certificate-data-dialog.component";
+import { BadgeDataComponent } from "./management/badge-data/badge-data.component";
+import { BadgeDataDialogComponent } from "./management/dialog/badge-data-dialog/badge-data-dialog.component";
+import { SignerDataComponent } from "./management/signer-data/signer-data.component";
+import { SignerDataDialogComponent } from "./management/dialog/signer-data-dialog/signer-data-dialog.component";
+import { CertificateSummaryComponent } from "./management/certificate-summary/certificate-summary.component";
+import { CertificatePublishingComponent } from "./management/certificate-publishing/certificate-publishing.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -61,6 +69,14 @@ const routes: Routes = [
       { path: ":id", component: ModuleDetailComponent },
     ],
   },
+  { path: "certficate-data-management", component: CertificateDataComponent },
+  { path: "badge-data-management", component: BadgeDataComponent },
+  { path: "signer-data-management", component: SignerDataComponent },
+  {
+    path: "certificate-summary-management",
+    component: CertificateSummaryComponent,
+  },
+  { path: "certificate-publishing", component: CertificatePublishingComponent },
 ];
 
 @NgModule({
@@ -70,5 +86,10 @@ const routes: Routes = [
     }),
   ],
   exports: [RouterModule],
+  entryComponents: [
+    CertificateDataDialogComponent,
+    BadgeDataDialogComponent,
+    SignerDataDialogComponent,
+  ],
 })
 export class AppRoutingModule {}

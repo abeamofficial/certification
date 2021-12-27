@@ -1,0 +1,129 @@
+<section class="container">
+  <section class="breadcrumb">
+    <p [routerLink]="['']">หน้าแรก</p>
+    <span>></span>
+    <p [routerLink]="['/certificate-summary-management']">สรุปผลสัมฤทธิบัตร</p>
+    <span>></span>
+    <p>{{ module_value.module_id + " " + module_value.module_name_th }}</p>
+  </section>
+  <section class="body">
+    <h1>สรุปผลการเรียนหลักสูตร</h1>
+    <div class="detail" *ngIf="season_value">
+      <h1>ข้อมูลเกี่ยวกับหลักสูตร</h1>
+      <hr />
+      <div class="column">
+        <div class="self">
+          <div>
+            <p>รหัสหลักสูตร</p>
+            <p>{{ season_value.module_id }}</p>
+          </div>
+          <div>
+            <p>ชื่อหลักสูตร</p>
+            <p>
+              {{
+                season_value.module_name_th +
+                  " (" +
+                  season_value.module_name_en +
+                  ")"
+              }}
+            </p>
+          </div>
+          <div>
+            <p>รุ่น</p>
+            <p>{{ season_value.season }}</p>
+          </div>
+          <div>
+            <p>จำนวน</p>
+            <p>{{ season_value.amount + " คน" }}</p>
+          </div>
+          <div>
+            <p>วันที่</p>
+            <p>{{ season_value.create_date | date: "dd/MM/yyyy" }}</p>
+          </div>
+        </div>
+        <div class="course" *ngIf="module_value">
+          <h1>รายวิชาในหลักสูตร</h1>
+          <p *ngFor="let item of module_value.course | keyvalue">
+            {{ item.value.course_id + " " + item.value.course_name_th }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="button-area">
+      <button class="public-button">เผยแพร่สัมฤทธิบัตร</button>
+      <button>export รายชื่อ</button>
+    </div>
+    <div class="name-summary">
+      <div>
+        <h1>ผู้ได้สัมฤทธิบัตรเกียรตินิยม ({{ honor_cert.length }} คน)</h1>
+        <p *ngFor="let item of honor_cert; let i = index">
+          {{
+            i + 1 + ". " + item.nametitle + item.firstname + " " + item.lastname
+          }}
+        </p>
+      </div>
+      <div>
+        <h1>ผู้ได้สัมฤทธิบัตร ({{ general_cert.length }} คน)</h1>
+        <p *ngFor="let item of general_cert; let i = index">
+          {{
+            i + 1 + ". " + item.nametitle + item.firstname + " " + item.lastname
+          }}
+        </p>
+      </div>
+      <div>
+        <h1>ผู้ได้ใบรับรอง ({{ diploma.length }} คน)</h1>
+        <p *ngFor="let item of diploma; let i = index">
+          {{
+            i + 1 + ". " + item.nametitle + item.firstname + " " + item.lastname
+          }}
+        </p>
+      </div>
+    </div>
+
+    <div class="table">
+      <h1>ตารางสรุปผู้เรียน</h1>
+      <table>
+        <thead>
+          <th class="text-center" style="width: 5%">ลำดับ</th>
+          <th style="width: 10%">รหัสผู้เรียน</th>
+          <th style="width: 15%">ชื่อ - นามสกุล</th>
+          <th
+            class="course-name"
+            style="width: 15%"
+            *ngFor="let item of module_value.course | keyvalue"
+          >
+            <p class="m-0">{{ item.value.course_id }}</p>
+            <p class="m-0">{{ item.value.course_name_th }}</p>
+          </th>
+          <th class="text-center">สรุป</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of graduate_value | keyvalue; let i = index">
+            <td class="text-center">{{ i + 1 }}</td>
+            <td>{{ item.key }}</td>
+            <td>
+              {{
+                item.value.nametitle +
+                  item.value.firstname +
+                  " " +
+                  item.value.lastname
+              }}
+            </td>
+            <td
+              class="text-center"
+              *ngFor="let course of module_value.course | keyvalue"
+            >
+              {{
+                item.value.enroll[course.key] &&
+                item.value.enroll[course.key].isBadge
+                  ? item.value.enroll[course.key].badge_type_name
+                  : "-"
+              }}
+            </td>
+            <td class="text-center">{{ getTotal(item.value) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,60 @@
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>
+        {{ data.isEdit ? "แก้ไขข้อมูลสัมฤทธิบัตร" : "เพิ่มข้อมูลสัมฤทธิบัตร" }}
+      </h1>
+      <button
+        *ngIf="data.value && !data.isEdit"
+        (click)="data.isEdit = true"
+        class="edit"
+      >
+        <i class="material-icons">edit</i>
+        แก้ไข
+      </button>
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal()">close</i>
+  </div>
+  <hr />
+
+  <ng-container *ngIf="data.isEdit; else view">
+    <div class="body">
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
+        <input [(ngModel)]="data.value.cert_name_th" />
+      </div>
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
+        <input [(ngModel)]="data.value.cert_name_en" />
+      </div>
+      <div class="input">
+        <p>ชุดวิชา</p>
+        <input />
+      </div>
+    </div>
+    <div class="footer">
+      <button class="submit">บันทึก</button>
+      <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+    </div>
+  </ng-container>
+  <ng-template #view>
+    <div class="body">
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
+        <span>{{ data.value.cert_name_th }}</span>
+      </div>
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
+        <span>{{ data.value.cert_name_en }}</span>
+      </div>
+      <div class="input">
+        <p>ชุดวิชา</p>
+        <span>{{ data.value.module_name_th }}</span>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal()">กลับ</button>
+    </div>
+  </ng-template>
+</section>

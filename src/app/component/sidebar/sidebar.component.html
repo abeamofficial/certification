@@ -1,0 +1,39 @@
+<section>
+  <div class="profile">admin</div>
+  <div class="menu">
+    <div
+      [ngClass]="{ active: isActiveRouter('/') }"
+      (click)="onNavigateByRouter('/')"
+    >
+      <p>หน้าแรก</p>
+    </div>
+    <div
+      [ngClass]="{ active: isActiveRouter('/certficate-data-management') }"
+      (click)="onNavigateByRouter('/certficate-data-management')"
+    >
+      <p>จัดการข้อมูลสัมฤทธิบัตร</p>
+    </div>
+    <div
+      [ngClass]="{ active: isActiveRouter('/badge-data-management') }"
+      (click)="onNavigateByRouter('/badge-data-management')"
+    >
+      <p>จัดการข้อมูล Badge</p>
+    </div>
+    <div
+      [ngClass]="{ active: isActiveRouter('/signer-data-management') }"
+      (click)="onNavigateByRouter('/signer-data-management')"
+    >
+      <p>จัดการข้อมูลผู้ลงนาม</p>
+    </div>
+    <div
+      [ngClass]="{
+        active:
+          isActiveRouter('/certificate-summary-management') ||
+          isActiveRouter('/certificate-publishing')
+      }"
+      (click)="onNavigateByRouter('/certificate-summary-management')"
+    >
+      <p>สรุปผลสัมฤทธิบัตร</p>
+    </div>
+  </div>
+</section>

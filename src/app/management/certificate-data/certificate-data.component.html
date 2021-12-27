@@ -1,0 +1,78 @@
+<section class="container">
+  <section class="breadcrumb">
+    <p [routerLink]="['']">หน้าแรก</p>
+    <span>></span>
+    <p>Certificate management</p>
+  </section>
+  <section class="body">
+    <h1>จัดการข้อมูลสัมฤทธิบัตร</h1>
+    <div class="search-area">
+      <span>
+        <input placeholder="ค้นหา" /><i class="material-icons">search</i>
+      </span>
+      <button class="add" (click)="onOpenAddCertificateDialog()">
+        <i class="material-icons">add</i> เพิ่มสัมฤทธิบัตร
+      </button>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <th style="width: 5%"><p>ลำดับ</p></th>
+          <th><p>สัมฤทธิบัตร (th)</p></th>
+          <th><p>สัมฤทธิบัตร (en)</p></th>
+          <th style="width: 1%"></th>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of certificate_list
+                | keyvalue
+                | paginate: { itemsPerPage: itemsPerPage, currentPage: p };
+              let i = index
+            "
+          >
+            <td (click)="onOpenCertificateDialog(false, item.value)">
+              {{ absoluteIndex(i + 1) }}
+            </td>
+            <td (click)="onOpenCertificateDialog(false, item.value)">
+              {{ item.value.cert_name_th }}
+            </td>
+            <td (click)="onOpenCertificateDialog(false, item.value)">
+              {{ item.value.cert_name_en }}
+            </td>
+            <td>
+              <button
+                mat-icon-button
+                [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu"
+              >
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button
+                  mat-menu-item
+                  class="menu"
+                  (click)="onOpenCertificateDialog(true, item.value)"
+                >
+                  <mat-icon>edit</mat-icon>
+                  <span>แก้ไข</span>
+                </button>
+                <button mat-menu-item class="menu">
+                  <mat-icon>delete</mat-icon>
+                  <span>ลบ</span>
+                </button>
+              </mat-menu>
+              <!-- <div class="table-button">
+                <button><i class="material-icons">edit</i> แก้ไข</button>
+                <button><i class="material-icons">delete</i> ลบ</button>
+              </div> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </section>
+</section>

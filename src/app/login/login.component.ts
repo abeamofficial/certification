@@ -28,9 +28,10 @@ export class LoginComponent implements OnInit {
   }
 
   isLogOn() {
-    return (
-      localStorage.getItem("c_login") &&
-      localStorage.getItem("c_login") == "true"
-    );
+    return this.authenticationService.currentUserValue;
+    // return (
+    //   localStorage.getItem("c_login") &&
+    //   localStorage.getItem("c_login") == "true"
+    // );
   }
 }

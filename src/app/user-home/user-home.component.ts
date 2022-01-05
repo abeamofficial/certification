@@ -12,7 +12,7 @@ export class UserHomeComponent implements OnInit {
   value = data;
   constructor(private router: Router) {
     if (!this.isLogOn()) {
-      router.navigate(["/login"]);
+      this.router.navigate(["/login"]);
     }
   }
 

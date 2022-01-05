@@ -1,3 +1,86 @@
-<p>
-  signer-data-dialog works!
-</p>
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>ข้อมูลผู้ลงนาม</h1>
+      <!-- <button
+        *ngIf="data.value.cert_id && !data.isEdit"
+        (click)="data.isEdit = true"
+        class="edit"
+      >
+        <i class="material-icons">edit</i>
+        แก้ไข
+      </button> -->
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal()">close</i>
+  </div>
+  <hr />
+
+  <ng-container *ngIf="true; else view">
+    <div class="body">
+      <div class="input">
+        <p>ไฟล์รูป</p>
+        <ngx-file-drop
+          customstyle="filedrop"
+          dropZoneLabel="Drop file here "
+          (onFileDrop)="dropped($event)"
+          (onFileOver)="fileOver($event)"
+          (onFileLeave)="fileLeave($event)"
+        >
+          <ng-template
+            ngx-file-drop-content-tmp
+            let-openFileSelector="openFileSelector"
+          >
+            <p>Drop file here</p>
+            <span>or</span>
+            <button class="import" (click)="openFileSelector()">
+              Browse Files
+            </button>
+          </ng-template>
+        </ngx-file-drop>
+
+        <p *ngFor="let item of files; let i = index">
+          {{ item.relativePath }}
+        </p>
+      </div>
+
+      <div class="input">
+        <p>ตำแหน่ง</p>
+        <input />
+      </div>
+      <div class="input">
+        <p>ชื่อผู้ลงนาม</p>
+        <input />
+      </div>
+      <div class="input">
+        <p>นามสกุลผู้ลงนาม</p>
+        <input />
+      </div>
+    </div>
+    <div class="footer">
+      <button class="submit">บันทึก</button>
+      <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+    </div>
+  </ng-container>
+  <!-- <ng-template #view>
+    <div class="body">
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
+        <span>{{ data.value.cert_name_th }}</span>
+      </div>
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
+        <span>{{ data.value.cert_name_en }}</span>
+      </div>
+      <div class="input">
+        <p>ชุดวิชา</p>
+        <span>{{
+          data.value.module_id + " ชุดวิชา" + data.value.module_name_th
+        }}</span>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal()">กลับ</button>
+    </div>
+  </ng-template> -->
+</section>

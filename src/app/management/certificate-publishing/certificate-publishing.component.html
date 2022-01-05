@@ -4,7 +4,9 @@
     <span>></span>
     <p [routerLink]="['/certificate-summary-management']">สรุปผลสัมฤทธิบัตร</p>
     <span>></span>
-    <p>{{ module_value.module_id + " " + module_value.module_name_th }}</p>
+    <p *ngIf="module_value">
+      {{ module_value.module_id + " " + module_value.module_name_th }}
+    </p>
   </section>
   <section class="body">
     <h1>สรุปผลการเรียนหลักสูตร</h1>
@@ -50,10 +52,15 @@
       </div>
     </div>
     <div class="button-area">
-      <button class="public-button">เผยแพร่สัมฤทธิบัตร</button>
-      <button>export รายชื่อ</button>
+      <button
+        class="public-button"
+        (click)="onOpenCertificatePublishingDialog()"
+      >
+        เผยแพร่สัมฤทธิบัตร
+      </button>
+      <!-- <button>export รายชื่อ</button> -->
     </div>
-    <div class="name-summary">
+    <div class="name-summary" *ngIf="honor_cert && general_cert && diploma">
       <div>
         <h1>ผู้ได้สัมฤทธิบัตรเกียรตินิยม ({{ honor_cert.length }} คน)</h1>
         <p *ngFor="let item of honor_cert; let i = index">
@@ -80,7 +87,7 @@
       </div>
     </div>
 
-    <div class="table">
+    <div class="table" *ngIf="module_value">
       <h1>ตารางสรุปผู้เรียน</h1>
       <table>
         <thead>

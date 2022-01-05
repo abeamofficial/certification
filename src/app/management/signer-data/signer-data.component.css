@@ -93,7 +93,7 @@ div.search-area input:focus {
 
 section.body > div.search-area button {
   box-sizing: border-box;
-  padding: 7px 32px;
+  padding: 8px 24px;
   font-family: "sutregular";
   font-size: 1rem;
   text-align: center;

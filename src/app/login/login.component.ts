@@ -1,13 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-
+import { AuthenticationService } from "../services/authentication.service";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router) {
+  username = null;
+
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
     if (this.isLogOn()) {
       this.router.navigate(["/"]);
     }
@@ -16,8 +21,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   login() {
-    localStorage.setItem("c_login", "true");
-    this.router.navigate(["/"]);
+    this.authenticationService.login(this.username, null);
+
+    // localStorage.setItem("c_login", "true");
+    // this.router.navigate(["/"]);
   }
 
   isLogOn() {

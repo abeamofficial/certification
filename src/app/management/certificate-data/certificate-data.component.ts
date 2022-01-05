@@ -36,7 +36,7 @@ export class CertificateDataComponent implements OnInit {
 
   onOpenAddCertificateDialog() {
     this.matDialog.open(CertificateDataDialogComponent, {
-      data: { isEdit: true },
+      data: { isEdit: false },
       height: "60%",
       width: "30%",
       minHeight: "500px",

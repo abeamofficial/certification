@@ -1,0 +1,260 @@
+section.container {
+  padding: 0px 20px;
+  height: 100%;
+}
+
+/* ----- breadcrumb template ----- */
+
+section.breadcrumb {
+  padding: 25px 0 15px 0;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+}
+
+section.breadcrumb > p,
+section.breadcrumb > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.breadcrumb > p {
+  cursor: pointer;
+}
+
+section.breadcrumb > p:hover {
+  color: var(--blue);
+}
+
+/* ----- END breadcrumb template ----- */
+
+/* ----- body ----- */
+
+section.body {
+  background-color: #fff;
+  box-shadow: 2px 2px 10px 0 rgb(0 0 0 / 2.5%);
+  padding: 25px 40px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 95%;
+}
+
+section.body > h1,
+section.body > div.column > div > h1 {
+  font-size: 1.5rem;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+/* ----- body > div.card ----- */
+section.body > div.card {
+  width: 100%;
+  display: flex;
+  gap: 2%;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+section.body > div.card > div {
+  width: 23.5%;
+  min-width: 200px;
+  padding: 1.25rem 2rem;
+  box-sizing: border-box;
+  background-color: #f0f4f8;
+  border-left: 7px solid var(--soft-blue);
+  border-radius: 7px;
+  box-shadow: 2px 3px 3px 2px rgb(0 0 0 / 2.5%);
+}
+
+section.body > div.card > div > span {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "sutregular";
+}
+section.body > div.card > div > p {
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 3.25rem;
+  font-family: "sutregular";
+  font-weight: 100;
+}
+
+/* ----- body > div.column ----- */
+
+section.body > div.column {
+  display: flex;
+  gap: 2%;
+  width: 100%;
+  margin: 4rem 0;
+}
+
+/* ----- body > div.column > recent-list ----- */
+section.body > div.column > div.recent-list {
+  width: calc(65 / 100 * 98%);
+}
+
+section.body > div.column > div.recent-list > div.list {
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+section.body > div.column > div.recent-list > div.list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+section.body > div.column > div.recent-list > div.list > div:hover {
+  background-color: #f5f7fa;
+  cursor: pointer;
+}
+section.body > div.column > div.recent-list > div.list > div:first-of-type {
+  margin: 0;
+  padding: 0 1rem;
+}
+section.body
+  > div.column
+  > div.recent-list
+  > div.list
+  > div:first-of-type:hover {
+  background-color: unset;
+}
+
+section.body > div.column > div.recent-list > div.list > div > div.name {
+  width: 80%;
+}
+section.body > div.column > div.recent-list > div.list > div > div.detail {
+  width: 100px;
+}
+
+section.body
+  > div.column
+  > div.recent-list
+  > div.list
+  > div:first-of-type
+  > div {
+  color: #888888;
+  font-size: 0.75rem;
+  font-family: "sutregular";
+  margin: 0.5rem 0;
+}
+
+section.body > div.column > div.recent-list > div.list > div > div.name > p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-family: "sutbold";
+}
+
+section.body > div.column > div.recent-list > div.list > div > div.name > span {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "sutregular";
+}
+
+section.body > div.column > div.recent-list > div.list > div > div.detail > p {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "sutregular";
+}
+
+/* ----- body > div.column > top-list ----- */
+section.body > div.column > div.top-list {
+  width: calc(35 / 100 * 98%);
+}
+
+section.body > div.column > div.top-list > div.list {
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+section.body > div.column > div.top-list > div.list > div {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+section.body > div.column > div.top-list > div.list > div > div.order {
+  display: flex;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  /* width: 10%; */
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+}
+section.body
+  > div.column
+  > div.top-list
+  > div.list
+  > div:nth-of-type(1)
+  > div.order {
+  background-color: #77a3e0;
+}
+
+section.body
+  > div.column
+  > div.top-list
+  > div.list
+  > div:nth-of-type(2)
+  > div.order {
+  background-color: #9bbbe7;
+}
+
+section.body
+  > div.column
+  > div.top-list
+  > div.list
+  > div:nth-of-type(3)
+  > div.order {
+  background-color: #d5e3f5;
+}
+
+section.body > div.column > div.top-list > div.list > div > div.order > p {
+  margin: auto;
+  font-family: "sutregular";
+  font-size: 2rem;
+  line-height: 2rem;
+}
+section.body > div.column > div.top-list > div.list > div > div.name {
+  width: -webkit-fill-available;
+}
+section.body > div.column > div.top-list > div.list > div > div.name > p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25rem;
+  font-family: "sutbold";
+}
+
+section.body > div.column > div.top-list > div.list > div > div.detail {
+  width: 20%;
+  min-width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+}
+section.body > div.column > div.top-list > div.list > div > div.detail > p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-family: "sutregular";
+}
+
+/* ----- body > pagination ----- */
+section.body > div.pagination {
+  /* position: absolute;
+    bottom: 0;
+    width: inherit; */
+}
+
+/* ----- END body ----- */

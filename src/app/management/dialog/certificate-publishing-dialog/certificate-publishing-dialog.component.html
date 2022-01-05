@@ -1,0 +1,47 @@
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>เผยแพร่สัมฤทธิบัตร</h1>
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal()">close</i>
+  </div>
+  <hr />
+
+  <ng-container *ngIf="true; else view">
+    <div class="body">
+      <div class="input">
+        <p>สัมฤทธิบัตร</p>
+        <span>
+          {{ data.season_value.module_name_th }}
+        </span>
+      </div>
+      <div class="input">
+        <p>รุ่นที่</p>
+        <span>{{ data.season_value.season }}</span>
+      </div>
+      <div class="input">
+        <p>หลักสูตร</p>
+        <span>
+          {{ data.season_value.module_name_th }}
+        </span>
+      </div>
+      <div class="input">
+        <p>ผู้ลงนาม</p>
+        <select>
+          <option disabled>จัดเรียง</option>
+          <option>ใหม่ที่สุด</option>
+          <option>เก่าที่สุด</option>
+        </select>
+      </div>
+      <div class="input">
+        <p>วันที่ลงนาม</p>
+        <input type="date" />
+      </div>
+    </div>
+    <div class="footer">
+      <button class="submit">เผยแพร่</button>
+      <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+    </div>
+  </ng-container>
+</section>

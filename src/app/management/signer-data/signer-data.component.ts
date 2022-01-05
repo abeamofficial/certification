@@ -31,7 +31,7 @@ export class SignerDataComponent implements OnInit {
     this.matDialog.open(SignerDataDialogComponent, {
       data: { isEdit: false },
       height: "60%",
-      width: "40%",
+      width: "30%",
       minHeight: "500px",
       minWidth: "500px",
     });

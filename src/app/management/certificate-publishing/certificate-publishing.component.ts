@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { MatDialog } from "@angular/material/dialog";
 
 import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CertificatePublishingDialogComponent } from "../dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
 
 @Component({
   selector: "app-certificate-publishing",
@@ -19,7 +21,8 @@ export class CertificatePublishingComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private certificateDataService: CertificateDataService
+    private certificateDataService: CertificateDataService,
+    public matDialog: MatDialog
   ) {
     let id;
     this.activatedRoute.queryParams.subscribe((params) => {
@@ -36,6 +39,16 @@ export class CertificatePublishingComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onOpenCertificatePublishingDialog() {
+    this.matDialog.open(CertificatePublishingDialogComponent, {
+      data: { isEdit: false, season_value: this.season_value },
+      height: "60%",
+      width: "30%",
+      minHeight: "500px",
+      minWidth: "500px",
+    });
+  }
 
   async getSeason(id) {
     await this.certificateDataService.getSeason(id).then((result) => {

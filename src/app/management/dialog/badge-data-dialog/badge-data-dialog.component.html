@@ -1,3 +1,103 @@
-<p>
-  badge-data-dialog works!
-</p>
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>ข้อมูลสัมฤทธิสัญลักษณ์</h1>
+      <!-- <button
+        *ngIf="data.value.cert_id && !data.isEdit"
+        (click)="data.isEdit = true"
+        class="edit"
+      >
+        <i class="material-icons">edit</i>
+        แก้ไข
+      </button> -->
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal()">close</i>
+  </div>
+  <hr />
+
+  <ng-container *ngIf="true; else view">
+    <div class="body">
+      <div class="input">
+        <p>ไฟล์รูป</p>
+        <ngx-file-drop
+          customstyle="filedrop"
+          dropZoneLabel="Drop file here "
+          (onFileDrop)="dropped($event)"
+          (onFileOver)="fileOver($event)"
+          (onFileLeave)="fileLeave($event)"
+        >
+          <ng-template
+            ngx-file-drop-content-tmp
+            let-openFileSelector="openFileSelector"
+          >
+            <p>Drop file here</p>
+            <span>or</span>
+            <button class="import" (click)="openFileSelector()">
+              Browse Files
+            </button>
+          </ng-template>
+        </ngx-file-drop>
+
+        <p *ngFor="let item of files; let i = index">
+          {{ item.relativePath }}
+        </p>
+      </div>
+
+      <div class="input">
+        <p>รายวิชา</p>
+        <mat-form-field>
+          <mat-select placeholder="เลือกวิชา" #singleSelect>
+            <mat-option>
+              <ngx-mat-select-search
+                [formControl]="courseFilterCtrl"
+                placeholderLabel="ค้นหาชุดวิชา"
+                noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
+              ></ngx-mat-select-search>
+            </mat-option>
+
+            <mat-option
+              *ngFor="let course of filteredCourse | async"
+              [value]="course.m_id"
+            >
+              {{ course.course_id + " " + course.course_name_th }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <p>ชื่อสัมสัญลักษณ์ ภาษาไทย</p>
+        <input />
+      </div>
+      <div class="input">
+        <p>ชื่อสัมสัญลักษณ์ ภาษาอังกฤษ</p>
+        <input />
+      </div>
+    </div>
+    <div class="footer">
+      <button class="submit">บันทึก</button>
+      <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+    </div>
+  </ng-container>
+  <!-- <ng-template #view>
+    <div class="body">
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
+        <span>{{ data.value.cert_name_th }}</span>
+      </div>
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
+        <span>{{ data.value.cert_name_en }}</span>
+      </div>
+      <div class="input">
+        <p>ชุดวิชา</p>
+        <span>{{
+          data.value.module_id + " ชุดวิชา" + data.value.module_name_th
+        }}</span>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal()">กลับ</button>
+    </div>
+  </ng-template> -->
+</section>

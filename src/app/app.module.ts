@@ -5,12 +5,17 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 // import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+import { NgxFileDropModule } from "ngx-file-drop";
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDialogModule } from "@angular/material/dialog";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { MatFormFieldModule, MatSelectModule } from "@angular/material";
+import { NgxMatSelectSearchModule } from "ngx-mat-select-search";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -41,6 +46,7 @@ import { SignerDataComponent } from "./management/signer-data/signer-data.compon
 import { SignerDataDialogComponent } from "./management/dialog/signer-data-dialog/signer-data-dialog.component";
 import { CertificateSummaryComponent } from "./management/certificate-summary/certificate-summary.component";
 import { CertificatePublishingComponent } from "./management/certificate-publishing/certificate-publishing.component";
+import { CertificatePublishingDialogComponent } from './management/dialog/certificate-publishing-dialog/certificate-publishing-dialog.component';
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -74,6 +80,7 @@ import { CertificatePublishingComponent } from "./management/certificate-publish
     SignerDataDialogComponent,
     CertificateSummaryComponent,
     CertificatePublishingComponent,
+    CertificatePublishingDialogComponent,
   ],
   imports: [
     EllipsisModule,
@@ -87,6 +94,11 @@ import { CertificatePublishingComponent } from "./management/certificate-publish
     HttpClientModule,
     MatDialogModule,
     FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    NgxMatSelectSearchModule,
+    ReactiveFormsModule,
+    NgxFileDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,10 +2,16 @@
   <div class="header">
     <div>
       <h1>
-        {{ data.isEdit ? "แก้ไขข้อมูลสัมฤทธิบัตร" : "เพิ่มข้อมูลสัมฤทธิบัตร" }}
+        {{
+          data.isEdit
+            ? "แก้ไขข้อมูลสัมฤทธิบัตร"
+            : data.value.cert_id
+            ? "ข้อมูลสัมฤทธิบัตร"
+            : "เพิ่มข้อมูลสัมฤทธิบัตร"
+        }}
       </h1>
       <button
-        *ngIf="data.value && !data.isEdit"
+        *ngIf="data.value.cert_id && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
@@ -18,7 +24,7 @@
   </div>
   <hr />
 
-  <ng-container *ngIf="data.isEdit; else view">
+  <ng-container *ngIf="!data.value.cert_id || data.isEdit; else view">
     <div class="body">
       <div class="input">
         <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
@@ -30,7 +36,28 @@
       </div>
       <div class="input">
         <p>ชุดวิชา</p>
-        <input />
+        <mat-form-field>
+          <mat-select
+            [(ngModel)]="data.value.m_id"
+            placeholder="เลือกชุดวิชา"
+            #singleSelect
+          >
+            <mat-option>
+              <ngx-mat-select-search
+                [formControl]="moduleFilterCtrl"
+                placeholderLabel="ค้นหาชุดวิชา"
+                noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
+              ></ngx-mat-select-search>
+            </mat-option>
+
+            <mat-option
+              *ngFor="let module of filteredModule | async"
+              [value]="module.m_id"
+            >
+              {{ module.module_id + " " + module.module_name_th }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
     </div>
     <div class="footer">
@@ -50,7 +77,9 @@
       </div>
       <div class="input">
         <p>ชุดวิชา</p>
-        <span>{{ data.value.module_name_th }}</span>
+        <span>{{
+          data.value.module_id + " ชุดวิชา" + data.value.module_name_th
+        }}</span>
       </div>
     </div>
     <div class="footer">

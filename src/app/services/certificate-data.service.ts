@@ -115,4 +115,44 @@ export class CertificateDataService {
       return false;
     }
   }
+
+  async getModule() {
+    let result = await this.http
+      .post<any>("https://digitech.sut.ac.th/api/api_module.php", null, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
+  async getCourse() {
+    let result = await this.http
+      .post<any>("https://digitech.sut.ac.th/api/api_course.php", null, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
+  // $scope.getModule = function () {
+  //   $http.post("https://digitech.sut.ac.th/api/api_module.php", null).then(function (response) {
+  //     if (response.data) {
+  //       $scope.module = response.data.data;
+  //     }
+  //   });
+  // };
 }

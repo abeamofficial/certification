@@ -17,9 +17,16 @@ import { SignerDataComponent } from "./management/signer-data/signer-data.compon
 import { SignerDataDialogComponent } from "./management/dialog/signer-data-dialog/signer-data-dialog.component";
 import { CertificateSummaryComponent } from "./management/certificate-summary/certificate-summary.component";
 import { CertificatePublishingComponent } from "./management/certificate-publishing/certificate-publishing.component";
+import { CertificatePublishingDialogComponent } from "./management/dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
+
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  {
+    path: "",
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
   { path: "login", component: LoginComponent },
   {
     path: "transcript-detail",
@@ -90,6 +97,7 @@ const routes: Routes = [
     CertificateDataDialogComponent,
     BadgeDataDialogComponent,
     SignerDataDialogComponent,
+    CertificatePublishingDialogComponent,
   ],
 })
 export class AppRoutingModule {}

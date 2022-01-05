@@ -8,6 +8,19 @@ section {
 
 section div.profile {
   height: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+section div.profile i {
+  margin: auto 0;
+  font-size: 2.5rem;
+}
+section div.profile p {
+  margin: auto 0;
+  font-size: 2rem;
+  font-family: "sutbold";
 }
 
 section div.menu {

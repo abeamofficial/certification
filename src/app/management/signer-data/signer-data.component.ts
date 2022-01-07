@@ -34,23 +34,19 @@ export class SignerDataComponent implements OnInit {
     });
   }
 
-  onOpenCreateSignerDialog() {
-    this.matDialog.open(SignerDataDialogComponent, {
-      data: { isEdit: false },
+  onOpenSignerDialog(isEdit, value) {
+    const dialogRef = this.matDialog.open(SignerDataDialogComponent, {
+      data: { isEdit: isEdit, ...(value && { value: value }) },
       height: "60%",
       width: "30%",
       minHeight: "500px",
       minWidth: "500px",
     });
-  }
 
-  onOpenSignerDialog(isEdit, value) {
-    this.matDialog.open(SignerDataDialogComponent, {
-      data: { isEdit: isEdit, value: value },
-      height: "60%",
-      width: "30%",
-      minHeight: "500px",
-      minWidth: "500px",
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getSignerData();
+      }
     });
   }
 }

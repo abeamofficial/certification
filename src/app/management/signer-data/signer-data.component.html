@@ -10,7 +10,7 @@
       <span>
         <input placeholder="ค้นหา" /><i class="material-icons">search</i>
       </span>
-      <button class="add" (click)="onOpenCreateSignerDialog()">
+      <button class="add" (click)="onOpenSignerDialog(false)">
         <i class="material-icons">add</i> เพิ่มผู้ลงนาม
       </button>
     </div>
@@ -44,11 +44,7 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                <button
-                  (click)="onOpenSignerDialog(true, item)"
-                  mat-menu-item
-                  class="menu"
-                >
+                <button mat-menu-item class="menu">
                   <mat-icon>edit</mat-icon>
                   <span>แก้ไข</span>
                 </button>

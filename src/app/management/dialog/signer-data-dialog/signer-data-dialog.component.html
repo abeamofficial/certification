@@ -2,17 +2,17 @@
   <div class="header">
     <div>
       <h1>ข้อมูลผู้ลงนาม</h1>
-      <button
+      <!-- <button
         *ngIf="data.value && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
         <i class="material-icons">edit</i>
         แก้ไข
-      </button>
+      </button> -->
     </div>
 
-    <i class="material-icons close" (click)="onCloseModal()">close</i>
+    <i class="material-icons close" (click)="onCloseModal(false)">close</i>
   </div>
   <hr />
 
@@ -65,8 +65,8 @@
       </form>
     </div>
     <div class="footer">
-      <button class="submit" (click)="isUpload()">บันทึก</button>
-      <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+      <button class="submit" (click)="onSaveSigner()">บันทึก</button>
+      <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
     </div>
   </ng-container>
   <ng-template #view>

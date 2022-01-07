@@ -52,8 +52,8 @@ export class SignerDataDialogComponent implements OnInit {
     }
   }
 
-  onCloseModal() {
-    this.dialogRef.close();
+  onCloseModal(isModify: boolean) {
+    this.dialogRef.close(isModify);
   }
 
   // public files: NgxFileDropEntry = null;
@@ -73,13 +73,22 @@ export class SignerDataDialogComponent implements OnInit {
       });
     }
   }
+
   removeImg() {
     this.signerForm.controls["img"].setValue(null);
     this.url = null;
   }
 
-  isUpload() {
-    this.signerService.createSigner(this.fileToUpload, this.signerForm.value);
+  async onSaveSigner() {
+    await this.signerService
+      .createSigner(this.fileToUpload, this.signerForm.value)
+      .then((result) => {
+        if (result) {
+          this.onCloseModal(true);
+        } else {
+          //alert
+        }
+      });
   }
 
   public fileOver(event) {

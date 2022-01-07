@@ -34,27 +34,15 @@ export class SignerService {
       "createSigner.php?signer=" +
       JSON.stringify(signerValue);
 
-    const endpoint = URL;
     const formData: FormData = new FormData();
     formData.append("file", fileToUpload, fileToUpload.name);
-    return this.http.post(endpoint, formData).toPromise();
 
-    // let result = await this.http
-    //   .post<any>(
-    //     this.pathConfigService.apiPath + "createSigner.php",
-    //     fileToUpload,
-    //     {
-    //       headers: {
-    //         "Content-Type": "multipart/form-data",
-    //       },
-    //     }
-    //   )
-    //   .toPromise();
+    let result = await this.http.post<any>(URL, formData).toPromise();
 
-    // if (result.status === 200) {
-    //   return result.data;
-    // } else {
-    //   return false;
-    // }
+    if (result.status === 200) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

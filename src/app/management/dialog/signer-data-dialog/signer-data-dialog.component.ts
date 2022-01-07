@@ -6,7 +6,7 @@ import {
   ViewChild,
   Inject,
 } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import {
   MAT_DIALOG_DATA,
   MatDialogRef,
@@ -19,57 +19,67 @@ import {
   FileSystemDirectoryEntry,
 } from "ngx-file-drop";
 
+import { SignerService } from "src/app/services/signer.service";
+
 @Component({
   selector: "app-signer-data-dialog",
   templateUrl: "./signer-data-dialog.component.html",
   styleUrls: ["./signer-data-dialog.component.css"],
 })
 export class SignerDataDialogComponent implements OnInit {
+  signerForm = this.fb.group({
+    id: null, // record id
+    prefix_name: null,
+    first_name: null,
+    last_name: null,
+    img: null,
+  });
+
+  url;
+  fileToUpload;
+
   constructor(
+    private fb: FormBuilder,
     public dialogRef: MatDialogRef<SignerDataDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private signerService: SignerService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.data.value) {
+      this.signerForm.patchValue(this.data.value);
+      this.url = "./../../certification-img/signer/" + this.data.value.img;
+    }
+  }
 
   onCloseModal() {
     this.dialogRef.close();
   }
 
-  public files: NgxFileDropEntry[] = [];
+  // public files: NgxFileDropEntry = null;
 
   public dropped(files: NgxFileDropEntry[]) {
-    this.files = files;
-    for (const droppedFile of files) {
-      // Is it a file?
-      if (droppedFile.fileEntry.isFile) {
-        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
-        fileEntry.file((file: File) => {
-          // Here you can access the real file
-          console.log(droppedFile.relativePath, file);
+    if (files[0] && files[0].fileEntry.isFile) {
+      this.signerForm.controls["img"].setValue(files[0].relativePath);
 
-          /**
-          // You could upload it like this:
-          const formData = new FormData()
-          formData.append('logo', file, relativePath)
-
-          // Headers
-          const headers = new HttpHeaders({
-            'security-token': 'mytoken'
-          })
-
-          this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })
-          .subscribe(data => {
-            // Sanitized logo returned from backend
-          })
-          **/
-        });
-      } else {
-        // It was a directory (empty directories are added, otherwise only files)
-        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        console.log(droppedFile.relativePath, fileEntry);
-      }
+      const reader = new FileReader();
+      const fileEntry = files[0].fileEntry as FileSystemFileEntry;
+      fileEntry.file((file: File) => {
+        this.fileToUpload = file;
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.url = reader.result;
+        };
+      });
     }
+  }
+  removeImg() {
+    this.signerForm.controls["img"].setValue(null);
+    this.url = null;
+  }
+
+  isUpload() {
+    this.signerService.createSigner(this.fileToUpload, this.signerForm.value);
   }
 
   public fileOver(event) {
@@ -78,5 +88,9 @@ export class SignerDataDialogComponent implements OnInit {
 
   public fileLeave(event) {
     console.log(event);
+  }
+
+  get img() {
+    return this.signerForm.get("img").value;
   }
 }

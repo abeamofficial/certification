@@ -1,16 +1,20 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { async } from "@angular/core/testing";
+
+import { PathConfigService } from "./path-config.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class CertificateDataService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private pathConfigService: PathConfigService
+  ) {}
 
   async getCertificate() {
     let result = await this.http
-      .post<any>("https://digitech.sut.ac.th/api/api_cert.php", null, {
+      .post<any>(this.pathConfigService.apiPath + "api_cert.php", null, {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
         },

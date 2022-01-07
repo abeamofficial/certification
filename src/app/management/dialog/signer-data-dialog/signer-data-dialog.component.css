@@ -56,17 +56,54 @@ section.dialog > div.body {
   box-sizing: border-box;
 }
 
-section.dialog > div.body > div.input {
+section.dialog > div.body div.img {
+  box-sizing: border-box;
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  gap: 2.5%;
+  margin: 5px 0;
+}
+
+section.dialog > div.body div.img > div.upload-img {
+  width: 150px;
+  display: flex;
+}
+
+section.dialog > div.body div.img > div.upload-img img {
+  width: 100%;
+  height: auto;
+  max-height: 125px;
+  margin: auto 0;
+}
+section.dialog > div.body div.img > div.detail-img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+section.dialog > div.body div.img > div.detail-img p {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "sutregular";
+}
+section.dialog > div.body div.img > div.detail-img i {
+  font-size: 1rem;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+section.dialog > div.body div.input {
   margin: 20px 30px;
 }
 
-section.dialog > div.body > div.input > p {
+section.dialog > div.body div.input > p {
   font-family: "sutregular";
   font-size: 1rem;
   margin: 0;
   color: gray;
 }
-section.dialog > div.body > div.input > input {
+section.dialog > div.body div.input > input {
   display: block;
   width: -webkit-fill-available;
   /* min-width: 258px; */
@@ -80,10 +117,10 @@ section.dialog > div.body > div.input > input {
   resize: vertical;
 }
 
-section.dialog > div.body > div.input > span {
+section.dialog > div.body div.input > span {
   font-family: "sutregular";
   font-size: 1.15rem;
-  margin: 5px 0;
+  line-height: 2rem;
 }
 
 /* ----- dialog > footer ----- */

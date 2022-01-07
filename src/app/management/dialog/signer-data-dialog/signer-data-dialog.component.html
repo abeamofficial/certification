@@ -2,85 +2,101 @@
   <div class="header">
     <div>
       <h1>ข้อมูลผู้ลงนาม</h1>
-      <!-- <button
-        *ngIf="data.value.cert_id && !data.isEdit"
+      <button
+        *ngIf="data.value && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
         <i class="material-icons">edit</i>
         แก้ไข
-      </button> -->
+      </button>
     </div>
 
     <i class="material-icons close" (click)="onCloseModal()">close</i>
   </div>
   <hr />
 
-  <ng-container *ngIf="true">
+  <ng-container *ngIf="!data.value || data.isEdit; else view">
     <div class="body">
-      <div class="input">
-        <p>ไฟล์รูป</p>
-        <ngx-file-drop
-          customstyle="filedrop"
-          dropZoneLabel="Drop file here "
-          (onFileDrop)="dropped($event)"
-          (onFileOver)="fileOver($event)"
-          (onFileLeave)="fileLeave($event)"
-        >
-          <ng-template
-            ngx-file-drop-content-tmp
-            let-openFileSelector="openFileSelector"
+      <form [formGroup]="signerForm">
+        <div class="input">
+          <p>ไฟล์รูป</p>
+          <ngx-file-drop
+            *ngIf="!img"
+            customstyle="filedrop"
+            dropZoneLabel="Drop file here "
+            (onFileDrop)="dropped($event)"
+            multiple="false"
           >
-            <p>Drop file here</p>
-            <span>or</span>
-            <button class="import" (click)="openFileSelector()">
-              Browse Files
-            </button>
-          </ng-template>
-        </ngx-file-drop>
+            <ng-template
+              ngx-file-drop-content-tmp
+              let-openFileSelector="openFileSelector"
+            >
+              <p>Drop file here</p>
+              <span>or</span>
+              <button class="import" (click)="openFileSelector()">
+                Browse Files
+              </button>
+            </ng-template>
+          </ngx-file-drop>
+          <div class="img" *ngIf="img">
+            <div class="upload-img">
+              <img *ngIf="url" [src]="url" />
+            </div>
+            <div class="detail-img">
+              <p>{{ img }}</p>
+              <i (click)="removeImg()" class="material-icons">close</i>
+            </div>
+          </div>
+        </div>
 
-        <p *ngFor="let item of files; let i = index">
-          {{ item.relativePath }}
-        </p>
-      </div>
-
-      <div class="input">
-        <p>ตำแหน่ง</p>
-        <input />
-      </div>
-      <div class="input">
-        <p>ชื่อผู้ลงนาม</p>
-        <input />
-      </div>
-      <div class="input">
-        <p>นามสกุลผู้ลงนาม</p>
-        <input />
-      </div>
+        <div class="input">
+          <p>ตำแหน่ง</p>
+          <input formControlName="prefix_name" />
+        </div>
+        <div class="input">
+          <p>ชื่อผู้ลงนาม</p>
+          <input formControlName="first_name" />
+        </div>
+        <div class="input">
+          <p>นามสกุลผู้ลงนาม</p>
+          <input formControlName="last_name" />
+        </div>
+      </form>
     </div>
     <div class="footer">
-      <button class="submit">บันทึก</button>
+      <button class="submit" (click)="isUpload()">บันทึก</button>
       <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
     </div>
   </ng-container>
-  <!-- <ng-template #view>
+  <ng-template #view>
     <div class="body">
       <div class="input">
-        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
-        <span>{{ data.value.cert_name_th }}</span>
+        <p>ไฟล์รูป</p>
+        <div class="img" *ngIf="img">
+          <div class="upload-img">
+            <img *ngIf="url" [src]="url" />
+          </div>
+          <div class="detail-img">
+            <p>{{ img }}</p>
+          </div>
+        </div>
       </div>
       <div class="input">
-        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
-        <span>{{ data.value.cert_name_en }}</span>
+        <p>ตำแหน่ง</p>
+        <span>{{ data.value.prefix_name }}</span>
       </div>
       <div class="input">
-        <p>ชุดวิชา</p>
-        <span>{{
-          data.value.module_id + " ชุดวิชา" + data.value.module_name_th
-        }}</span>
+        <p>ชื่อผู้ลงนาม</p>
+        <span>{{ data.value.first_name }}</span>
+      </div>
+      <div class="input">
+        <p>นามสกุลผู้ลงนาม</p>
+        <span>{{ data.value.last_name }}</span>
       </div>
     </div>
     <div class="footer">
-      <button class="cancel" (click)="onCloseModal()">กลับ</button>
+      <!-- <button class="cancel" (click)="onCloseModal()">กลับ</button> -->
     </div>
-  </ng-template> -->
+  </ng-template>
 </section>

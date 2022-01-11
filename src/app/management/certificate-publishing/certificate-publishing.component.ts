@@ -3,6 +3,9 @@ import { ActivatedRoute } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 
 import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { GraduationService } from "src/app/services/graduation.service";
+import { CourseService } from "src/app/services/course.service";
+
 import { CertificatePublishingDialogComponent } from "../dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
 
 @Component({
@@ -22,6 +25,8 @@ export class CertificatePublishingComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private certificateDataService: CertificateDataService,
+    private graduationService: GraduationService,
+    private courseService: CourseService,
     public matDialog: MatDialog
   ) {
     let id;
@@ -59,26 +64,22 @@ export class CertificatePublishingComponent implements OnInit {
   }
 
   async getCourseByModuleId(module_id) {
-    await this.certificateDataService
-      .getCourseByModuleId(module_id)
-      .then((result) => {
-        if (result) {
-          this.module_value = result;
-        }
-      });
+    await this.courseService.getCourseByModuleId(module_id).then((result) => {
+      if (result) {
+        this.module_value = result;
+      }
+    });
   }
 
   async getGraduateById(id, degree) {
-    await this.certificateDataService
-      .getGraduateById(id, degree)
-      .then((result) => {
-        if (result) {
-          this.graduate_value = result;
-          this.honor_cert = this.getHonorCert(result);
-          this.general_cert = this.getGeneralCert(result);
-          this.diploma = this.getDiploma(result);
-        }
-      });
+    await this.graduationService.getGraduateById(id, degree).then((result) => {
+      if (result) {
+        this.graduate_value = result;
+        this.honor_cert = this.getHonorCert(result);
+        this.general_cert = this.getGeneralCert(result);
+        this.diploma = this.getDiploma(result);
+      }
+    });
   }
 
   async getCertType() {

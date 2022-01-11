@@ -6,16 +6,16 @@ import { PathConfigService } from "./path-config.service";
 @Injectable({
   providedIn: "root",
 })
-export class CertificateDataService {
+export class GraduationService {
   constructor(
     private http: HttpClient,
     private pathConfigService: PathConfigService
   ) {}
 
-  async getCertificate() {
+  async getGraduateList() {
     let result = await this.http
       .post<any>(
-        this.pathConfigService.apiPath + "getCertificateName.php",
+        this.pathConfigService.apiPath + "getGraduationList.php",
         null,
         {
           headers: {
@@ -32,11 +32,11 @@ export class CertificateDataService {
     }
   }
 
-  async getSeason(id) {
+  async getGraduateById(id, degree) {
     let result = await this.http
       .post<any>(
-        this.pathConfigService.apiPath + "getSeasonById.php",
-        { season_id: id },
+        this.pathConfigService.apiPath + "getGraduationBySeasonId.php",
+        { season_id: id, degree_of_module_id: degree },
         {
           headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -51,32 +51,4 @@ export class CertificateDataService {
       return false;
     }
   }
-
-  async getCertType() {
-    let result = await this.http
-      .post<any>(
-        this.pathConfigService.apiPath + "getCertificateType.php",
-        null,
-        {
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }
-      )
-      .toPromise();
-
-    if (result.status === 200) {
-      return result.data;
-    } else {
-      return false;
-    }
-  }
-
-  // $scope.getModule = function () {
-  //   $http.post("https://digitech.sut.ac.th/api/api_module.php", null).then(function (response) {
-  //     if (response.data) {
-  //       $scope.module = response.data.data;
-  //     }
-  //   });
-  // };
 }

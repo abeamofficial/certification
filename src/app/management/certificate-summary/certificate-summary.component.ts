@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { GraduationService } from "src/app/services/graduation.service";
 
 @Component({
   selector: "app-certificate-summary",
@@ -14,7 +15,7 @@ export class CertificateSummaryComponent implements OnInit {
   graduate_list = null;
 
   constructor(
-    private certificateDataService: CertificateDataService,
+    private graduationService: GraduationService,
     public router: Router
   ) {}
 
@@ -23,7 +24,7 @@ export class CertificateSummaryComponent implements OnInit {
   }
 
   async getGraduateList() {
-    await this.certificateDataService.getGraduateList().then((result) => {
+    await this.graduationService.getGraduateList().then((result) => {
       if (result) {
         this.graduate_list = result;
       }

@@ -24,6 +24,7 @@ import {
 } from "ngx-file-drop";
 
 import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CourseService } from "src/app/services/course.service";
 
 @Component({
   selector: "app-badge-data-dialog",
@@ -48,7 +49,8 @@ export class BadgeDataDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<BadgeDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private certificateDataService: CertificateDataService
+    private certificateDataService: CertificateDataService,
+    private courseService: CourseService
   ) {
     if (!this.data.value) {
       this.data["value"] = {
@@ -82,7 +84,7 @@ export class BadgeDataDialogComponent implements OnInit {
   }
 
   async getCourse() {
-    await this.certificateDataService.getCourse().then((result) => {
+    await this.courseService.getCourse().then((result) => {
       if (result) {
         this.course = result;
       }

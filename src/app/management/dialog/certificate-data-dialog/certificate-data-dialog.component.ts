@@ -14,6 +14,7 @@ import {
 } from "@angular/material/dialog";
 
 import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { ModuleService } from "src/app/services/module.service";
 
 import { MatSelect } from "@angular/material/select";
 import { ReplaySubject, Subject } from "rxjs";
@@ -41,7 +42,8 @@ export class CertificateDataDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<CertificateDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private certificateDataService: CertificateDataService
+    private certificateDataService: CertificateDataService,
+    private moduleService: ModuleService
   ) {
     if (!this.data.value) {
       this.data["value"] = {
@@ -75,7 +77,7 @@ export class CertificateDataDialogComponent implements OnInit {
   }
 
   async getModule() {
-    await this.certificateDataService.getModule().then((result) => {
+    await this.moduleService.getModule().then((result) => {
       if (result) {
         this.module = result;
       }

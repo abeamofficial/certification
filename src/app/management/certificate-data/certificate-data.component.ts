@@ -34,16 +34,6 @@ export class CertificateDataComponent implements OnInit {
     });
   }
 
-  onOpenAddCertificateDialog() {
-    this.matDialog.open(CertificateDataDialogComponent, {
-      data: { isEdit: false },
-      height: "60%",
-      width: "30%",
-      minHeight: "500px",
-      minWidth: "500px",
-    });
-  }
-
   onOpenCertificateDialog(isEdit, value) {
     this.matDialog.open(CertificateDataDialogComponent, {
       data: { isEdit: isEdit, value: value },

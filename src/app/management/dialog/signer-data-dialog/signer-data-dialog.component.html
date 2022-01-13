@@ -20,6 +20,18 @@
     <div class="body">
       <form [formGroup]="signerForm">
         <div class="input">
+          <p>ตำแหน่ง</p>
+          <input formControlName="prefix_name" />
+        </div>
+        <div class="input">
+          <p>ชื่อผู้ลงนาม</p>
+          <input formControlName="first_name" />
+        </div>
+        <div class="input">
+          <p>นามสกุลผู้ลงนาม</p>
+          <input formControlName="last_name" />
+        </div>
+        <div class="input">
           <p>ไฟล์รูป</p>
           <ngx-file-drop
             *ngIf="!img"
@@ -49,19 +61,6 @@
             </div>
           </div>
         </div>
-
-        <div class="input">
-          <p>ตำแหน่ง</p>
-          <input formControlName="prefix_name" />
-        </div>
-        <div class="input">
-          <p>ชื่อผู้ลงนาม</p>
-          <input formControlName="first_name" />
-        </div>
-        <div class="input">
-          <p>นามสกุลผู้ลงนาม</p>
-          <input formControlName="last_name" />
-        </div>
       </form>
     </div>
     <div class="footer">
@@ -71,17 +70,6 @@
   </ng-container>
   <ng-template #view>
     <div class="body">
-      <div class="input">
-        <p>ไฟล์รูป</p>
-        <div class="img" *ngIf="img">
-          <div class="upload-img">
-            <img *ngIf="url" [src]="url" />
-          </div>
-          <div class="detail-img">
-            <p>{{ img }}</p>
-          </div>
-        </div>
-      </div>
       <div class="input">
         <p>ตำแหน่ง</p>
         <span>{{ data.value.prefix_name }}</span>
@@ -93,6 +81,17 @@
       <div class="input">
         <p>นามสกุลผู้ลงนาม</p>
         <span>{{ data.value.last_name }}</span>
+      </div>
+      <div class="input">
+        <p>ไฟล์รูป</p>
+        <div class="img" *ngIf="img">
+          <div class="upload-img">
+            <img *ngIf="url" [src]="url" />
+          </div>
+          <div class="detail-img">
+            <p>{{ img }}</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer">

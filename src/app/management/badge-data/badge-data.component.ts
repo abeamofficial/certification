@@ -3,6 +3,8 @@ import { MatDialog } from "@angular/material/dialog";
 
 import { BadgeDataDialogComponent } from "../dialog/badge-data-dialog/badge-data-dialog.component";
 
+import { BadgeService } from "src/app/services/badge.service";
+
 @Component({
   selector: "app-badge-data",
   templateUrl: "./badge-data.component.html",
@@ -11,29 +13,35 @@ import { BadgeDataDialogComponent } from "../dialog/badge-data-dialog/badge-data
 export class BadgeDataComponent implements OnInit {
   p: number = 1;
   itemsPerPage = 15;
+  badge_list;
 
-  constructor(public matDialog: MatDialog) {}
+  constructor(
+    public matDialog: MatDialog,
+    private badgeService: BadgeService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getBadgeData();
+  }
 
   absoluteIndex(indexOnPage: number): number {
     return this.itemsPerPage * (this.p - 1) + indexOnPage;
   }
 
   async getBadgeData() {
-    // await this.certificateDataService.getCertificate().then((result) => {
-    //   if (result) {
-    //     this.certificate_list = result;
-    //   }
-    // });
+    await this.badgeService.getBadge().then((result) => {
+      if (result) {
+        this.badge_list = result;
+      }
+    });
   }
 
-  onOpenBadgeDialog() {
+  onOpenBadgeDialog(isEdit, value) {
     this.matDialog.open(BadgeDataDialogComponent, {
-      data: { isEdit: false },
-      height: "60%",
+      data: { isEdit: isEdit, value: value },
+      height: "70%",
       width: "30%",
-      minHeight: "500px",
+      minHeight: "400px",
       minWidth: "500px",
     });
   }

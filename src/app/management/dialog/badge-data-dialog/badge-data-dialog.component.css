@@ -2,6 +2,7 @@ section.dialog {
   /* padding: 0 15px; */
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 section.dialog > hr {
@@ -54,6 +55,8 @@ section.dialog > div.header i {
 section.dialog > div.body {
   padding: 15px 30px;
   box-sizing: border-box;
+  overflow-y: auto;
+  height: calc(100% - 150px);
 }
 
 section.dialog > div.body > div.input {
@@ -87,6 +90,43 @@ section.dialog > div.body > div.input > span {
   margin: 5px 0;
 }
 
+section.dialog > div.body div.img {
+  box-sizing: border-box;
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  gap: 2.5%;
+  margin: 5px 0;
+}
+
+section.dialog > div.body div.img > div.upload-img {
+  width: 150px;
+  display: flex;
+}
+
+section.dialog > div.body div.img > div.upload-img img {
+  width: 100%;
+  height: auto;
+  max-height: 125px;
+  margin: auto 0;
+}
+section.dialog > div.body div.img > div.detail-img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+section.dialog > div.body div.img > div.detail-img p {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "sutregular";
+}
+section.dialog > div.body div.img > div.detail-img i {
+  font-size: 1rem;
+  margin: auto 0;
+  cursor: pointer;
+}
+
 /* ----- dialog > footer ----- */
 section.dialog > div.footer {
   display: flex;
@@ -96,6 +136,7 @@ section.dialog > div.footer {
   position: absolute;
   bottom: 0;
   width: -webkit-fill-available;
+  background-color: #fff;
 }
 
 section.dialog > div.footer button {
@@ -244,4 +285,15 @@ section.dialog > div.footer button.submit {
   border: 1px solid #e7e7e7;
   border-radius: 4px 4px 0 0;
   border-bottom: 0;
+}
+
+::ng-deep .mat-select-arrow {
+  border: unset !important;
+  margin: auto !important;
+  width: 15px !important;
+  height: 7px !important;
+  background-image: url("/assets/images/arrow-down.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 }

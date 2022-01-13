@@ -6,7 +6,7 @@ import {
   ViewChild,
   Inject,
 } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import {
   MAT_DIALOG_DATA,
   MatDialogRef,
@@ -32,6 +32,18 @@ import { CourseService } from "src/app/services/course.service";
   styleUrls: ["./badge-data-dialog.component.css"],
 })
 export class BadgeDataDialogComponent implements OnInit {
+  badgeForm = this.fb.group({
+    id: null, // record id
+    img_gold: null,
+    img_silver: null,
+    badge_gold_id: null,
+    badge_silver_id: null,
+    c_id: null,
+  });
+
+  url = { gold: null, silver: null };
+  fileToUpload;
+
   /** list of course */
   course = [];
 
@@ -50,7 +62,8 @@ export class BadgeDataDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<BadgeDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private certificateDataService: CertificateDataService,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private fb: FormBuilder
   ) {
     if (!this.data.value) {
       this.data["value"] = {
@@ -62,6 +75,24 @@ export class BadgeDataDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.data.value) {
+      this.badgeForm.patchValue({
+        id: this.data.value.id, // record id
+        img_gold: this.data.value.badge_file_name,
+        img_silver: this.data.value.badge_file_name,
+        badge_gold_id: this.data.value.badge_id,
+        badge_silver_id: this.data.value.badge_id,
+        c_id: this.data.value.c_id,
+      });
+
+      this.url.gold =
+        "./../../certification-img/badge/gold/" +
+        this.data.value.badge_file_name;
+      this.url.silver =
+        "./../../certification-img/badge/silver/" +
+        this.data.value.badge_file_name;
+    }
+
     this.getCourse().then(() => {
       // load the initial course list
       this.filteredCourse.next(this.course.slice());
@@ -135,47 +166,36 @@ export class BadgeDataDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  public files: NgxFileDropEntry[] = [];
+  // public files: NgxFileDropEntry[] = [];
 
-  public dropped(files: NgxFileDropEntry[]) {
-    this.files = files;
-    for (const droppedFile of files) {
-      // Is it a file?
-      if (droppedFile.fileEntry.isFile) {
-        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
-        fileEntry.file((file: File) => {
-          // Here you can access the real file
-          console.log(droppedFile.relativePath, file);
+  public dropped(files: NgxFileDropEntry[], fieldName: string) {
+    if (files[0] && files[0].fileEntry.isFile) {
+      this.badgeForm.controls["img_" + fieldName].setValue(
+        files[0].relativePath
+      );
 
-          /**
-          // You could upload it like this:
-          const formData = new FormData()
-          formData.append('logo', file, relativePath)
-
-          // Headers
-          const headers = new HttpHeaders({
-            'security-token': 'mytoken'
-          })
-
-          this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })
-          .subscribe(data => {
-            // Sanitized logo returned from backend
-          })
-          **/
-        });
-      } else {
-        // It was a directory (empty directories are added, otherwise only files)
-        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        console.log(droppedFile.relativePath, fileEntry);
-      }
+      const reader = new FileReader();
+      const fileEntry = files[0].fileEntry as FileSystemFileEntry;
+      fileEntry.file((file: File) => {
+        // this.fileToUpload = file;
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.url[fieldName] = reader.result;
+        };
+      });
     }
   }
 
-  public fileOver(event) {
-    console.log(event);
+  removeImg(fieldName: string) {
+    this.badgeForm.controls["img_" + fieldName].setValue(null);
+    this.url[fieldName] = null;
   }
 
-  public fileLeave(event) {
-    console.log(event);
+  get img_gold() {
+    return this.badgeForm.get("img_gold").value;
+  }
+
+  get img_silver() {
+    return this.badgeForm.get("img_silver").value;
   }
 }

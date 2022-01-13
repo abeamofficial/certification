@@ -25,6 +25,8 @@ import { take, takeUntil } from "rxjs/operators";
   styleUrls: ["./certificate-data-dialog.component.css"],
 })
 export class CertificateDataDialogComponent implements OnInit {
+  degree_of_module = null;
+
   /** list of module */
   module = [];
 
@@ -66,6 +68,8 @@ export class CertificateDataDialogComponent implements OnInit {
           this.filterModule();
         });
     });
+
+    this.getDegreeOfModule();
   }
   ngAfterViewInit() {
     // this.setInitialValue();
@@ -80,6 +84,14 @@ export class CertificateDataDialogComponent implements OnInit {
     await this.moduleService.getModule().then((result) => {
       if (result) {
         this.module = result;
+      }
+    });
+  }
+
+  async getDegreeOfModule() {
+    await this.moduleService.getDegreeOfModule().then((result) => {
+      if (result) {
+        this.degree_of_module = result;
       }
     });
   }
@@ -126,6 +138,12 @@ export class CertificateDataDialogComponent implements OnInit {
 
   onCloseModal() {
     this.dialogRef.close();
+  }
+
+  getdegreeName(id) {
+    if (!this.degree_of_module) return;
+    return this.degree_of_module.find((item) => item.id == id)
+      .degree_of_module_name;
   }
 }
 

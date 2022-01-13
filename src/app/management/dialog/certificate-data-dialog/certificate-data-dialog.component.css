@@ -62,11 +62,13 @@ section.dialog > div.body > div.input {
 
 section.dialog > div.body > div.input > p {
   font-family: "sutregular";
-  font-size: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.25rem;
   margin: 0;
   color: gray;
 }
-section.dialog > div.body > div.input > input {
+section.dialog > div.body > div.input > input,
+section.dialog > div.body > div.input > select {
   display: block;
   width: -webkit-fill-available;
   /* min-width: 258px; */
@@ -78,6 +80,10 @@ section.dialog > div.body > div.input > input {
   font-family: "sutregular";
   min-height: 21px;
   resize: vertical;
+}
+
+.disabled {
+  color: gray;
 }
 
 section.dialog > div.body > div.input > span {
@@ -192,4 +198,15 @@ section.dialog > div.footer button.submit {
   border: 1px solid #e7e7e7;
   border-radius: 4px 4px 0 0;
   border-bottom: 0;
+}
+
+::ng-deep .mat-select-arrow {
+  border: unset !important;
+  margin: auto !important;
+  width: 15px !important;
+  height: 7px !important;
+  background-image: url("/assets/images/arrow-down.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 }

@@ -59,7 +59,20 @@
           </mat-select>
         </mat-form-field>
       </div>
+      <div class="input">
+        <p>ประเภทสัมฤทธิบัตร</p>
+        <select
+          [(ngModel)]="data.value.degree_of_module_id"
+          [class.disabled]="data.value.degree_of_module_id == undefined"
+        >
+          <option value="undefined" disabled>เลือกประเภทสัมฤทธิบัตร</option>
+          <option *ngFor="let item of degree_of_module" [value]="item.id">
+            {{ item.degree_of_module_name }}
+          </option>
+        </select>
+      </div>
     </div>
+
     <div class="footer">
       <button class="submit">บันทึก</button>
       <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
@@ -81,6 +94,12 @@
           data.value.module_id + " ชุดวิชา" + data.value.module_name_th
         }}</span>
       </div>
+      <div class="input">
+        <p>ประเภทสัมฤทธิบัตร</p>
+        <span>{{ getdegreeName(data.value.degree_of_module_id) }}</span>
+      </div>
+
+      <!-- getdegreeName -->
     </div>
     <div class="footer">
       <button class="cancel" (click)="onCloseModal()">กลับ</button>

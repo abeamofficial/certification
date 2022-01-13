@@ -62,7 +62,8 @@ section.dialog > div.body > div.input {
 
 section.dialog > div.body > div.input > p {
   font-family: "sutregular";
-  font-size: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.25rem;
   margin: 0;
   color: gray;
 }

@@ -27,4 +27,24 @@ export class ModuleService {
       return false;
     }
   }
+
+  async getDegreeOfModule() {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getDegreeOfModule.php",
+        null,
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
 }

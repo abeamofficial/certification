@@ -14,15 +14,11 @@ export class CertificateDataService {
 
   async getCertificate() {
     let result = await this.http
-      .post<any>(
-        this.pathConfigService.apiPath + "getCertificateName.php",
-        null,
-        {
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }
-      )
+      .post<any>(this.pathConfigService.apiPath + "getCertificate.php", null, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
       .toPromise();
 
     if (result.status === 200) {

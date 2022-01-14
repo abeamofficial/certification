@@ -99,6 +99,10 @@ export class SignerDataDialogComponent implements OnInit {
     console.log(event);
   }
 
+  get c_id() {
+    return this.signerForm.get("c_id").value;
+  }
+
   get img() {
     return this.signerForm.get("img").value;
   }

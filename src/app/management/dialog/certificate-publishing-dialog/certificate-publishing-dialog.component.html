@@ -13,26 +13,33 @@
       <div class="input">
         <p>สัมฤทธิบัตร</p>
         <span>
-          {{ data.season_value.module_name_th }}
+          {{ data.season_value.cert_name_th }}
         </span>
-      </div>
-      <div class="input">
-        <p>รุ่นที่</p>
-        <span>{{ data.season_value.season }}</span>
+        <br />
+        <span>
+          {{ "(" + data.season_value.cert_name_en + ")" }}
+        </span>
       </div>
       <div class="input">
         <p>หลักสูตร</p>
         <span>
-          {{ data.season_value.module_name_th }}
+          {{
+            data.season_value.module_id + " " + data.season_value.module_name_th
+          }}
         </span>
       </div>
       <div class="input">
         <p>ผู้ลงนาม</p>
         <select>
-          <option disabled>จัดเรียง</option>
-          <option>ใหม่ที่สุด</option>
-          <option>เก่าที่สุด</option>
+          <option disabled>เลือกผู้ลงนาม</option>
+          <option *ngFor="let item of signer">
+            {{ item.prefix_name + item.first_name + " " + item.last_name }}
+          </option>
         </select>
+      </div>
+      <div class="input">
+        <p>ตำแหน่งผู้ลงนาม</p>
+        <input />
       </div>
       <div class="input">
         <p>วันที่ลงนาม</p>

@@ -45,7 +45,7 @@ export class BadgeDataDialogComponent implements OnInit {
   fileToUpload;
 
   /** list of course */
-  course = [];
+  course = null;
 
   /** control for the MatSelect filter keyword */
   public courseFilterCtrl: FormControl = new FormControl();
@@ -189,6 +189,18 @@ export class BadgeDataDialogComponent implements OnInit {
   removeImg(fieldName: string) {
     this.badgeForm.controls["img_" + fieldName].setValue(null);
     this.url[fieldName] = null;
+  }
+
+  getCourseName(c_id) {
+    if (!this.course) {
+      return;
+    }
+    let course = this.course.find((item) => item.c_id == c_id);
+    return course.course_id + " " + course.course_name_th;
+  }
+
+  get c_id() {
+    return this.badgeForm.get("c_id").value;
   }
 
   get img_gold() {

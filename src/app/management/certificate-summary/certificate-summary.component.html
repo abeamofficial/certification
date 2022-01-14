@@ -24,8 +24,10 @@
         (click)="onNavigateByRouter('/certificate-publishing?id=' + item.id)"
       >
         <div class="name">
-          <p>{{ item.module_id + " " + item.module_name_th }}</p>
-          <span>{{ "(" + item.module_name_en + ")" }}</span>
+          <p>{{ item.cert_name_th }}</p>
+          <span>{{ "(" + item.cert_name_en + ")" }}</span>
+          <!-- <p>{{ item.module_id + " " + item.module_name_th }}</p>
+          <span>{{ "(" + item.module_name_en + ")" }}</span> -->
         </div>
         <div class="detail">
           {{ "รุ่น " + item.season }}

@@ -26,6 +26,10 @@ export class NavbarComponent implements OnInit {
     // );
   }
 
+  isAdmin() {
+    return this.authenticationService.currentUserValue === "admin";
+  }
+
   logout() {
     this.authenticationService.logout();
     // remove user from local storage and set current user to null

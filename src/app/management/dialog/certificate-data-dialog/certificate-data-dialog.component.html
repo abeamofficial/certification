@@ -4,10 +4,10 @@
       <h1>
         {{
           data.isEdit
-            ? "แก้ไขข้อมูลสัมฤทธิบัตร"
-            : data.value.cert_id
-            ? "ข้อมูลสัมฤทธิบัตร"
-            : "เพิ่มข้อมูลสัมฤทธิบัตร"
+            ? data.value
+              ? "แก้ไขข้อมูลสัมฤทธิสัญลักษณ์"
+              : "เพิ่มข้อมูลสัมฤทธิสัญลักษณ์"
+            : "ข้อมูลสัมฤทธิสัญลักษณ์"
         }}
       </h1>
       <button
@@ -24,7 +24,7 @@
   </div>
   <hr />
 
-  <ng-container *ngIf="!data.value.cert_id || data.isEdit; else view">
+  <ng-container *ngIf="!data.value || data.isEdit; else view">
     <div class="body">
       <div class="input">
         <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>

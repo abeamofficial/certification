@@ -1,9 +1,17 @@
 <section class="dialog">
   <div class="header">
     <div>
-      <h1>ข้อมูลสัมฤทธิสัญลักษณ์</h1>
+      <h1>
+        {{
+          data.isEdit
+            ? data.value
+              ? "แก้ไขข้อมูลสัมฤทธิสัญลักษณ์"
+              : "เพิ่มข้อมูลสัมฤทธิสัญลักษณ์"
+            : "ข้อมูลสัมฤทธิสัญลักษณ์"
+        }}
+      </h1>
       <button
-        *ngIf="data.value.cert_id && !data.isEdit"
+        *ngIf="data.value.id && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
@@ -16,7 +24,7 @@
   </div>
   <hr />
 
-  <ng-container *ngIf="true">
+  <ng-container *ngIf="!data.value || data.isEdit; else view">
     <div class="body">
       <div class="input">
         <p>รายวิชา</p>
@@ -122,25 +130,39 @@
       <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
     </div>
   </ng-container>
-  <!-- <ng-template #view>
+
+  <ng-template #view>
     <div class="body">
       <div class="input">
-        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
-        <span>{{ data.value.cert_name_th }}</span>
+        <p>รายวิชา</p>
+        <span>{{ getCourseName(c_id) }}</span>
+      </div>
+
+      <div class="input">
+        <p>ไฟล์รูป GOLD</p>
+        <div class="img" *ngIf="img_gold">
+          <div class="upload-img">
+            <img *ngIf="url.gold" [src]="url.gold" />
+          </div>
+          <div class="detail-img">
+            <p>{{ img_gold }}</p>
+          </div>
+        </div>
       </div>
       <div class="input">
-        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
-        <span>{{ data.value.cert_name_en }}</span>
-      </div>
-      <div class="input">
-        <p>ชุดวิชา</p>
-        <span>{{
-          data.value.module_id + " ชุดวิชา" + data.value.module_name_th
-        }}</span>
+        <p>ไฟล์รูป SILVER</p>
+        <div class="img" *ngIf="img_silver">
+          <div class="upload-img">
+            <img *ngIf="url.silver" [src]="url.silver" />
+          </div>
+          <div class="detail-img">
+            <p>{{ img_silver }}</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer">
       <button class="cancel" (click)="onCloseModal()">กลับ</button>
     </div>
-  </ng-template> -->
+  </ng-template>
 </section>

@@ -68,6 +68,26 @@ export class CertificateDataService {
     }
   }
 
+  async getCertificateAmount() {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getCertificateAmount.php",
+        null,
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
   // $scope.getModule = function () {
   //   $http.post("https://digitech.sut.ac.th/api/api_module.php", null).then(function (response) {
   //     if (response.data) {

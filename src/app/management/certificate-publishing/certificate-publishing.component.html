@@ -45,8 +45,8 @@
         </div>
         <div class="course" *ngIf="module_value">
           <h1>รายวิชาในหลักสูตร</h1>
-          <p *ngFor="let item of module_value.course | keyvalue">
-            {{ item.value.course_id + " " + item.value.course_name_th }}
+          <p *ngFor="let item of module_value.course">
+            {{ item.course_id + " " + item.course_name_th }}
           </p>
         </div>
       </div>
@@ -97,37 +97,28 @@
           <th
             class="course-name"
             style="width: 15%"
-            *ngFor="let item of module_value.course | keyvalue"
+            *ngFor="let item of module_value.course"
           >
-            <p class="m-0">{{ item.value.course_id }}</p>
-            <p class="m-0">{{ item.value.course_name_th }}</p>
+            <p class="m-0">{{ item.course_id }}</p>
+            <p class="m-0">{{ item.course_name_th }}</p>
           </th>
           <th class="text-center">สรุป</th>
         </thead>
         <tbody>
-          <tr *ngFor="let item of graduate_value | keyvalue; let i = index">
+          <tr *ngFor="let item of graduate_value; let i = index">
             <td class="text-center">{{ i + 1 }}</td>
             <td>{{ item.key }}</td>
             <td>
-              {{
-                item.value.nametitle +
-                  item.value.firstname +
-                  " " +
-                  item.value.lastname
-              }}
+              {{ item.nametitle + item.firstname + " " + item.lastname }}
             </td>
-            <td
-              class="text-center"
-              *ngFor="let course of module_value.course | keyvalue"
-            >
+            <td class="text-center" *ngFor="let course of module_value.course">
               {{
-                item.value.enroll[course.key] &&
-                item.value.enroll[course.key].isBadge
-                  ? item.value.enroll[course.key].badge_type_name
+                item.enroll[course.key] && item.enroll[course.key].isBadge
+                  ? item.enroll[course.key].badge_type_name
                   : "-"
               }}
             </td>
-            <td class="text-center">{{ getTotal(item.value) }}</td>
+            <td class="text-center">{{ getTotal(item) }}</td>
           </tr>
         </tbody>
       </table>

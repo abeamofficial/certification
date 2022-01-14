@@ -47,4 +47,40 @@ export class ModuleService {
       return false;
     }
   }
+
+  async getModuleAmount() {
+    let result = await this.http
+      .post<any>(this.pathConfigService.apiPath + "getModuleAmount.php", null, {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+      })
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
+  async getMostPopularCourse() {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getMostPopularCourse.php",
+        null,
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
 }

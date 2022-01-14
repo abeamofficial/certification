@@ -51,4 +51,24 @@ export class GraduationService {
       return false;
     }
   }
+
+  async getAttendanceAmount() {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getAttendanceAmount.php",
+        null,
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
 }

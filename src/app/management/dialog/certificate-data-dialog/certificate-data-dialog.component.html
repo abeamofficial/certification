@@ -4,14 +4,14 @@
       <h1>
         {{
           data.isEdit
-            ? data.value.cert_id
+            ? data.value.id
               ? "แก้ไขข้อมูลสัมฤทธิสัญลักษณ์"
               : "เพิ่มข้อมูลสัมฤทธิสัญลักษณ์"
             : "ข้อมูลสัมฤทธิสัญลักษณ์"
         }}
       </h1>
       <button
-        *ngIf="data.value.cert_id && !data.isEdit"
+        *ngIf="data.value.id && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >

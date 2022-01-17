@@ -38,7 +38,7 @@ export class BadgeDataComponent implements OnInit {
 
   onOpenBadgeDialog(isEdit, value) {
     this.matDialog.open(BadgeDataDialogComponent, {
-      data: { isEdit: isEdit, value: value },
+      data: { isEdit: isEdit, ...(value && { value: value }) },
       height: "70%",
       width: "30%",
       minHeight: "400px",

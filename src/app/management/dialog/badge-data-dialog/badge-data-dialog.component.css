@@ -297,3 +297,10 @@ section.dialog > div.footer button.submit {
   background-position: right 0em top 50%, 0 0;
   background-size: 0.65em auto, 100%;
 }
+::ng-deep mat-form-field span.mat-form-field-label-wrapper label {
+  color: gray !important;
+}
+
+::ng-deep mat-form-field.mat-focused span.mat-form-field-label-wrapper label {
+  color: gray !important;
+}

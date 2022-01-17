@@ -5,11 +5,11 @@
     <p [routerLink]="['/certificate-summary-management']">สรุปผลสัมฤทธิบัตร</p>
     <span>></span>
     <p *ngIf="module_value">
-      {{ module_value.module_id + " " + module_value.module_name_th }}
+      สรุปผล{{ season_value ? season_value.cert_name_th : "" }}
     </p>
   </section>
   <section class="body">
-    <h1>สรุปผลการเรียนหลักสูตร</h1>
+    <h1>สรุปผล{{ season_value ? season_value.cert_name_th : "" }}</h1>
     <div class="detail" *ngIf="season_value">
       <h1>ข้อมูลเกี่ยวกับหลักสูตร</h1>
       <hr />
@@ -45,13 +45,40 @@
         </div>
         <div class="course" *ngIf="module_value">
           <h1>รายวิชาในหลักสูตร</h1>
-          <p *ngFor="let item of module_value.course">
-            {{ item.course_id + " " + item.course_name_th }}
+          <p *ngFor="let item of module_value.course | keyvalue">
+            {{ item.value.course_id + " " + item.value.course_name_th }}
           </p>
         </div>
       </div>
     </div>
-    <div class="button-area">
+    <div class="detail" *ngIf="season_value && season_value.public">
+      <h1>ข้อมูลเกี่ยวกับสัมฤทธิบัตร</h1>
+      <hr />
+      <div class="column">
+        <div class="self">
+          <div>
+            <p>ผู้ลงนาม</p>
+            <p>
+              {{
+                season_value.prefix_name +
+                  season_value.first_name +
+                  " " +
+                  season_value.last_name
+              }}
+            </p>
+          </div>
+          <div>
+            <p>ตำแหน่งผู้ลงนาม</p>
+            <p>{{ season_value.signer_position }}</p>
+          </div>
+          <div>
+            <p>วันลงนาม</p>
+            <p>{{ season_value.public_date | date: "dd/MM/yyyy" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="season_value && !season_value.public" class="button-area">
       <button
         class="public-button"
         (click)="onOpenCertificatePublishingDialog()"
@@ -97,28 +124,37 @@
           <th
             class="course-name"
             style="width: 15%"
-            *ngFor="let item of module_value.course"
+            *ngFor="let item of module_value.course | keyvalue"
           >
-            <p class="m-0">{{ item.course_id }}</p>
-            <p class="m-0">{{ item.course_name_th }}</p>
+            <p class="m-0">{{ item.value.course_id }}</p>
+            <p class="m-0">{{ item.value.course_name_th }}</p>
           </th>
           <th class="text-center">สรุป</th>
         </thead>
         <tbody>
-          <tr *ngFor="let item of graduate_value; let i = index">
+          <tr *ngFor="let item of graduate_value | keyvalue; let i = index">
             <td class="text-center">{{ i + 1 }}</td>
             <td>{{ item.key }}</td>
             <td>
-              {{ item.nametitle + item.firstname + " " + item.lastname }}
-            </td>
-            <td class="text-center" *ngFor="let course of module_value.course">
               {{
-                item.enroll[course.key] && item.enroll[course.key].isBadge
-                  ? item.enroll[course.key].badge_type_name
+                item.value.nametitle +
+                  item.value.firstname +
+                  " " +
+                  item.value.lastname
+              }}
+            </td>
+            <td
+              class="text-center"
+              *ngFor="let course of module_value.course | keyvalue"
+            >
+              {{
+                item.value.enroll[course.key] &&
+                item.value.enroll[course.key].isBadge
+                  ? item.value.enroll[course.key].badge_type_name
                   : "-"
               }}
             </td>
-            <td class="text-center">{{ getTotal(item) }}</td>
+            <td class="text-center">{{ getTotal(item.value) }}</td>
           </tr>
         </tbody>
       </table>

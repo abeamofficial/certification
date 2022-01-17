@@ -30,9 +30,9 @@
       </div>
       <div class="input">
         <p>ผู้ลงนาม</p>
-        <select>
-          <option disabled>เลือกผู้ลงนาม</option>
-          <option *ngFor="let item of signer">
+        <select [class.disabled]="data.season_value.signer_id == undefined">
+          <option value="undefined" disabled>เลือกผู้ลงนาม</option>
+          <option *ngFor="let item of signer" [value]="item.id">
             {{ item.prefix_name + item.first_name + " " + item.last_name }}
           </option>
         </select>

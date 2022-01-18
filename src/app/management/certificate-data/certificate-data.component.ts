@@ -3,6 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 
 import { CertificateDataService } from "src/app/services/certificate-data.service";
 import { CertificateDataDialogComponent } from "../dialog/certificate-data-dialog/certificate-data-dialog.component";
+import { ConfirmDeleteDialogComponent } from "../dialog/confirm-delete-dialog/confirm-delete-dialog.component";
 
 @Component({
   selector: "app-certificate-data",
@@ -48,5 +49,32 @@ export class CertificateDataComponent implements OnInit {
         this.getCertificateData();
       }
     });
+  }
+
+  onOpenDeleteDialog(certificate) {
+    const dialogRef = this.matDialog.open(ConfirmDeleteDialogComponent, {
+      data: { text: "สัมฤทธิบัตร" + certificate.cert_name_th },
+      height: "30%",
+      width: "30%",
+      minHeight: "300px",
+      minWidth: "500px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.onDeleteCertificate(certificate.id);
+      }
+    });
+  }
+
+  async onDeleteCertificate(id: string) {
+    await this.certificateDataService
+      .deleteCertificateById(id)
+      .then((result) => {
+        if (result) {
+          this.getCertificateData();
+        } else {
+        }
+      });
   }
 }

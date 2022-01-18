@@ -60,6 +60,11 @@ section.dialog > div.body div.input {
   margin: 20px 30px;
 }
 
+section.dialog > div.body > p {
+  font-family: "sutregular";
+  font-size: 1.25rem;
+}
+
 section.dialog > div.body div.input > p {
   font-family: "sutregular";
   font-size: 0.85rem;

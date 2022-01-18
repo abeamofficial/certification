@@ -145,13 +145,23 @@ export class CertificateDataDialogComponent implements OnInit {
 
   onSave() {
     if (this.id) {
+      this.certificateDataService
+        .updateCertificateById(this.certificateForm.value)
+        .then((result) => {
+          if (result) {
+            this.onCloseModal(true);
+          } else {
+          }
+        });
     } else {
-      this.certificateDataService.createCertificate().then((result) => {
-        if (result) {
-          this.onCloseModal(true);
-        } else {
-        }
-      });
+      this.certificateDataService
+        .createCertificate(this.certificateForm.value)
+        .then((result) => {
+          if (result) {
+            this.onCloseModal(true);
+          } else {
+          }
+        });
     }
   }
 

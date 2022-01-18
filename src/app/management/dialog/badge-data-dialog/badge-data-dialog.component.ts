@@ -64,15 +64,7 @@ export class BadgeDataDialogComponent implements OnInit {
     private certificateDataService: CertificateDataService,
     private courseService: CourseService,
     private fb: FormBuilder
-  ) {
-    if (!this.data.value) {
-      this.data["value"] = {
-        cert_name_th: null,
-        cert_name_en: null,
-        m_id: null,
-      };
-    }
-  }
+  ) {}
 
   ngOnInit() {
     if (this.data.value) {
@@ -197,6 +189,10 @@ export class BadgeDataDialogComponent implements OnInit {
     }
     let course = this.course.find((item) => item.c_id == c_id);
     return course.course_id + " " + course.course_name_th;
+  }
+
+  get id() {
+    return this.badgeForm.get("id").value;
   }
 
   get c_id() {

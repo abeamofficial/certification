@@ -4,14 +4,14 @@
       <h1>
         {{
           data.isEdit
-            ? data.value.id
+            ? id
               ? "แก้ไขข้อมูลสัมฤทธิสัญลักษณ์"
               : "เพิ่มข้อมูลสัมฤทธิสัญลักษณ์"
             : "ข้อมูลสัมฤทธิสัญลักษณ์"
         }}
       </h1>
       <button
-        *ngIf="data.value.id && !data.isEdit"
+        *ngIf="data.value && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
@@ -24,21 +24,21 @@
   </div>
   <hr />
 
-  <ng-container *ngIf="!data.value || data.isEdit; else view">
+  <ng-container *ngIf="!id || data.isEdit; else view">
     <div class="body">
       <div class="input">
         <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
-        <input [(ngModel)]="data.value.cert_name_th" />
+        <input [(ngModel)]="cert_name_th" />
       </div>
       <div class="input">
         <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
-        <input [(ngModel)]="data.value.cert_name_en" />
+        <input [(ngModel)]="cert_name_en" />
       </div>
       <div class="input">
         <p>ชุดวิชา</p>
         <mat-form-field>
           <mat-select
-            [(ngModel)]="data.value.m_id"
+            [(ngModel)]="m_id"
             placeholder="เลือกชุดวิชา"
             #singleSelect
           >
@@ -62,8 +62,8 @@
       <div class="input">
         <p>ประเภทสัมฤทธิบัตร</p>
         <select
-          [(ngModel)]="data.value.degree_of_module_id"
-          [class.disabled]="data.value.degree_of_module_id == undefined"
+          [(ngModel)]="degree_of_module_id"
+          [class.disabled]="degree_of_module_id == undefined"
         >
           <option value="undefined" disabled>เลือกประเภทสัมฤทธิบัตร</option>
           <option *ngFor="let item of degree_of_module" [value]="item.id">

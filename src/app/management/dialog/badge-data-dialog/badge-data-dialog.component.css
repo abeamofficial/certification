@@ -59,18 +59,18 @@ section.dialog > div.body {
   height: calc(100% - 150px);
 }
 
-section.dialog > div.body > div.input {
+section.dialog > div.body div.input {
   margin: 20px 30px;
 }
 
-section.dialog > div.body > div.input > p {
+section.dialog > div.body div.input > p {
   font-family: "sutregular";
   font-size: 0.85rem;
   line-height: 1.25rem;
   margin: 0;
   color: gray;
 }
-section.dialog > div.body > div.input > input {
+section.dialog > div.body div.input > input {
   display: block;
   width: -webkit-fill-available;
   /* min-width: 258px; */
@@ -84,7 +84,7 @@ section.dialog > div.body > div.input > input {
   resize: vertical;
 }
 
-section.dialog > div.body > div.input > span {
+section.dialog > div.body div.input > span {
   font-family: "sutregular";
   font-size: 1.15rem;
   margin: 5px 0;

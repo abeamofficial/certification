@@ -6,7 +6,7 @@ import {
   ViewChild,
   Inject,
 } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import {
   MAT_DIALOG_DATA,
   MatDialogRef,
@@ -25,6 +25,15 @@ import { take, takeUntil } from "rxjs/operators";
   styleUrls: ["./certificate-data-dialog.component.css"],
 })
 export class CertificateDataDialogComponent implements OnInit {
+  certificateForm = this.fb.group({
+    id: null, // record id
+    cert_name_th: null,
+    cert_name_en: null,
+    cert_of_module_id: null,
+    m_id: null,
+    degree_of_module_id: null,
+  });
+
   degree_of_module = null;
 
   /** list of module */
@@ -45,18 +54,23 @@ export class CertificateDataDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<CertificateDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private certificateDataService: CertificateDataService,
-    private moduleService: ModuleService
+    private moduleService: ModuleService,
+    private fb: FormBuilder
   ) {
-    if (!this.data.value) {
-      this.data["value"] = {
-        cert_name_th: null,
-        cert_name_en: null,
-        m_id: null,
-      };
-    }
+    // if (!this.data.value) {
+    //   this.data["value"] = {
+    //     cert_name_th: null,
+    //     cert_name_en: null,
+    //     m_id: null,
+    //   };
+    // }
   }
 
   ngOnInit() {
+    if (this.data.value) {
+      this.certificateForm.patchValue(this.data.value);
+    }
+
     this.getModule().then(() => {
       // load the initial module list
       this.filteredModule.next(this.module.slice());
@@ -71,6 +85,7 @@ export class CertificateDataDialogComponent implements OnInit {
 
     this.getDegreeOfModule();
   }
+
   ngAfterViewInit() {
     // this.setInitialValue();
   }
@@ -144,6 +159,47 @@ export class CertificateDataDialogComponent implements OnInit {
     if (!this.degree_of_module) return;
     return this.degree_of_module.find((item) => item.id == id)
       .degree_of_module_name;
+  }
+
+  get id() {
+    return this.certificateForm.get("id").value;
+  }
+
+  get cert_name_th() {
+    return this.certificateForm.get("cert_name_th").value;
+  }
+
+  get cert_name_en() {
+    return this.certificateForm.get("cert_name_en").value;
+  }
+
+  get m_id() {
+    return this.certificateForm.get("m_id").value;
+  }
+
+  get module_id() {
+    if (!this.module) return;
+    return this.module.find(
+      (item) => item.m_id == this.certificateForm.get("m_id").value
+    ).module_id;
+  }
+
+  get module_name_th() {
+    if (!this.module) return;
+    return this.module.find(
+      (item) => item.m_id == this.certificateForm.get("m_id").value
+    ).module_name_th;
+  }
+
+  get degree_of_module_id() {
+    return this.certificateForm.get("degree_of_module_id").value;
+  }
+
+  get degree_of_module_name() {
+    if (!this.degree_of_module) return;
+    return this.degree_of_module.find(
+      (item) => item.id == this.certificateForm.get("degree_of_module_id").value
+    ).degree_of_module_name;
   }
 }
 

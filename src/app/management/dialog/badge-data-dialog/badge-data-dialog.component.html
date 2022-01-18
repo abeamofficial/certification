@@ -4,14 +4,14 @@
       <h1>
         {{
           data.isEdit
-            ? data.value.id
+            ? id
               ? "แก้ไขข้อมูลสัมฤทธิสัญลักษณ์"
               : "เพิ่มข้อมูลสัมฤทธิสัญลักษณ์"
             : "ข้อมูลสัมฤทธิสัญลักษณ์"
         }}
       </h1>
       <button
-        *ngIf="data.value.id && !data.isEdit"
+        *ngIf="id && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
@@ -24,106 +24,100 @@
   </div>
   <hr />
 
-  <ng-container *ngIf="!data.value || data.isEdit; else view">
+  <ng-container *ngIf="!id || data.isEdit; else view">
     <div class="body">
-      <div class="input">
-        <p>รายวิชา</p>
-        <mat-form-field>
-          <mat-select
-            [(ngModel)]="data.value.c_id"
-            placeholder="เลือกวิชา"
-            #singleSelect
-          >
-            <mat-option>
-              <ngx-mat-select-search
-                [formControl]="courseFilterCtrl"
-                placeholderLabel="ค้นหาชุดวิชา"
-                noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
-              ></ngx-mat-select-search>
-            </mat-option>
-
-            <mat-option
-              *ngFor="let course of filteredCourse | async"
-              [value]="course.c_id"
+      <form [formGroup]="badgeForm">
+        <div class="input">
+          <p>รายวิชา</p>
+          <mat-form-field>
+            <mat-select
+              formControlName="c_id"
+              placeholder="เลือกวิชา"
+              #singleSelect
             >
-              {{ course.course_id + " " + course.course_name_th }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <!-- <div class="input" >
-        <p>ชื่อสัมสัญลักษณ์ ภาษาไทย</p>
-        <input />
-      </div>
-      <div class="input">
-        <p>ชื่อสัมสัญลักษณ์ ภาษาอังกฤษ</p>
-        <input />
-      </div> -->
+              <mat-option>
+                <ngx-mat-select-search
+                  [formControl]="courseFilterCtrl"
+                  placeholderLabel="ค้นหาชุดวิชา"
+                  noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
+                ></ngx-mat-select-search>
+              </mat-option>
 
-      <!-- GOLD -->
-      <div class="input">
-        <p>ไฟล์รูป GOLD</p>
-        <ngx-file-drop
-          *ngIf="!img_gold"
-          customstyle="filedrop"
-          dropZoneLabel="Drop file here "
-          (onFileDrop)="dropped($event, 'gold')"
-          multiple="false"
-        >
-          <ng-template
-            ngx-file-drop-content-tmp
-            let-openFileSelector="openFileSelector"
+              <mat-option
+                *ngFor="let course of filteredCourse | async"
+                [value]="course.c_id"
+              >
+                {{ course.course_id + " " + course.course_name_th }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- GOLD -->
+        <div class="input">
+          <p>ไฟล์รูป GOLD</p>
+          <ngx-file-drop
+            *ngIf="!img_gold"
+            customstyle="filedrop"
+            dropZoneLabel="Drop file here "
+            (onFileDrop)="dropped($event, 'gold')"
+            multiple="false"
           >
-            <p>Drop file here</p>
-            <span>or</span>
-            <button class="import" (click)="openFileSelector()">
-              Browse Files
-            </button>
-          </ng-template>
-        </ngx-file-drop>
+            <ng-template
+              ngx-file-drop-content-tmp
+              let-openFileSelector="openFileSelector"
+            >
+              <p>Drop file here</p>
+              <span>or</span>
+              <button class="import" (click)="openFileSelector()">
+                Browse Files
+              </button>
+            </ng-template>
+          </ngx-file-drop>
 
-        <div class="img" *ngIf="img_gold">
-          <div class="upload-img">
-            <img *ngIf="url.gold" [src]="url.gold" />
-          </div>
-          <div class="detail-img">
-            <p>{{ img_gold }}</p>
-            <i (click)="removeImg('gold')" class="material-icons">close</i>
+          <div class="img" *ngIf="img_gold">
+            <div class="upload-img">
+              <img *ngIf="url.gold" [src]="url.gold" />
+            </div>
+            <div class="detail-img">
+              <p>{{ img_gold }}</p>
+              <i (click)="removeImg('gold')" class="material-icons">close</i>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- SILVER -->
-      <div class="input">
-        <p>ไฟล์รูป SILVER</p>
-        <ngx-file-drop
-          *ngIf="!img_silver"
-          customstyle="filedrop"
-          dropZoneLabel="Drop file here "
-          (onFileDrop)="dropped($event, 'silver')"
-          multiple="false"
-        >
-          <ng-template
-            ngx-file-drop-content-tmp
-            let-openFileSelector="openFileSelector"
+        <!-- SILVER -->
+        <div class="input">
+          <p>ไฟล์รูป SILVER</p>
+          <ngx-file-drop
+            *ngIf="!img_silver"
+            customstyle="filedrop"
+            dropZoneLabel="Drop file here "
+            (onFileDrop)="dropped($event, 'silver')"
+            multiple="false"
           >
-            <p>Drop file here</p>
-            <span>or</span>
-            <button class="import" (click)="openFileSelector()">
-              Browse Files
-            </button>
-          </ng-template>
-        </ngx-file-drop>
-        <div class="img" *ngIf="img_silver">
-          <div class="upload-img">
-            <img *ngIf="url.silver" [src]="url.silver" />
-          </div>
-          <div class="detail-img">
-            <p>{{ img_silver }}</p>
-            <i (click)="removeImg('silver')" class="material-icons">close</i>
+            <ng-template
+              ngx-file-drop-content-tmp
+              let-openFileSelector="openFileSelector"
+            >
+              <p>Drop file here</p>
+              <span>or</span>
+              <button class="import" (click)="openFileSelector()">
+                Browse Files
+              </button>
+            </ng-template>
+          </ngx-file-drop>
+          <div class="img" *ngIf="img_silver">
+            <div class="upload-img">
+              <img *ngIf="url.silver" [src]="url.silver" />
+            </div>
+            <div class="detail-img">
+              <p>{{ img_silver }}</p>
+              <i (click)="removeImg('silver')" class="material-icons">close</i>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
     <div class="footer">
       <button class="submit">บันทึก</button>

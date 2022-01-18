@@ -11,7 +11,7 @@
         }}
       </h1>
       <button
-        *ngIf="data.value && !data.isEdit"
+        *ngIf="id && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
@@ -74,7 +74,7 @@
     </div>
 
     <div class="footer">
-      <button class="submit">บันทึก</button>
+      <button class="submit" (click)="onSave()">บันทึก</button>
       <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
     </div>
   </ng-container>

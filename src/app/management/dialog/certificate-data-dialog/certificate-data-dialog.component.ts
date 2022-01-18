@@ -56,15 +56,7 @@ export class CertificateDataDialogComponent implements OnInit {
     private certificateDataService: CertificateDataService,
     private moduleService: ModuleService,
     private fb: FormBuilder
-  ) {
-    // if (!this.data.value) {
-    //   this.data["value"] = {
-    //     cert_name_th: null,
-    //     cert_name_en: null,
-    //     m_id: null,
-    //   };
-    // }
-  }
+  ) {}
 
   ngOnInit() {
     if (this.data.value) {
@@ -103,8 +95,8 @@ export class CertificateDataDialogComponent implements OnInit {
     });
   }
 
-  async getDegreeOfModule() {
-    await this.moduleService.getDegreeOfModule().then((result) => {
+  getDegreeOfModule() {
+    this.moduleService.getDegreeOfModule().then((result) => {
       if (result) {
         this.degree_of_module = result;
       }
@@ -151,8 +143,20 @@ export class CertificateDataDialogComponent implements OnInit {
     );
   }
 
-  onCloseModal() {
-    this.dialogRef.close();
+  onSave() {
+    if (this.id) {
+    } else {
+      this.certificateDataService.createCertificate().then((result) => {
+        if (result) {
+          this.onCloseModal(true);
+        } else {
+        }
+      });
+    }
+  }
+
+  onCloseModal(isModify) {
+    this.dialogRef.close(isModify);
   }
 
   getdegreeName(id) {

@@ -35,12 +35,18 @@ export class CertificateDataComponent implements OnInit {
   }
 
   onOpenCertificateDialog(isEdit, value) {
-    this.matDialog.open(CertificateDataDialogComponent, {
+    const dialogRef = this.matDialog.open(CertificateDataDialogComponent, {
       data: { isEdit: isEdit, ...(value && { value: value }) },
       height: "60%",
       width: "30%",
       minHeight: "500px",
       minWidth: "500px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getCertificateData();
+      }
     });
   }
 }

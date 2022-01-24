@@ -30,7 +30,12 @@
             <div class="name">Certificate Name</div>
             <div class="detail">Date</div>
           </div>
-          <div *ngFor="let item of recent_certificate">
+          <div
+            *ngFor="let item of recent_certificate | slice: 0:10"
+            (click)="
+              onNavigateByRouter('/certificate-publishing?id=' + item.id)
+            "
+          >
             <div class="name">
               <p>{{ item.cert_name_th }}</p>
               <span>{{ item.cert_name_en }}</span>
@@ -44,7 +49,7 @@
       <div class="top-list">
         <h1>Most Popular Courses</h1>
         <div class="list">
-          <div *ngFor="let item of popular_course; let i = index">
+          <div *ngFor="let item of popular_course | slice: 0:10; let i = index">
             <div class="order">
               <p>{{ i + 1 }}</p>
             </div>

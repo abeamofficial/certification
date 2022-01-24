@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { CertificateDataService } from "../services/certificate-data.service";
 import { ModuleService } from "../services/module.service";
@@ -19,7 +20,8 @@ export class AdminDashboardComponent implements OnInit {
   constructor(
     private certificateDataService: CertificateDataService,
     private moduleService: ModuleService,
-    private graduationService: GraduationService
+    private graduationService: GraduationService,
+    public router: Router
   ) {}
 
   ngOnInit() {
@@ -74,5 +76,9 @@ export class AdminDashboardComponent implements OnInit {
         });
       }
     });
+  }
+
+  onNavigateByRouter(value) {
+    this.router.navigateByUrl(value);
   }
 }

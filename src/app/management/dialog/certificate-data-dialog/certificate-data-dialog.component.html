@@ -11,7 +11,7 @@
         }}
       </h1>
       <button
-        *ngIf="data.value && !data.isEdit"
+        *ngIf="id && !data.isEdit"
         (click)="data.isEdit = true"
         class="edit"
       >
@@ -26,56 +26,58 @@
 
   <ng-container *ngIf="!id || data.isEdit; else view">
     <div class="body">
-      <div class="input">
-        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
-        <input [(ngModel)]="cert_name_th" />
-      </div>
-      <div class="input">
-        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
-        <input [(ngModel)]="cert_name_en" />
-      </div>
-      <div class="input">
-        <p>ชุดวิชา</p>
-        <mat-form-field>
-          <mat-select
-            [(ngModel)]="m_id"
-            placeholder="เลือกชุดวิชา"
-            #singleSelect
-          >
-            <mat-option>
-              <ngx-mat-select-search
-                [formControl]="moduleFilterCtrl"
-                placeholderLabel="ค้นหาชุดวิชา"
-                noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
-              ></ngx-mat-select-search>
-            </mat-option>
-
-            <mat-option
-              *ngFor="let module of filteredModule | async"
-              [value]="module.m_id"
+      <form [formGroup]="certificateForm">
+        <div class="input">
+          <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
+          <input formControlName="cert_name_th" />
+        </div>
+        <div class="input">
+          <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
+          <input formControlName="cert_name_en" />
+        </div>
+        <div class="input">
+          <p>ชุดวิชา</p>
+          <mat-form-field>
+            <mat-select
+              formControlName="m_id"
+              placeholder="เลือกชุดวิชา"
+              #singleSelect
             >
-              {{ module.module_id + " " + module.module_name_th }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="input">
-        <p>ประเภทสัมฤทธิบัตร</p>
-        <select
-          [(ngModel)]="degree_of_module_id"
-          [class.disabled]="degree_of_module_id == undefined"
-        >
-          <option value="undefined" disabled>เลือกประเภทสัมฤทธิบัตร</option>
-          <option *ngFor="let item of degree_of_module" [value]="item.id">
-            {{ item.degree_of_module_name }}
-          </option>
-        </select>
-      </div>
+              <mat-option>
+                <ngx-mat-select-search
+                  [formControl]="moduleFilterCtrl"
+                  placeholderLabel="ค้นหาชุดวิชา"
+                  noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
+                ></ngx-mat-select-search>
+              </mat-option>
+
+              <mat-option
+                *ngFor="let module of filteredModule | async"
+                [value]="module.m_id"
+              >
+                {{ module.module_id + " " + module.module_name_th }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <p>ประเภทสัมฤทธิบัตร</p>
+          <select
+            formControlName="degree_of_module_id"
+            [class.disabled]="degree_of_module_id == undefined"
+          >
+            <option value="undefined" disabled>เลือกประเภทสัมฤทธิบัตร</option>
+            <option *ngFor="let item of degree_of_module" [value]="item.id">
+              {{ item.degree_of_module_name }}
+            </option>
+          </select>
+        </div>
+      </form>
     </div>
 
     <div class="footer">
-      <button class="submit">บันทึก</button>
       <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+      <button class="submit" (click)="onSave()">บันทึก</button>
     </div>
   </ng-container>
   <ng-template #view>

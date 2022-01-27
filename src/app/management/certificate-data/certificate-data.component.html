@@ -56,7 +56,11 @@
                   <mat-icon>edit</mat-icon>
                   <span>แก้ไข</span>
                 </button>
-                <button mat-menu-item class="menu">
+                <button
+                  mat-menu-item
+                  class="menu"
+                  (click)="onOpenDeleteDialog(item)"
+                >
                   <mat-icon>delete</mat-icon>
                   <span>ลบ</span>
                 </button>

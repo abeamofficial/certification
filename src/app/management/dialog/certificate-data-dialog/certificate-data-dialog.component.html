@@ -20,7 +20,7 @@
       </button>
     </div>
 
-    <i class="material-icons close" (click)="onCloseModal()">close</i>
+    <i class="material-icons close" (click)="onCloseModal(false)">close</i>
   </div>
   <hr />
 
@@ -76,7 +76,7 @@
     </div>
 
     <div class="footer">
-      <button class="cancel" (click)="onCloseModal()">ยกเลิก</button>
+      <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
       <button class="submit" (click)="onSave()">บันทึก</button>
     </div>
   </ng-container>
@@ -104,7 +104,7 @@
       <!-- getdegreeName -->
     </div>
     <div class="footer">
-      <button class="cancel" (click)="onCloseModal()">กลับ</button>
+      <button class="cancel" (click)="onCloseModal(false)">กลับ</button>
     </div>
   </ng-template>
 </section>

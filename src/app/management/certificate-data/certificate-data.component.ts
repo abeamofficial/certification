@@ -53,7 +53,7 @@ export class CertificateDataComponent implements OnInit {
 
   onOpenDeleteDialog(certificate) {
     const dialogRef = this.matDialog.open(ConfirmDeleteDialogComponent, {
-      data: { text: "สัมฤทธิบัตร" + certificate.cert_name_th },
+      data: { text: certificate.cert_name_th },
       height: "30%",
       width: "30%",
       minHeight: "300px",

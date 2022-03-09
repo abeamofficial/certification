@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule, MatSelectModule } from "@angular/material";
 import { NgxMatSelectSearchModule } from "ngx-mat-select-search";
 
+import { NgApexchartsModule } from "ng-apexcharts";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./component/navbar/navbar.component";
@@ -47,7 +49,9 @@ import { SignerDataDialogComponent } from "./management/dialog/signer-data-dialo
 import { CertificateSummaryComponent } from "./management/certificate-summary/certificate-summary.component";
 import { CertificatePublishingComponent } from "./management/certificate-publishing/certificate-publishing.component";
 import { CertificatePublishingDialogComponent } from "./management/dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
-import { ConfirmDeleteDialogComponent } from './management/dialog/confirm-delete-dialog/confirm-delete-dialog.component';
+import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete-dialog/confirm-delete-dialog.component";
+import { PloProgressComponent } from "./plo-progress/plo-progress.component";
+import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -83,6 +87,8 @@ import { ConfirmDeleteDialogComponent } from './management/dialog/confirm-delete
     CertificatePublishingComponent,
     CertificatePublishingDialogComponent,
     ConfirmDeleteDialogComponent,
+    PloProgressComponent,
+    CompetencyLevelDialogComponent,
   ],
   imports: [
     EllipsisModule,
@@ -101,6 +107,7 @@ import { ConfirmDeleteDialogComponent } from './management/dialog/confirm-delete
     NgxMatSelectSearchModule,
     ReactiveFormsModule,
     NgxFileDropModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

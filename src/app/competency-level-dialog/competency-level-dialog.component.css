@@ -1,0 +1,71 @@
+section {
+  padding: 0 10px;
+  position: relative;
+  font-family: "sutregular";
+}
+
+section > i.close {
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+section > i.close :hover {
+  border: none;
+  border-radius: 100px;
+  background-color: #f3f3f3;
+}
+
+section > div > h1 {
+  font-size: 22px;
+  font-family: "sutbold";
+  margin: 10px 0;
+}
+
+section > div {
+  margin: 0;
+}
+
+section > div > div.detail {
+}
+
+section > div > div.detail > table {
+  border-collapse: collapse;
+  border: 1px solid #bcc8de;
+  width: 100%;
+}
+
+section > div > div.detail > table > thead > th {
+  background-color: #ebeff6;
+  border: 1px solid #bcc8de;
+  width: 125px;
+  font-family: "sutbold";
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+
+section > div > div.detail > table > thead > th:nth-child(1),
+section > div > div.detail > table > thead > th:nth-child(2) {
+  width: 200px;
+  text-align: left;
+}
+
+section > div > div.detail > table tr > td {
+  border: 1px solid #bcc8de;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+}
+
+section > div > div.detail > table tr > td:nth-child(1),
+section > div > div.detail > table tr > td:nth-child(2) {
+  text-align: left;
+}
+
+section > div > div.detail > div {
+  display: flex;
+  gap: 15px;
+}

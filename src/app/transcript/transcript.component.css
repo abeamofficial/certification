@@ -1,6 +1,31 @@
 @import url("./../user-home/user-home.component.css");
 /* @import url("./../../styles.css"); */
 
+button.plo {
+  margin: 0 auto 0 0;
+  display: flex;
+  background-color: #51af5f;
+  color: #ffffff;
+  padding: 6px 20px;
+  border: 0;
+  gap: 5px;
+  border-radius: 3px;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+button.plo:hover {
+  background-color: #439750;
+}
+
+button.plo > p {
+  font-family: "sutbold";
+  font-size: 16px;
+  margin: auto 0;
+}
+button.plo > i {
+  font-size: 14px;
+  margin: auto;
+}
 /* ----- data-list ----- */
 div.data-list {
 }

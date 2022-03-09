@@ -88,6 +88,7 @@ const routes: Routes = [
     component: CertificateSummaryComponent,
   },
   { path: "certificate-publishing", component: CertificatePublishingComponent },
+  { path: "plo-progress", component: PloProgressComponent },
 ];
 
 @NgModule({

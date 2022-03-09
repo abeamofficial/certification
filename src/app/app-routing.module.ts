@@ -18,8 +18,8 @@ import { SignerDataDialogComponent } from "./management/dialog/signer-data-dialo
 import { CertificateSummaryComponent } from "./management/certificate-summary/certificate-summary.component";
 import { CertificatePublishingComponent } from "./management/certificate-publishing/certificate-publishing.component";
 import { CertificatePublishingDialogComponent } from "./management/dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
-
 import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete-dialog/confirm-delete-dialog.component";
+import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
@@ -86,6 +86,7 @@ const routes: Routes = [
     component: CertificateSummaryComponent,
   },
   { path: "certificate-publishing", component: CertificatePublishingComponent },
+  { path: "plo-progress", component: PloProgressComponent },
 ];
 
 @NgModule({

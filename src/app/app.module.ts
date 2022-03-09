@@ -47,7 +47,8 @@ import { SignerDataDialogComponent } from "./management/dialog/signer-data-dialo
 import { CertificateSummaryComponent } from "./management/certificate-summary/certificate-summary.component";
 import { CertificatePublishingComponent } from "./management/certificate-publishing/certificate-publishing.component";
 import { CertificatePublishingDialogComponent } from "./management/dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
-import { ConfirmDeleteDialogComponent } from './management/dialog/confirm-delete-dialog/confirm-delete-dialog.component';
+import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete-dialog/confirm-delete-dialog.component";
+import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -83,6 +84,7 @@ import { ConfirmDeleteDialogComponent } from './management/dialog/confirm-delete
     CertificatePublishingComponent,
     CertificatePublishingDialogComponent,
     ConfirmDeleteDialogComponent,
+    PloProgressComponent,
   ],
   imports: [
     EllipsisModule,

@@ -1,0 +1,359 @@
+/* ----- header template ----- */
+section.header {
+  box-sizing: border-box;
+  padding: 0 15%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  height: 150px;
+  display: flex;
+}
+
+section.header > div {
+  margin: auto 0;
+  height: fit-content;
+}
+
+section.header > div > span {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header > div > h1 {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 26px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header > div > p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  color: #3c5981;
+}
+
+/* ----- END header template ----- */
+
+/* ----- breadcrumb template ----- */
+
+section.breadcrumb {
+  padding: 20px 15% 35px 15%;
+  display: flex;
+  gap: 10px;
+}
+
+section.breadcrumb > p,
+section.breadcrumb > span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.breadcrumb > p {
+  cursor: pointer;
+}
+
+section.breadcrumb > p:hover {
+  color: var(--blue);
+}
+
+/* ----- END breadcrumb template ----- */
+
+/* ==================== cert detail ==================== */
+
+section.body {
+  /* margin: 100px 0; */
+  padding: 0 15%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+section.body > h1 {
+  font-size: 22px;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+section.body > hr {
+  width: 100%;
+  margin: 5px 0;
+  border: 0;
+  border-radius: 3px;
+  border-top: 1px solid #e2e2e2;
+}
+
+section.body > span {
+  display: flex;
+}
+
+section.body > span > p:first-of-type {
+  font-size: 16px;
+  font-family: "sutbold";
+  width: 100px;
+}
+section.body > span > p {
+  font-size: 16px;
+  font-family: "sutregular";
+  margin: 2px;
+}
+
+span {
+  display: flex;
+  gap: 20px;
+}
+span > h1 {
+  font-size: 22px;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+section.body div.info-detail {
+  border-radius: 50px;
+  padding: 5px 20px;
+  background-color: #dbdbdb;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+section.body div.info-detail:hover {
+  background-color: #cac7c7;
+}
+section.body div.info-detail p {
+  font-size: 14px;
+  font-family: "sutregular";
+  margin: auto 0;
+}
+section.body div.info-detail i {
+  font-size: 16px;
+  margin: auto 0;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  border-top: 1px solid #e2e2e2;
+}
+
+div.plo {
+  background-color: #fafafa;
+  padding: 10px 35px;
+  margin: 15px 0 25px 0;
+  border-radius: 5px;
+}
+
+div.plo > h1 {
+  font-size: 20px;
+  font-family: "sutbold";
+  margin: 15px 0;
+}
+
+/* competency */
+
+div.plo > div.competency {
+  display: flex;
+  gap: 5%;
+}
+div.plo > div.competency > div.field {
+  width: 47.5%;
+}
+
+/* competency > competency-graph */
+
+div.plo > div.competency > div.field > div.competency-graph {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+div.plo > div.competency > div.field > div.competency-graph > h1 {
+  font-size: 18px;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+/* competency > competency-table */
+
+div.plo > div.competency > div.field > div.competency-table {
+  padding: 15px;
+}
+
+div.plo > div.competency > div.field > div.competency-table > h1 {
+  font-size: 18px;
+  font-family: "sutbold";
+  margin: 5px 0;
+}
+
+div.plo > div.competency > div.field > div.competency-table > table {
+  /* width: 100%; */
+  border-collapse: collapse;
+  border: 1px solid #bcc8de;
+}
+div.plo > div.competency > div.field > div.competency-table > table thead > th {
+  border: 1px solid #bcc8de;
+  font-family: "sutbold";
+  width: 125px;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  thead
+  > th:first-of-type {
+  min-width: 150px;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  thead
+  > th
+  > div.header {
+  /* display: flex; */
+  width: 125px;
+  padding: 5px 10px;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  thead
+  > th
+  > div.header
+  h1 {
+  font-size: 18px;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  thead
+  > th
+  > div.header
+  p {
+  font-size: 12px;
+  font-family: "sutregular";
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.plo > div.competency > div.field > div.competency-table > table thead > th,
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td:first-of-type {
+  background-color: #ebeff6;
+}
+
+div.plo > div.competency > div.field > div.competency-table > table tr td {
+  border: 1px solid #bcc8de;
+  text-align: center;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td
+  div.header
+  h1 {
+  font-size: 18px;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td
+  div.header
+  p {
+  font-size: 12px;
+  font-family: "sutregular";
+  margin: 0;
+}
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td
+  div.header,
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td
+  div.score {
+  padding: 5px;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td
+  div.score
+  h1 {
+  font-size: 18px;
+  font-family: "sutbold";
+  margin: 0;
+}
+
+div.plo
+  > div.competency
+  > div.field
+  > div.competency-table
+  > table
+  tr
+  td
+  div.score
+  p {
+  font-size: 14px;
+  font-family: "sutregular";
+  margin: 0;
+}
+
+/* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+.summative-header {
+  color: #cb0303;
+}
+
+.formative-header {
+  color: #164caf;
+}

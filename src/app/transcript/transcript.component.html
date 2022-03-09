@@ -1,6 +1,10 @@
 <section class="body-section">
   <div class="header">Transcript</div>
   <div class="search-area">
+    <button class="plo" [routerLink]="['/plo-progress']">
+      <!-- <i class="material-icons">stacked_line_chart</i> -->
+      <p>PLO Progress</p>
+    </button>
     <span>
       <input placeholder="ค้นหา" /><i class="material-icons">search</i>
     </span>
@@ -14,13 +18,13 @@
   </div>
   <div class="data-list">
     <div
-      *ngFor="let item of value.earn_lo"
+      *ngFor="let item of value.earn_lo; let i = index"
       class="list"
       [routerLink]="['/transcript-detail/' + item.id]"
     >
       <div class="name">
         <p>
-          {{ "PLO " + item.name_en }}
+          {{ "PLO" + (i + 1) + " " + item.name_en }}
         </p>
         <span> {{ item.name_th }}</span>
       </div>

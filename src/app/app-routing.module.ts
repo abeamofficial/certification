@@ -20,6 +20,7 @@ import { CertificatePublishingComponent } from "./management/certificate-publish
 import { CertificatePublishingDialogComponent } from "./management/dialog/certificate-publishing-dialog/certificate-publishing-dialog.component";
 import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete-dialog/confirm-delete-dialog.component";
 import { PloProgressComponent } from "./plo-progress/plo-progress.component";
+import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
@@ -102,6 +103,7 @@ const routes: Routes = [
     SignerDataDialogComponent,
     CertificatePublishingDialogComponent,
     ConfirmDeleteDialogComponent,
+    CompetencyLevelDialogComponent,
   ],
 })
 export class AppRoutingModule {}

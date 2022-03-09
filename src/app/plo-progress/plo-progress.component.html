@@ -1,16 +1,198 @@
-<!-- The content below is only a placeholder and can be replaced.
-<div id="chart">
-  <apx-chart
-    [series]="chartOptions.series"
-    [chart]="chartOptions.chart"
-    [xaxis]="chartOptions.xaxis"
-    [stroke]="chartOptions.stroke"
-    [colors]="chartOptions.colors"
-    [dataLabels]="chartOptions.dataLabels"
-    [legend]="chartOptions.legend"
-    [markers]="chartOptions.markers"
-    [grid]="chartOptions.grid"
-    [yaxis]="chartOptions.yaxis"
-    [title]="chartOptions.title"
-  ></apx-chart>
-</div> -->
+<section class="header">
+  <div>
+    <!-- <span>Certificate of Achievement in</span> -->
+    <h1>Program Learning Outcomes</h1>
+    <p>ตรวจสอบผลลัพธ์การเรียนรู้ของหลักสูตร</p>
+  </div>
+</section>
+<section class="breadcrumb">
+  <p [routerLink]="['']">Home</p>
+  <span>></span>
+  <p>Plo Progress</p>
+</section>
+
+<section class="body">
+  <div style="padding: 2.5% 3.5%; background-color: white">
+    <span>
+      <h1>ผลลัพธ์การเรียน</h1>
+      <div class="info-detail" (click)="onOpenDetail()">
+        <i class="material-icons">info</i>
+        <p>เกณฑ์และการคำนวณ</p>
+      </div>
+    </span>
+
+    <hr />
+    <div class="plo" *ngFor="let item of plo; let i = index">
+      <h1>{{ item.id + "  " + item.name_th }}</h1>
+      <div class="competency">
+        <div class="field">
+          <div class="competency-graph">
+            <h1 class="summative-header">Competency Level (Summative)</h1>
+            <div id="chart">
+              <apx-chart
+                transform="translate(20, 30)"
+                [series]="plo[i].summative_level"
+                [chart]="chartOptions.chart"
+                [xaxis]="plo[i].summative_xaxis"
+                [stroke]="chartOptions.stroke"
+                [colors]="summative_colors"
+                [dataLabels]="chartOptions.dataLabels"
+                [legend]="chartOptions.legend"
+                [markers]="chartOptions.markers"
+                [yaxis]="chartOptions.yaxis"
+                [grid]="chartOptions.grid"
+              ></apx-chart>
+            </div>
+          </div>
+          <div class="competency-table">
+            <h1>ตาราง Cumulative Competency Level (Summative)</h1>
+            <table>
+              <thead>
+                <th>Cumulative Competency Level</th>
+                <th *ngFor="let summative of item.summative; let j = index">
+                  <div class="header">
+                    <h1>{{ "course " + (j + 1) }}</h1>
+                    <p>{{ summative.id + " " + summative.name_th }}</p>
+                    <p>{{ summative.date | date: "dd/MM/yyyy" }}</p>
+                  </div>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="header">
+                      <h1>Summative</h1>
+                      <p>Level (Score) / Weight</p>
+                    </div>
+                  </td>
+                  <ng-container
+                    *ngIf="
+                      item.summative_level[1].data.length;
+                      else emptysummative
+                    "
+                  >
+                    <td
+                      *ngFor="
+                        let summative_level of item.summative_level[1].data;
+                        let j = index
+                      "
+                    >
+                      <div class="score">
+                        <h1>{{ summative_level | number: "1.2-2" }}</h1>
+                        <p>
+                          {{ item.summative_level[0].data[j] }} ({{
+                            item.summative[j].score | number: "1.2-2"
+                          }}) /
+                          {{ item.summative[j].weight + "%" }}
+                        </p>
+                      </div>
+                    </td>
+                  </ng-container>
+                  <ng-template #emptysummative>
+                    <td *ngFor="let summative of item.summative; let j = index">
+                      <div class="score">
+                        <h1>{{ "-" }}</h1>
+                        <p>
+                          - /
+                          {{ item.summative[j].weight + "%" }}
+                        </p>
+                      </div>
+                    </td>
+                  </ng-template>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="field" *ngIf="item.formative.length">
+          <div class="competency-graph">
+            <h1 class="formative-header">Competency Level (Formative)</h1>
+            <div id="chart">
+              <apx-chart
+                transform="translate(20, 30)"
+                [series]="plo[i].formative_level"
+                [chart]="chartOptions.chart"
+                [xaxis]="plo[i].formative_xaxis"
+                [stroke]="chartOptions.stroke"
+                [colors]="formative_colors"
+                [dataLabels]="chartOptions.dataLabels"
+                [legend]="chartOptions.legend"
+                [markers]="chartOptions.markers"
+                [yaxis]="chartOptions.yaxis"
+                [grid]="chartOptions.grid"
+              ></apx-chart>
+            </div>
+          </div>
+          <div class="competency-table">
+            <h1>ตาราง Cumulative Competency Level (Formative)</h1>
+            <table>
+              <thead>
+                <th>Cumulative Competency Level</th>
+                <th *ngFor="let formative of item.formative; let j = index">
+                  <div class="header">
+                    <h1>{{ "course " + (j + 1) }}</h1>
+                    <p>{{ formative.id + " " + formative.name_th }}</p>
+                    <p>{{ formative.date | date: "dd/MM/yyyy" }}</p>
+                  </div>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="header">
+                      <h1>Formative</h1>
+                      <p>Level (Score) / No.Course</p>
+                    </div>
+                  </td>
+                  <ng-container
+                    *ngIf="
+                      item.formative_level[1].data.length;
+                      else emptyformative
+                    "
+                  >
+                    <td
+                      *ngFor="
+                        let formative_level of item.formative_level[1].data;
+                        let j = index
+                      "
+                    >
+                      <div class="score">
+                        <h1>{{ formative_level | number: "1.2-2" }}</h1>
+                        <p>
+                          {{ item.formative_level[0].data[j] }} ({{
+                            item.formative[j].score | number: "1.2-2"
+                          }}) /
+                          {{ j + 1 }}
+                        </p>
+                      </div>
+                    </td>
+                  </ng-container>
+                  <ng-template #emptyformative>
+                    <td *ngFor="let formative of item.formative; let j = index">
+                      <div class="score">
+                        <h1>{{ "-" }}</h1>
+                        <p>
+                          - /
+                          {{ j + 1 }}
+                        </p>
+                      </div>
+                    </td>
+                  </ng-template>
+                  <!-- <td *ngFor="let formative_level of item.formative_level[1].data; let j = index">
+                  <div class="score">
+                    <h1>{{ formative_level | number: "1.2-2" }}</h1>
+                    <p>
+                      {{ item.formative_level[0].data[j] }} ({{ item.formative[j].score | number: "1.2-2" }}) /
+                      {{ j + 1 }}
+                    </p>
+                  </div>
+                </td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

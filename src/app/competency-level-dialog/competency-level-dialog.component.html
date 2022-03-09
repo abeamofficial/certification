@@ -1,0 +1,61 @@
+<section>
+  <i class="material-icons close" (click)="onCloseModal()">close</i>
+  <div>
+    <h1>ระดับและค่าคะแนน (Level)</h1>
+    <div class="detail">
+      <table>
+        <thead>
+          <th>ชื่อระดับ (ภาษาอังกฤษ)</th>
+          <th>ชื่อระดับ (ภาษาไทย)</th>
+          <th>ค่าคะแนน</th>
+          <th>ช่วงคะแนน</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Exceptional</td>
+            <td>เหนือความคาดหวังเป็นอย่างยิ่ง</td>
+            <td>5</td>
+            <td>80-100</td>
+          </tr>
+          <tr>
+            <td>Exceeds expectations</td>
+            <td>เหนือความคาดหวัง</td>
+            <td>4</td>
+            <td>70-79.9</td>
+          </tr>
+          <tr>
+            <td>Meets expectations</td>
+            <td>ทำได้ตามความคาดหวัง</td>
+            <td>3</td>
+            <td>60-69.9</td>
+          </tr>
+          <tr>
+            <td>Improvement needed</td>
+            <td>ควรปรับปรุง</td>
+            <td>2</td>
+            <td>50-59.9</td>
+          </tr>
+          <tr>
+            <td>Unsatisfactory</td>
+            <td>ไม่เป็นที่น่าพึงพอใจ</td>
+            <td>1</td>
+            <td>0-49.9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div style="margin-top: 25px">
+    <h1>การคำนวณ Competency Level</h1>
+    <div class="detail">
+      <div style="padding: 0 0 0 25%">
+        <p>Summative =</p>
+        <img src="./assets/images/summative-formula.svg" />
+      </div>
+      <div style="padding: 0 0 0 25%">
+        <p>Formmative =</p>
+        <img src="./assets/images/formative-formula.svg" />
+      </div>
+    </div>
+  </div>
+</section>

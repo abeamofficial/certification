@@ -23,7 +23,7 @@ import {
   FileSystemDirectoryEntry,
 } from "ngx-file-drop";
 
-import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CertificateService } from "src/app/services/certificate.service";
 import { CourseService } from "src/app/services/course.service";
 
 @Component({
@@ -61,7 +61,7 @@ export class BadgeDataDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<BadgeDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private certificateDataService: CertificateDataService,
+    private certificateDataService: CertificateService,
     private courseService: CourseService,
     private fb: FormBuilder
   ) {}
@@ -70,19 +70,17 @@ export class BadgeDataDialogComponent implements OnInit {
     if (this.data.value) {
       this.badgeForm.patchValue({
         id: this.data.value.id, // record id
-        img_gold: this.data.value.badge_file_name,
-        img_silver: this.data.value.badge_file_name,
+        img_gold: this.data.value.file_name,
+        img_silver: this.data.value.file_name,
         badge_gold_id: this.data.value.badge_id,
         badge_silver_id: this.data.value.badge_id,
         c_id: this.data.value.c_id,
       });
 
       this.url.gold =
-        "./../../certification-img/badge/gold/" +
-        this.data.value.badge_file_name;
+        "./../../certification-img/badge/gold/" + this.data.value.file_name;
       this.url.silver =
-        "./../../certification-img/badge/silver/" +
-        this.data.value.badge_file_name;
+        "./../../certification-img/badge/silver/" + this.data.value.file_name;
     }
 
     this.getCourse().then(() => {

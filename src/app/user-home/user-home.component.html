@@ -4,8 +4,11 @@
       <img src="./assets/images/person.svg" />
     </div>
     <div class="name">
-      <p>{{ value.first_name + " " + value.last_name }}</p>
-      <span>เข้าร่วมเมื่อ {{ value.join_date }} / 24 หน่วยกิตสะสม</span>
+      <p>{{ user.first_name + " " + user.last_name }}</p>
+      <span
+        >เข้าร่วมเมื่อ {{ user.joined_date | date: "yyyy" }} / 24
+        หน่วยกิตสะสม</span
+      >
     </div>
   </div>
   <div class="menu">

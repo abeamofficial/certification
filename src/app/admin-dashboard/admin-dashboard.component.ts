@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { CertificateDataService } from "../services/certificate-data.service";
+import { CertificateService } from "../services/certificate.service";
 import { ModuleService } from "../services/module.service";
 import { GraduationService } from "../services/graduation.service";
 
@@ -18,7 +18,7 @@ export class AdminDashboardComponent implements OnInit {
   popular_course;
 
   constructor(
-    private certificateDataService: CertificateDataService,
+    private certificateDataService: CertificateService,
     private moduleService: ModuleService,
     private graduationService: GraduationService,
     public router: Router

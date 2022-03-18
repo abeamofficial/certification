@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { BehaviorSubject, Observable } from "rxjs";
 
+import { HttpClient } from "@angular/common/http";
+import { PathConfigService } from "./path-config.service";
+
 @Injectable({
   providedIn: "root",
 })
@@ -9,9 +12,13 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private pathConfigService: PathConfigService
+  ) {
     this.currentUserSubject = new BehaviorSubject<any>(
-      JSON.parse(localStorage.getItem("currentUser"))
+      JSON.parse(localStorage.getItem("certification_account"))
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -20,32 +27,42 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
-    // if (username !== "" && username) {
-    localStorage.setItem(
-      "currentUser",
-      JSON.stringify(username ? username : "user")
-    );
-    this.currentUserSubject.next(username ? username : "user");
-    this.router.navigate(["/"]);
-    // } else {
-    // }
-    // return this.http.post<any>(`${config.apiUrl}/users/authenticate`, { username, password })
-    //     .pipe(map(user => {
-    //         // login successful if there's a jwt token in the response
-    //         if (user && user.token) {
-    //             // store user details and jwt token in local storage to keep user logged in between page refreshes
-    //             localStorage.setItem('currentUser', JSON.stringify(user));
-    //             this.currentUserSubject.next(user);
-    //         }
+  async login(username: string, password: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "login.php",
+        { username: username, password: password },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
 
-    //         return user;
-    //     }));
+    if (result.status === 200) {
+      localStorage.setItem(
+        "certification_account",
+        JSON.stringify(result.data)
+      );
+      this.currentUserSubject.next(result.data);
+
+      return true;
+    } else {
+      return false;
+    }
+
+    // localStorage.setItem(
+    //   "currentUser",
+    //   JSON.stringify(username ? username : "user")
+    // );
+    // this.currentUserSubject.next(username ? username : "user");
+    // this.router.navigate(["/"]);
   }
 
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem("currentUser");
+    localStorage.removeItem("certification_account");
     this.currentUserSubject.next(null);
     this.router.navigate(["/login"]);
   }

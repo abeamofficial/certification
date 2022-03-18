@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { data, competency_level } from "src/assets/models/data";
+import { AuthenticationService } from "../services/authentication.service";
+
+import { BadgeService } from "../services/badge.service";
+import { CalculationService } from "../services/calculation.service";
 
 @Component({
   selector: "app-badge",
@@ -7,9 +11,21 @@ import { data, competency_level } from "src/assets/models/data";
   styleUrls: ["./badge.component.css"],
 })
 export class BadgeComponent implements OnInit {
-  value = data.badge;
+  value;
 
-  constructor() {}
+  constructor(
+    private badgeService: BadgeService,
+    private authenticationService: AuthenticationService,
+    private calculationService: CalculationService
+  ) {
+    this.badgeService
+      .getBadgeByUserId(this.authenticationService.currentUserValue.id)
+      .then((result) => {
+        if (result) {
+          this.value = result;
+        }
+      });
+  }
 
   ngOnInit() {}
 
@@ -21,5 +37,13 @@ export class BadgeComponent implements OnInit {
       }
     });
     return competency_name;
+  }
+
+  getSummaryScore(value) {
+    return this.calculationService.getSummaryScore(value);
+  }
+
+  getScoreLevel(value) {
+    return this.calculationService.getScoreLevel(value);
   }
 }

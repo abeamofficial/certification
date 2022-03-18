@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CertificateService } from "src/app/services/certificate.service";
 import { GraduationService } from "src/app/services/graduation.service";
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 
-import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CertificateService } from "src/app/services/certificate.service";
 import { GraduationService } from "src/app/services/graduation.service";
 import { CourseService } from "src/app/services/course.service";
 
@@ -24,7 +24,7 @@ export class CertificatePublishingComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private certificateDataService: CertificateDataService,
+    private certificateDataService: CertificateService,
     private graduationService: GraduationService,
     private courseService: CourseService,
     public matDialog: MatDialog

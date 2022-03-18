@@ -13,7 +13,7 @@ export class PathConfigService {
     // ) {
     //   return "https://digitech.sut.ac.th/dev/certification-API-Dev/";
     // } else {
-    return "https://digitech.sut.ac.th/certification-API/";
+    return "https://digitech.sut.ac.th/dev/certification-API-Dev/";
     // }
   }
 }

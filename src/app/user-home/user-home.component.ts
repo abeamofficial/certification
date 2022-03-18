@@ -11,7 +11,7 @@ import { AuthenticationService } from "../services/authentication.service";
 })
 export class UserHomeComponent implements OnInit {
   menu = 0;
-  value = data;
+  user;
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
@@ -19,6 +19,10 @@ export class UserHomeComponent implements OnInit {
     if (!this.isLogOn()) {
       this.router.navigate(["/login"]);
     }
+
+    this.authenticationService.currentUser.subscribe(
+      (item) => (this.user = item)
+    );
   }
 
   ngOnInit() {}

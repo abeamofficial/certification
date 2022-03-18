@@ -2,12 +2,11 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import { PathConfigService } from "./path-config.service";
-import { FormGroup } from "@angular/forms";
 
 @Injectable({
   providedIn: "root",
 })
-export class CertificateDataService {
+export class CertificateService {
   constructor(
     private http: HttpClient,
     private pathConfigService: PathConfigService
@@ -144,6 +143,68 @@ export class CertificateDataService {
 
     if (result.status === 200) {
       return true;
+    } else {
+      return false;
+    }
+  }
+
+  async getCertificateOfAchievementByUserId(id: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath +
+          "getCertificateOfAchievementByUserId.php",
+        { user_id: id },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
+  async getCertificateOfAchievementById(user_id: string, cert_id: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getCertificateOfAchievementById.php",
+        { user_id: user_id, cert_id: cert_id },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
+  async getCertificateOfParticipantByUserId(user_id: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath +
+          "getCertificateOfParticipantByUserId.php",
+        { user_id: user_id },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
     } else {
       return false;
     }

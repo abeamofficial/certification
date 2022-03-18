@@ -9,9 +9,12 @@ export class AppComponent {
   title = "certification";
   admin;
 
-  constructor(private authenticationService: AuthenticationService) {
-    this.authenticationService.currentUser.subscribe(
-      (item) => (this.admin = item == "admin")
+  constructor(private authenticationService: AuthenticationService) {}
+
+  isAdmin() {
+    return (
+      this.authenticationService.currentUserValue &&
+      this.authenticationService.currentUserValue.role_id == "1"
     );
   }
 }

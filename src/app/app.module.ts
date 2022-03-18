@@ -53,6 +53,9 @@ import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete
 import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
 
+import { RecaptchaModule, RecaptchaFormsModule } from "ng-recaptcha";
+import { ModuleTemplateComponent } from './module-template/module-template.component';
+
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 // }
@@ -89,6 +92,7 @@ import { CompetencyLevelDialogComponent } from "./competency-level-dialog/compet
     ConfirmDeleteDialogComponent,
     PloProgressComponent,
     CompetencyLevelDialogComponent,
+    ModuleTemplateComponent,
   ],
   imports: [
     EllipsisModule,
@@ -108,6 +112,8 @@ import { CompetencyLevelDialogComponent } from "./competency-level-dialog/compet
     ReactiveFormsModule,
     NgxFileDropModule,
     NgApexchartsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

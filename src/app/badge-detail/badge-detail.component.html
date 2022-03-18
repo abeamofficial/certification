@@ -1,32 +1,49 @@
 <section class="header">
   <div>
     <span>Badge in</span>
-    <h1>{{ value.name_en }}</h1>
-    <p>{{ value.name_th }}</p>
+    <h1>{{ value.course_name_en }}</h1>
+    <p>{{ value.course_name_th }}</p>
   </div>
 </section>
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>Badge in {{ value.name_en }}</p>
+  <p>Badge in {{ value.course_name_en }}</p>
 </section>
 <section class="body">
   <div class="badge">
     <div class="badge-paper">
-      <img src="./assets/images/badge/{{ value.img }}" />
+      <img
+        src="https://digitech.sut.ac.th/certification-img/badge/{{
+          value.file_name
+        }}"
+      />
       <div class="badge-info">
         <p>Level</p>
-        <span [ngClass]="value.score >= 80 ? 'gold' : 'silver'">{{
-          getCompetencyLevel(value.score)
-        }}</span>
+        <span
+          [ngClass]="
+            getScoreLevel([value.objective_score, value.practice_score])
+          "
+          >{{ getCompetencyLevel(value.score) }}</span
+        >
         <div class="level-bar">
           <div class="full-bar">
             <div
               class="percent-bar"
-              [ngClass]="value.score >= 80 ? 'gold' : 'silver'"
-              [ngStyle]="{ width: value.score + '%' }"
+              [ngClass]="
+                getScoreLevel([value.objective_score, value.practice_score])
+              "
+              [ngStyle]="{
+                width:
+                  getSummaryScore([
+                    value.objective_score,
+                    value.practice_score
+                  ]) + '%'
+              }"
             >
-              {{ value.score }}%
+              {{
+                getSummaryScore([value.objective_score, value.practice_score])
+              }}%
             </div>
           </div>
         </div>
@@ -42,7 +59,7 @@
       <ng-template #dateEarned>
         <div class="badge-info">
           <p>Date Earned</p>
-          <span>{{ value.date_earned | date: "dd/MM/yyyy" }}</span>
+          <span>{{ value.badge_date | date: "dd/MM/yyyy" }}</span>
         </div>
       </ng-template>
 
@@ -65,22 +82,22 @@
     <div class="badge-detail">
       <div class="badge-info">
         <p class="link" [routerLink]="['/course-detail/' + value.course_id]">
-          {{ "วิชา" + course_detail.name_th }}
+          {{ "วิชา" + value.course_name_th }}
         </p>
       </div>
       <div class="badge-info">
         <p>Description</p>
         <span class="text">
-          {{ course_detail.detail_th }}
+          {{ value.course_detail_th }}
         </span>
         <span class="text">
-          {{ course_detail.detail_en }}
+          {{ value.course_detail_en }}
         </span>
       </div>
 
       <div class="badge-info">
         <p>Earned credits</p>
-        <span> {{ course_detail.trimester_credit }} Credits</span>
+        <span> {{ value.course_credit }} Credits</span>
       </div>
 
       <!-- <div class="badge-info">

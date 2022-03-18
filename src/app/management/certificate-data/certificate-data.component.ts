@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 
-import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CertificateService } from "src/app/services/certificate.service";
 import { CertificateDataDialogComponent } from "../dialog/certificate-data-dialog/certificate-data-dialog.component";
 import { ConfirmDeleteDialogComponent } from "../dialog/confirm-delete-dialog/confirm-delete-dialog.component";
 
@@ -15,7 +15,7 @@ export class CertificateDataComponent implements OnInit {
   itemsPerPage = 15;
   certificate_list = null;
   constructor(
-    private certificateDataService: CertificateDataService,
+    private certificateDataService: CertificateService,
     public matDialog: MatDialog
   ) {}
 

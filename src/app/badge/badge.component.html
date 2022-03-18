@@ -17,36 +17,50 @@
     <div
       class="list"
       *ngFor="let item of value"
-      [ngClass]="{ disabled: item.isExpired }"
+      [ngClass]="{ disabled: !item.active }"
     >
       <div class="img">
-        <img src="./assets/images/badge/{{ item.img }}" />
+        <img
+          src="https://digitech.sut.ac.th/certification-img/badge/{{
+            item.file_name
+          }}"
+        />
       </div>
       <div class="name" ellipsis>
-        {{ item.name_en }}
+        {{ item.course_name_en }}
       </div>
-      <p>( {{ item.credit }} credits )</p>
+      <p>( {{ item.course_credit }} credits )</p>
 
       <!-- percent bar -->
       <div class="level-bar">
         <div class="full-bar">
           <div
             class="percent-bar"
-            [ngClass]="item.score >= 80 ? 'gold' : 'silver'"
-            [ngStyle]="{ width: item.score + '%' }"
+            [ngClass]="
+              getScoreLevel([item.objective_score, item.practice_score])
+            "
+            [ngStyle]="{
+              width:
+                getSummaryScore([item.objective_score, item.practice_score]) +
+                '%'
+            }"
           >
-            {{ item.score }}%
+            {{ getSummaryScore([item.objective_score, item.practice_score]) }}%
           </div>
         </div>
         <div class="percent-level">
-          <p [ngClass]="item.score >= 80 ? 'gold' : 'silver'">
-            {{ getCompetencyLevel(item.score) }}
+          <p
+            [ngClass]="
+              getScoreLevel([item.objective_score, item.practice_score])
+            "
+          >
+            {{ getScoreLevel([item.objective_score, item.practice_score]) }}
           </p>
         </div>
       </div>
 
       <div class="detail" ellipsis>
-        {{ item.detail_en }}
+        {{ item.course_detail_en }}
       </div>
 
       <div class="button-area">

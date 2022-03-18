@@ -9,13 +9,18 @@ import { AuthenticationService } from "src/app/services/authentication.service";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent implements OnInit {
-  data = data;
+  user = null;
+
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
   ) {}
 
   ngOnInit() {}
+
+  getCurrentUserName() {
+    return this.authenticationService.currentUserValue.first_name;
+  }
 
   isLogOn() {
     // console.log(this.authenticationService.currentUserValue() !== null);
@@ -27,7 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   isAdmin() {
-    return this.authenticationService.currentUserValue === "admin";
+    return this.authenticationService.currentUserValue.role_id === 1;
   }
 
   logout() {

@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="main">
-  <div class="sidebar" *ngIf="admin">
+  <div class="sidebar" *ngIf="isAdmin()">
     <app-sidebar></app-sidebar>
   </div>
   <div class="body">

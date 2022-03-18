@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService) {
     this.authenticationService.currentUser.subscribe(
-      (item) => (this.user = item !== "admin")
+      (item) => (this.user = item && item.role_id !== "1")
     );
   }
 

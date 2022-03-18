@@ -2,30 +2,40 @@ import { HttpHeaders } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { data, competency_level } from "src/assets/models/data";
+
+import { CertificateService } from "../services/certificate.service";
+import { ModuleService } from "../services/module.service";
+import { AuthenticationService } from "../services/authentication.service";
 @Component({
   selector: "app-achievement-cert-detail",
   templateUrl: "./achievement-cert-detail.component.html",
   styleUrls: ["./achievement-cert-detail.component.css"],
 })
 export class AchievementCertDetailComponent implements OnInit {
-  data = data;
   value;
-  module_detail;
-  badge_detail;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private certificateDataService: CertificateService,
+    private authenticationService: AuthenticationService,
+    private moduleService: ModuleService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       if (params.id) {
-        this.value = data.achievement_certificate.find(
-          (item) => item.id == params.id
-        );
-        this.module_detail = data.module.find(
-          (item) => item.id == this.value.module_id
-        );
-        this.badge_detail = data.badge.filter((item) =>
-          this.value.badge.includes(item.id)
-        );
+        this.certificateDataService
+          .getCertificateOfAchievementById(
+            this.authenticationService.currentUserValue.id,
+            params.id
+          )
+          .then((result) => {
+            this.value = result;
+            this.moduleService.getModuleById(this.value.m_id).then((module) => {
+              if (module && module.course) {
+                this.value.module_detail = module;
+              }
+            });
+          });
       }
     });
   }
@@ -38,6 +48,10 @@ export class AchievementCertDetailComponent implements OnInit {
       }
     });
     return competency_name;
+  }
+
+  getSummaryScore(objective_score, practice_score) {
+    return Math.floor(Number(objective_score) + Number(practice_score));
   }
 
   onNavigate(url) {

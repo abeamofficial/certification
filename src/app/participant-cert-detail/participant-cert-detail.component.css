@@ -153,8 +153,8 @@ section.cert div.cert > div.cert-detail > div.detail > div > p {
   color: var(--dark-blue);
 }
 
-section.cert div.cert > div.cert-detail > div.detail > div > span {
-  margin: 0 0 auto 0;
+section.cert div.cert > div.cert-detail > div.detail > div > div {
+  margin: 0.25rem 0 auto 0;
   font-family: "sutregular";
   font-weight: 100;
   font-size: 18px;

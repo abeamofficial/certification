@@ -29,11 +29,11 @@
       <form [formGroup]="certificateForm">
         <div class="input">
           <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
-          <input formControlName="cert_name_th" />
+          <input formControlName="name_th" />
         </div>
         <div class="input">
           <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
-          <input formControlName="cert_name_en" />
+          <input formControlName="name_en" />
         </div>
         <div class="input">
           <p>ชุดวิชา</p>
@@ -68,7 +68,7 @@
           >
             <option value="undefined" disabled>เลือกประเภทสัมฤทธิบัตร</option>
             <option *ngFor="let item of degree_of_module" [value]="item.id">
-              {{ item.degree_of_module_name }}
+              {{ item.name }}
             </option>
           </select>
         </div>
@@ -84,11 +84,11 @@
     <div class="body">
       <div class="input">
         <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
-        <span>{{ data.value.cert_name_th }}</span>
+        <span>{{ data.value.name_th }}</span>
       </div>
       <div class="input">
         <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
-        <span>{{ data.value.cert_name_en }}</span>
+        <span>{{ data.value.name_en }}</span>
       </div>
       <div class="input">
         <p>ชุดวิชา</p>
@@ -98,7 +98,7 @@
       </div>
       <div class="input">
         <p>ประเภทสัมฤทธิบัตร</p>
-        <span>{{ getdegreeName(data.value.degree_of_module_id) }}</span>
+        <span>{{ getDegreeName(data.value.degree_of_module_id) }}</span>
       </div>
 
       <!-- getdegreeName -->

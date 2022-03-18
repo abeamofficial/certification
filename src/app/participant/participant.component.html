@@ -17,17 +17,22 @@
       [routerLink]="['/participant-cert-detail/' + item.id]"
     >
       <div class="img">
-        <img src="./assets/images/certificate/{{ item.img }}" />
+        <img
+          src="https://digitech.sut.ac.th/certification-img/certificate/TEMPLATE-BACKGROUND/"
+        />
       </div>
       <div class="detail">
-        <p>Certificate in {{ item.name_en }}</p>
-        <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ item.name_th }}</p>
-        <div class="tag">Specialist</div>
+        <p>Certificate Of Participant in {{ item.module_name_en }}</p>
+        <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ item.module_name_th }}</p>
+        <div class="tag">{{ item.degree_of_module_name }}</div>
 
         <div class="date">
           <span>
-            <p>Approved by : Digitech @ SUT</p>
-            <p>Approved date : {{ item.approved_date | date: "dd/MM/yyyy" }}</p>
+            <p>Approved by : {{ item.diploma_approved }}</p>
+            <p>
+              Approved date :
+              {{ item.diploma_approved_date | date: "dd/MM/yyyy" }}
+            </p>
           </span>
         </div>
       </div>

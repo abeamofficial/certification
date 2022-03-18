@@ -14,7 +14,7 @@
       class="menu"
       *ngIf="isLogOn()"
     >
-      <span>{{ isAdmin() ? "Manager" : data.first_name }}</span>
+      <span>{{ getCurrentUserName() }}</span>
       <i class="material-icons">expand_more</i>
     </button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">

@@ -113,6 +113,7 @@ div.data-list > div.list > div.level-bar > div.percent-level {
 div.data-list > div.list > div.level-bar > div.percent-level > p {
   margin: auto;
   font-size: 12px;
+  text-transform: capitalize;
 }
 
 div.data-list > div.list > div.level-bar > div.percent-level .gold {

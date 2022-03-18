@@ -13,7 +13,7 @@ import {
   MatDialog,
 } from "@angular/material/dialog";
 
-import { CertificateDataService } from "src/app/services/certificate-data.service";
+import { CertificateService } from "src/app/services/certificate.service";
 import { ModuleService } from "src/app/services/module.service";
 
 import { MatSelect } from "@angular/material/select";
@@ -27,8 +27,8 @@ import { take, takeUntil } from "rxjs/operators";
 export class CertificateDataDialogComponent implements OnInit {
   certificateForm = this.fb.group({
     id: null, // record id
-    cert_name_th: null,
-    cert_name_en: null,
+    name_th: null,
+    name_en: null,
     cert_of_module_id: null,
     m_id: null,
     degree_of_module_id: null,
@@ -53,7 +53,7 @@ export class CertificateDataDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<CertificateDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private certificateDataService: CertificateDataService,
+    private certificateDataService: CertificateService,
     private moduleService: ModuleService,
     private fb: FormBuilder
   ) {}
@@ -169,10 +169,9 @@ export class CertificateDataDialogComponent implements OnInit {
     this.dialogRef.close(isModify);
   }
 
-  getdegreeName(id) {
+  getDegreeName(id) {
     if (!this.degree_of_module) return;
-    return this.degree_of_module.find((item) => item.id == id)
-      .degree_of_module_name;
+    return this.degree_of_module.find((item) => item.id == id).name;
   }
 
   get id() {

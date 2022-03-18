@@ -4,12 +4,58 @@
       <h1>เข้าสู่ระบบ</h1>
       <hr />
       <div>
-        <p>ชื่อบัญชี</p>
-        <input [(ngModel)]="username" (keyup.enter)="login()" />
-        <p>รหัสผ่าน</p>
-        <input type="password" />
-        <button (click)="login()">ลงชื่อเข้าใช้</button>
+        <form [formGroup]="userForm">
+          <p>ชื่อบัญชี</p>
+          <input
+            formControlName="username"
+            [class.warning]="
+              userForm.controls['username'].errors?.required &&
+              userForm.controls['username'].touched
+            "
+            (keyup.enter)="login()"
+          />
+          <div class="warning">
+            <p
+              *ngIf="
+                userForm.controls['username'].errors?.required &&
+                userForm.controls['username'].touched
+              "
+            >
+              Username is required.
+            </p>
+          </div>
+          <p>รหัสผ่าน</p>
+          <input
+            type="password"
+            formControlName="password"
+            [class.warning]="
+              userForm.controls['password'].errors?.required &&
+              userForm.controls['password'].touched
+            "
+            (keyup.enter)="login()"
+          />
+          <div class="warning">
+            <p
+              *ngIf="
+                userForm.controls['password'].errors?.required &&
+                userForm.controls['password'].touched
+              "
+            >
+              Password is required.
+            </p>
+          </div>
+          <div class="g-recaptcha">
+            <re-captcha
+              formControlName="recaptchaReactive"
+              siteKey="6LeqedAUAAAAAEPT0NvZ4CsQsw2bTjUFAB6xaBIx"
+              (error)="errored($event)"
+            ></re-captcha>
+          </div>
+        </form>
       </div>
+      <button [disabled]="userForm.invalid" (click)="login()">
+        ลงชื่อเข้าใช้
+      </button>
     </div>
     <p class="footer">©2021 DIGITECH : Certificate. All Rights Reserved.</p>
   </div>

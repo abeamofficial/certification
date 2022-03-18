@@ -1,222 +1,172 @@
-<section class="header">
-  <div>
-    <span>Certificate of Achievement in</span>
-    <h1>{{ value.name_en }}</h1>
-    <p>สัมฤทธิบัตร{{ value.name_th }}</p>
-  </div>
-</section>
-<section class="breadcrumb">
-  <p [routerLink]="['']">Home</p>
-  <span>></span>
-  <p>Certificate of Achievement in {{ value.name_en }}</p>
-</section>
-
-<section class="cert">
-  <div class="cert">
-    <div class="cert-paper">
-      <img src="./assets/images/certificate/{{ value.img }}" />
-    </div>
-    <div class="cert-detail">
-      <div class="title">
-        <hr />
-        <p>This certificate is awarded to</p>
-        <hr />
-      </div>
-      <div class="name">
-        <p>{{ data.first_name + " " + data.last_name }}</p>
-      </div>
-      <div class="detail">
-        <div>
-          <p>Approved By</p>
-          <span>Digitech @ SUT</span>
-        </div>
-
-        <ng-container *ngIf="value.expired_date; else approvedDate">
-          <div>
-            <p style="color: red">Date Expired</p>
-            <span style="color: red">{{
-              value.expired_date | date: "MMM d, y"
-            }}</span>
-          </div>
-        </ng-container>
-        <ng-template #approvedDate>
-          <div>
-            <p>Approved Date</p>
-            <span>{{ value.approved_date | date: "MMM d, y" }}</span>
-          </div>
-        </ng-template>
-
-        <hr />
-        <p>Offered By</p>
-        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-          <p>
-            Suranaree University of Technology
-            <i class="material-icons">open_in_new</i>
-          </p>
-        </span>
-        <span>
-          <span>Nakhon ratchasima</span>
-          <span>•</span>
-          <span>Thailand</span>
-        </span>
-      </div>
-      <button>
-        <p>Download</p>
-        <i class="material-icons">file_download</i>
-      </button>
-    </div>
-  </div>
-</section>
-<section class="badge-of-cert">
-  <div class="header">
+<ng-container *ngIf="value">
+  <section class="header">
     <div>
-      <hr />
-      <p>Certificate Badge</p>
+      <span>Certificate of Achievement in</span>
+      <h1>{{ value.name_en }}</h1>
+      <p>สัมฤทธิบัตร{{ value.name_th }}</p>
     </div>
-    <div></div>
-  </div>
+  </section>
+  <section class="breadcrumb">
+    <p [routerLink]="['']">Home</p>
+    <span>></span>
+    <p>Certificate of Achievement in {{ value.name_en }}</p>
+  </section>
 
-  <div class="body" id="about">
-    <div
-      class="list"
-      *ngFor="let item of badge_detail"
-      [ngClass]="{ disabled: item.isExpired }"
-    >
-      <div class="bg"></div>
-      <div class="img"><img src="./assets/images/badge/{{ item.img }}" /></div>
-      <div class="name" ellipsis>
-        {{ item.name_en }}
+  <section class="cert">
+    <div class="cert">
+      <div class="cert-paper">
+        <img
+          src="https://digitech.sut.ac.th/certification-img/certificate/TEMPLATE-BACKGROUND/{{
+            value.img_file_name
+          }}"
+        />
       </div>
-      <p>( {{ item.credit }} credits )</p>
-
-      <!-- percent bar -->
-      <div class="level-bar">
-        <div class="full-bar">
-          <div
-            class="percent-bar"
-            [ngClass]="item.score >= 80 ? 'gold' : 'silver'"
-            [ngStyle]="{ width: item.score + '%' }"
-          >
-            {{ item.score }}%
+      <div class="cert-detail">
+        <div class="title">
+          <hr />
+          <p>This certificate is awarded to</p>
+          <hr />
+        </div>
+        <div class="name">
+          <p>{{ value.first_name + " " + value.last_name }}</p>
+        </div>
+        <div class="detail">
+          <div>
+            <p>Approved By</p>
+            <div>{{ value.cert_approved }}</div>
           </div>
+
+          <ng-container *ngIf="!value.active; else approvedDate">
+            <div>
+              <p style="color: red">Date Expired</p>
+              <div style="color: red">
+                {{ value.cert_expired_date | date: "MMM d, y" }}
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #approvedDate>
+            <div>
+              <p>Approved Date</p>
+              <div>{{ value.cert_approved_date | date: "MMM d, y" }}</div>
+            </div>
+          </ng-template>
+
+          <hr />
+          <p>Offered By</p>
+          <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
+            <p>
+              Suranaree University of Technology
+              <i class="material-icons">open_in_new</i>
+            </p>
+          </span>
+          <span>
+            <span>Nakhon ratchasima</span>
+            <span>•</span>
+            <span>Thailand</span>
+          </span>
         </div>
-        <div class="percent-level">
-          <p [ngClass]="item.score >= 80 ? 'gold' : 'silver'">
-            {{ getCompetencyLevel(item.score) }}
-          </p>
-        </div>
-      </div>
-
-      <div class="detail" ellipsis>
-        {{ item.detail_th }}
-      </div>
-
-      <div class="button-area">
-        <button [routerLink]="['/badge-detail/' + item.id]">Detail</button>
+        <button>
+          <p>Download</p>
+          <i class="material-icons">file_download</i>
+        </button>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="cert-detail">
-  <div class="header">
-    <div>
-      <mat-tab-group
-        animationDuration="0ms"
-        (selectedTabChange)="scrollToId($event)"
-      >
-        <mat-tab label="ข้อมูลชุดวิชา"></mat-tab>
-        <mat-tab label="รายวิชาในชุดวิชา"></mat-tab>
-        <mat-tab label="เกี่ยวกับสถาบัน"></mat-tab>
-      </mat-tab-group>
-    </div>
-  </div>
-
-  <div class="body" id="about">
-    <h1>{{ module_detail.name_en }} Module</h1>
-    <h1>ชุดวิชา{{ module_detail.name_th }}</h1>
-
-    <div id="about" class="plo check-list border">
-      <h1>สิ่งที่คุณจะได้เรียนรู้ (Program Learning Outcome)</h1>
-      <span *ngFor="let item of module_detail.plo">
-        <i class="material-icons">check</i>
-        <p>{{ item.name_th }}</p>
-      </span>
-    </div>
-    <div class="normal-detail">
-      <h1>จำนวนชั่วโมงการเรียนรู้</h1>
-      <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 60 ชั่วโมง</p>
-    </div>
-
-    <div class="normal-detail">
-      <h1>คุณสมบัติผู้เรียน</h1>
-      <p>
-        เป็นผู้ที่สำเร็จการศึกษาไม่ต่ำกว่า ปวส. หรือเทียบเท่า ที่ ก.พ. รับรอง
-      </p>
-    </div>
-
-    <div class="normal-detail" id="course">
-      <h1>รายวิชาในชุดวิชา</h1>
-      <div *ngFor="let item of module_detail.course; let i = index">
-        <h1>
-          <span>{{ i + 1 }}.</span>
-          <span class="link" [routerLink]="['/course-detail/' + item.id]">
-            {{ "วิชา" + item.name_th + " (" + item.name_en + ")" }}</span
-          >
-        </h1>
-        <div>
-          {{ item.detail_th }}
-        </div>
-      </div>
-    </div>
-
-    <div class="normal-detail">
-      <h1>อาจารย์ผู้รับผิดชอบ</h1>
-      <ul>
-        <li>อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร</li>
-      </ul>
-    </div>
-
-    <div class="normal-detail">
-      <h1>หลักสูตรที่เกี่ยวข้อง</h1>
-      <ul>
-        <li>
-          หลักสูตรวิทยาการสารสนเทศมหาบัณฑิต
-          สาขาวิชาเทคโนโลยีดิจิทัลและนิเทศศาสตร์ดิจิทัล,
-          มหาวิทยาลัยเทคโนโลยีสุรนารี
-        </li>
-      </ul>
-    </div>
-
-    <div class="normal-detail" id="institution">
-      <h1>สถาบัน</h1>
+  </section>
+  <section class="badge-of-cert" *ngIf="value.badge">
+    <div class="header">
       <div>
-        <img class="institution-logo" src="./assets/images/sut-logo.svg" />
-        <h1>มหาวิทยาลัยเทคโนโลยีสุรนารี</h1>
-        <p>
-          มหาวิทยาลัยเทคโนโลยีสุรนารี (มทส.) เป็น “มหาวิทยาลัยในกำกับของรัฐ”
-          แห่งแรกของประเทศไทย มุ่งผลิตนักวิทยาศาสตร์และเทคโนโลยีที่เป็นเลิศ
-          สร้างบัณฑิตพึงประสงค์ ที่มีความพร้อมด้านวิชาการ วิชาชีพ
-          มีความสามารถด้านนวัตกรรมและทักษะด้านความเป็นผู้ประกอบการ
-          รวมถึงความพร้อมที่จะเป็นพลเมืองโลกในศตวรรษที่ 21
-          ด้วยการพัฒนาหลักสูตรที่ทันสมัย
-          ส่งเสริมการเรียนรู้ตลอดชีวิตผ่านหลักสูตรพันธุ์ใหม่ หลักสูตร Up-skill,
-          Re-skill และ New-skill หลักสูตรแบบ Modular Curriculum
-          ที่ยืดหยุ่นได้ตามความต้องการและบริบทสังคม
-          ปรับรูปแบบการเรียนการสอนให้รองรับทั้งการเรียนการสอนแบบ On-site, Online
-          และแบบ Hybrid ที่นำมาใช้ได้อย่างมีประสิทธิผล
-        </p>
+        <hr />
+        <p>Certificate Badge</p>
       </div>
+      <div></div>
+    </div>
 
-      <div style="margin-top: 15px">
-        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-          <p>http://www.sut.ac.th/<i class="material-icons">open_in_new</i></p>
-        </span>
-        <span>
-          111 ถนนมหาวิทยาลัย ตำบลสุรนารี อำเภอเมือง จังหวัดนครราชสีมา 30000
-        </span>
-        <span>โทรศัพท์ 0-4422-3000 โทรสาร 0-4422-4070.</span>
+    <div class="body" id="about">
+      <div
+        class="list"
+        *ngFor="let item of value.badge | keyvalue"
+        [ngClass]="{ disabled: !item.value.active }"
+      >
+        <div class="bg"></div>
+        <div class="img">
+          <img
+            src="https://digitech.sut.ac.th/certification-img/badge/{{
+              item.value.badge_type_path
+            }}/{{ item.value.badge_file_name }}"
+          />
+        </div>
+        <div class="name" ellipsis>
+          {{ item.value.course_name_en }}
+        </div>
+        <p>( {{ item.value.course_credit }} credits )</p>
+
+        <!-- percent bar -->
+        <div class="level-bar">
+          <div class="full-bar">
+            <div
+              class="percent-bar"
+              [ngClass]="
+                getSummaryScore(
+                  item.value.objective_score,
+                  item.value.practice_score
+                ) >= 80
+                  ? 'gold'
+                  : 'silver'
+              "
+              [ngStyle]="{
+                width:
+                  getSummaryScore(
+                    item.value.objective_score,
+                    item.value.practice_score
+                  ) + '%'
+              }"
+            >
+              {{
+                getSummaryScore(
+                  item.value.objective_score,
+                  item.value.practice_score
+                )
+              }}%
+            </div>
+          </div>
+          <div class="percent-level">
+            <p
+              [ngClass]="
+                getSummaryScore(
+                  item.value.objective_score,
+                  item.value.practice_score
+                ) >= 80
+                  ? 'gold'
+                  : 'silver'
+              "
+            >
+              {{
+                getCompetencyLevel(
+                  getSummaryScore(
+                    item.value.objective_score,
+                    item.value.practice_score
+                  )
+                )
+              }}
+            </p>
+          </div>
+        </div>
+
+        <div class="detail" ellipsis>
+          {{ item.value.course_detail_th }}
+        </div>
+
+        <div class="button-area">
+          <button [routerLink]="['/badge-detail/' + item.value.id]">
+            Detail
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <app-module-template
+    *ngIf="value.module_detail"
+    [value]="value.module_detail"
+  ></app-module-template>
+</ng-container>

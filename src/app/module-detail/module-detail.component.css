@@ -27,6 +27,7 @@ section.header > div > h1 {
   font-size: 26px;
   margin: 0;
   color: var(--dark-blue);
+  text-transform: capitalize;
 }
 
 section.header > div > p {
@@ -35,6 +36,7 @@ section.header > div > p {
   font-size: 20px;
   margin: 0;
   color: #3c5981;
+  text-transform: capitalize;
 }
 
 /* ----- END header template ----- */
@@ -58,6 +60,7 @@ section.breadcrumb > span {
 
 section.breadcrumb > p {
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 section.breadcrumb > p:hover {

@@ -15,7 +15,7 @@ export class AchievementCertDetailComponent implements OnInit {
   value;
   constructor(
     private route: ActivatedRoute,
-    private certificateDataService: CertificateService,
+    private certificateService: CertificateService,
     private authenticationService: AuthenticationService,
     private moduleService: ModuleService
   ) {}
@@ -23,7 +23,7 @@ export class AchievementCertDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       if (params.id) {
-        this.certificateDataService
+        this.certificateService
           .getCertificateOfAchievementById(
             this.authenticationService.currentUserValue.id,
             params.id

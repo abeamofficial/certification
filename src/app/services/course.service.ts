@@ -47,4 +47,24 @@ export class CourseService {
       return false;
     }
   }
+
+  async getCourseById(course_id) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getCourseById.php",
+        { course_id: course_id },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
 }

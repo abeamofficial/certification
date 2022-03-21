@@ -3,6 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { data, competency_level } from "src/assets/models/data";
 
+import { CourseService } from "../services/course.service";
+
 @Component({
   selector: "app-course-detail",
   templateUrl: "./course-detail.component.html",
@@ -11,12 +13,19 @@ import { data, competency_level } from "src/assets/models/data";
 export class CourseDetailComponent implements OnInit {
   value;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private courseService: CourseService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       if (params.id) {
-        this.value = data.course.find((item) => item.id == params.id);
+        this.courseService.getCourseById(params.id).then((result) => {
+          if (result) {
+            this.value = result;
+          }
+        });
       }
     });
   }

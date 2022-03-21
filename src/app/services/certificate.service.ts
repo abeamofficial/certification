@@ -210,6 +210,26 @@ export class CertificateService {
     }
   }
 
+  async getCertificateOfParticipantById(user_id: string, cert_id: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getCertificateOfParticipantById.php",
+        { user_id: user_id, cert_id: cert_id },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
   // $scope.getModule = function () {
   //   $http.post("https://digitech.sut.ac.th/api/api_module.php", null).then(function (response) {
   //     if (response.data) {

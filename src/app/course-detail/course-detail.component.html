@@ -1,14 +1,14 @@
 <section class="header">
   <div>
     <!-- <span>Certificate of Achievement in</span> -->
-    <h1>{{ value.name_en }}</h1>
-    <p>{{ "วิชา" + value.name_th }}</p>
+    <h1>{{ value.course_name_en }}</h1>
+    <p>{{ "วิชา" + value.course_name_th }}</p>
   </div>
 </section>
 <section class="breadcrumb">
   <p [routerLink]="['']">Home</p>
   <span>></span>
-  <p>{{ value.name_en }}</p>
+  <p>{{ value.course_name_en }}</p>
 </section>
 
 <section class="course-detail">
@@ -26,17 +26,23 @@
   </div>
 
   <div class="body" id="about">
-    <h1>{{ value.name_en }}</h1>
-    <h1>{{ "วิชา" + value.name_th }}</h1>
+    <h1>{{ value.course_name_en }}</h1>
+    <h1>{{ "วิชา" + value.course_name_th }}</h1>
 
-    <div class="plo check-list border">
+    <div class="plo check-list border" *ngIf="value.plo">
       <h1>สิ่งที่คุณจะได้เรียนรู้ (Program Learning Outcome)</h1>
       <span *ngFor="let item of value.plo">
         <i class="material-icons">check</i>
         <p>{{ getPlo(item).name_th }}</p>
       </span>
     </div>
-    <div class="normal-detail">
+
+    <div class="normal-detail" *ngIf="value.course_detail_th">
+      <h1>รายละเอียดวิชา</h1>
+      <p>{{ value.course_detail_th }}</p>
+    </div>
+
+    <div class="normal-detail" *ngIf="value.learning_hour">
       <h1>จำนวนชั่วโมงการเรียนรู้</h1>
       <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 30 ชั่วโมง</p>
     </div>
@@ -48,14 +54,16 @@
       </p>
     </div>
 
-    <div class="normal-detail">
+    <div class="normal-detail" *ngIf="value.instructor">
       <h1>อาจารย์ผู้รับผิดชอบ</h1>
       <ul>
-        <li>อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร</li>
+        <li *ngFor="let item of value.instructor">
+          อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร
+        </li>
       </ul>
     </div>
 
-    <div class="normal-detail">
+    <div class="normal-detail" *ngIf="value.program">
       <h1>หลักสูตรที่เกี่ยวข้อง</h1>
       <ul>
         <li>

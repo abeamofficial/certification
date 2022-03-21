@@ -72,6 +72,7 @@ section.breadcrumb > p:hover {
 
 section.cert {
   padding: 0 15%;
+  margin: 0 0 100px 0;
   width: 100%;
   box-sizing: border-box;
 }

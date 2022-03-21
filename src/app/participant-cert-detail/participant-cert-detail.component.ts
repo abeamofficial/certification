@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { data, competency_level } from "src/assets/models/data";
+import { CertificateService } from "../services/certificate.service";
+import { AuthenticationService } from "../services/authentication.service";
+import { ModuleService } from "../services/module.service";
 
 @Component({
   selector: "app-participant-cert-detail",
@@ -8,21 +11,37 @@ import { data, competency_level } from "src/assets/models/data";
   styleUrls: ["./participant-cert-detail.component.css"],
 })
 export class ParticipantCertDetailComponent implements OnInit {
-  data = data;
   value;
-  module_detail;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private certificateService: CertificateService,
+    private authenticationService: AuthenticationService,
+    private moduleService: ModuleService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       if (params.id) {
-        this.value = data.participant_certificate.find(
-          (item) => item.id == params.id
-        );
-        this.module_detail = data.module.find(
-          (item) => item.id == this.value.module_id
-        );
+        this.route.params.subscribe((params) => {
+          if (params.id) {
+            this.certificateService
+              .getCertificateOfParticipantById(
+                this.authenticationService.currentUserValue.id,
+                params.id
+              )
+              .then((result) => {
+                this.value = result;
+                this.moduleService
+                  .getModuleById(this.value.m_id)
+                  .then((module) => {
+                    if (module && module.course) {
+                      this.value.module_detail = module;
+                    }
+                  });
+              });
+          }
+        });
       }
     });
   }

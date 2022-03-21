@@ -67,6 +67,7 @@ section.breadcrumb > p:hover {
 /* ----- END breadcrumb template ----- */
 
 section.cert {
+  margin: 0 0 100px 0;
   padding: 0 15%;
   width: 100%;
   box-sizing: border-box;
@@ -141,7 +142,7 @@ section.cert div.cert > div.cert-detail > div.detail {
 
 section.cert div.cert > div.cert-detail > div.detail > div {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 
 section.cert div.cert > div.cert-detail > div.detail > div > p {

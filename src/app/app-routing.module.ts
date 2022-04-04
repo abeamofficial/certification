@@ -22,20 +22,15 @@ import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete
 import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
 import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
-import { AppComponent } from "./app.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "home",
-    pathMatch: "full",
-    // component: HomeComponent,
-    canActivate: [AuthGuard],
-    // children: [{ path: "cpw", component: CertPreviewComponent }],
+    component: HomeComponent,
+    // canActivate: [AuthGuard],
   },
-  { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
   {
     path: "transcript-detail",
@@ -97,6 +92,10 @@ const routes: Routes = [
   {
     path: "cpw",
     component: CertPreviewComponent,
+    children: [
+      { path: "", component: CertPreviewComponent },
+      // { path: ":no", component: CertPreviewComponent },
+    ],
   },
 ];
 

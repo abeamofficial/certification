@@ -19,28 +19,28 @@ export class CertPreviewComponent implements OnInit {
     private certificateService: CertificateService,
     private moduleService: ModuleService
   ) {
-    // this.route.queryParams.subscribe((params) => {
-    //   if (params.no) {
-    //     this.certificateService
-    //       .getCertificateOfAchievementByNo(params.no)
-    //       .then((result) => {
-    //         if (result) {
-    //           this.value = result;
-    //           this.moduleService
-    //             .getModuleById(this.value.m_id)
-    //             .then((module) => {
-    //               if (module && module.course) {
-    //                 this.value.module_detail = module;
-    //               }
-    //             });
-    //         } else {
-    //           this.router.navigate(["/login"]);
-    //         }
-    //       });
-    //   } else {
-    //     this.router.navigate(["/login"]);
-    //   }
-    // });
+    this.route.queryParams.subscribe((params) => {
+      if (params.no) {
+        this.certificateService
+          .getCertificateOfAchievementByNo(params.no)
+          .then((result) => {
+            if (result) {
+              this.value = result;
+              this.moduleService
+                .getModuleById(this.value.m_id)
+                .then((module) => {
+                  if (module && module.course) {
+                    this.value.module_detail = module;
+                  }
+                });
+            } else {
+              this.router.navigate(["/login"]);
+            }
+          });
+      } else {
+        this.router.navigate(["/login"]);
+      }
+    });
   }
 
   ngOnInit() {}

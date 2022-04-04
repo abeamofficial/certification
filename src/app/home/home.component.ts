@@ -14,5 +14,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!this.user) {
+    }
+  }
 }

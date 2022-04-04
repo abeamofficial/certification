@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     // );
   }
 
-  errored() {
+  errored(e) {
     console.warn(`reCAPTCHA error encountered`);
   }
 }

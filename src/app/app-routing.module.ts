@@ -92,10 +92,11 @@ const routes: Routes = [
   { path: "plo-progress", component: PloProgressComponent },
   {
     path: "cpw",
-    children: [
-      { path: "", component: CertPreviewComponent },
-      // { path: ":no", component: CertPreviewComponent },
-    ],
+    component: CertPreviewComponent,
+    // children: [
+    //   { path: "", component: CertPreviewComponent },
+    //   // { path: ":no", component: CertPreviewComponent },
+    // ],
   },
 ];
 

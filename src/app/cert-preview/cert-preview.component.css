@@ -634,6 +634,10 @@ section.badge-of-cert > div.body > div.list > div.button-area > button:hover {
     height: auto;
   }
 
+  section.badge-of-cert > div.body > div.list > div.img > img {
+    height: auto;
+  }
+
   section.badge-of-cert > div.body > div.list > div.badge-name {
     width: 100%;
     height: calc(75px + 1vw);

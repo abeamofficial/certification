@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { path: "login", component: LoginComponent },
   {
@@ -92,10 +92,6 @@ const routes: Routes = [
   {
     path: "cpw",
     component: CertPreviewComponent,
-    // children: [
-    //   { path: "", component: CertPreviewComponent },
-    //   { path: ":no", component: CertPreviewComponent },
-    // ],
   },
 ];
 

@@ -26,7 +26,6 @@ import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
-  // { path: "", redirectTo: "/home", pathMatch: "full" },
   {
     path: "",
     component: HomeComponent,

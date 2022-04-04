@@ -631,7 +631,7 @@ section.badge-of-cert > div.body > div.list > div.button-area > button:hover {
   }
 
   section.badge-of-cert > div.body > div.list > div.img {
-    height: unset;
+    height: auto;
   }
 
   section.badge-of-cert > div.body > div.list > div.badge-name {

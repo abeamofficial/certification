@@ -279,7 +279,7 @@ section.course-detail
 /* ----------- Portrait iPhone  ----------- */
 @media only screen and (min-device-width: 375px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   section.course-detail {
-    padding: 50px 5%;
+    padding: 25px 5%;
   }
 
   section.course-detail > div.header > div {
@@ -287,9 +287,9 @@ section.course-detail
   }
 
   ::ng-deep section.course-detail > div.header > div .mat-tab-label {
-    font-size: calc(20px + 2.5vw);
-    min-width: 200px;
-    padding: 30px 5%;
+    font-size: calc(14px + 0.25vw);
+    min-width: 125px;
+    padding: 15px 5%;
   }
 
   /* -----  cert detail  >  body ----- */
@@ -297,15 +297,18 @@ section.course-detail
   section.course-detail > div.body > h1 {
     margin: 0 2.5%;
     font-family: "sutbold";
-    font-size: calc(26px + 2.5vw);
+    font-size: calc(16px + 0.25vw);
+  }
+  section.course-detail > div.body > div.normal-detail {
+    padding: 2.5vw;
   }
 
   section.course-detail > div.body > div.check-list > h1,
   section.course-detail > div.body > div.normal-detail > h1 {
-    font-size: calc(22px + 2.5vw);
+    font-size: calc(14px + 0.25vw);
   }
   section.course-detail > div.body > div.check-list > span > p {
-    font-size: calc(20px + 2.5vw);
+    font-size: calc(16px + 0.25vw);
   }
 
   section.course-detail > div.body > div.check-list > p,
@@ -324,16 +327,20 @@ section.course-detail
   section.course-detail > div.body > div.normal-detail > div > div,
   section.course-detail > div.body > div.normal-detail > div > span,
   section.course-detail > div.body > div.normal-detail > ul {
-    font-size: calc(20px + 2.5vw);
+    font-size: calc(12px + 0.25vw);
     line-height: 115%;
+  }
+  section.course-detail > div.body > div.normal-detail > p,
+  section.course-detail > div.body > div.normal-detail > div {
+    margin: 5px 10px;
   }
 
   section.course-detail > div.body > div.normal-detail > div {
-    padding: 0.5rem 0;
+    padding: 0.5vh 0;
   }
 
   section.course-detail > div.body > div.normal-detail > div > div {
-    margin: 0.5rem 0;
+    margin: 0.5vh 0;
   }
 
   section.course-detail > div.body > div.check-list > p > i,
@@ -345,10 +352,19 @@ section.course-detail
     > p
     > i,
   section.course-detail > div.body > div.check-list > span > i {
-    font-size: calc(22px + 2.5vw);
+    font-size: calc(22px + 0.25vw);
   }
 
   section.course-detail > div.body > div.check-list > span > i {
-    font-size: calc(16px + 2.5vw);
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.course-detail
+    > div.body
+    > div.normal-detail
+    > div
+    > img.institution-logo {
+    height: 100px;
+    margin: 10px 0;
   }
 }

@@ -121,26 +121,35 @@ div.sidebar {
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .navbar-section {
-    height: 75px;
-    max-height: 75px;
+    height: 50px;
+    padding: 8px 5%;
+  }
+
+  .navbar-section > div.logo {
+    gap: 5px;
   }
 
   .navbar-section > div.logo > hr {
     height: 75%;
+    width: 3px;
   }
 
   .navbar-section > div.logo > div > p:first-of-type {
-    font-size: calc(12px + 2.5vw);
+    font-size: calc(12px + 0.25vw);
     line-height: 125%;
   }
 
   .navbar-section > div.logo > div > p:last-of-type {
-    font-size: calc(10px + 2.5vw);
+    font-size: calc(10px + 0.25vw);
     line-height: 100%;
   }
 
   .navbar-section > div.menu > button.menu > span {
-    font-size: calc(18px + 2.5vw);
+    font-size: calc(16px + 0.25vw);
+  }
+
+  .navbar-section > div.menu > button.menu > i {
+    font-size: calc(16px + 0.25vw);
   }
 }
 

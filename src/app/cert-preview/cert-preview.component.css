@@ -523,27 +523,28 @@ section.badge-of-cert > div.body > div.list > div.button-area > button:hover {
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   section.header {
     padding: 0 5%;
-    height: calc(175px + 2.5vw);
+    height: calc(100px + 0.25vw);
   }
 
   section.header > div > span {
-    font-size: calc(16px + 2.5vw);
+    font-size: calc(12px + 0.25vw);
   }
 
   section.header > div > h1 {
-    font-size: calc(25px + 2.5vw);
+    font-size: calc(16px + 0.25vw);
   }
 
   section.header > div > p {
-    font-size: calc(20px + 2.5vw);
+    font-size: calc(14px + 0.25vw);
   }
 
   section.breadcrumb {
-    padding: 20px 5% 35px 5%;
+    padding: 15px 5% 20px 5%;
   }
 
   section.cert {
     padding: 0 5%;
+    margin: 0 0 50px 0;
   }
 
   section.cert div.cert {
@@ -563,69 +564,83 @@ section.badge-of-cert > div.body > div.list > div.button-area > button:hover {
   }
 
   section.cert div.cert > div.cert-detail > div.title {
-    height: 65px;
+    height: 35px;
   }
   section.cert div.cert > div.cert-detail > div.title > hr {
-    width: 25%;
+    width: 20%;
   }
   section.cert div.cert > div.cert-detail > div.title > p {
-    font-size: calc(15px + 5vw);
-    width: 50%;
+    font-size: calc(12px + 0.25vw);
+    width: 60%;
   }
 
   section.cert div.cert > div.cert-detail > div.cert-detail-name {
-    height: 85px;
+    height: 45px;
   }
 
   section.cert div.cert > div.cert-detail > div.cert-detail-name > p {
     margin: auto;
     font-family: "sutregular";
-    font-size: calc(25px + 5vw);
+    font-size: calc(18px + 0.25vw);
     color: #fff;
   }
+  section.cert div.cert > div.cert-detail > div.detail {
+    margin: 15px 0;
+    padding: 10px 15px;
+    width: 100%;
+  }
 
+  section.cert div.cert > div.cert-detail > div.detail > hr {
+    margin: 10px 0;
+  }
   section.cert div.cert > div.cert-detail > div.detail > div > p {
-    width: 35%;
-    font-size: calc(25px + 2.5vw);
+    width: 45%;
+    font-size: calc(14px + 0.25vw);
   }
 
   section.cert div.cert > div.cert-detail > div.detail > div > div {
-    font-size: calc(20px + 2.5vw);
+    font-size: calc(12px + 0.25vw);
+    margin: 0.25vh 0 auto 0;
   }
   section.cert div.cert > div.cert-detail > div.detail > p {
-    font-size: calc(25px + 2.5vw);
+    font-size: calc(14px + 0.25vw);
   }
   section.cert div.cert > div.cert-detail > div.detail > span > p {
-    font-size: calc(18px + 2.5vw);
+    font-size: calc(12px + 0.25vw);
   }
 
   section.cert div.cert > div.cert-detail > div.detail > span.link > p > i {
-    font-size: calc(14px + 2.5vw);
+    font-size: calc(14px + 0.25vw);
   }
 
   section.cert div.cert > div.cert-detail > div.detail > span > span {
-    font-size: calc(16px + 2.5vw);
+    font-size: calc(12px + 0.25vw);
   }
 
   /* ==================== badge of cert ==================== */
 
   section.badge-of-cert {
-    padding: 100px 5% 0px;
+    padding: 50px 5% 0px;
+    margin: 50px 0;
   }
 
   section.badge-of-cert > div.header > div {
-    padding: 15px 0 15px 5%;
+    padding: 10px 0 10px 5%;
+    gap: 10px;
   }
 
   section.badge-of-cert > div.header > div > p {
-    font-size: calc(25px + 2.5vw);
+    font-size: calc(18px + 0.25vw);
   }
 
   /*  badge of cert  >  body  */
+  section.badge-of-cert > div.body {
+    column-gap: 1%;
+  }
 
   section.badge-of-cert > div.body > div.list {
-    padding: 2.5%;
-    width: calc(25% - 1rem);
+    padding: 2%;
+    width: 24%;
     min-height: unset;
     min-width: unset;
   }
@@ -640,19 +655,51 @@ section.badge-of-cert > div.body > div.list > div.button-area > button:hover {
 
   section.badge-of-cert > div.body > div.list > div.badge-name {
     width: 100%;
-    height: calc(75px + 1vw);
-    font-size: calc(12px + 2.5vw);
+    height: calc(30px + 1vw);
+    font-size: calc(8px + 0.25vw);
     line-height: 115%;
-    margin: 2.5vh 0 0 0;
+    margin: 1vh 0 0 0;
   }
 
   section.badge-of-cert > div.body > div.list > p {
-    font-size: calc(12px + 2.5vw);
+    font-size: calc(8px + 0.25vw);
   }
 
   section.badge-of-cert > div.body > div.list > div.detail {
-    height: calc(75px + 1vw);
-    font-size: calc(10px + 2.5vw);
+    height: calc(35px + 1vw);
+    font-size: calc(6px + 0.25vw);
     line-height: 115%;
+  }
+
+  section.badge-of-cert > div.body > div.list > div.level-bar {
+    margin: 1vh 0;
+  }
+
+  section.badge-of-cert
+    > div.body
+    > div.list
+    > div.level-bar
+    > .full-bar
+    > .percent-bar {
+    height: calc(6px + 0.25vw);
+    font-size: calc(6px + 0.25vw);
+    padding-left: 5px;
+  }
+
+  section.badge-of-cert
+    > div.body
+    > div.list
+    > div.level-bar
+    > div.percent-level {
+    padding: 0 0 0 5px;
+  }
+
+  section.badge-of-cert
+    > div.body
+    > div.list
+    > div.level-bar
+    > div.percent-level
+    > p {
+    font-size: calc(4px + 0.25vw);
   }
 }

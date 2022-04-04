@@ -7,12 +7,13 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class ModuleTemplateComponent implements OnInit {
   @Input() value: any;
+  @Input() isView: any;
 
   constructor() {}
 
   ngOnInit() {}
   onNavigate(url) {
-    window.location.href = url;
+    window.open(url, "_blank");
   }
 
   scrollToId($event) {

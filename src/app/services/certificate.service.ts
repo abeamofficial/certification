@@ -189,6 +189,26 @@ export class CertificateService {
     }
   }
 
+  async getCertificateOfAchievementByNo(no: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getCertificateOfAchievementByNo.php",
+        { no: no },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
+
   async getCertificateOfParticipantByUserId(user_id: string) {
     let result = await this.http
       .post<any>(

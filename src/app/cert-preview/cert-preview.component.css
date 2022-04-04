@@ -216,7 +216,7 @@ section.cert div.cert > div.cert-detail > div.detail > span > span {
   font-weight: 100;
 }
 
-section.cert div.cert > div.cert-detail > button {
+/* section.cert div.cert > div.cert-detail > button {
   display: flex;
   background-color: #51af5f;
   color: #ffffff;
@@ -241,7 +241,7 @@ section.cert div.cert > div.cert-detail > button > p {
 section.cert div.cert > div.cert-detail > button > i {
   margin: auto;
   font-size: 20px;
-}
+} */
 
 /* ==================== badge of cert ==================== */
 
@@ -494,7 +494,7 @@ section.badge-of-cert > div.body > div.list > div.detail {
   margin: 10px 0;
 }
 
-section.badge-of-cert > div.body > div.list > div.button-area {
+/* section.badge-of-cert > div.body > div.list > div.button-area {
   width: 100%;
   display: flex;
 }
@@ -515,28 +515,140 @@ section.badge-of-cert > div.body > div.list > div.button-area > button {
 
 section.badge-of-cert > div.body > div.list > div.button-area > button:hover {
   background-color: #d7e3f1;
-}
+} */
 
 /* ==================== END badge of cert ==================== */
 
-/*  spinner */
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  section.header {
+    padding: 0 5%;
+    height: calc(175px + 2.5vw);
+  }
 
-.spinner {
-  position: absolute;
-  display: flex;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-}
+  section.header > div > span {
+    font-size: calc(16px + 2.5vw);
+  }
 
-.spinner mat-spinner {
-  margin: auto;
-}
+  section.header > div > h1 {
+    font-size: calc(25px + 2.5vw);
+  }
 
-::ng-deep .mat-progress-spinner circle,
-::ng-deep .mat-spinner circle {
-  stroke: var(--dark-blue);
+  section.header > div > p {
+    font-size: calc(20px + 2.5vw);
+  }
+
+  section.breadcrumb {
+    padding: 20px 5% 35px 5%;
+  }
+
+  section.cert {
+    padding: 0 5%;
+  }
+
+  section.cert div.cert {
+    display: block;
+    min-width: unset;
+    row-gap: unset;
+    column-gap: unset;
+  }
+
+  section.cert div.cert > div.cert-paper {
+    width: 100%;
+  }
+
+  section.cert div.cert > div.cert-detail {
+    width: 100%;
+    padding: 2.5% 0;
+  }
+
+  section.cert div.cert > div.cert-detail > div.title {
+    height: 65px;
+  }
+  section.cert div.cert > div.cert-detail > div.title > hr {
+    width: 25%;
+  }
+  section.cert div.cert > div.cert-detail > div.title > p {
+    font-size: calc(15px + 5vw);
+    width: 50%;
+  }
+
+  section.cert div.cert > div.cert-detail > div.cert-detail-name {
+    height: 85px;
+  }
+
+  section.cert div.cert > div.cert-detail > div.cert-detail-name > p {
+    margin: auto;
+    font-family: "sutregular";
+    font-size: calc(25px + 5vw);
+    color: #fff;
+  }
+
+  section.cert div.cert > div.cert-detail > div.detail > div > p {
+    width: 35%;
+    font-size: calc(25px + 2.5vw);
+  }
+
+  section.cert div.cert > div.cert-detail > div.detail > div > div {
+    font-size: calc(20px + 2.5vw);
+  }
+  section.cert div.cert > div.cert-detail > div.detail > p {
+    font-size: calc(25px + 2.5vw);
+  }
+  section.cert div.cert > div.cert-detail > div.detail > span > p {
+    font-size: calc(18px + 2.5vw);
+  }
+
+  section.cert div.cert > div.cert-detail > div.detail > span.link > p > i {
+    font-size: calc(14px + 2.5vw);
+  }
+
+  section.cert div.cert > div.cert-detail > div.detail > span > span {
+    font-size: calc(16px + 2.5vw);
+  }
+
+  /* ==================== badge of cert ==================== */
+
+  section.badge-of-cert {
+    padding: 100px 5% 0px;
+  }
+
+  section.badge-of-cert > div.header > div {
+    padding: 15px 0 15px 5%;
+  }
+
+  section.badge-of-cert > div.header > div > p {
+    font-size: calc(25px + 2.5vw);
+  }
+
+  /*  badge of cert  >  body  */
+
+  section.badge-of-cert > div.body > div.list {
+    padding: 2.5%;
+    width: calc(25% - 1rem);
+    min-height: unset;
+    min-width: unset;
+  }
+
+  section.badge-of-cert > div.body > div.list > div.img {
+    height: unset;
+  }
+
+  section.badge-of-cert > div.body > div.list > div.badge-name {
+    width: 100%;
+    height: calc(75px + 1vw);
+    font-size: calc(12px + 2.5vw);
+    line-height: 115%;
+    margin: 2.5vh 0 0 0;
+  }
+
+  section.badge-of-cert > div.body > div.list > p {
+    font-size: calc(12px + 2.5vw);
+  }
+
+  section.badge-of-cert > div.body > div.list > div.detail {
+    height: calc(75px + 1vw);
+    font-size: calc(10px + 2.5vw);
+    line-height: 115%;
+  }
 }

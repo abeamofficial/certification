@@ -26,7 +26,7 @@
 
     <div class="normal-detail" *ngIf="value.module_objective">
       <h1>วัตถุประสงค์</h1>
-      <p style="white-space: pre">{{ value.module_objective }}</p>
+      <p style="white-space: pre-line">{{ value.module_objective }}</p>
     </div>
 
     <div class="normal-detail" *ngIf="value.learning_hour">
@@ -46,11 +46,20 @@
       <div *ngFor="let item of value.course; let i = index">
         <h1>
           <span>{{ i + 1 }}.</span>
-          <span class="link" [routerLink]="['/course-detail/' + item.id]">
-            {{
-              "วิชา" + item.course_name_th + " (" + item.course_name_en + ")"
-            }}</span
-          >
+          <ng-container *ngIf="!isView; else view">
+            <span class="link" [routerLink]="['/course-detail/' + item.id]">
+              {{
+                "วิชา" + item.course_name_th + " (" + item.course_name_en + ")"
+              }}
+            </span>
+          </ng-container>
+          <ng-template #view>
+            <span>
+              {{
+                "วิชา" + item.course_name_th + " (" + item.course_name_en + ")"
+              }}</span
+            >
+          </ng-template>
         </h1>
         <div>
           {{ item.course_detail_th }}

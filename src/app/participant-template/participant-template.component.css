@@ -1,0 +1,65 @@
+section {
+  position: relative;
+  font-family: "sutregular";
+  font-size: 100%;
+}
+
+.bg-cert {
+  width: 100%;
+  display: block;
+}
+
+.inner-cert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  margin-top: 5%;
+}
+
+.sut-logo-cert {
+  margin: auto;
+  height: 92.5%;
+}
+
+.text-cert {
+  width: 100%;
+  height: 70%;
+}
+
+.text-cert .d-text-1 {
+  text-align: center;
+  font-size: 100%;
+  line-height: 175%;
+}
+
+.text-cert .d-text-2 {
+  text-align: center;
+  font-size: 100%;
+  line-height: 125%;
+}
+
+.text-cert .d-text-3 {
+  text-align: center;
+  font-size: 100%;
+  line-height: 200%;
+}
+
+.text-cert-sign {
+  height: 17.5%;
+  margin: 0.5% auto 0 auto;
+  display: flex;
+}
+
+.text-cert .d-text-4 {
+  text-align: center;
+  font-size: 100%;
+  line-height: 150%;
+}

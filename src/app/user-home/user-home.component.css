@@ -129,6 +129,11 @@ section.body-section > div.search-area > span > i.material-icons {
   color: var(--blue);
 }
 
+section.body-section > div.search-area > span > i.material-icons.searching {
+  color: gray;
+  cursor: pointer;
+}
+
 section.body-section > div.search-area > span > input::placeholder {
   color: #676767;
 }

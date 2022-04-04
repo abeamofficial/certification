@@ -1,4 +1,9 @@
 /* ----- header template ----- */
+.main {
+  /* position: relative; */
+  height: 100%;
+}
+
 section.header {
   box-sizing: border-box;
   padding: 0 15%;
@@ -115,7 +120,7 @@ section.cert div.cert > div.cert-detail > div.title > p {
   width: 70%;
 }
 
-section.cert div.cert > div.cert-detail > div.name {
+section.cert div.cert > div.cert-detail > div.cert-detail-name {
   background-color: #073c83;
   border-radius: 3px;
   display: flex;
@@ -123,7 +128,7 @@ section.cert div.cert > div.cert-detail > div.name {
   height: 65px;
 }
 
-section.cert div.cert > div.cert-detail > div.name > p {
+section.cert div.cert > div.cert-detail > div.cert-detail-name > p {
   margin: auto;
   font-family: "sutregular";
   font-size: calc(12px + 1vw);
@@ -499,4 +504,25 @@ section.cert-detail
   > img.institution-logo {
   height: 175px;
   margin: 10px 0;
+}
+
+/* * spinner  */
+.spinner {
+  position: absolute;
+  display: flex;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.spinner mat-spinner {
+  margin: auto;
+}
+
+::ng-deep .mat-progress-spinner circle,
+::ng-deep .mat-spinner circle {
+  stroke: var(--dark-blue);
 }

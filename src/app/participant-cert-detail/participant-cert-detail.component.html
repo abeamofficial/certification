@@ -1,65 +1,87 @@
-<section class="header">
-  <div>
-    <span>Certificate of Participant in</span>
-    <h1>{{ value.module_name_en }}</h1>
-    <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ value.module_name_th }}</p>
-  </div>
-</section>
-<section class="breadcrumb">
-  <p [routerLink]="['']">Home</p>
-  <span>></span>
-  <p>Certificate of Participant in {{ value.module_name_en }}</p>
-</section>
-<section class="cert">
-  <div class="cert">
-    <div class="cert-paper">
-      <img
-        src="https://digitech.sut.ac.th/certification-img/certificate/TEMPLATE-BACKGROUND/Certificate-Digitech-TEMPLATE-blank.jpg"
-      />
-    </div>
-    <div class="cert-detail">
-      <div class="title">
-        <hr />
-        <p>This certificate is awarded to</p>
-        <hr />
-      </div>
-      <div class="name">
-        <p>{{ value.first_name + " " + value.last_name }}</p>
-      </div>
-      <div class="detail">
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+<ng-container *ngIf="value">
+  <div
+    class="main"
+    [ngStyle]="{
+      overflow: isLoading ? 'hidden' : 'auto',
+      position: isLoading ? 'relative' : 'unset'
+    }"
+  >
+    <div style="position: absolute; z-index: 1; background-color: white">
+      <section class="header">
         <div>
-          <p>Approved By</p>
-          <div>{{ value.diploma_approved }}</div>
+          <span>Certificate of Participant in</span>
+          <h1>{{ value.module_name_en }}</h1>
+          <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ value.module_name_th }}</p>
         </div>
+      </section>
+      <section class="breadcrumb">
+        <p [routerLink]="['']">Home</p>
+        <span>></span>
+        <p>Certificate of Participant in {{ value.module_name_en }}</p>
+      </section>
+      <section class="cert">
+        <div class="cert">
+          <div class="cert-paper">
+            <app-participant-template
+              [value]="value"
+            ></app-participant-template>
+          </div>
+          <div class="cert-detail">
+            <div class="title">
+              <hr />
+              <p>This certificate is awarded to</p>
+              <hr />
+            </div>
+            <div class="cert-detail-name">
+              <p>{{ value.first_name + " " + value.last_name }}</p>
+            </div>
+            <div class="detail">
+              <div>
+                <p>Approved By</p>
+                <div>{{ value.diploma_approved }}</div>
+              </div>
 
-        <div>
-          <p>Approved Date</p>
-          <div>{{ value.diploma_approved_date | date: "MMM d, y" }}</div>
+              <div>
+                <p>Approved Date</p>
+                <div>{{ value.diploma_approved_date | date: "MMM d, y" }}</div>
+              </div>
+
+              <hr />
+              <p>Offered By</p>
+              <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
+                <p>
+                  Suranaree University of Technology
+                  <i class="material-icons">open_in_new</i>
+                </p>
+              </span>
+              <span>
+                <span>Nakhon ratchasima</span>
+                <span>•</span>
+                <span>Thailand</span>
+              </span>
+            </div>
+            <button (click)="onDownloadFile()">
+              <p>Download</p>
+              <i class="material-icons">file_download</i>
+            </button>
+          </div>
         </div>
+      </section>
 
-        <hr />
-        <p>Offered By</p>
-        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-          <p>
-            Suranaree University of Technology
-            <i class="material-icons">open_in_new</i>
-          </p>
-        </span>
-        <span>
-          <span>Nakhon ratchasima</span>
-          <span>•</span>
-          <span>Thailand</span>
-        </span>
-      </div>
-      <button>
-        <p>Download</p>
-        <i class="material-icons">file_download</i>
-      </button>
+      <app-module-template
+        *ngIf="value.module_detail"
+        [value]="value.module_detail"
+        [isView]="false"
+      ></app-module-template>
+    </div>
+    <div style="position: absolute; z-index: -1">
+      <app-participant-template
+        id="printableArea"
+        [value]="value"
+      ></app-participant-template>
     </div>
   </div>
-</section>
-
-<app-module-template
-  *ngIf="value.module_detail"
-  [value]="value.module_detail"
-></app-module-template>
+</ng-container>

@@ -1,26 +1,17 @@
-<div class="spinner" *ngIf="isLoading">
-  <mat-spinner></mat-spinner>
-</div>
 <ng-container *ngIf="value">
-  <div
-    class="main"
-    [ngStyle]="{
-      overflow: isLoading ? 'hidden' : 'auto',
-      position: isLoading ? 'relative' : 'unset'
-    }"
-  >
+  <div class="main">
     <div style="z-index: 1; background-color: white">
       <section class="header">
         <div>
           <span>Certificate of Achievement in</span>
-          <h1>{{ value.name_en }}</h1>
-          <p>สัมฤทธิบัตร{{ value.name_th }}</p>
+          <h1>{{ value.module_name_en }}</h1>
+          <p>สัมฤทธิบัตร{{ value.module_name_th }}</p>
         </div>
       </section>
       <section class="breadcrumb">
-        <p [routerLink]="['']">Home</p>
+        <!-- <p [routerLink]="['']">Home</p>
         <span>></span>
-        <p>Certificate of Achievement in {{ value.name_en }}</p>
+        <p>Certificate of Achievement in {{ value.name_en }}</p> -->
       </section>
 
       <section class="cert">
@@ -74,10 +65,6 @@
                 <span>Thailand</span>
               </span>
             </div>
-            <button *ngIf="value.active" (click)="onDownloadFile()">
-              <p>Download</p>
-              <i class="material-icons">file_download</i>
-            </button>
           </div>
         </div>
       </section>
@@ -164,12 +151,6 @@
             <div class="detail" ellipsis>
               {{ item.value.course_detail_th }}
             </div>
-
-            <div class="button-area">
-              <button [routerLink]="['/badge-detail/' + item.value.id]">
-                Detail
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -177,14 +158,8 @@
       <app-module-template
         *ngIf="value.module_detail"
         [value]="value.module_detail"
-        [isView]="false"
+        [isView]="true"
       ></app-module-template>
-    </div>
-    <div style="position: absolute; z-index: -1; left: 0; top: 0">
-      <app-achievement-template
-        id="printableArea"
-        [value]="value"
-      ></app-achievement-template>
     </div>
   </div>
 </ng-container>

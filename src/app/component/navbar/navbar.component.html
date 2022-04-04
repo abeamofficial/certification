@@ -8,18 +8,18 @@
   </div>
 
   <div class="menu">
-    <button
-      mat-button
-      [matMenuTriggerFor]="beforeMenu"
-      class="menu"
-      *ngIf="isLogOn()"
-    >
-      <span>{{ getCurrentUserName() }}</span>
-      <i class="material-icons">expand_more</i>
-    </button>
-    <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button mat-menu-item (click)="logout()">ออกจากระบบ</button>
-    </mat-menu>
+    <ng-container *ngIf="isLogOn(); else anonymous">
+      <button mat-button [matMenuTriggerFor]="beforeMenu" class="menu">
+        <span>{{ getCurrentUserName() }}</span>
+        <i class="material-icons">expand_more</i>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="logout()">ออกจากระบบ</button>
+      </mat-menu>
+    </ng-container>
+    <ng-template #anonymous>
+      <button class="login-button">เข้าสู่ระบบ</button>
+    </ng-template>
   </div>
 </div>
 <!-- <div [@slideInOut]="menuState" class="sidebar">

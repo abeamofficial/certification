@@ -35,7 +35,7 @@ export class CourseDetailComponent implements OnInit {
   }
 
   onNavigate(url) {
-    window.location.href = url;
+    window.open(url, "_blank");
   }
 
   scrollToId($event) {

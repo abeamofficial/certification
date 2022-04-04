@@ -6,6 +6,10 @@ import { data, competency_level } from "src/assets/models/data";
 import { CertificateService } from "../services/certificate.service";
 import { ModuleService } from "../services/module.service";
 import { AuthenticationService } from "../services/authentication.service";
+
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
 @Component({
   selector: "app-achievement-cert-detail",
   templateUrl: "./achievement-cert-detail.component.html",
@@ -13,14 +17,14 @@ import { AuthenticationService } from "../services/authentication.service";
 })
 export class AchievementCertDetailComponent implements OnInit {
   value;
+
+  isLoading = false;
   constructor(
     private route: ActivatedRoute,
     private certificateService: CertificateService,
     private authenticationService: AuthenticationService,
     private moduleService: ModuleService
-  ) {}
-
-  ngOnInit() {
+  ) {
     this.route.params.subscribe((params) => {
       if (params.id) {
         this.certificateService
@@ -40,6 +44,8 @@ export class AchievementCertDetailComponent implements OnInit {
     });
   }
 
+  ngOnInit() {}
+
   getCompetencyLevel(score) {
     let competency_name;
     Object.entries(competency_level).forEach(([key, item]) => {
@@ -55,7 +61,7 @@ export class AchievementCertDetailComponent implements OnInit {
   }
 
   onNavigate(url) {
-    window.location.href = url;
+    window.open(url, "_blank");
   }
 
   scrollToId($event) {
@@ -75,9 +81,33 @@ export class AchievementCertDetailComponent implements OnInit {
     // document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   }
 
-  onDownloadFile(filePath) {
-    // let headers = new HttpHeaders();
-    // headers = headers.set('Accept', 'application/pdf');
-    // return this.http.get(filePath, { headers: headers, responseType: 'blob' });
+  onDownloadFile() {
+    this.isLoading = true;
+    html2canvas(document.querySelector("#printableArea")).then((canvas) => {
+      this.isLoading = false;
+      var imgData = canvas.toDataURL("image/png");
+      var doc = new jsPDF("l", "mm", "a4");
+
+      var width = doc.internal.pageSize.getWidth();
+      var height = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, width, height);
+
+      window.open(doc.output("bloburl").toString(), "_blank");
+    });
   }
+
+  // imageDownload() {
+  //   html2canvas(document.querySelector("#printableArea")).then(function (
+  //     canvas
+  //   ) {
+  //     var imgData = canvas.toDataURL("image/png");
+  //     // document.body.appendChild(canvas);
+  //     var doc = new jsPDF("l", "mm", "a4");
+
+  //     var width = doc.internal.pageSize.getWidth();
+  //     var height = doc.internal.pageSize.getHeight();
+  //     doc.addImage(imgData, "PNG", 0, 0, width, height);
+  //     window.open(doc.output("bloburl").toString(), "_blank");
+  //   });
+  // }
 }

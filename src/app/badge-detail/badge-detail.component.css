@@ -96,8 +96,37 @@ div.badge > div.badge-paper {
   /* padding: 16px; */
 }
 
-div.badge > div.badge-paper > img {
+div.badge > div.badge-paper.disabled > div.img,
+div.badge > div.badge-paper.disabled > div.badge-info {
+  filter: grayscale(100%);
+}
+
+div.badge > div.badge-paper > div.img {
   text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+div.badge > div.badge-paper > div.img .watermark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 100;
+  text-transform: uppercase;
+}
+div.badge > div.badge-paper > div.img .watermark div {
+  margin: 0;
+  margin: auto;
+  font-family: "sutbold";
+  background-color: rgb(212, 212, 212);
+  color: gray;
+  padding: 2.5% 7.5%;
+  font-size: 100%;
+  border-radius: calc(0.25vmax + 0.75vmin);
+}
+
+div.badge > div.badge-paper > div.img img {
   width: 100%;
 }
 

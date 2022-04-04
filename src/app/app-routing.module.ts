@@ -21,6 +21,7 @@ import { CertificatePublishingDialogComponent } from "./management/dialog/certif
 import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete-dialog/confirm-delete-dialog.component";
 import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
+import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
@@ -88,6 +89,14 @@ const routes: Routes = [
   },
   { path: "certificate-publishing", component: CertificatePublishingComponent },
   { path: "plo-progress", component: PloProgressComponent },
+  {
+    path: "cpw",
+    component: CertPreviewComponent,
+    // children: [
+    //   { path: "", component: CertPreviewComponent },
+    //   { path: ":no", component: CertPreviewComponent },
+    // ],
+  },
 ];
 
 @NgModule({

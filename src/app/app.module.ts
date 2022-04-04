@@ -13,6 +13,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDialogModule } from "@angular/material/dialog";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { MatFormFieldModule, MatSelectModule } from "@angular/material";
 import { NgxMatSelectSearchModule } from "ngx-mat-select-search";
@@ -54,7 +55,10 @@ import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
 
 import { RecaptchaModule, RecaptchaFormsModule } from "ng-recaptcha";
-import { ModuleTemplateComponent } from './module-template/module-template.component';
+import { ModuleTemplateComponent } from "./module-template/module-template.component";
+import { AchievementTemplateComponent } from "./achievement-template/achievement-template.component";
+import { ParticipantTemplateComponent } from './participant-template/participant-template.component';
+import { CertPreviewComponent } from './cert-preview/cert-preview.component';
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -93,6 +97,9 @@ import { ModuleTemplateComponent } from './module-template/module-template.compo
     PloProgressComponent,
     CompetencyLevelDialogComponent,
     ModuleTemplateComponent,
+    AchievementTemplateComponent,
+    ParticipantTemplateComponent,
+    CertPreviewComponent,
   ],
   imports: [
     EllipsisModule,
@@ -114,6 +121,7 @@ import { ModuleTemplateComponent } from './module-template/module-template.compo
     NgApexchartsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

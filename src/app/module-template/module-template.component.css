@@ -186,7 +186,7 @@ section.course-detail > div.body > div.normal-detail > div {
 section.course-detail > div.body > div.normal-detail > div > h1 {
   font-family: "sutbold";
   font-size: 18px;
-  line-height: 30px;
+  line-height: 100%;
   margin: 0;
 }
 
@@ -227,7 +227,7 @@ section.course-detail
 section.course-detail > div.body > div.normal-detail > div > div {
   font-family: "sutregular";
   font-weight: 100;
-  margin: 0 20px;
+  margin: 0 1.25rem;
   font-size: 18px;
 }
 
@@ -274,4 +274,81 @@ section.course-detail
   > img.institution-logo {
   height: 175px;
   margin: 10px 0;
+}
+
+/* ----------- Portrait iPhone  ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  section.course-detail {
+    padding: 50px 5%;
+  }
+
+  section.course-detail > div.header > div {
+    padding-left: 5%;
+  }
+
+  ::ng-deep section.course-detail > div.header > div .mat-tab-label {
+    font-size: calc(20px + 2.5vw);
+    min-width: 200px;
+    padding: 30px 5%;
+  }
+
+  /* -----  cert detail  >  body ----- */
+
+  section.course-detail > div.body > h1 {
+    margin: 0 2.5%;
+    font-family: "sutbold";
+    font-size: calc(26px + 2.5vw);
+  }
+
+  section.course-detail > div.body > div.check-list > h1,
+  section.course-detail > div.body > div.normal-detail > h1 {
+    font-size: calc(22px + 2.5vw);
+  }
+  section.course-detail > div.body > div.check-list > span > p {
+    font-size: calc(20px + 2.5vw);
+  }
+
+  section.course-detail > div.body > div.check-list > p,
+  section.course-detail
+    > div.body
+    > div.normal-detail
+    > div
+    > div.check-list
+    > p,
+  section.course-detail > div.body > div.normal-detail > span > span,
+  section.course-detail > div.body > div.normal-detail > span > p,
+  section.course-detail > div.body > div.normal-detail > p,
+  section.course-detail > div.body > div.normal-detail > div,
+  section.course-detail > div.body > div.normal-detail > div > h1,
+  section.course-detail > div.body > div.normal-detail > div > p,
+  section.course-detail > div.body > div.normal-detail > div > div,
+  section.course-detail > div.body > div.normal-detail > div > span,
+  section.course-detail > div.body > div.normal-detail > ul {
+    font-size: calc(20px + 2.5vw);
+    line-height: 115%;
+  }
+
+  section.course-detail > div.body > div.normal-detail > div {
+    padding: 0.5rem 0;
+  }
+
+  section.course-detail > div.body > div.normal-detail > div > div {
+    margin: 0.5rem 0;
+  }
+
+  section.course-detail > div.body > div.check-list > p > i,
+  section.course-detail
+    > div.body
+    > div.normal-detail
+    > div
+    > div.check-list
+    > p
+    > i,
+  section.course-detail > div.body > div.check-list > span > i {
+    font-size: calc(22px + 2.5vw);
+  }
+
+  section.course-detail > div.body > div.check-list > span > i {
+    font-size: calc(16px + 2.5vw);
+  }
 }

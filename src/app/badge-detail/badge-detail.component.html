@@ -12,12 +12,19 @@
 </section>
 <section class="body">
   <div class="badge">
-    <div class="badge-paper">
-      <img
-        src="https://digitech.sut.ac.th/certification-img/badge/{{
-          value.file_name
-        }}"
-      />
+    <div class="badge-paper" [ngClass]="{ disabled: !value.active }">
+      <div class="img">
+        <div *ngIf="!value.active" class="watermark">
+          <div class="watermark-text">expired</div>
+        </div>
+        <!-- <img
+          src="https://digitech.sut.ac.th/certification-img/badge/{{
+            value.file_name
+          }}"
+        /> -->
+        <img src="./assets/images/1101012.png" />
+      </div>
+
       <div class="badge-info">
         <p>Level</p>
         <span

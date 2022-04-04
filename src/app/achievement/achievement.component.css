@@ -22,7 +22,7 @@ div.data-list > div.list.disabled {
   background-color: #eaeaea !important;
 }
 
-div.data-list > div.list.disabled > div.img > img {
+div.data-list > div.list.disabled > div.img {
   filter: grayscale(100%);
 }
 

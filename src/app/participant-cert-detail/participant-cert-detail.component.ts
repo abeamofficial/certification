@@ -5,6 +5,9 @@ import { CertificateService } from "../services/certificate.service";
 import { AuthenticationService } from "../services/authentication.service";
 import { ModuleService } from "../services/module.service";
 
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
 @Component({
   selector: "app-participant-cert-detail",
   templateUrl: "./participant-cert-detail.component.html",
@@ -12,6 +15,7 @@ import { ModuleService } from "../services/module.service";
 })
 export class ParticipantCertDetailComponent implements OnInit {
   value;
+  isLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,7 +51,7 @@ export class ParticipantCertDetailComponent implements OnInit {
   }
 
   onNavigate(url) {
-    window.location.href = url;
+    window.open(url, "_blank");
   }
 
   scrollToId($event) {
@@ -65,5 +69,20 @@ export class ParticipantCertDetailComponent implements OnInit {
       behavior: "smooth",
     });
     // document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }
+
+  onDownloadFile() {
+    this.isLoading = true;
+    html2canvas(document.querySelector("#printableArea")).then((canvas) => {
+      this.isLoading = false;
+      var imgData = canvas.toDataURL("image/png");
+      var doc = new jsPDF("l", "mm", "a4");
+
+      var width = doc.internal.pageSize.getWidth();
+      var height = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, width, height);
+
+      window.open(doc.output("bloburl").toString(), "_blank");
+    });
   }
 }

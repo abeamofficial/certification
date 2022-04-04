@@ -2,24 +2,34 @@
   <div class="header">Certificate Of Participant</div>
   <div class="search-area">
     <span>
-      <input placeholder="ค้นหา" /><i class="material-icons">search</i>
+      <input
+        placeholder="ค้นหา"
+        [(ngModel)]="keyword"
+        (input)="onSearching()"
+      />
+      <ng-container *ngIf="!keyword; else close">
+        <i class="material-icons">search</i></ng-container
+      >
+      <ng-template #close>
+        <i class="material-icons searching" (click)="onClearSearching()"
+          >close</i
+        >
+      </ng-template>
     </span>
-    <select>
-      <option disabled>จัดเรียง</option>
-      <option>ใหม่ที่สุด</option>
-      <option>เก่าที่สุด</option>
+    <select [(ngModel)]="sort" (change)="onSorting()">
+      <option value="null" disabled>จัดเรียง</option>
+      <option value="1">ใหม่ที่สุด</option>
+      <option value="2">เก่าที่สุด</option>
     </select>
   </div>
   <div class="data-list">
     <div
       class="list"
-      *ngFor="let item of value"
+      *ngFor="let item of filter_value"
       [routerLink]="['/participant-cert-detail/' + item.id]"
     >
       <div class="img">
-        <img
-          src="https://digitech.sut.ac.th/certification-img/certificate/TEMPLATE-BACKGROUND/"
-        />
+        <app-participant-template [value]="item"></app-participant-template>
       </div>
       <div class="detail">
         <p>Certificate Of Participant in {{ item.module_name_en }}</p>

@@ -337,7 +337,7 @@ section.badge-of-cert > div.body > div.list.disabled > div.img {
 
 section.badge-of-cert > div.body > div.list > div.img {
   width: 100%;
-  height: 200px;
+  height: auto;
   display: flex;
 }
 

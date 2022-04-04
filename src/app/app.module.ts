@@ -57,8 +57,8 @@ import { CompetencyLevelDialogComponent } from "./competency-level-dialog/compet
 import { RecaptchaModule, RecaptchaFormsModule } from "ng-recaptcha";
 import { ModuleTemplateComponent } from "./module-template/module-template.component";
 import { AchievementTemplateComponent } from "./achievement-template/achievement-template.component";
-import { ParticipantTemplateComponent } from './participant-template/participant-template.component';
-import { CertPreviewComponent } from './cert-preview/cert-preview.component';
+import { ParticipantTemplateComponent } from "./participant-template/participant-template.component";
+import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");

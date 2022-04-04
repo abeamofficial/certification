@@ -26,11 +26,12 @@ import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
-  {
-    path: "",
-    component: HomeComponent,
-    // canActivate: [AuthGuard],
-  },
+  { path: "", redirectTo: "/cpw", pathMatch: "full" },
+  // {
+  //   path: "",
+  //   component: HomeComponent,
+  //   // canActivate: [AuthGuard],
+  // },
   { path: "login", component: LoginComponent },
   {
     path: "transcript-detail",
@@ -91,7 +92,6 @@ const routes: Routes = [
   { path: "plo-progress", component: PloProgressComponent },
   {
     path: "cpw",
-    component: CertPreviewComponent,
     children: [
       { path: "", component: CertPreviewComponent },
       // { path: ":no", component: CertPreviewComponent },

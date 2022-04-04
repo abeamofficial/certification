@@ -26,9 +26,9 @@ import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  // { path: "", redirectTo: "/home", pathMatch: "full" },
   {
-    path: "home",
+    path: "",
     component: HomeComponent,
     canActivate: [AuthGuard],
   },

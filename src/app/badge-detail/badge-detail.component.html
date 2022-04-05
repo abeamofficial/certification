@@ -17,12 +17,11 @@
         <div *ngIf="!value.active" class="watermark">
           <div class="watermark-text">expired</div>
         </div>
-        <!-- <img
+        <img
           src="https://digitech.sut.ac.th/certification-img/badge/{{
-            value.file_name
-          }}"
-        /> -->
-        <img src="./assets/images/1101012.png" />
+            value.path
+          }}/{{ value.file_name }}"
+        />
       </div>
 
       <div class="badge-info">

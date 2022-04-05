@@ -1,6 +1,8 @@
 <section>
   <img
-    src="./assets/images/Diploma-Digitech-TEMPLATE-blank.jpg"
+    src="https://digitech.sut.ac.th/certification-img/certificate/{{
+      'Diploma-Digitech-TEMPLATE-blank.jpg'
+    }}"
     class="bg-cert"
   />
   <div class="inner-cert">
@@ -17,7 +19,12 @@
       <div class="d-text-2">
         ให้ไว้ ณ วันที่ {{ value.diploma_approved_thai_date }}
       </div>
-      <img class="text-cert-sign" src="./assets/images/anan.png" />
+      <img
+        class="text-cert-sign"
+        src="https://digitech.sut.ac.th/certification-img/signer/{{
+          value.signer_img
+        }}"
+      />
       <div class="d-text-4">
         {{
           "(" +

@@ -2,7 +2,12 @@
   <div *ngIf="!value.active" class="watermark">
     <div>certificate expired</div>
   </div>
-  <img src="./assets/images/background.jpg" class="bg-cert" />
+  <img
+    src="https://digitech.sut.ac.th/certification-img/certificate/{{
+      value.img_file_name
+    }}"
+    class="bg-cert"
+  />
   <div class="inner-cert">
     <div class="logo">
       <img src="./assets/images/sut-logo.svg" class="sut-logo-cert" />
@@ -33,7 +38,12 @@
         </div>
 
         <div style="width: 85%; margin: 7.5% 0">
-          <img class="text-cert-sign" src="./assets/images/anan.png" />
+          <img
+            class="text-cert-sign"
+            src="https://digitech.sut.ac.th/certification-img/signer/{{
+              value.signer_img
+            }}"
+          />
 
           <div class="c-text-4">
             {{

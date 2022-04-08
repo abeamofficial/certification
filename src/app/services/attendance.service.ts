@@ -31,4 +31,24 @@ export class AttendanceService {
       return false;
     }
   }
+
+  async getCreditByUserId(user_id: string) {
+    let result = await this.http
+      .post<any>(
+        this.pathConfigService.apiPath + "getCreditByUserId.php",
+        { user_id: user_id },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }
+      )
+      .toPromise();
+
+    if (result.status === 200) {
+      return result.data;
+    } else {
+      return false;
+    }
+  }
 }

@@ -69,7 +69,11 @@
               getScoreLevel([item.objective_score, item.practice_score])
             "
           >
-            {{ getScoreLevel([item.objective_score, item.practice_score]) }}
+            {{
+              getCompetencyLevel(
+                getSummaryScore([item.objective_score, item.practice_score])
+              )
+            }}
           </p>
         </div>
       </div>
@@ -82,35 +86,5 @@
         <button [routerLink]="['/badge-detail/' + item.id]">Detail</button>
       </div>
     </div>
-    <!-- <div class="list disabled">
-      <div class="img"><img src="./assets/images/badge.svg" /></div>
-      <div class="name" ellipsis>
-        Business Intelligence and Information Visualization
-      </div>
-      <p>( 2 credits )</p>
-
-      <div class="level-bar">
-        <div class="full-bar">
-          <div class="percent-bar gold" style="width: 85%">85%</div>
-        </div>
-        <div class="percent-level">
-          <p class="gold">Excellent</p>
-        </div>
-      </div>
-
-      <div class="detail" ellipsis>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </div>
-
-      <div class="button-area">
-        <button [routerLink]="['/badge-detail']">Detail</button>
-      </div>
-    </div> -->
   </div>
 </section>

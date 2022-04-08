@@ -6,6 +6,7 @@ import { data, competency_level } from "src/assets/models/data";
 import { CertificateService } from "../services/certificate.service";
 import { ModuleService } from "../services/module.service";
 import { AuthenticationService } from "../services/authentication.service";
+import { CalculationService } from "../services/calculation.service";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -23,7 +24,8 @@ export class AchievementCertDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private certificateService: CertificateService,
     private authenticationService: AuthenticationService,
-    private moduleService: ModuleService
+    private moduleService: ModuleService,
+    private calculationService: CalculationService
   ) {
     this.route.params.subscribe((params) => {
       if (params.id) {
@@ -56,8 +58,12 @@ export class AchievementCertDetailComponent implements OnInit {
     return competency_name;
   }
 
-  getSummaryScore(objective_score, practice_score) {
-    return Math.floor(Number(objective_score) + Number(practice_score));
+  getScoreLevel(value) {
+    return this.calculationService.getScoreLevel(value);
+  }
+
+  getSummaryScore(value) {
+    return this.calculationService.getSummaryScore(value);
   }
 
   onNavigate(url) {

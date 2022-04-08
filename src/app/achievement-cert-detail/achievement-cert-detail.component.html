@@ -115,46 +115,42 @@
                 <div
                   class="percent-bar"
                   [ngClass]="
-                    getSummaryScore(
+                    getScoreLevel([
                       item.value.objective_score,
                       item.value.practice_score
-                    ) >= 80
-                      ? 'gold'
-                      : 'silver'
+                    ])
                   "
                   [ngStyle]="{
                     width:
-                      getSummaryScore(
+                      getSummaryScore([
                         item.value.objective_score,
                         item.value.practice_score
-                      ) + '%'
+                      ]) + '%'
                   }"
                 >
                   {{
-                    getSummaryScore(
+                    getSummaryScore([
                       item.value.objective_score,
                       item.value.practice_score
-                    )
+                    ])
                   }}%
                 </div>
               </div>
               <div class="percent-level">
                 <p
                   [ngClass]="
-                    getSummaryScore(
+                    getScoreLevel([
                       item.value.objective_score,
                       item.value.practice_score
-                    ) >= 80
-                      ? 'gold'
-                      : 'silver'
+                    ])
                   "
                 >
                   {{
                     getCompetencyLevel(
-                      getSummaryScore(
+                      getSummaryScore([
                         item.value.objective_score,
                         item.value.practice_score
-                      )
+                      ])
                     )
                   }}
                 </p>

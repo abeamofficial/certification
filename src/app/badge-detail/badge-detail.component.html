@@ -30,7 +30,11 @@
           [ngClass]="
             getScoreLevel([value.objective_score, value.practice_score])
           "
-          >{{ getCompetencyLevel(value.score) }}</span
+          >{{
+            getCompetencyLevel(
+              getSummaryScore([value.objective_score, value.practice_score])
+            )
+          }}</span
         >
         <div class="level-bar">
           <div class="full-bar">

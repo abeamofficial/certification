@@ -3,6 +3,7 @@ import { data, competency_level } from "src/assets/models/data";
 import { Router } from "@angular/router";
 
 import { AuthenticationService } from "../services/authentication.service";
+import { AttendanceService } from "../services/attendance.service";
 
 @Component({
   selector: "app-user-home",
@@ -11,10 +12,12 @@ import { AuthenticationService } from "../services/authentication.service";
 })
 export class UserHomeComponent implements OnInit {
   menu = 0;
+  credit = 0;
   user;
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private attendanceService: AttendanceService
   ) {
     if (!this.isLogOn()) {
       this.router.navigate(["/login"]);
@@ -25,7 +28,13 @@ export class UserHomeComponent implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.user) {
+      this.attendanceService.getCreditByUserId(this.user.id).then((result) => {
+        this.credit = result;
+      });
+    }
+  }
   change($event) {
     this.menu = $event.index;
   }

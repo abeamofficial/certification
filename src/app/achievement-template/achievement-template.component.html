@@ -64,7 +64,11 @@
     <div class="badge-cert">
       <ng-container *ngIf="value.is_show_degree_badge; else module_badge">
         <div class="single-badge">
-          <img src="./assets/images/badge.png" />
+          <img
+            src="https://digitech.sut.ac.th/certification-img/badge/{{
+              value.cert_type_path
+            }}/{{ value.badge_file_name }}"
+          />
         </div>
       </ng-container>
       <ng-template #module_badge>
@@ -76,11 +80,19 @@
               *ngIf="value.badge.length % 2 == 1 && i == 0; else even"
             >
               <div>
-                <img src="./assets/images/1101012.png" />
+                <img
+                  src="https://digitech.sut.ac.th/certification-img/badge/{{
+                    item.value.badge_type_path
+                  }}/{{ item.value.badge_file_name }}"
+                />
               </div>
             </ng-container>
             <ng-template #even>
-              <img src="./assets/images/1101012.png" />
+              <img
+                src="https://digitech.sut.ac.th/certification-img/badge/{{
+                  item.value.badge_type_path
+                }}/{{ item.value.badge_file_name }}"
+              />
             </ng-template>
           </ng-container>
         </div>

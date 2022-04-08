@@ -6,9 +6,12 @@
     <div class="name">
       <p>{{ user.first_name + " " + user.last_name }}</p>
       <span
-        >เข้าร่วมเมื่อ {{ user.joined_date | date: "yyyy" }} / 24
-        หน่วยกิตสะสม</span
-      >
+        >เข้าร่วมเมื่อ {{ user.joined_date | date: "yyyy" }}
+
+        <ng-container *ngIf="credit">
+          / {{ credit }} หน่วยกิตสะสม
+        </ng-container>
+      </span>
     </div>
   </div>
   <div class="menu">

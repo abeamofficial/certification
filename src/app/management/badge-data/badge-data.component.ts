@@ -13,7 +13,9 @@ import { BadgeService } from "src/app/services/badge.service";
 export class BadgeDataComponent implements OnInit {
   p: number = 1;
   itemsPerPage = 15;
-  badge_list;
+  value = null;
+  filter_value;
+  keyword;
 
   constructor(
     public matDialog: MatDialog,
@@ -31,7 +33,8 @@ export class BadgeDataComponent implements OnInit {
   async getBadgeData() {
     await this.badgeService.getBadge().then((result) => {
       if (result) {
-        this.badge_list = result;
+        this.value = result;
+        this.filter_value = result;
       }
     });
   }
@@ -44,5 +47,28 @@ export class BadgeDataComponent implements OnInit {
       minHeight: "400px",
       minWidth: "500px",
     });
+  }
+
+  onSearching() {
+    const value = JSON.parse(JSON.stringify(this.value));
+
+    if (this.keyword && this.keyword.length) {
+      this.filter_value = value.filter(
+        (item) =>
+          item.course_name_th
+            .toLowerCase()
+            .indexOf(this.keyword.toLowerCase()) > -1 ||
+          item.course_name_en
+            .toLowerCase()
+            .indexOf(this.keyword.toLowerCase()) > -1
+      );
+    } else {
+      this.filter_value = value;
+    }
+  }
+
+  onClearSearching() {
+    this.keyword = null;
+    this.onSearching();
   }
 }

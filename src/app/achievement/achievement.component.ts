@@ -37,7 +37,7 @@ export class AchievementComponent implements OnInit {
   onSearching() {
     const value = JSON.parse(JSON.stringify(this.value));
 
-    if (this.keyword || this.keyword.length) {
+    if (this.keyword && this.keyword.length) {
       this.filter_value = value.filter(
         (item) =>
           item.name_th.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1 ||

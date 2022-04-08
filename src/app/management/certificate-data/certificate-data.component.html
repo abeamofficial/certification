@@ -8,7 +8,19 @@
     <h1>ข้อมูลสัมฤทธิบัตร</h1>
     <div class="search-area">
       <span>
-        <input placeholder="ค้นหา" /><i class="material-icons">search</i>
+        <input
+          placeholder="ค้นหา"
+          [(ngModel)]="keyword"
+          (input)="onSearching()"
+        />
+        <ng-container *ngIf="!keyword; else close">
+          <i class="material-icons">search</i></ng-container
+        >
+        <ng-template #close>
+          <i class="material-icons searching" (click)="onClearSearching()"
+            >close</i
+          >
+        </ng-template>
       </span>
       <button class="add" (click)="onOpenCertificateDialog(true, null)">
         <i class="material-icons">add</i> เพิ่มสัมฤทธิบัตร
@@ -25,7 +37,7 @@
         <tbody>
           <tr
             *ngFor="
-              let item of certificate_list
+              let item of filter_value
                 | paginate: { itemsPerPage: itemsPerPage, currentPage: p };
               let i = index
             "

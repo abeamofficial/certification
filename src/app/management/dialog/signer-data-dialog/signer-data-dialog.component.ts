@@ -48,7 +48,9 @@ export class SignerDataDialogComponent implements OnInit {
   ngOnInit() {
     if (this.data.value) {
       this.signerForm.patchValue(this.data.value);
-      this.url = "./../../certification-img/signer/" + this.data.value.img;
+      this.url =
+        "https://digitech.sut.ac.th/certification-img/signer/" +
+        this.data.value.img;
     }
   }
 

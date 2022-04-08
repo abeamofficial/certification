@@ -54,7 +54,7 @@ export class BadgeComponent implements OnInit {
   onSearching() {
     const value = JSON.parse(JSON.stringify(this.value));
 
-    if (this.keyword || this.keyword.length) {
+    if (this.keyword && this.keyword.length) {
       this.filter_value = value.filter(
         (item) =>
           item.course_name_th

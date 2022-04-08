@@ -9,9 +9,11 @@ import { SignerDataDialogComponent } from "../dialog/signer-data-dialog/signer-d
   styleUrls: ["./signer-data.component.css"],
 })
 export class SignerDataComponent implements OnInit {
-  signer_list = null;
   p: number = 1;
   itemsPerPage = 15;
+  value = null;
+  filter_value;
+  keyword;
 
   constructor(
     public matDialog: MatDialog,
@@ -29,7 +31,8 @@ export class SignerDataComponent implements OnInit {
   async getSignerData() {
     await this.signerService.getSigner().then((result) => {
       if (result) {
-        this.signer_list = result;
+        this.value = result;
+        this.filter_value = result;
       }
     });
   }
@@ -48,5 +51,28 @@ export class SignerDataComponent implements OnInit {
         this.getSignerData();
       }
     });
+  }
+
+  onSearching() {
+    const value = JSON.parse(JSON.stringify(this.value));
+
+    if (this.keyword && this.keyword.length) {
+      this.filter_value = value.filter(
+        (item) =>
+          item.first_name.toLowerCase().indexOf(this.keyword.toLowerCase()) >
+            -1 ||
+          item.last_name.toLowerCase().indexOf(this.keyword.toLowerCase()) >
+            -1 ||
+          item.prefix_name.toLowerCase().indexOf(this.keyword.toLowerCase()) >
+            -1
+      );
+    } else {
+      this.filter_value = value;
+    }
+  }
+
+  onClearSearching() {
+    this.keyword = null;
+    this.onSearching();
   }
 }

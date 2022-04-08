@@ -108,7 +108,7 @@ export class CertificatePublishingComponent implements OnInit {
 
   getTotal(value) {
     if (value.isCert) {
-      return this.cert_type[value.cert_type_id].cert_type_name_th;
+      return this.cert_type[value.cert_type_id].name_th;
     } else if (value.isDiploma) {
       return "ใบรับรอง";
     } else {

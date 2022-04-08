@@ -12,8 +12,10 @@ import { ConfirmDeleteDialogComponent } from "../dialog/confirm-delete-dialog/co
 })
 export class CertificateDataComponent implements OnInit {
   p: number = 1;
-  itemsPerPage = 15;
-  certificate_list = null;
+  itemsPerPage = 25;
+  value = null;
+  filter_value;
+  keyword;
   constructor(
     private certificateDataService: CertificateService,
     public matDialog: MatDialog
@@ -30,7 +32,8 @@ export class CertificateDataComponent implements OnInit {
   async getCertificateData() {
     await this.certificateDataService.getCertificate().then((result) => {
       if (result) {
-        this.certificate_list = result;
+        this.value = result;
+        this.filter_value = result;
       }
     });
   }
@@ -76,5 +79,24 @@ export class CertificateDataComponent implements OnInit {
         } else {
         }
       });
+  }
+
+  onSearching() {
+    const value = JSON.parse(JSON.stringify(this.value));
+
+    if (this.keyword && this.keyword.length) {
+      this.filter_value = value.filter(
+        (item) =>
+          item.name_th.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1 ||
+          item.name_en.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1
+      );
+    } else {
+      this.filter_value = value;
+    }
+  }
+
+  onClearSearching() {
+    this.keyword = null;
+    this.onSearching();
   }
 }

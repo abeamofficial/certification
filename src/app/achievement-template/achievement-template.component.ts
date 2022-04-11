@@ -11,6 +11,8 @@ export class AchievementTemplateComponent implements OnInit {
 
   @Input() value: any;
   qrgen = false;
+  isRender = false;
+
   constructor() {}
 
   ngOnInit() {
@@ -67,6 +69,7 @@ export class AchievementTemplateComponent implements OnInit {
 
       this.qrgen = true;
     }
+    this.isRender = true;
   }
 
   addEvent(el, type, fn) {
@@ -148,10 +151,10 @@ export class AchievementTemplateComponent implements OnInit {
     let strYearThai = "";
 
     for (let i = 0; i < strDay.length; i++) {
-      strDayThai = strThai[strDay[i]];
+      strDayThai += strThai[strDay[i]];
     }
     for (let i = 0; i < strYear.length; i++) {
-      strYearThai = strThai[strYear[i]];
+      strYearThai += strThai[strYear[i]];
     }
 
     return strDayThai + " " + strMonthThai + " พ.ศ." + " " + strYearThai;

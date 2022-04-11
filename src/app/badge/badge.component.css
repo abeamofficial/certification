@@ -7,7 +7,7 @@ div.data-list {
   column-gap: 1rem;
 }
 
-div.data-list > div.list {
+div.data-list>div.list {
   background-color: white;
   width: 19%;
   min-height: 400px;
@@ -17,21 +17,29 @@ div.data-list > div.list {
   padding: 16px 32px;
 }
 
-div.data-list > div.list.disabled {
+div.data-list>div.list.disabled {
   background-color: #eaeaea !important;
 }
 
-div.data-list > div.list.disabled > div.img {
+div.data-list>div.list.disabled>div.img {
   filter: grayscale(100%);
 }
 
-div.data-list > div.list > div.img {
+div.data-list>div.list>div.img {
   width: 100%;
   height: 200px;
   display: flex;
   position: relative;
 }
-div.data-list > div.list > div.img .watermark {
+
+div.data-list>div.list>div.img>img {
+  /* width: 100%; */
+  /* max-width: fit-content; */
+  height: 100%;
+  margin: 0 auto;
+}
+
+div.data-list>div.list>div.img .watermark {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -39,7 +47,8 @@ div.data-list > div.list > div.img .watermark {
   z-index: 100;
   text-transform: uppercase;
 }
-div.data-list > div.list > div.img .watermark div {
+
+div.data-list>div.list>div.img .watermark div {
   margin: 0;
   margin: auto;
   font-family: "sutbold";
@@ -50,14 +59,7 @@ div.data-list > div.list > div.img .watermark div {
   border-radius: calc(0.25vmax + 0.75vmin);
 }
 
-div.data-list > div.list > div.img > img {
-  /* width: 100%; */
-  /* max-width: fit-content; */
-  height: 100%;
-  margin: 0 auto;
-}
-
-div.data-list > div.list > div.name {
+div.data-list>div.list>div.name {
   width: 100%;
   height: 45px;
   font-size: 16px;
@@ -68,7 +70,7 @@ div.data-list > div.list > div.name {
   margin: 10px 0 0 0;
 }
 
-div.data-list > div.list > p {
+div.data-list>div.list>p {
   width: 100%;
   text-align: center;
   color: #848484;
@@ -79,17 +81,18 @@ div.data-list > div.list > p {
 
 /* //////////  BADGE PERCENT BAR  /////////// */
 
-div.data-list > div.list > div.level-bar {
+div.data-list>div.list>div.level-bar {
   font-family: "sutregular";
   margin: 25px 0 10px 0;
   display: flex;
+  gap: 1rem;
 }
 
-div.data-list > div.list > div.level-bar-disabled {
+div.data-list>div.list>div.level-bar-disabled {
   filter: grayscale(100%) !important;
 }
 
-div.data-list > div.list > div.level-bar > div.full-bar {
+div.data-list>div.list>div.level-bar>div.full-bar {
   box-sizing: border-box;
   display: flex;
   width: 400px;
@@ -98,11 +101,12 @@ div.data-list > div.list > div.level-bar > div.full-bar {
   border-radius: 50px;
 }
 
-div.data-list > div.list.disabled > div.level-bar > div.full-bar {
+div.data-list>div.list.disabled>div.level-bar>div.full-bar {
   background-color: #cccccc;
+
 }
 
-div.data-list > div.list > div.level-bar > .full-bar > .percent-bar {
+div.data-list>div.list>div.level-bar>.full-bar>.percent-bar {
   box-sizing: border-box;
   height: 12px;
   width: 50%;
@@ -114,40 +118,43 @@ div.data-list > div.list > div.level-bar > .full-bar > .percent-bar {
   align-items: center;
 }
 
-div.data-list > div.list > div.level-bar > div.full-bar .gold {
+div.data-list>div.list>div.level-bar>div.full-bar .gold {
   background-color: #edb037;
 }
-div.data-list > div.list.disabled > div.level-bar > div.full-bar .gold {
+
+div.data-list>div.list.disabled>div.level-bar>div.full-bar .gold {
   background-color: #b5b5b5;
 }
-div.data-list > div.list > div.level-bar > .full-bar > .silver {
+
+div.data-list>div.list>div.level-bar>.full-bar>.silver {
   background-color: #999999;
 }
 
-div.data-list > div.list > div.level-bar > div.percent-level {
+div.data-list>div.list>div.level-bar>div.percent-level {
   width: fit-content;
-  padding: 0 0 0 10px;
-  display: flex;
+  /* padding: 0 0 0 10px; */
+  /* display: flex; */
 }
-div.data-list > div.list > div.level-bar > div.percent-level > p {
+
+div.data-list>div.list>div.level-bar>div.percent-level>p {
   margin: auto;
   font-size: 12px;
   text-transform: capitalize;
 }
 
-div.data-list > div.list > div.level-bar > div.percent-level .gold {
+div.data-list>div.list>div.level-bar>div.percent-level .gold {
   color: #edb037;
 }
 
-div.data-list > div.list.disabled > div.level-bar > div.percent-level .gold {
+div.data-list>div.list.disabled>div.level-bar>div.percent-level .gold {
   color: #b5b5b5;
 }
 
-div.data-list > div.list > div.level-bar > div.percent-level .silver {
+div.data-list>div.list>div.level-bar>div.percent-level .silver {
   color: #999999;
 }
 
-div.data-list > div.list > div.detail {
+div.data-list>div.list>div.detail {
   height: 50px;
   font-size: 14px;
   line-height: 16px;
@@ -157,12 +164,12 @@ div.data-list > div.list > div.detail {
   margin: 10px 0;
 }
 
-div.data-list > div.list > div.button-area {
+div.data-list>div.list>div.button-area {
   width: 100%;
   display: flex;
 }
 
-div.data-list > div.list > div.button-area > button {
+div.data-list>div.list>div.button-area>button {
   border-radius: 3px;
   border: none;
   background-color: #eaf3ff;
@@ -178,6 +185,78 @@ div.data-list > div.list > div.button-area > button {
   cursor: pointer;
 }
 
-div.data-list > div.list > div.button-area > button:hover {
+div.data-list>div.list>div.button-area>button:hover {
   background-color: #d7e3f1;
+}
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  div.data-list {
+    row-gap: 1vh;
+    column-gap: 1.33%;
+  }
+
+  div.data-list>div.list {
+    width: 32%;
+    min-height: 200px;
+    min-width: unset;
+    padding: 2.5%;
+  }
+
+  div.data-list>div.list>div.img {
+    height: 90px;
+  }
+
+  div.data-list>div.list>div.img>img {
+    height: fit-content;
+    width: 100%;
+  }
+
+  div.data-list>div.list>div.img .watermark div {
+    font-size: 100%;
+  }
+
+
+  div.data-list>div.list>div.name {
+    font-size: calc(10px + 0.25vw);
+    line-height: calc(12px + 0.25vw);
+  }
+
+  div.data-list>div.list>p {
+    font-size: calc(8px + 0.25vw);
+  }
+
+  /* //////////  BADGE PERCENT BAR  /////////// */
+
+  div.data-list>div.list>div.level-bar {
+    margin: 10% 0 5% 0;
+    gap: 2.5%;
+  }
+
+  div.data-list>div.list>div.level-bar>div.full-bar {
+    /* width: 80%; */
+  }
+
+  div.data-list>div.list>div.level-bar>.full-bar>.percent-bar {
+    height: 10px;
+    font-size: calc(8px + 0.25vw);
+  }
+
+
+  div.data-list>div.list>div.level-bar>div.percent-level>p {
+    font-size: calc(8px + 0.25vw);
+  }
+
+  div.data-list>div.list>div.detail {
+    font-size: calc(7px + 0.25vw);
+    line-height: calc(8px + 0.25vw);
+    margin: 5% 0;
+    height: 45px;
+  }
+
+  div.data-list>div.list>div.button-area>button {
+    margin: 5% auto;
+    font-size: calc(10px + 0.25vw);
+  }
 }

@@ -16,6 +16,7 @@ section .watermark {
   z-index: 100;
   text-transform: uppercase;
 }
+
 section .watermark div {
   margin: 0;
   margin: auto;
@@ -99,7 +100,7 @@ section .watermark div {
   width: 32.5%;
 }
 
-div.single-badge > img {
+div.single-badge>img {
   width: 65%;
   margin: auto;
   display: flex;
@@ -112,33 +113,43 @@ div.module-badge {
   margin: auto;
 }
 
-div.module-badge > div {
+div.module-badge>div {
   width: 100%;
   display: flex;
   margin-bottom: -2.5%;
 }
-div.module-badge > div > img {
+
+div.module-badge>div>img {
   width: 48%;
   margin: auto;
 }
-div.module-badge > img {
+
+div.module-badge>img {
   width: 48%;
   padding: 0 0.5%;
 }
 
 .text-cert-qr {
-  position: absolute;
+  /* position: absolute;
   right: 0;
   width: 100%;
   height: 15.5%;
-  bottom: 0;
+  bottom: 0; */
+
+
+  position: absolute;
+  right: 9.25%;
+  width: 22%;
+  height: 22.5%;
+  bottom: -8.25%;
 }
-.text-cert-qr > div {
+
+/* .text-cert-qr>div {
   position: absolute;
   right: 10.25%;
   width: 20%;
   top: 10.5%;
-}
+} */
 
 #cert-hide {
   position: fixed;
@@ -146,4 +157,14 @@ div.module-badge > img {
   top: 0;
   z-index: -1;
   /* visibility: hidden; */
+}
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+  .text-cert-qr {
+
+    bottom: 0%;
+  }
+
 }

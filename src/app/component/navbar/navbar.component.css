@@ -97,7 +97,7 @@ button.mat-menu-item {
 }
 
 .navbar-section > div.menu button.login-button {
-  margin: 0 25px;
+  margin: 0;
   box-sizing: border-box;
   border-radius: 3px;
   border: none;
@@ -150,6 +150,10 @@ div.sidebar {
 
   .navbar-section > div.menu > button.menu > i {
     font-size: calc(16px + 0.25vw);
+  }
+
+  .navbar-section > div.menu button.login-button {
+    font-size: 14px;
   }
 }
 

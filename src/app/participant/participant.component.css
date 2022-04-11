@@ -5,7 +5,7 @@ div.data-list {
   gap: 15px;
 }
 
-div.data-list > div.list {
+div.data-list>div.list {
   width: 100%;
   background-color: #fff;
   box-shadow: var(--box-shadow);
@@ -18,31 +18,31 @@ div.data-list > div.list {
   display: flex;
 }
 
-div.data-list > div.list > div.img {
+div.data-list>div.list>div.img {
   width: 300px;
   min-width: 150px;
   display: flex;
 }
 
-div.data-list > div.list > div.img > img {
+div.data-list>div.list>div.img>img {
   margin: auto;
   width: 100%;
 }
 
-div.data-list > div.list > div.detail {
+div.data-list>div.list>div.detail {
   width: 100%;
   display: flex;
   flex-flow: column;
 }
 
-div.data-list > div.list > div.detail > p {
+div.data-list>div.list>div.detail>p {
   font-family: "sutbold";
   font-size: 18px;
   margin: 0;
   flex: 0 1 auto;
 }
 
-div.data-list > div.list > div.detail > div.tag {
+div.data-list>div.list>div.detail>div.tag {
   border-radius: 3px;
   background-color: #eeeeee;
   padding: 2px 16px;
@@ -54,13 +54,13 @@ div.data-list > div.list > div.detail > div.tag {
   flex: 0 1 auto;
 }
 
-div.data-list > div.list > div.detail > div.date {
+div.data-list>div.list>div.detail>div.date {
   box-sizing: border-box;
   flex: 1 1 auto;
   display: flex;
 }
 
-div.data-list > div.list > div.detail > div.date > span {
+div.data-list>div.list>div.detail>div.date>span {
   display: block;
   margin-top: auto;
   font-family: "sutregular";
@@ -69,6 +69,36 @@ div.data-list > div.list > div.detail > div.date > span {
   color: #2f2f2f;
 }
 
-div.data-list > div.list > div.detail > div.date > span > p {
+div.data-list>div.list>div.detail>div.date>span>p {
   margin: 0;
+}
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+  div.data-list>div.list>div.img {
+    width: calc(200px + 0.25vw);
+    min-width: unset;
+    display: flex;
+  }
+
+
+  div.data-list>div.list {
+    padding: 10px;
+  }
+
+  div.data-list>div.list>div.detail>p {
+    font-size: calc(12px + 0.25vw);
+    line-height: calc(14px + 0.25vw);
+  }
+
+  div.data-list>div.list>div.detail>div.tag {
+    font-size: calc(8px + 0.25vw);
+    padding: 2px 8px;
+  }
+
+  div.data-list>div.list>div.detail>div.date>span {
+    font-size: calc(10px + 0.25vw);
+    line-height: calc(12px + 0.25vw);
+  }
 }

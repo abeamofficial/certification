@@ -5,7 +5,7 @@ div.data-list {
   gap: 15px;
 }
 
-div.data-list > div.list {
+div.data-list>div.list {
   width: 100%;
   background-color: #fff;
   box-shadow: var(--box-shadow);
@@ -18,14 +18,14 @@ div.data-list > div.list {
   /* display: flex; */
 }
 
-div.data-list > div.list > p {
+div.data-list>div.list>p {
   font-family: "sutbold";
   font-size: 18px;
   margin: 0;
   flex: 0 1 auto;
 }
 
-div.data-list > div.list > div.tag {
+div.data-list>div.list>div.tag {
   border-radius: 3px;
   background-color: #eeeeee;
   padding: 2px 16px;
@@ -37,17 +37,47 @@ div.data-list > div.list > div.tag {
   flex: 0 1 auto;
 }
 
-div.data-list > div.list > div.detail {
+div.data-list>div.list>div.detail {
   display: flex;
   height: 35px;
   box-sizing: border-box;
   gap: 15px;
 }
 
-div.data-list > div.list > div.detail > span {
+div.data-list>div.list>div.detail>span {
   margin-top: auto;
   font-family: "sutregular";
   font-weight: 100;
   font-size: 14px;
   color: #2f2f2f;
+}
+
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  div.data-list>div.list {
+    padding: 2.5%;
+  }
+
+  div.data-list>div.list>p {
+    font-size: calc(12px + 0.25vw);
+    line-height: calc(14px + 0.25vw);
+  }
+
+  div.data-list>div.list>div.tag {
+    font-size: calc(8px + 0.25vw);
+    padding: 2px 8px;
+  }
+
+
+  div.data-list>div.list>div.detail {
+    height: 25px;
+    gap: 10px;
+  }
+
+  div.data-list>div.list>div.detail>span {
+    font-size: calc(10px + 0.25vw);
+    line-height: calc(12px + 0.25vw);
+  }
 }

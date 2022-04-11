@@ -19,17 +19,20 @@ section.home-header div.profile {
     font-size: 40px; */
 }
 
-section.home-header div.profile > div.img-profile {
+section.home-header div.profile>div.img-profile {
   width: 50px;
+  display: flex;
 }
-section.home-header div.profile > div.img-profile > img {
+
+section.home-header div.profile>div.img-profile>img {
   width: 100%;
 }
 
-section.home-header div.profile > div.name {
+section.home-header div.profile>div.name {
+  margin: auto 0;
 }
 
-section.home-header div.profile > div.name > p {
+section.home-header div.profile>div.name>p {
   font-family: "sutregular";
   font-weight: 500;
   font-size: 32px;
@@ -37,7 +40,7 @@ section.home-header div.profile > div.name > p {
   margin: 0;
 }
 
-section.home-header div.profile > div.name > span {
+section.home-header div.profile>div.name>span {
   font-family: "sutregular";
   font-size: 14px;
   line-height: 14px;
@@ -77,12 +80,16 @@ section.home-header div.menu {
   letter-spacing: 0 !important;
 }
 
+::ng-deep .mat-tab-label {
+  min-width: unset !important;
+}
+
 section.body-section {
   box-sizing: border-box;
   padding: 50px 15%;
 }
 
-section.body-section > div.header {
+section.body-section>div.header {
   width: 100%;
   background: var(--blue-gradient);
   border-radius: 3px;
@@ -95,7 +102,7 @@ section.body-section > div.header {
   letter-spacing: 0.025em;
 }
 
-section.body-section > div.search-area {
+section.body-section>div.search-area {
   display: flex;
   width: 100%;
   justify-content: flex-end;
@@ -104,7 +111,7 @@ section.body-section > div.search-area {
   padding: 25px 0 15px 0;
 }
 
-section.body-section > div.search-area > span {
+section.body-section>div.search-area>span {
   background-color: #fff;
   display: flex;
   width: 350px;
@@ -113,7 +120,7 @@ section.body-section > div.search-area > span {
   min-height: 21px;
 }
 
-section.body-section > div.search-area > span > input {
+section.body-section>div.search-area>span>input {
   width: 100%;
   font-size: 16px;
   font-family: "sutregular";
@@ -122,23 +129,24 @@ section.body-section > div.search-area > span > input {
   border: none;
   color: #676767;
 }
-section.body-section > div.search-area > span > i.material-icons {
+
+section.body-section>div.search-area>span>i.material-icons {
   margin: auto;
   padding: 0 5px;
   font-size: 20px;
   color: var(--blue);
 }
 
-section.body-section > div.search-area > span > i.material-icons.searching {
+section.body-section>div.search-area>span>i.material-icons.searching {
   color: gray;
   cursor: pointer;
 }
 
-section.body-section > div.search-area > span > input::placeholder {
+section.body-section>div.search-area>span>input::placeholder {
   color: #676767;
 }
 
-section.body-section > div.search-area select {
+section.body-section>div.search-area select {
   width: 200px;
   background-color: #fff;
   border: 1px solid #e2e2e2;
@@ -153,4 +161,77 @@ section.body-section > div.search-area select {
 div.search-area input:focus,
 div.search-area select:focus {
   outline: none;
+}
+
+
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  section.home-header {
+    padding: 0 5%;
+    height: calc(100px + 1vw);
+  }
+
+  section.home-header div.profile>div.img-profile {
+    width: calc(35px + 1vw);
+  }
+
+  section.home-header div.profile>div.name>p {
+
+    font-size: calc(18px + 0.25vw);
+    line-height: calc(20px + 0.25vw);
+
+  }
+
+  section.home-header div.profile>div.name>span {
+    font-size: calc(12px + 0.25vw);
+    line-height: calc(14px + 0.25vw);
+  }
+
+  section.home-header div.menu {
+    height: 35px;
+    margin-bottom: 0;
+  }
+
+  ::ng-deep .mat-tab-label {
+    min-width: unset !important;
+  }
+
+  ::ng-deep .mat-tab-header,
+  ::ng-deep section.home-header div.menu .mat-tab-label {
+    height: 35px;
+    /* font-size:  calc(12px + 0.25vw); */
+  }
+
+  ::ng-deep section.home-header div.menu .mat-tab-label {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.body-section {
+    padding: 5%;
+  }
+
+  section.body-section>div.header {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.body-section>div.search-area {
+    gap: 5px;
+    padding: 15px 0;
+  }
+
+  section.body-section>div.search-area>span {
+    min-height: unset;
+  }
+
+  section.body-section>div.search-area>span>input,
+  section.body-section>div.search-area select {
+    padding: 4px 10px;
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.body-section>div.search-area>span>i.material-icons {
+    font-size: calc(12px + 0.25vw);
+  }
 }

@@ -29,6 +29,7 @@ export class AchievementTemplateComponent implements OnInit {
 
     setTimeout(() => {
       this.calElementSize();
+      this.isRender = true;
     }, 1000);
     // }
   }
@@ -69,7 +70,6 @@ export class AchievementTemplateComponent implements OnInit {
 
       this.qrgen = true;
     }
-    this.isRender = true;
   }
 
   addEvent(el, type, fn) {

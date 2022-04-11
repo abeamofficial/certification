@@ -1,4 +1,4 @@
-<section [ngClass]="{ disabled: !value.active }" *ngIf="isRender">
+<section [ngClass]="{ disabled: !value.active }" [ngClass]="{ invi: isRender }">
   <div *ngIf="!value.active" class="watermark">
     <div>certificate expired</div>
   </div>

@@ -209,8 +209,7 @@ div.data-list>div.list>div.button-area>button:hover {
   }
 
   div.data-list>div.list>div.img>img {
-    height: auto;
-    width: 100%;
+    height: 100%;
   }
 
   div.data-list>div.list>div.img .watermark div {

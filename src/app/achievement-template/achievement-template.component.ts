@@ -35,12 +35,9 @@ export class AchievementTemplateComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    this.isRender = false;
     this.calElementSize();
     this.isRender = true;
-  }
-
-  ngOnDestroy() {
-    this.isRender = false;
   }
 
   calElementSize() {

@@ -209,7 +209,7 @@ div.data-list>div.list>div.button-area>button:hover {
   }
 
   div.data-list>div.list>div.img>img {
-    height: fit-content;
+    height: auto;
     width: 100%;
   }
 

@@ -229,6 +229,7 @@ div.search-area select:focus {
   section.body-section>div.search-area select {
     padding: 4px 10px;
     font-size: calc(12px + 0.25vw);
+    min-height: unset;
   }
 
   section.body-section>div.search-area>span>i.material-icons {

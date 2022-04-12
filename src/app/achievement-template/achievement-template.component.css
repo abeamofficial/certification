@@ -17,9 +17,6 @@ section .watermark {
   text-transform: uppercase;
 }
 
-.invi {
-  opacity: 0;
-}
 
 section .watermark div {
   margin: 0;

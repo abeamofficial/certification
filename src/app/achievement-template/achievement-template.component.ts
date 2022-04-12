@@ -13,7 +13,6 @@ export class AchievementTemplateComponent implements OnInit {
 
   @Input() value: any;
   qrgen = false;
-  isRender = false;
 
   constructor() {}
 
@@ -31,15 +30,12 @@ export class AchievementTemplateComponent implements OnInit {
 
     setTimeout(() => {
       this.calElementSize();
-      this.isRender = true;
     }, 1000);
     // }
   }
 
   ngAfterViewInit() {
-    this.isRender = false;
     this.calElementSize();
-    this.isRender = true;
   }
 
   calElementSize() {

@@ -127,7 +127,7 @@ export class AchievementTemplateComponent implements OnInit {
   }
 
   dateThai(strDate) {
-    let date = new Date(strDate);
+    // let date = new Date(strDate);
     let strYear = (Number(moment(strDate).format("YYYY")) + 543).toString();
     let strMonth = moment(strDate).format("M").toString();
     let strDay = moment(strDate).format("DD").toString();

@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild, Input } from "@angular/core";
 import QRCode from "easyqrcodejs";
 
+import moment from "moment";
+
 @Component({
   selector: "app-achievement-template",
   templateUrl: "./achievement-template.component.html",
@@ -128,9 +130,9 @@ export class AchievementTemplateComponent implements OnInit {
 
   dateThai(strDate) {
     let date = new Date(strDate);
-    let strYear = (date.getFullYear() + 543).toString();
-    let strMonth = date.getMonth();
-    let strDay = date.getDate().toString();
+    let strYear = (Number(moment(strDate).format("YYYY")) + 543).toString();
+    let strMonth = moment(strDate).format("M").toString();
+    let strDay = moment(strDate).format("DD").toString();
     let strMonthCut = [
       "มกราคม",
       "กุมภาพันธ์",

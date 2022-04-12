@@ -34,7 +34,7 @@ export class MyCourseComponent implements OnInit {
   ngOnInit() {}
 
   getDate(value) {
-    return moment(value).format("D/MM/yyyy");
+    return moment(value).format("DD/MM/yyyy");
   }
 
   onSearching() {

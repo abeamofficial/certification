@@ -70,6 +70,8 @@ export class AchievementTemplateComponent implements OnInit {
       let canvas = document.getElementsByTagName("canvas");
       Object.values(canvas).forEach((element) => {
         element.style.width = "100%";
+        element.style.position = "absolute";
+        element.style.top = "0";
       });
 
       this.qrgen = true;

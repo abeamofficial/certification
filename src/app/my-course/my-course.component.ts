@@ -4,6 +4,8 @@ import { data, competency_level } from "src/assets/models/data";
 import { AttendanceService } from "../services/attendance.service";
 import { AuthenticationService } from "../services/authentication.service";
 
+import moment from "moment";
+
 @Component({
   selector: "app-my-course",
   templateUrl: "./my-course.component.html",
@@ -30,6 +32,10 @@ export class MyCourseComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  getDate(value) {
+    return moment(value).format("D/MM/yyyy");
+  }
 
   onSearching() {
     const value = JSON.parse(JSON.stringify(this.value));

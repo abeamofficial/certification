@@ -35,6 +35,16 @@ export class UserHomeComponent implements OnInit {
       });
     }
   }
+
+  ngAfterViewInit(): void {
+    document
+      .getElementsByClassName("mat-tab-header-pagination-before")[0]
+      .remove();
+    document
+      .getElementsByClassName("mat-tab-header-pagination-after")[0]
+      .remove();
+  }
+
   change($event) {
     this.menu = $event.index;
   }

@@ -76,8 +76,8 @@ section.home-header div.menu {
 ::ng-deep .mat-tab-label:focus:not(.mat-tab-disabled),
 ::ng-deep .mat-tab-label-active {
   opacity: 1 !important;
-  font-weight: 600 !important;
-  letter-spacing: 0 !important;
+  /* font-weight: 600 !important; */
+  /* letter-spacing: 0 !important; */
 }
 
 ::ng-deep .mat-tab-label {
@@ -195,6 +195,7 @@ div.search-area select:focus {
     margin-bottom: 0;
   }
 
+
   ::ng-deep .mat-tab-label {
     min-width: unset !important;
   }
@@ -202,7 +203,6 @@ div.search-area select:focus {
   ::ng-deep .mat-tab-header,
   ::ng-deep section.home-header div.menu .mat-tab-label {
     height: 35px;
-    /* font-size:  calc(12px + 0.25vw); */
   }
 
   ::ng-deep section.home-header div.menu .mat-tab-label {
@@ -239,4 +239,20 @@ div.search-area select:focus {
   section.body-section>div.search-area>span>i.material-icons {
     font-size: calc(12px + 0.25vw);
   }
+}
+
+::ng-deep .mat-tab-header-pagination {
+  display: none !important;
+}
+
+::ng-deep .mat-tab-header {
+  overflow-x: scroll !important;
+}
+
+::ng-deep .mat-tab-label-container {
+  overflow: visible !important;
+}
+
+::ng-deep .mat-tab-header::-webkit-scrollbar {
+  display: none;
 }

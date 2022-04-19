@@ -8,6 +8,8 @@ import { ModuleService } from "../services/module.service";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
+import moment from "moment";
+
 @Component({
   selector: "app-participant-cert-detail",
   templateUrl: "./participant-cert-detail.component.html",
@@ -48,6 +50,10 @@ export class ParticipantCertDetailComponent implements OnInit {
         });
       }
     });
+  }
+
+  getDate(value) {
+    return moment(value).format("DD/MM/yyyy");
   }
 
   onNavigate(url) {

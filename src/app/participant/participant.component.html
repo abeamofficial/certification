@@ -41,7 +41,7 @@
             <p>Approved by : {{ item.diploma_approved }}</p>
             <p>
               Approved date :
-              {{ item.diploma_approved_date | date: "dd/MM/yyyy" }}
+              {{ getDate(item.diploma_approved_date) }}
             </p>
           </span>
         </div>

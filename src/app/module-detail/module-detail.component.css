@@ -8,12 +8,12 @@ section.header {
   display: flex;
 }
 
-section.header > div {
+section.header>div {
   margin: auto 0;
   height: fit-content;
 }
 
-section.header > div > span {
+section.header>div>span {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 16px;
@@ -21,7 +21,7 @@ section.header > div > span {
   color: var(--dark-blue);
 }
 
-section.header > div > h1 {
+section.header>div>h1 {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 26px;
@@ -30,7 +30,7 @@ section.header > div > h1 {
   text-transform: capitalize;
 }
 
-section.header > div > p {
+section.header>div>p {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 20px;
@@ -49,8 +49,8 @@ section.breadcrumb {
   gap: 10px;
 }
 
-section.breadcrumb > p,
-section.breadcrumb > span {
+section.breadcrumb>p,
+section.breadcrumb>span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
@@ -58,13 +58,45 @@ section.breadcrumb > span {
   color: #212121;
 }
 
-section.breadcrumb > p {
+section.breadcrumb>p {
   cursor: pointer;
   text-transform: capitalize;
 }
 
-section.breadcrumb > p:hover {
+section.breadcrumb>p:hover {
   color: var(--blue);
 }
 
 /* ----- END breadcrumb template ----- */
+
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  section.header {
+    padding: 0 5%;
+    height: calc(100px + 0.25vw);
+  }
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+}

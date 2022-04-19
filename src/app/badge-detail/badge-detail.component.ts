@@ -6,6 +6,8 @@ import { BadgeService } from "../services/badge.service";
 import { AuthenticationService } from "../services/authentication.service";
 import { CalculationService } from "../services/calculation.service";
 
+import moment from "moment";
+
 @Component({
   selector: "app-badge-detail",
   templateUrl: "./badge-detail.component.html",
@@ -39,6 +41,10 @@ export class BadgeDetailComponent implements OnInit {
         // );
       }
     });
+  }
+
+  getDate(value) {
+    return moment(value).format("DD/MM/yyyy");
   }
 
   getCompetencyLevel(score) {

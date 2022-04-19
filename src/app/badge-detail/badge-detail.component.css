@@ -8,12 +8,12 @@ section.header {
   display: flex;
 }
 
-section.header > div {
+section.header>div {
   margin: auto 0;
   height: fit-content;
 }
 
-section.header > div > span {
+section.header>div>span {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 16px;
@@ -21,7 +21,7 @@ section.header > div > span {
   color: var(--dark-blue);
 }
 
-section.header > div > h1 {
+section.header>div>h1 {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 26px;
@@ -29,7 +29,7 @@ section.header > div > h1 {
   color: var(--dark-blue);
 }
 
-section.header > div > p {
+section.header>div>p {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 20px;
@@ -47,8 +47,8 @@ section.breadcrumb {
   gap: 10px;
 }
 
-section.breadcrumb > p,
-section.breadcrumb > span {
+section.breadcrumb>p,
+section.breadcrumb>span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
@@ -56,11 +56,11 @@ section.breadcrumb > span {
   color: #212121;
 }
 
-section.breadcrumb > p {
+section.breadcrumb>p {
   cursor: pointer;
 }
 
-section.breadcrumb > p:hover {
+section.breadcrumb>p:hover {
   color: var(--blue);
 }
 
@@ -81,7 +81,7 @@ div.badge {
   gap: 48px;
 }
 
-div.badge > hr {
+div.badge>hr {
   margin: 0;
   border: 0;
   border-left: 1px solid #eaeaea;
@@ -89,25 +89,25 @@ div.badge > hr {
 
 /*   badge  >  badge-paper    */
 
-div.badge > div.badge-paper {
+div.badge>div.badge-paper {
   width: 25%;
   min-width: 25%;
   box-sizing: border-box;
   /* padding: 16px; */
 }
 
-div.badge > div.badge-paper.disabled > div.img,
-div.badge > div.badge-paper.disabled > div.badge-info {
+div.badge>div.badge-paper.disabled>div.img,
+div.badge>div.badge-paper.disabled>div.badge-info {
   filter: grayscale(100%);
 }
 
-div.badge > div.badge-paper > div.img {
+div.badge>div.badge-paper>div.img {
   text-align: center;
   width: 100%;
   position: relative;
 }
 
-div.badge > div.badge-paper > div.img .watermark {
+div.badge>div.badge-paper>div.img .watermark {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -115,7 +115,8 @@ div.badge > div.badge-paper > div.img .watermark {
   z-index: 100;
   text-transform: uppercase;
 }
-div.badge > div.badge-paper > div.img .watermark div {
+
+div.badge>div.badge-paper>div.img .watermark div {
   margin: 0;
   margin: auto;
   font-family: "sutbold";
@@ -126,34 +127,40 @@ div.badge > div.badge-paper > div.img .watermark div {
   border-radius: calc(0.25vmax + 0.75vmin);
 }
 
-div.badge > div.badge-paper > div.img img {
+div.badge>div.badge-paper>div.img img {
   width: 100%;
 }
 
-div.badge > div.badge-paper > div.badge-info,
-div.badge > div.badge-detail > div.badge-info {
+div.badge>div.badge-paper>div.detail {
+  display: block;
+}
+
+div.badge>div.badge-paper div.badge-info,
+div.badge>div.badge-detail>div.badge-info {
   margin: 20px 0;
 }
-div.badge > div.badge-paper > div.badge-info > p,
-div.badge > div.badge-detail > div.badge-info > p {
+
+div.badge>div.badge-paper div.badge-info>p,
+div.badge>div.badge-detail>div.badge-info>p {
   margin: 0;
   font-family: "sutbold";
   font-size: 22px;
 }
 
-div.badge > div.badge-paper > div.badge-info > p {
+div.badge>div.badge-paper div.badge-info>p {
   color: var(--dark-blue);
 }
 
-div.badge > div.badge-detail > div.badge-info > p {
+div.badge>div.badge-detail>div.badge-info>p {
   color: #000;
 }
-div.badge > div.badge-paper > div.badge-info > span {
+
+div.badge>div.badge-paper div.badge-info>span {
   display: flex;
 }
 
-div.badge > div.badge-paper > div.badge-info > span,
-div.badge > div.badge-detail > div.badge-info > span {
+div.badge>div.badge-paper div.badge-info>span,
+div.badge>div.badge-detail>div.badge-info>span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
@@ -163,36 +170,39 @@ div.badge > div.badge-detail > div.badge-info > span {
   gap: 5px;
 }
 
-div.badge > div.badge-paper > div.badge-info > span.link > p,
-div.badge > div.badge-detail > div.badge-info > p.link {
+div.badge>div.badge-paper div.badge-info>span.link>p,
+div.badge>div.badge-detail>div.badge-info>p.link {
   color: var(--soft-blue);
   font-weight: 600;
   cursor: pointer;
   margin: 0;
 }
-div.badge > div.badge-paper > div.badge-info > span.link:hover > p,
-div.badge > div.badge-detail > div.badge-info > p.link:hover {
+
+div.badge>div.badge-paper div.badge-info>span.link:hover>p,
+div.badge>div.badge-detail>div.badge-info>p.link:hover {
   text-decoration: underline;
 }
 
-div.badge > div.badge-paper > div.badge-info > span.link > p > i {
+div.badge>div.badge-paper div.badge-info>span.link>p>i {
   font-size: 16px;
   vertical-align: middle;
 }
 
-div.badge > div.badge-paper > div.badge-info > span > span {
+div.badge>div.badge-paper div.badge-info>span>span {
   font-size: 16px;
 }
 
-div.badge > div.badge-detail > div.badge-info span.text {
+div.badge>div.badge-detail>div.badge-info span.text {
   text-indent: 24px;
 }
-div.badge > div.badge-detail > div.badge-info div.skill {
+
+div.badge>div.badge-detail>div.badge-info div.skill {
   display: flex;
   gap: 10px;
   margin: 2px 0;
 }
-div.badge > div.badge-detail > div.badge-info div.skill > div.skill-tag {
+
+div.badge>div.badge-detail>div.badge-info div.skill>div.skill-tag {
   padding: 4px 16px;
   border: 1px solid #e2e2e2;
   border-radius: 5px;
@@ -204,106 +214,171 @@ div.badge > div.badge-detail > div.badge-info div.skill > div.skill-tag {
 
 /*   badge  >  level bar    */
 
-div.badge > div.badge-paper > div.badge-info > div.level-bar {
+div.badge>div.badge-paper div.badge-info>div.level-bar {
   font-family: "sutregular";
   margin: 0;
   display: flex;
 }
 
-div.badge > div.badge-paper > div.badge-info > div.level-bar-disabled {
+div.badge>div.badge-paper div.badge-info>div.level-bar-disabled {
   filter: grayscale(100%) !important;
 }
 
-div.badge > div.badge-paper > div.badge-info > div.level-bar > div.full-bar {
+div.badge>div.badge-paper div.badge-info>div.level-bar>div.full-bar {
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(8px + 0.5vmax);
   background-color: #e8e8e8;
   border-radius: 50px;
-  height: calc(5px + 0.5vw);
+  height: calc(8px + 0.5vmax);
 }
 
-div.badge
-  > div.badge-paper.disabled
-  > div.badge-info
-  > div.level-bar
-  > div.full-bar {
+div.badge>div.badge-paper.disabled div.badge-info>div.level-bar>div.full-bar {
   background-color: #cccccc;
 }
 
-div.badge
-  > div.badge-paper
-  > div.badge-info
-  > div.level-bar
-  > .full-bar
-  > .percent-bar {
+div.badge>div.badge-paper div.badge-info>div.level-bar>.full-bar>.percent-bar {
   box-sizing: border-box;
   height: 100%;
   width: 50%;
   border-radius: 50px;
   color: #ffffff;
-  font-size: calc(5px + 0.5vw);
+  font-size: calc(7px + 0.5vmax);
   padding-left: 20px;
   display: flex;
   align-items: center;
 }
 
-div.badge
-  > div.badge-paper
-  > div.badge-info
-  > div.level-bar
-  > div.full-bar
-  .gold {
+div.badge>div.badge-paper div.badge-info>div.level-bar>div.full-bar .gold {
   background-color: #edb037;
 }
-div.badge
-  > div.badge-paper.disabled
-  > div.badge-info
-  > div.level-bar
-  > div.full-bar
-  .gold {
+
+div.badge>div.badge-paper.disabled>div.badge-info>div.level-bar>div.full-bar .gold {
   background-color: #b5b5b5;
 }
-div.badge
-  > div.badge-paper
-  > div.badge-info
-  > div.level-bar
-  > .full-bar
-  > .silver {
+
+div.badge>div.badge-paper div.badge-info>div.level-bar>.full-bar>.silver {
   background-color: #999999;
 }
 
-div.badge
-  > div.badge-paper
-  > div.badge-info
-  > div.level-bar
-  > div.percent-level {
+div.badge>div.badge-paper div.badge-info>div.level-bar>div.percent-level {
   width: fit-content;
   padding: 0 0 0 10px;
   display: flex;
 }
-div.badge
-  > div.badge-paper
-  > div.badge-info
-  > div.level-bar
-  > div.percent-level
-  > p {
+
+div.badge>div.badge-paper div.badge-info>div.level-bar>div.percent-level>p {
   margin: auto;
   font-size: 12px;
 }
 
-div.badge > div.badge-paper > div.badge-info > span.gold {
+div.badge>div.badge-paper div.badge-info>span.gold {
   color: #edb037;
   font-family: "sutbold";
 }
 
-div.badge > div.badge-paper.disabled > div.badge-info > span.gold {
+div.badge>div.badge-paper.disabled div.badge-info>span.gold {
   color: #b5b5b5;
   font-family: "sutbold";
 }
 
-div.badge > div.badge-paper > div.badge-info > span.silver {
+div.badge>div.badge-paper div.badge-info>span.silver {
   color: #999999;
   font-family: "sutbold";
+}
+
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+  section.header {
+    padding: 0 5%;
+    height: calc(100px + 0.25vw);
+  }
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+  section.body {
+    padding: 0 5%;
+  }
+
+  div.badge {
+    display: block;
+    padding: 2.5% 5%;
+  }
+
+
+  div.badge>div.badge-paper {
+    width: 100%;
+    min-width: unset;
+    display: flex;
+  }
+
+  div.badge>div.badge-paper>div.img {
+    width: 45%;
+  }
+
+
+  div.badge>div.badge-paper>div.detail {
+    padding: 0 0 0 5%;
+    width: 55%;
+  }
+
+  div.badge>div.badge-paper div.badge-info,
+  div.badge>div.badge-detail>div.badge-info {
+    margin: 0.5rem 0;
+  }
+
+  div.badge>div.badge-paper div.badge-info>p,
+  div.badge>div.badge-detail>div.badge-info>p {
+    margin: 0;
+    font-family: "sutbold";
+    font-size: 16px;
+  }
+
+  div.badge>div.badge-paper div.badge-info>span,
+  div.badge>div.badge-detail>div.badge-info>span {
+    font-size: 14px;
+  }
+
+  div.badge>div.badge-paper div.badge-info>span.link>p>i {
+    font-size: 14px;
+  }
+
+  div.badge>div.badge-paper div.badge-info>span>span {
+    font-size: 12px;
+  }
+
+  div.badge>hr {
+    width: 100%;
+    margin: 1rem 0;
+    border: 0;
+    border-top: 1px solid #eaeaea;
+  }
+
+  div.badge>div.badge-detail {
+    margin: 1rem 0 2rem 0;
+  }
+
 }

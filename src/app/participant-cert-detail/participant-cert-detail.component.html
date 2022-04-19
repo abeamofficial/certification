@@ -9,7 +9,7 @@
       position: isLoading ? 'relative' : 'unset'
     }"
   >
-    <div style="position: absolute; z-index: 1; background-color: white">
+    <div style="z-index: 1">
       <section class="header">
         <div>
           <span>Certificate of Participant in</span>
@@ -77,7 +77,7 @@
         [isView]="false"
       ></app-module-template>
     </div>
-    <div style="position: absolute; z-index: -1">
+    <div style="position: absolute; z-index: -1; left: 0; top: 0">
       <app-participant-template
         id="printableArea"
         [value]="value"

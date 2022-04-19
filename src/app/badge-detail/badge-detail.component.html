@@ -1,116 +1,119 @@
-<section class="header">
-  <div>
-    <span>Badge in</span>
-    <h1>{{ value.course_name_en }}</h1>
-    <p>{{ value.course_name_th }}</p>
-  </div>
-</section>
-<section class="breadcrumb">
-  <p [routerLink]="['']">Home</p>
-  <span>></span>
-  <p>Badge in {{ value.course_name_en }}</p>
-</section>
-<section class="body">
-  <div class="badge">
-    <div class="badge-paper" [ngClass]="{ disabled: !value.active }">
-      <div class="img">
-        <div *ngIf="!value.active" class="watermark">
-          <div class="watermark-text">expired</div>
+<ng-container *ngIf="value">
+  <section class="header">
+    <div>
+      <span>Badge in</span>
+      <h1>{{ value.course_name_en }}</h1>
+      <p>{{ value.course_name_th }}</p>
+    </div>
+  </section>
+  <section class="breadcrumb">
+    <p [routerLink]="['']">Home</p>
+    <span>></span>
+    <p>Badge in {{ value.course_name_en }}</p>
+  </section>
+  <section class="body">
+    <div class="badge">
+      <div class="badge-paper" [ngClass]="{ disabled: !value.active }">
+        <div class="img">
+          <div *ngIf="!value.active" class="watermark">
+            <div class="watermark-text">expired</div>
+          </div>
+          <img
+            src="https://digitech.sut.ac.th/certification-img/badge/{{
+              value.path
+            }}/{{ value.file_name }}"
+          />
         </div>
-        <img
-          src="https://digitech.sut.ac.th/certification-img/badge/{{
-            value.path
-          }}/{{ value.file_name }}"
-        />
-      </div>
 
-      <div class="badge-info">
-        <p>Level</p>
-        <span
-          [ngClass]="
-            getScoreLevel([value.objective_score, value.practice_score])
-          "
-          >{{
-            getCompetencyLevel(
-              getSummaryScore([value.objective_score, value.practice_score])
-            )
-          }}</span
-        >
-        <div class="level-bar">
-          <div class="full-bar">
-            <div
-              class="percent-bar"
+        <div class="detail">
+          <div class="badge-info">
+            <p>Level</p>
+            <span
               [ngClass]="
                 getScoreLevel([value.objective_score, value.practice_score])
               "
-              [ngStyle]="{
-                width:
-                  getSummaryScore([
-                    value.objective_score,
-                    value.practice_score
-                  ]) + '%'
-              }"
+              >{{
+                getCompetencyLevel(
+                  getSummaryScore([value.objective_score, value.practice_score])
+                )
+              }}</span
             >
-              {{
-                getSummaryScore([value.objective_score, value.practice_score])
-              }}%
+            <div class="level-bar">
+              <div class="full-bar">
+                <div
+                  class="percent-bar"
+                  [ngClass]="
+                    getScoreLevel([value.objective_score, value.practice_score])
+                  "
+                  [ngStyle]="{
+                    width:
+                      getSummaryScore([
+                        value.objective_score,
+                        value.practice_score
+                      ]) + '%'
+                  }"
+                >
+                  {{
+                    getSummaryScore([
+                      value.objective_score,
+                      value.practice_score
+                    ])
+                  }}%
+                </div>
+              </div>
             </div>
+          </div>
+          <ng-container *ngIf="value.expired_date; else dateEarned">
+            <div class="badge-info">
+              <p style="color: red">Date Expired</p>
+              <span style="color: red">{{ getDate(value.expired_date) }}</span>
+            </div>
+          </ng-container>
+          <ng-template #dateEarned>
+            <div class="badge-info">
+              <p>Date Earned</p>
+              <span>{{ getDate(value.badge_date) }}</span>
+            </div>
+          </ng-template>
+          <div class="badge-info">
+            <p>Offered By</p>
+            <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
+              <p>
+                Suranaree University of Technology
+                <i class="material-icons">open_in_new</i>
+              </p>
+            </span>
+            <span>
+              <span>Nakhon ratchasima</span>
+              <span>•</span>
+              <span>Thailand</span>
+            </span>
           </div>
         </div>
       </div>
-      <ng-container *ngIf="value.expired_date; else dateEarned">
+      <hr />
+      <div class="badge-detail">
         <div class="badge-info">
-          <p style="color: red">Date Expired</p>
-          <span style="color: red">{{
-            value.expired_date | date: "dd/MM/yyyy"
-          }}</span>
-        </div>
-      </ng-container>
-      <ng-template #dateEarned>
-        <div class="badge-info">
-          <p>Date Earned</p>
-          <span>{{ value.badge_date | date: "dd/MM/yyyy" }}</span>
-        </div>
-      </ng-template>
-
-      <div class="badge-info">
-        <p>Offered By</p>
-        <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-          <p>
-            Suranaree University of Technology
-            <i class="material-icons">open_in_new</i>
+          <p class="link" [routerLink]="['/course-detail/' + value.course_id]">
+            {{ "วิชา" + value.course_name_th }}
           </p>
-        </span>
-        <span>
-          <span>Nakhon ratchasima</span>
-          <span>•</span>
-          <span>Thailand</span>
-        </span>
-      </div>
-    </div>
-    <hr />
-    <div class="badge-detail">
-      <div class="badge-info">
-        <p class="link" [routerLink]="['/course-detail/' + value.course_id]">
-          {{ "วิชา" + value.course_name_th }}
-        </p>
-      </div>
-      <div class="badge-info">
-        <p>Description</p>
-        <span class="text">
-          {{ value.course_detail_th }}
-        </span>
-        <span class="text">
-          {{ value.course_detail_en }}
-        </span>
-      </div>
+        </div>
+        <div class="badge-info">
+          <p>Description</p>
+          <span class="text">
+            {{ value.course_detail_th }}
+          </span>
+          <span class="text">
+            {{ value.course_detail_en }}
+          </span>
+        </div>
 
-      <div class="badge-info">
-        <p>Earned credits</p>
-        <span> {{ value.course_credit }} Credits</span>
-      </div>
+        <div class="badge-info">
+          <p>Earned credits</p>
+          <span> {{ value.course_credit }} Credits</span>
+        </div>
 
-      <!-- <div class="badge-info">
+        <!-- <div class="badge-info">
         <p>Skills</p>
         <div class="skill">
           <div class="skill-tag">Data Analysis</div>
@@ -118,6 +121,7 @@
           <div class="skill-tag">Communication</div>
         </div>
       </div> -->
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</ng-container>

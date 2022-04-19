@@ -8,12 +8,12 @@ section.header {
   display: flex;
 }
 
-section.header > div {
+section.header>div {
   margin: auto 0;
   height: fit-content;
 }
 
-section.header > div > span {
+section.header>div>span {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 16px;
@@ -21,7 +21,7 @@ section.header > div > span {
   color: var(--dark-blue);
 }
 
-section.header > div > h1 {
+section.header>div>h1 {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 26px;
@@ -29,7 +29,7 @@ section.header > div > h1 {
   color: var(--dark-blue);
 }
 
-section.header > div > p {
+section.header>div>p {
   font-family: "sutregular";
   font-weight: 600;
   font-size: 20px;
@@ -47,8 +47,8 @@ section.breadcrumb {
   gap: 10px;
 }
 
-section.breadcrumb > p,
-section.breadcrumb > span {
+section.breadcrumb>p,
+section.breadcrumb>span {
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
@@ -56,11 +56,11 @@ section.breadcrumb > span {
   color: #212121;
 }
 
-section.breadcrumb > p {
+section.breadcrumb>p {
   cursor: pointer;
 }
 
-section.breadcrumb > p:hover {
+section.breadcrumb>p:hover {
   color: var(--blue);
 }
 
@@ -77,7 +77,7 @@ section.course-detail {
 
 /*  cert detail  >  header  */
 
-section.course-detail > div.header {
+section.course-detail>div.header {
   /* padding-left: 15%; */
   display: flex;
   position: absolute;
@@ -85,7 +85,8 @@ section.course-detail > div.header {
   top: 0;
   width: 100%;
 }
-section.course-detail > div.header > div {
+
+section.course-detail>div.header>div {
   background-color: #f2f1f0;
   width: 100%;
   padding-left: 15%;
@@ -93,7 +94,7 @@ section.course-detail > div.header > div {
 
 /* -----  cert detail  >  header  >  mat-tab ----- */
 
-::ng-deep section.course-detail > div.header > div .mat-tab-label {
+::ng-deep section.course-detail>div.header>div .mat-tab-label {
   font-family: "sutregular";
   font-size: 18px;
   padding: 30px 24px;
@@ -103,116 +104,102 @@ section.course-detail > div.header > div {
 }
 
 .mat-tab-nav-bar,
-::ng-deep section.course-detail > div.header > div .mat-tab-header {
+::ng-deep section.course-detail>div.header>div .mat-tab-header {
   border-bottom: unset;
 }
 
-::ng-deep
-  section.course-detail
-  > div.header
-  > div
-  .mat-tab-group.mat-primary
-  .mat-ink-bar,
-::ng-deep
-  section.course-detail
-  > div.header
-  > div
-  .mat-tab-nav-bar.mat-primary
-  .mat-ink-bar {
+::ng-deep section.course-detail>div.header>div .mat-tab-group.mat-primary .mat-ink-bar,
+::ng-deep section.course-detail>div.header>div .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: var(--dark-blue);
   height: 3px;
 }
 
-::ng-deep
-  section.course-detail
-  > div.header
-  > div
-  .mat-tab-label:focus:not(.mat-tab-disabled),
-::ng-deep section.course-detail > div.header > div .mat-tab-label-active {
+::ng-deep section.course-detail>div.header>div .mat-tab-label:focus:not(.mat-tab-disabled),
+::ng-deep section.course-detail>div.header>div .mat-tab-label-active {
   opacity: 1 !important;
   font-weight: 600 !important;
   letter-spacing: 0 !important;
 }
 
 /* -----  cert detail  >  body ----- */
-section.course-detail > div.body {
+section.course-detail>div.body {
   margin: 50px 0;
 }
 
-section.course-detail > div.body > h1 {
+section.course-detail>div.body>h1 {
   margin: 0 2.5%;
   font-family: "sutbold";
   font-size: 25px;
 }
 
-section.course-detail > div.body > div.plo {
+section.course-detail>div.body>div.plo {
   margin: 32px 0;
   width: 100%;
   padding: 16px 32px;
 }
-section.course-detail > div.body > div.border {
+
+section.course-detail>div.body>div.border {
   border: 1px solid #e2e2e2;
   border-radius: 3px;
 }
-section.course-detail > div.body > div.check-list,
-section.course-detail > div.body > div.check-list > span,
-section.course-detail > div.body > div.normal-detail > div > div.check-list {
+
+section.course-detail>div.body>div.check-list,
+section.course-detail>div.body>div.check-list>span,
+section.course-detail>div.body>div.normal-detail>div>div.check-list {
   box-sizing: border-box;
 }
 
-section.course-detail > div.body > div.normal-detail {
+section.course-detail>div.body>div.normal-detail {
   margin: 8px 0;
   padding: 16px 32px;
   box-sizing: border-box;
 }
-section.course-detail > div.body > div.normal-detail .text-indent {
+
+section.course-detail>div.body>div.normal-detail .text-indent {
   text-indent: 20px;
 }
 
-section.course-detail > div.body > div.check-list > h1,
-section.course-detail > div.body > div.normal-detail > h1 {
+section.course-detail>div.body>div.check-list>h1,
+section.course-detail>div.body>div.normal-detail>h1 {
   margin: 0 0 10px 0;
   font-family: "sutbold";
   font-size: 20px;
 }
-section.course-detail > div.body > div.check-list > span > p {
+
+section.course-detail>div.body>div.check-list>span>p {
   font-family: "sutregular";
   font-weight: 100;
   margin: 2px 0;
   font-size: 18px;
 }
 
-section.course-detail > div.body > div.check-list > p,
-section.course-detail
-  > div.body
-  > div.normal-detail
-  > div
-  > div.check-list
-  > p {
+section.course-detail>div.body>div.check-list>p,
+section.course-detail>div.body>div.normal-detail>div>div.check-list>p {
   margin: 5px 0;
   font-size: 18px;
   text-indent: 10px;
 }
 
-section.course-detail > div.body > div.check-list > span,
-section.course-detail > div.body > div.normal-detail > span {
+section.course-detail>div.body>div.check-list>span,
+section.course-detail>div.body>div.normal-detail>span {
   display: flex;
   width: 100%;
   box-sizing: border-box;
   padding-left: 16px;
 }
 
-section.course-detail > div.body > div.normal-detail > span > span {
+section.course-detail>div.body>div.normal-detail>span>span {
   display: flex;
   margin: 2px 16px;
   font-size: 18px;
 }
 
-section.course-detail > div.body > div.normal-detail > span > p {
+section.course-detail>div.body>div.normal-detail>span>p {
   margin: 2px 0;
   font-size: 18px;
 }
-section.course-detail > div.body > div.normal-detail > p {
+
+section.course-detail>div.body>div.normal-detail>p {
   font-family: "sutregular";
   font-weight: 100;
   margin: 10px 25px;
@@ -220,49 +207,44 @@ section.course-detail > div.body > div.normal-detail > p {
   /* text-indent: 10px; */
 }
 
-section.course-detail > div.body > div.check-list > p > i,
-section.course-detail
-  > div.body
-  > div.normal-detail
-  > div
-  > div.check-list
-  > p
-  > i {
+section.course-detail>div.body>div.check-list>p>i,
+section.course-detail>div.body>div.normal-detail>div>div.check-list>p>i {
   font-size: 20px;
   margin: auto 10px auto 0;
   vertical-align: sub;
   color: #083a9d;
 }
 
-section.course-detail > div.body > div.check-list > span > i {
+section.course-detail>div.body>div.check-list>span>i {
   font-size: 20px;
   margin: 5px 16px auto 0;
   vertical-align: sub;
   color: #083a9d;
 }
 
-section.course-detail > div.body > div.check-list > span > i {
+section.course-detail>div.body>div.check-list>span>i {
   height: 100%;
 }
-section.course-detail > div.body > div.normal-detail > div {
+
+section.course-detail>div.body>div.normal-detail>div {
   margin: 5px 25px;
   font-size: 18px;
   font-family: "sutregular";
   font-weight: 100;
 }
 
-section.course-detail > div.body > div.normal-detail > div > h1 {
+section.course-detail>div.body>div.normal-detail>div>h1 {
   font-family: "sutbold";
   font-size: 18px;
   line-height: 30px;
   margin: 0;
 }
 
-section.course-detail > div.body > div.normal-detail > div > h1.link {
+section.course-detail>div.body>div.normal-detail>div>h1.link {
   color: var(--soft-blue);
 }
 
-section.course-detail > div.body > div.normal-detail > div > p {
+section.course-detail>div.body>div.normal-detail>div>p {
   font-family: "sutregular";
   font-weight: 100;
   text-indent: 18px;
@@ -270,64 +252,51 @@ section.course-detail > div.body > div.normal-detail > div > p {
   margin: 0;
 }
 
-section.course-detail
-  > div.body
-  > div.normal-detail
-  > div
-  > h1
-  > span:first-of-type {
+section.course-detail>div.body>div.normal-detail>div>h1>span:first-of-type {
   margin-right: 5px;
 }
 
-section.course-detail > div.body > div.normal-detail > div > h1 > span.link {
+section.course-detail>div.body>div.normal-detail>div>h1>span.link {
   color: var(--soft-blue);
   cursor: pointer;
 }
 
-section.course-detail
-  > div.body
-  > div.normal-detail
-  > div
-  > h1
-  > span.link:hover {
+section.course-detail>div.body>div.normal-detail>div>h1>span.link:hover {
   text-decoration: underline;
 }
-section.course-detail > div.body > div.normal-detail > div > div {
+
+section.course-detail>div.body>div.normal-detail>div>div {
   font-family: "sutregular";
   font-weight: 100;
   margin: 0 20px;
   font-size: 18px;
 }
 
-section.course-detail > div.body > div.normal-detail > div > span {
+section.course-detail>div.body>div.normal-detail>div>span {
   display: block;
   margin: 0;
   font-family: "sutregular";
   font-weight: 100;
   font-size: 18px;
 }
-section.course-detail > div.body > div.normal-detail > div > span.link > p {
+
+section.course-detail>div.body>div.normal-detail>div>span.link>p {
   margin: 0;
   color: var(--soft-blue);
   cursor: pointer;
 }
 
-section.course-detail
-  > div.body
-  > div.normal-detail
-  > div
-  > span.link:hover
-  > p {
+section.course-detail>div.body>div.normal-detail>div>span.link:hover>p {
   text-decoration: underline;
 }
 
-section.course-detail > div.body > div.normal-detail > div > span.link > p > i {
+section.course-detail>div.body>div.normal-detail>div>span.link>p>i {
   font-size: 14px;
   vertical-align: middle;
   margin-bottom: 2px;
 }
 
-section.course-detail > div.body > div.normal-detail > ul {
+section.course-detail>div.body>div.normal-detail>ul {
   font-family: "sutregular";
   font-weight: 100;
   margin: 10px 25px;
@@ -335,11 +304,122 @@ section.course-detail > div.body > div.normal-detail > ul {
   font-size: 18px;
 }
 
-section.course-detail
-  > div.body
-  > div.normal-detail
-  > div
-  > img.institution-logo {
+section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
   height: 175px;
   margin: 10px 0;
+}
+
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  section.header {
+    padding: 0 5%;
+    height: calc(100px + 0.25vw);
+  }
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+
+  section.course-detail {
+    padding: 25px 5%;
+  }
+
+  section.course-detail>div.header>div {
+    padding-left: 5%;
+  }
+
+  section.course-detail>div.header>div.menu {
+    height: 35px;
+  }
+
+  ::ng-deep section.course-detail>div.header>div .mat-tab-label {
+    font-size: calc(14px + 0.25vw);
+    min-width: 100px;
+    height: 35px;
+    padding: 15px 5%;
+  }
+
+  /* -----  cert detail  >  body ----- */
+
+  section.course-detail>div.body>h1 {
+    margin: 0 2.5%;
+    font-family: "sutbold";
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.course-detail>div.body>div.normal-detail {
+    padding: 2.5vw;
+  }
+
+  section.course-detail>div.body>div.check-list>h1,
+  section.course-detail>div.body>div.normal-detail>h1 {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.course-detail>div.body>div.check-list>span>p {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.course-detail>div.body>div.check-list>p,
+  section.course-detail>div.body>div.normal-detail>div>div.check-list>p,
+  section.course-detail>div.body>div.normal-detail>span>span,
+  section.course-detail>div.body>div.normal-detail>span>p,
+  section.course-detail>div.body>div.normal-detail>p,
+  section.course-detail>div.body>div.normal-detail>div,
+  section.course-detail>div.body>div.normal-detail>div>h1,
+  section.course-detail>div.body>div.normal-detail>div>p,
+  section.course-detail>div.body>div.normal-detail>div>div,
+  section.course-detail>div.body>div.normal-detail>div>span,
+  section.course-detail>div.body>div.normal-detail>ul {
+    font-size: calc(12px + 0.25vw);
+    line-height: 115%;
+  }
+
+  section.course-detail>div.body>div.normal-detail>p,
+  section.course-detail>div.body>div.normal-detail>div {
+    margin: 5px 10px;
+  }
+
+  section.course-detail>div.body>div.normal-detail>div {
+    padding: 0.5vh 0;
+  }
+
+  section.course-detail>div.body>div.normal-detail>div>div {
+    margin: 0.5vh 0;
+  }
+
+  section.course-detail>div.body>div.check-list>p>i,
+  section.course-detail>div.body>div.normal-detail>div>div.check-list>p>i,
+  section.course-detail>div.body>div.check-list>span>i {
+    font-size: calc(22px + 0.25vw);
+  }
+
+  section.course-detail>div.body>div.check-list>span>i {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
+    height: 100px;
+    margin: 10px 0;
+  }
 }

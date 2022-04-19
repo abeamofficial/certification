@@ -108,11 +108,11 @@ div.data-list>div.list.disabled>div.level-bar>div.full-bar {
 
 div.data-list>div.list>div.level-bar>.full-bar>.percent-bar {
   box-sizing: border-box;
-  height: 12px;
+  height: 14px;
   width: 50%;
   border-radius: 50px;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   padding-left: 20px;
   display: flex;
   align-items: center;

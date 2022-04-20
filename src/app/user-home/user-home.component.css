@@ -166,6 +166,23 @@ div.search-area select:focus {
 
 
 
+::ng-deep .mat-tab-header-pagination {
+  display: none !important;
+}
+
+::ng-deep .mat-tab-header {
+  overflow-x: scroll !important;
+}
+
+::ng-deep .mat-tab-label-container {
+  overflow: visible !important;
+}
+
+::ng-deep .mat-tab-header::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -194,7 +211,6 @@ div.search-area select:focus {
     height: 35px;
     margin-bottom: 0;
   }
-
 
   ::ng-deep .mat-tab-label {
     min-width: unset !important;
@@ -241,18 +257,76 @@ div.search-area select:focus {
   }
 }
 
-::ng-deep .mat-tab-header-pagination {
-  display: none !important;
-}
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  section.home-header {
+    padding: 0 5%;
+    height: calc(100px + 1vw);
+  }
 
-::ng-deep .mat-tab-header {
-  overflow-x: scroll !important;
-}
 
-::ng-deep .mat-tab-label-container {
-  overflow: visible !important;
-}
+  section.home-header div.profile>div.img-profile {
+    width: calc(35px + 1vw);
+  }
 
-::ng-deep .mat-tab-header::-webkit-scrollbar {
-  display: none;
+  section.home-header div.profile>div.name>p {
+
+    font-size: calc(18px + 0.25vw);
+    line-height: calc(20px + 0.25vw);
+
+  }
+
+  section.home-header div.profile>div.name>span {
+    font-size: calc(12px + 0.25vw);
+    line-height: calc(14px + 0.25vw);
+  }
+
+  section.home-header div.menu {
+    height: 35px;
+    margin-bottom: 0;
+  }
+
+  ::ng-deep .mat-tab-label {
+    min-width: unset !important;
+  }
+
+  ::ng-deep .mat-tab-header,
+  ::ng-deep section.home-header div.menu .mat-tab-label {
+    height: 35px;
+  }
+
+  ::ng-deep section.home-header div.menu .mat-tab-label {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.body-section {
+    padding: 5%;
+  }
+
+  section.body-section>div.header {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.body-section>div.search-area {
+    gap: 5px;
+    padding: 15px 0;
+  }
+
+  section.body-section>div.search-area>span,
+  section.body-section>div.search-area select {
+    min-height: unset;
+    height: 25px;
+  }
+
+  section.body-section>div.search-area>span>input,
+  section.body-section>div.search-area select {
+    padding: 4px 10px;
+    font-size: calc(12px + 0.25vw);
+    height: auto;
+
+  }
+
+  section.body-section>div.search-area>span>i.material-icons {
+    font-size: calc(12px + 0.25vw);
+  }
 }

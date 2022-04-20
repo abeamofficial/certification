@@ -114,3 +114,7 @@ div.data-list>div.list>div.detail>div.date>span>p {
     line-height: calc(12px + 0.25vw);
   }
 }
+
+
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {}

@@ -259,3 +259,76 @@ div.data-list>div.list>div.button-area>button:hover {
     font-size: calc(10px + 0.25vw);
   }
 }
+
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  div.data-list {
+    row-gap: 1vh;
+    column-gap: 1%;
+  }
+
+  div.data-list>div.list {
+    width: 24%;
+    min-height: 200px;
+    min-width: unset;
+    padding: 2.5%;
+  }
+
+  div.data-list>div.list>div.img {
+    height: calc(100px + 2.5vw);
+  }
+
+  div.data-list>div.list>div.img>img {
+    height: 100%;
+  }
+
+
+  div.data-list>div.list>div.img .watermark div {
+    font-size: 100%;
+  }
+
+
+  div.data-list>div.list>div.name {
+    font-size: calc(12px + 0.25vw);
+    line-height: calc(14px + 0.25vw);
+    height: 55px;
+  }
+
+  div.data-list>div.list>p {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  /* //////////  BADGE PERCENT BAR  /////////// */
+
+  div.data-list>div.list>div.level-bar {
+    margin: 10% 0 5% 0;
+    gap: 2.5%;
+  }
+
+  div.data-list>div.list>div.level-bar>div.full-bar {
+    /* width: 80%; */
+  }
+
+  div.data-list>div.list>div.level-bar>.full-bar>.percent-bar {
+    height: 12px;
+    font-size: calc(10px + 0.25vw);
+  }
+
+
+  div.data-list>div.list>div.level-bar>div.percent-level>p {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  div.data-list>div.list>div.detail {
+    font-size: calc(12px + 0.25vw);
+    line-height: calc(14px + 0.25vw);
+    margin: 5% 0;
+    height: 45px;
+  }
+
+  div.data-list>div.list>div.button-area>button {
+    margin: 5% auto;
+    font-size: calc(12px + 0.25vw);
+  }
+
+}

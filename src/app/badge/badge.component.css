@@ -191,7 +191,7 @@ div.data-list>div.list>div.button-area>button:hover {
 
 
 /* ----------- Portrait iPhone ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
   div.data-list {
     row-gap: 1vh;
     column-gap: 1.33%;
@@ -261,7 +261,7 @@ div.data-list>div.list>div.button-area>button:hover {
 }
 
 /* ----------- Landscape iPhone  ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   div.data-list {
     row-gap: 1vh;
     column-gap: 1%;

@@ -76,6 +76,7 @@ section.breadcrumb>p:hover {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
   section.header>div>span {
@@ -106,6 +107,7 @@ section.breadcrumb>p:hover {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
   section.header>div>span {

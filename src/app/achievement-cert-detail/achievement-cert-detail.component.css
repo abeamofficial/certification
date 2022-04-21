@@ -516,6 +516,7 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
   section.header>div>span {
@@ -717,6 +718,7 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
 

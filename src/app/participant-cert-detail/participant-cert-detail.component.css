@@ -516,6 +516,7 @@ section.cert-detail>div.body>div.normal-detail>div>img.institution-logo {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
   section.header>div>span {
@@ -640,6 +641,7 @@ section.cert-detail>div.body>div.normal-detail>div>img.institution-logo {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
 

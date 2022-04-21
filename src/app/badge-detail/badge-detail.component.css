@@ -295,6 +295,7 @@ div.badge>div.badge-paper div.badge-info>span.silver {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
   section.header>div>span {
@@ -387,6 +388,7 @@ div.badge>div.badge-paper div.badge-info>span.silver {
   section.header {
     padding: 2.5% 5%;
     height: fit-content;
+    min-height: 85px;
   }
 
   section.header>div>span {

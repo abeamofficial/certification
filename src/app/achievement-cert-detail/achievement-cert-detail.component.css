@@ -711,6 +711,11 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
     padding: 4px 16px;
     margin: 5% auto;
   }
+
+  #printableArea {
+    min-width: 1024px !important;
+    position: absolute;
+  }
 }
 
 /* ----------- Landscape iPhone  ----------- */
@@ -909,6 +914,11 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
     font-size: 12px;
     padding: 4px 16px;
     margin: 5% auto;
+  }
+
+  #printableArea {
+    min-width: 1024px !important;
+    position: absolute;
   }
 
 }

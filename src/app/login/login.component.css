@@ -3,7 +3,7 @@ section.login-modal {
   display: flex;
 }
 
-section.login-modal > .login-form {
+section.login-modal>.login-form {
   width: 20%;
   min-width: 450px;
   position: relative;
@@ -12,36 +12,37 @@ section.login-modal > .login-form {
   border-radius: 3px;
 }
 
-section.login-modal > .login-form > div.form {
+section.login-modal>.login-form>div.form {
   padding: 15% 60px 20% 60px;
   height: 100%;
   box-sizing: border-box;
 }
 
-section.login-modal > .login-form > div.form > h1 {
+section.login-modal>.login-form>div.form>h1 {
   font-size: 30px;
   font-family: "sutbold";
   margin: 0;
 }
 
-section.login-modal > .login-form > div.form > hr {
+section.login-modal>.login-form>div.form>hr {
   border-radius: 3px;
   border: 1px solid #e2e2e2;
   width: 100%;
   margin: 5px 0;
 }
 
-section.login-modal > .login-form > div.form > div {
+section.login-modal>.login-form>div.form>div {
   padding: 25px 0;
   box-sizing: border-box;
 }
 
-section.login-modal > .login-form > div.form > div p {
+section.login-modal>.login-form>div.form>div p {
   margin: 10px 0 0 0;
   font-size: 16px;
   font-family: "sutregular";
 }
-section.login-modal > .login-form > div.form > div input {
+
+section.login-modal>.login-form>div.form>div input {
   display: block;
   width: -webkit-fill-available;
   /* min-width: 258px; */
@@ -55,11 +56,12 @@ section.login-modal > .login-form > div.form > div input {
   resize: vertical;
 }
 
-section.login-modal > .login-form > div.form > div input:focus {
+section.login-modal>.login-form>div.form>div input:focus {
   background-color: rgb(243, 243, 243);
   /* outline: none; */
 }
-section.login-modal > .login-form > div.form > button {
+
+section.login-modal>.login-form>div.form>button {
   border: none;
   border-radius: 3px;
   background-color: #ed9226;
@@ -74,11 +76,11 @@ section.login-modal > .login-form > div.form > button {
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.05);
 }
 
-section.login-modal > .login-form > div.form > button:disabled {
+section.login-modal>.login-form>div.form>button:disabled {
   background-color: #c3c3c3;
 }
 
-section.login-modal > .login-form > p.footer {
+section.login-modal>.login-form>p.footer {
   position: absolute;
   text-align: center;
   width: 100%;
@@ -125,31 +127,35 @@ input.warning {
 
 
 
+
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
 
-  section.login-modal > .login-form {
+  section.login-modal>.login-form {
     min-width: unset;
-    width: 100%;
+    width: 90%;
     margin: auto 5%;
   }
 
-  section.login-modal > .login-form > div.form {
+  section.login-modal>.login-form>div.form {
+    width: 100%;
     padding: 15% 10%;
   }
 
-  section.login-modal > .login-form > div.form > h1 {
+  section.login-modal>.login-form>div.form>h1 {
     font-size: calc(25px + 0.25vw);
   }
-  section.login-modal > .login-form > div.form > div {
+
+  section.login-modal>.login-form>div.form>div {
     padding: 10px 0;
   }
-  section.login-modal > .login-form > div.form > div p {
+
+  section.login-modal>.login-form>div.form>div p {
     margin: 10px 0 0 0;
     font-size: calc(14px + 0.25vw);
   }
 
-  section.login-modal > .login-form > div.form > div input {
+  section.login-modal>.login-form>div.form>div input {
     font-size: calc(14px + 0.25vw);
   }
 
@@ -160,30 +166,63 @@ input.warning {
     transform-origin: 0 0;
     -webkit-transform-origin: 0 0;
   }
-  section.login-modal > .login-form > div.form > button {
+
+  section.login-modal>.login-form>div.form>button {
     font-size: calc(16px + 0.25vw);
   }
-  
-  section.login-modal > .login-form > p.footer {
+
+  section.login-modal>.login-form>p.footer {
     font-size: calc(8.5px + 0.25vw);
   }
 }
 
-@media only screen and (min-width: 320px) and (max-height: 812px) and (orientation: portrait) {
-  
-  /* section.login-modal > div.cover-img {
-    display: none;
-  }
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   section.login-modal {
-    min-width: 90vw;
-    border-radius: 3px;
-    display: flex;
-  } */
-}
+    height: fit-content;
+  }
 
-@media only screen and (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
-  section.login-modal {
-    min-width: 80vw;
+  section.login-modal>.login-form {
+    min-width: unset;
+    width: 50%;
+    margin: auto 25%;
+  }
+
+  section.login-modal>.login-form>div.form {
+    width: 100%;
+    padding: 15% 10%;
+  }
+
+  section.login-modal>.login-form>div.form>h1 {
+    font-size: calc(25px + 0.25vw);
+  }
+
+  section.login-modal>.login-form>div.form>div {
+    padding: 10px 0;
+  }
+
+  section.login-modal>.login-form>div.form>div p {
+    margin: 10px 0 0 0;
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.login-modal>.login-form>div.form>div input {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  .g-recaptcha {
+    margin: 25px 0;
+    transform: scale(0.9) !important;
+    -webkit-transform: scale(0.9) !important;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
+
+  section.login-modal>.login-form>div.form>button {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.login-modal>.login-form>p.footer {
+    font-size: calc(8.5px + 0.25vw);
   }
 }
-

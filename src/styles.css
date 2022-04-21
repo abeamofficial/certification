@@ -59,10 +59,17 @@ body {
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
   padding-bottom: 50px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.stop-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 select {
@@ -159,6 +166,11 @@ select {
     width: 100vw !important;
     overflow-x: hidden;
   }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 
@@ -171,4 +183,10 @@ select {
     width: 100vw !important;
     overflow-x: hidden;
   }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
 }

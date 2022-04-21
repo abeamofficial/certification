@@ -509,7 +509,10 @@ section.cert-detail>div.body>div.normal-detail>div>img.institution-logo {
   stroke: var(--dark-blue);
 }
 
-
+#printableArea {
+  min-width: 1024px !important;
+  position: absolute;
+}
 
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {

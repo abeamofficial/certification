@@ -490,13 +490,13 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
 /*  spinner */
 
 .spinner {
-  position: absolute;
+  position: fixed;
   display: flex;
   z-index: 100;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.65);
 }
 
@@ -510,6 +510,10 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
 }
 
 
+#printableArea {
+  min-width: 1024px !important;
+  position: absolute;
+}
 
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -712,10 +716,8 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
     margin: 5% auto;
   }
 
-  #printableArea {
-    min-width: 1024px !important;
-    position: absolute;
-  }
+
+
 }
 
 /* ----------- Landscape iPhone  ----------- */
@@ -916,9 +918,5 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
     margin: 5% auto;
   }
 
-  #printableArea {
-    min-width: 1024px !important;
-    position: absolute;
-  }
 
 }

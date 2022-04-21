@@ -354,7 +354,7 @@ section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
   section.course-detail>div.body>h1 {
     margin: 0 2.5%;
     font-family: "sutbold";
-    font-size: calc(16px + 0.25vmin);
+    font-size: calc(16px + 0.25vmin) !important;
   }
 
   section.course-detail>div.body>div.normal-detail {
@@ -363,11 +363,11 @@ section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
 
   section.course-detail>div.body>div.check-list>h1,
   section.course-detail>div.body>div.normal-detail>h1 {
-    font-size: calc(14px + 0.25vmin);
+    font-size: calc(14px + 0.25vmin) !important;
   }
 
   section.course-detail>div.body>div.check-list>span>p {
-    font-size: calc(16px + 0.25vmin);
+    font-size: calc(16px + 0.25vmin) !important;
   }
 
   section.course-detail>div.body>div.check-list>p,
@@ -381,8 +381,8 @@ section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
   section.course-detail>div.body>div.normal-detail>div>div,
   section.course-detail>div.body>div.normal-detail>div>span,
   section.course-detail>div.body>div.normal-detail>ul {
-    font-size: calc(12px + 0.25vmin);
-    line-height: 115%;
+    font-size: calc(12px + 0.25vmin) !important;
+    line-height: 115% !important;
   }
 
   section.course-detail>div.body>div.normal-detail>p,

@@ -100,3 +100,33 @@ section.breadcrumb>p:hover {
   }
 
 }
+
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  section.header {
+    padding: 0 5%;
+    height: calc(100px + 0.25vw);
+  }
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+}

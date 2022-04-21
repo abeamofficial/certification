@@ -1,110 +1,112 @@
-<section class="header">
-  <div>
-    <!-- <span>Certificate of Achievement in</span> -->
-    <h1>{{ value.course_name_en }}</h1>
-    <p>{{ "วิชา" + value.course_name_th }}</p>
-  </div>
-</section>
-<section class="breadcrumb">
-  <p [routerLink]="['']">Home</p>
-  <span>></span>
-  <p>{{ value.course_name_en }}</p>
-</section>
-
-<section class="course-detail">
-  <div class="header">
-    <div class="menu">
-      <mat-tab-group
-        animationDuration="0ms"
-        (selectedTabChange)="scrollToId($event)"
-      >
-        <mat-tab label="ข้อมูลชุดวิชา"> </mat-tab>
-        <!-- <mat-tab label="รายวิชาในชุดวิชา"></mat-tab> -->
-        <mat-tab label="เกี่ยวกับสถาบัน"></mat-tab>
-      </mat-tab-group>
+<ng-container *ngIf="value">
+  <section class="header">
+    <div>
+      <!-- <span>Certificate of Achievement in</span> -->
+      <h1>{{ value.course_name_en }}</h1>
+      <p>{{ "วิชา" + value.course_name_th }}</p>
     </div>
-  </div>
+  </section>
+  <section class="breadcrumb">
+    <p [routerLink]="['']">Home</p>
+    <span>></span>
+    <p>{{ value.course_name_en }}</p>
+  </section>
 
-  <div class="body" id="about">
-    <h1>{{ value.course_name_en }}</h1>
-    <h1>{{ "วิชา" + value.course_name_th }}</h1>
-
-    <div class="plo check-list border" *ngIf="value.plo">
-      <h1>สิ่งที่คุณจะได้เรียนรู้ (Program Learning Outcome)</h1>
-      <span *ngFor="let item of value.plo">
-        <i class="material-icons">check</i>
-        <p>{{ getPlo(item).name_th }}</p>
-      </span>
+  <section class="course-detail">
+    <div class="header">
+      <div class="menu">
+        <mat-tab-group
+          animationDuration="0ms"
+          (selectedTabChange)="scrollToId($event)"
+        >
+          <mat-tab label="ข้อมูลชุดวิชา"> </mat-tab>
+          <!-- <mat-tab label="รายวิชาในชุดวิชา"></mat-tab> -->
+          <mat-tab label="เกี่ยวกับสถาบัน"></mat-tab>
+        </mat-tab-group>
+      </div>
     </div>
 
-    <div class="normal-detail" *ngIf="value.course_detail_th">
-      <h1>รายละเอียดวิชา</h1>
-      <p>{{ value.course_detail_th }}</p>
-    </div>
+    <div class="body" id="about">
+      <h1>{{ value.course_name_en }}</h1>
+      <h1>{{ "วิชา" + value.course_name_th }}</h1>
 
-    <div class="normal-detail" *ngIf="value.learning_hour">
-      <h1>จำนวนชั่วโมงการเรียนรู้</h1>
-      <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 30 ชั่วโมง</p>
-    </div>
+      <div class="plo check-list border" *ngIf="value.plo">
+        <h1>สิ่งที่คุณจะได้เรียนรู้ (Program Learning Outcome)</h1>
+        <span *ngFor="let item of value.plo">
+          <i class="material-icons">check</i>
+          <p>{{ getPlo(item).name_th }}</p>
+        </span>
+      </div>
 
-    <div class="normal-detail">
-      <h1>คุณสมบัติผู้เรียน</h1>
-      <p>
-        เป็นผู้ที่สำเร็จการศึกษาไม่ต่ำกว่า ปวส. หรือเทียบเท่า ที่ ก.พ. รับรอง
-      </p>
-    </div>
+      <div class="normal-detail" *ngIf="value.course_detail_th">
+        <h1>รายละเอียดวิชา</h1>
+        <p>{{ value.course_detail_th }}</p>
+      </div>
 
-    <div class="normal-detail" *ngIf="value.instructor">
-      <h1>อาจารย์ผู้รับผิดชอบ</h1>
-      <ul>
-        <li *ngFor="let item of value.instructor">
-          อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร
-        </li>
-      </ul>
-    </div>
+      <div class="normal-detail" *ngIf="value.learning_hour">
+        <h1>จำนวนชั่วโมงการเรียนรู้</h1>
+        <p>จำนวนชั่วโมงการเรียนบรรยายและปฏิบัติการทั้งหมด 30 ชั่วโมง</p>
+      </div>
 
-    <div class="normal-detail" *ngIf="value.program">
-      <h1>หลักสูตรที่เกี่ยวข้อง</h1>
-      <ul>
-        <li>
-          หลักสูตรวิทยาการสารสนเทศมหาบัณฑิต
-          สาขาวิชาเทคโนโลยีดิจิทัลและนิเทศศาสตร์ดิจิทัล,
-          มหาวิทยาลัยเทคโนโลยีสุรนารี
-        </li>
-      </ul>
-    </div>
-
-    <div class="normal-detail" id="institution">
-      <h1>สถาบัน</h1>
-      <div>
-        <img class="institution-logo" src="./assets/images/sut-logo.svg" />
-        <h1>มหาวิทยาลัยเทคโนโลยีสุรนารี</h1>
+      <div class="normal-detail">
+        <h1>คุณสมบัติผู้เรียน</h1>
         <p>
-          มหาวิทยาลัยเทคโนโลยีสุรนารี (มทส.) เป็น “มหาวิทยาลัยในกำกับของรัฐ”
-          แห่งแรกของประเทศไทย มุ่งผลิตนักวิทยาศาสตร์และเทคโนโลยีที่เป็นเลิศ
-          สร้างบัณฑิตพึงประสงค์ ที่มีความพร้อมด้านวิชาการ วิชาชีพ
-          มีความสามารถด้านนวัตกรรมและทักษะด้านความเป็นผู้ประกอบการ
-          รวมถึงความพร้อมที่จะเป็นพลเมืองโลกในศตวรรษที่ 21
-          ด้วยการพัฒนาหลักสูตรที่ทันสมัย
-          ส่งเสริมการเรียนรู้ตลอดชีวิตผ่านหลักสูตรพันธุ์ใหม่ หลักสูตร Up-skill,
-          Re-skill และ New-skill หลักสูตรแบบ Modular Curriculum
-          ที่ยืดหยุ่นได้ตามความต้องการและบริบทสังคม
-          ปรับรูปแบบการเรียนการสอนให้รองรับทั้งการเรียนการสอนแบบ On-site, Online
-          และแบบ Hybrid ที่นำมาใช้ได้อย่างมีประสิทธิผล
+          เป็นผู้ที่สำเร็จการศึกษาไม่ต่ำกว่า ปวส. หรือเทียบเท่า ที่ ก.พ. รับรอง
         </p>
       </div>
 
-      <div style="margin-top: 15px">
-        <span class="link">
-          <p (click)="onNavigate('http://www.sut.ac.th')">
-            http://www.sut.ac.th/<i class="material-icons">open_in_new</i>
-          </p></span
-        >
-        <span>
-          111 ถนนมหาวิทยาลัย ตำบลสุรนารี อำเภอเมือง จังหวัดนครราชสีมา 30000
-        </span>
-        <span>โทรศัพท์ 0-4422-3000 โทรสาร 0-4422-4070.</span>
+      <div class="normal-detail" *ngIf="value.instructor">
+        <h1>อาจารย์ผู้รับผิดชอบ</h1>
+        <ul>
+          <li *ngFor="let item of value.instructor">
+            อาจารย์ ดร.พิชญสินี กิจวัฒนาถาวร
+          </li>
+        </ul>
+      </div>
+
+      <div class="normal-detail" *ngIf="value.program">
+        <h1>หลักสูตรที่เกี่ยวข้อง</h1>
+        <ul>
+          <li>
+            หลักสูตรวิทยาการสารสนเทศมหาบัณฑิต
+            สาขาวิชาเทคโนโลยีดิจิทัลและนิเทศศาสตร์ดิจิทัล,
+            มหาวิทยาลัยเทคโนโลยีสุรนารี
+          </li>
+        </ul>
+      </div>
+
+      <div class="normal-detail" id="institution">
+        <h1>สถาบัน</h1>
+        <div>
+          <img class="institution-logo" src="./assets/images/sut-logo.svg" />
+          <h1>มหาวิทยาลัยเทคโนโลยีสุรนารี</h1>
+          <p>
+            มหาวิทยาลัยเทคโนโลยีสุรนารี (มทส.) เป็น “มหาวิทยาลัยในกำกับของรัฐ”
+            แห่งแรกของประเทศไทย มุ่งผลิตนักวิทยาศาสตร์และเทคโนโลยีที่เป็นเลิศ
+            สร้างบัณฑิตพึงประสงค์ ที่มีความพร้อมด้านวิชาการ วิชาชีพ
+            มีความสามารถด้านนวัตกรรมและทักษะด้านความเป็นผู้ประกอบการ
+            รวมถึงความพร้อมที่จะเป็นพลเมืองโลกในศตวรรษที่ 21
+            ด้วยการพัฒนาหลักสูตรที่ทันสมัย
+            ส่งเสริมการเรียนรู้ตลอดชีวิตผ่านหลักสูตรพันธุ์ใหม่ หลักสูตร
+            Up-skill, Re-skill และ New-skill หลักสูตรแบบ Modular Curriculum
+            ที่ยืดหยุ่นได้ตามความต้องการและบริบทสังคม
+            ปรับรูปแบบการเรียนการสอนให้รองรับทั้งการเรียนการสอนแบบ On-site,
+            Online และแบบ Hybrid ที่นำมาใช้ได้อย่างมีประสิทธิผล
+          </p>
+        </div>
+
+        <div style="margin-top: 15px">
+          <span class="link">
+            <p (click)="onNavigate('http://www.sut.ac.th')">
+              http://www.sut.ac.th/<i class="material-icons">open_in_new</i>
+            </p></span
+          >
+          <span>
+            111 ถนนมหาวิทยาลัย ตำบลสุรนารี อำเภอเมือง จังหวัดนครราชสีมา 30000
+          </span>
+          <span>โทรศัพท์ 0-4422-3000 โทรสาร 0-4422-4070.</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</ng-container>

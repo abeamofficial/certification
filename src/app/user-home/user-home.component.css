@@ -312,6 +312,10 @@ div.search-area select:focus {
     padding: 15px 0;
   }
 
+  section.body-section>div.search-area>span {
+    width: 250px;
+  }
+
   section.body-section>div.search-area>span,
   section.body-section>div.search-area select {
     min-height: unset;

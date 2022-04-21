@@ -228,7 +228,6 @@ div.badge>div.badge-paper div.badge-info>div.level-bar>div.full-bar {
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  height: calc(8px + 0.5vmax);
   background-color: #e8e8e8;
   border-radius: 50px;
   height: calc(8px + 0.5vmax);
@@ -379,6 +378,88 @@ div.badge>div.badge-paper div.badge-info>span.silver {
 
   div.badge>div.badge-detail {
     margin: 1rem 0 2rem 0;
+  }
+
+}
+
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  section.header {
+    padding: 0 5%;
+    height: calc(100px + 0.25vw);
+  }
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+  section.body {
+    padding: 0 5%;
+  }
+
+  div.badge {
+    gap: 5%;
+    padding: 2.5% 5%;
+  }
+
+  div.badge>div.badge-paper {
+    width: 30%;
+    min-width: 30%;
+  }
+
+  div.badge>div.badge-paper div.badge-info,
+  div.badge>div.badge-detail>div.badge-info {
+    margin: 0.5rem 0;
+  }
+
+  div.badge>div.badge-paper div.badge-info>p,
+  div.badge>div.badge-detail>div.badge-info>p {
+    margin: 0;
+    font-family: "sutbold";
+    font-size: 16px;
+  }
+
+  div.badge>div.badge-paper div.badge-info>span,
+  div.badge>div.badge-detail>div.badge-info>span {
+    font-size: 14px;
+  }
+
+  div.badge>div.badge-paper div.badge-info>span.link>p>i {
+    font-size: 16px;
+  }
+
+  div.badge>div.badge-paper div.badge-info>span>span {
+    font-size: 12px;
+  }
+
+
+  div.badge>div.badge-detail {
+    margin: 0rem 0 2rem 0;
+  }
+
+  div.badge>div.badge-paper div.badge-info>div.level-bar>div.full-bar {
+    height: calc(10px + 0.5vmax);
+  }
+
+  div.badge>div.badge-paper div.badge-info>div.level-bar>.full-bar>.percent-bar {
+    font-size: calc(8px + 0.5vmax);
   }
 
 }

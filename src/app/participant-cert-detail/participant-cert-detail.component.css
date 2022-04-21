@@ -634,3 +634,125 @@ section.cert-detail>div.body>div.normal-detail>div>img.institution-logo {
 
 
 }
+
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  section.header {
+    padding: 0 5%;
+    height: calc(100px + 0.25vw);
+  }
+
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+  section.cert {
+    padding: 0 5%;
+    margin: 0 0 50px 0;
+  }
+
+  section.cert div.cert {
+    min-width: unset;
+    row-gap: 2.5%;
+    column-gap: 2.5%;
+  }
+
+  section.cert div.cert>div.cert-paper {
+    width: 60%;
+    padding: 10px;
+  }
+
+  section.cert div.cert>div.cert-detail {
+    width: 40%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title {
+    height: 35px;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title>hr {
+    width: 15%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title>p {
+    font-size: calc(10px + 0.25vw);
+    width: 70%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.cert-detail-name {
+    height: 30px;
+  }
+
+  section.cert div.cert>div.cert-detail>div.cert-detail-name>p {
+    margin: auto;
+    font-family: "sutregular";
+    font-size: calc(16px + 0.25vw);
+    color: #fff;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail {
+    margin: 10px 0;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>hr {
+    margin: 10px 0;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>div>p {
+    width: 45%;
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>div>div {
+    font-size: calc(10px + 0.25vw);
+    margin: 0.25vh 0 auto 0;
+  }
+
+
+  section.cert div.cert>div.cert-detail>div.detail>p {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span>p {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span.link>p>i {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span>span {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>button>p {
+    font-size: 14px;
+  }
+
+  section.cert div.cert>div.cert-detail>button>i {
+    font-size: 12px;
+  }
+
+
+
+}

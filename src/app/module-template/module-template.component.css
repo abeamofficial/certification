@@ -354,7 +354,7 @@ section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
   section.course-detail>div.body>h1 {
     margin: 0 2.5%;
     font-family: "sutbold";
-    font-size: calc(16px + 0.25vmin) !important;
+    font-size: 16px;
   }
 
   section.course-detail>div.body>div.normal-detail {

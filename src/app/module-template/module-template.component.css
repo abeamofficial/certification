@@ -381,12 +381,12 @@ section.course-detail>div.body>div.normal-detail>div>img.institution-logo {
   section.course-detail>div.body>div.normal-detail>div>div,
   section.course-detail>div.body>div.normal-detail>div>span,
   section.course-detail>div.body>div.normal-detail>ul {
-    font-size: 12px;
-    line-height: 115% !important;
+    font-size: 10px;
+    line-height: 125% !important;
   }
 
   section.course-detail>div.body>div.normal-detail>div>span.link>p>i {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   section.course-detail>div.body>div.normal-detail>p,

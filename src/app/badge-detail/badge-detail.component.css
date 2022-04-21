@@ -293,8 +293,8 @@ div.badge>div.badge-paper div.badge-info>span.silver {
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
 
   section.header {
-    padding: 0 5%;
-    height: calc(100px + 0.25vw);
+    padding: 2.5% 5%;
+    height: fit-content;
   }
 
   section.header>div>span {
@@ -385,8 +385,8 @@ div.badge>div.badge-paper div.badge-info>span.silver {
 /* ----------- Landscape iPhone  ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   section.header {
-    padding: 0 5%;
-    height: calc(100px + 0.25vw);
+    padding: 2.5% 5%;
+    height: fit-content;
   }
 
   section.header>div>span {

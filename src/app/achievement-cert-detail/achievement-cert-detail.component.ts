@@ -11,6 +11,8 @@ import { CalculationService } from "../services/calculation.service";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
+import moment from "moment";
+
 @Component({
   selector: "app-achievement-cert-detail",
   templateUrl: "./achievement-cert-detail.component.html",
@@ -47,6 +49,10 @@ export class AchievementCertDetailComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  getDate(value) {
+    return moment(value).format("ll");
+  }
 
   getCompetencyLevel(score) {
     let competency_name;

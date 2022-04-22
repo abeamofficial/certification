@@ -53,7 +53,7 @@ export class ParticipantCertDetailComponent implements OnInit {
   }
 
   getDate(value) {
-    return moment(value).format("DD/MM/yyyy");
+    return moment(value).format("ll");
   }
 
   onNavigate(url) {
@@ -85,6 +85,7 @@ export class ParticipantCertDetailComponent implements OnInit {
     html2canvas(document.querySelector("#printableArea")).then((canvas) => {
       this.isLoading = false;
       element.classList.remove("stop-scroll");
+
       var imgData = canvas.toDataURL("image/png");
       var doc = new jsPDF("l", "mm", "a4");
 

@@ -163,7 +163,7 @@ select {
   html,
   body {
     min-width: unset !important;
-    width: 100vw !important;
+    /* width: 100vw !important; */
     overflow-x: hidden;
   }
 
@@ -180,7 +180,7 @@ select {
   html,
   body {
     min-width: unset !important;
-    width: 100vw !important;
+    /* width: 100vw !important; */
     overflow-x: hidden;
   }
 

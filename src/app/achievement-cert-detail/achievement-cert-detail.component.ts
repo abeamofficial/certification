@@ -20,7 +20,6 @@ import moment from "moment";
 })
 export class AchievementCertDetailComponent implements OnInit {
   value;
-  isShow = false;
 
   isLoading = false;
   constructor(
@@ -95,16 +94,13 @@ export class AchievementCertDetailComponent implements OnInit {
   }
 
   async onDownloadFile() {
-    this.isShow = true;
     this.isLoading = true;
 
     const element = document.querySelector("#appBody");
     element.classList.add("stop-scroll");
 
-    setTimeout(() => {
-      html2canvas(document.querySelector("#printableArea"), {
-        scrollY: 0,
-      }).then((canvas) => {
+    html2canvas(document.querySelector("#printableArea"), { scrollY: 0 }).then(
+      (canvas) => {
         this.isLoading = false;
         element.classList.remove("stop-scroll");
         var imgData = canvas.toDataURL("image/png");
@@ -118,10 +114,8 @@ export class AchievementCertDetailComponent implements OnInit {
         // doc.output("dataurlnewwindow"); // just open it
 
         // window.open(doc.output("bloburl").toString(), "_blank");
-      });
-
-      this.isShow = false;
-    }, 1500);
+      }
+    );
   }
 
   // imageDownload() {

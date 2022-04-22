@@ -48,10 +48,6 @@ export class AchievementTemplateComponent implements OnInit {
     if (document.getElementsByClassName("watermark").length) {
       this.fitText(document.getElementsByClassName("watermark"), 1.15);
     }
-    // if (document.getElementsByClassName('cert-text-1').length) {
-    //   this.fitText(document.getElementsByClassName('cert-text-1'), 1.2)
-    //   this.fitTextLine(document.getElementsByClassName('cert-text-1'), 1.2)
-    // }
 
     if (!this.qrgen && this.value) {
       var options = {

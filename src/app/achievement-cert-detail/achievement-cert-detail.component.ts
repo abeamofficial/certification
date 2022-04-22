@@ -94,19 +94,6 @@ export class AchievementCertDetailComponent implements OnInit {
   }
 
   async onDownloadFile() {
-    // const doc = new jsPDF("p", "pt", "a4");
-    // await html2canvas(document.querySelector("#printableArea")).then(
-    //   (canvas) => {
-    //     // Few necessary setting options
-    //     const imgWidth = 208; // your own stuff to calc the format you want
-    //     const imgHeight = (canvas.height * imgWidth) / canvas.width; // your own stuff to calc the format you want
-    //     const contentDataURL = canvas.toDataURL("image/png");
-    //     // page.addImage(contentDataURL, 'PNG', 0, 0, imgWidth, imgHeight);
-    //     doc.save("test.pdf"); // save / download
-    //     doc.output("dataurlnewwindow"); // just open it
-    //   }
-    // );
-
     this.isLoading = true;
 
     const element = document.querySelector("#appBody");
@@ -121,7 +108,10 @@ export class AchievementCertDetailComponent implements OnInit {
       var width = doc.internal.pageSize.getWidth();
       var height = doc.internal.pageSize.getHeight();
       doc.addImage(imgData, "PNG", 0, 0, width, height);
+
       doc.save("test.pdf"); // save / download
+      doc.output("dataurlnewwindow"); // just open it
+
       // window.open(doc.output("bloburl").toString(), "_blank");
     });
   }

@@ -23,10 +23,10 @@ export class AchievementTemplateComponent implements OnInit {
         this.value.cert_approved_date
       );
     }
-    if (this.isprint) {
-      let canvas = document.getElementById("section");
-      canvas.style.width = "1000px";
-    }
+    // if (this.isprint) {
+    //   let canvas = document.getElementById("section");
+    //   canvas.style.width = "1000px";
+    // }
 
     // if (
     //   !document.getElementsByClassName("c-text-1") ||

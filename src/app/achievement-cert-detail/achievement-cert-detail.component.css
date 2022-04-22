@@ -516,9 +516,6 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
   position: absolute;
 }
 
-.print {
-  width: 1000px;
-}
 
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {

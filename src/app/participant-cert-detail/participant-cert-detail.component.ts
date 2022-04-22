@@ -93,7 +93,8 @@ export class ParticipantCertDetailComponent implements OnInit {
       var height = doc.internal.pageSize.getHeight();
       doc.addImage(imgData, "PNG", 0, 0, width, height);
 
-      window.open(doc.output("bloburl").toString(), "_blank");
+      doc.save("test.pdf"); // save / download
+      // window.open(doc.output("bloburl").toString(), "_blank");
     });
   }
 }

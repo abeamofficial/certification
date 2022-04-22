@@ -510,7 +510,7 @@ section.cert-detail>div.body>div.normal-detail>div>img.institution-logo {
 }
 
 #printableArea {
-  min-width: 1024px !important;
+  /* min-width: 1024px !important; */
   position: absolute;
 }
 

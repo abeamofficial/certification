@@ -139,9 +139,9 @@ div.module-badge>img {
 
 
   position: absolute;
-  right: 3.2%;
-  width: 6.75%;
-  top: 86%;
+  width: 7.05%;
+  bottom: 14.05%;
+  right: 3%;
 }
 
 /* .text-cert-qr>div {
@@ -167,9 +167,7 @@ div.module-badge>img {
     top: 86.25%; */
     /* top: 78%; */
 
-    width: 7%;
-    bottom: 14%;
-    right: 3%;
+
   }
 
 }

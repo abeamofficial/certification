@@ -82,13 +82,13 @@ export class AchievementTemplateComponent implements OnInit {
 
   fitText(el, compressor) {
     // let el = document.getElementsByClassName(className);
-    let options = 1;
+    // let options = 1;
     var settings = this.extend(
       {
         minFontSize: -1 / 0,
         maxFontSize: 1 / 0,
       },
-      options
+      1
     );
 
     if (el.length)

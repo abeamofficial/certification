@@ -12,8 +12,8 @@
     <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 100%">
       <app-achievement-template
         id="printableArea"
-        style="width: 1000px"
         [value]="value"
+        [isprint]="true"
       ></app-achievement-template>
     </div>
     <div style="z-index: 1">
@@ -35,6 +35,7 @@
           <div class="cert-paper">
             <app-achievement-template
               [value]="value"
+              [isprint]="false"
             ></app-achievement-template>
           </div>
           <div class="cert-detail">

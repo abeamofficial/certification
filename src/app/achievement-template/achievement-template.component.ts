@@ -12,6 +12,7 @@ export class AchievementTemplateComponent implements OnInit {
   @ViewChild("qrcode", {}) qrcode: ElementRef;
 
   @Input() value: any;
+  @Input() isprint: any;
   qrgen = false;
 
   constructor() {}
@@ -21,6 +22,10 @@ export class AchievementTemplateComponent implements OnInit {
       this.value.cert_approved_thai_date = this.dateThai(
         this.value.cert_approved_date
       );
+    }
+    if (this.isprint) {
+      let canvas = document.getElementById("section");
+      canvas.style.width = "1000px";
     }
 
     // if (

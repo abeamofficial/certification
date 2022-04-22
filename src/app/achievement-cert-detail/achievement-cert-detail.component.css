@@ -600,13 +600,14 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
   }
 
   section.cert div.cert>div.cert-detail>div.detail>div>p {
-    width: 45%;
+    width: 35%;
     font-size: calc(14px + 0.25vw);
   }
 
   section.cert div.cert>div.cert-detail>div.detail>div>div {
     font-size: calc(12px + 0.25vw);
     margin: 0.25vh 0 auto 0;
+    width: 60%;
   }
 
 

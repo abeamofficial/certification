@@ -512,13 +512,12 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
 
 
 #printableArea {
-  width: 1000px;
   /* min-width: 1024px !important; */
   position: absolute;
 }
 
 .print {
-  /* width: 1000px; */
+  width: 1000px;
 }
 
 /* ----------- Portrait iPhone ----------- */

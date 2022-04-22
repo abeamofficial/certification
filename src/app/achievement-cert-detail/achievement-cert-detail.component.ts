@@ -93,18 +93,18 @@ export class AchievementCertDetailComponent implements OnInit {
     const element = document.querySelector("#appBody");
     element.classList.add("stop-scroll");
 
-    // html2canvas(document.querySelector("#printableArea")).then((canvas) => {
-    //   this.isLoading = false;
-    //   element.classList.remove("stop-scroll");
-    //   var imgData = canvas.toDataURL("image/png");
-    //   var doc = new jsPDF("l", "mm", "a4");
+    html2canvas(document.querySelector("#printableArea")).then((canvas) => {
+      this.isLoading = false;
+      element.classList.remove("stop-scroll");
+      var imgData = canvas.toDataURL("image/png");
+      var doc = new jsPDF("l", "mm", "a4");
 
-    //   var width = doc.internal.pageSize.getWidth();
-    //   var height = doc.internal.pageSize.getHeight();
-    //   doc.addImage(imgData, "PNG", 0, 0, width, height);
+      var width = doc.internal.pageSize.getWidth();
+      var height = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, width, height);
 
-    //   window.open(doc.output("bloburl").toString(), "_blank");
-    // });
+      window.open(doc.output("bloburl").toString(), "_blank");
+    });
   }
 
   // imageDownload() {

@@ -79,8 +79,12 @@ export class ParticipantCertDetailComponent implements OnInit {
 
   onDownloadFile() {
     this.isLoading = true;
+    const element = document.querySelector("#appBody");
+    element.classList.add("stop-scroll");
+
     html2canvas(document.querySelector("#printableArea")).then((canvas) => {
       this.isLoading = false;
+      element.classList.remove("stop-scroll");
       var imgData = canvas.toDataURL("image/png");
       var doc = new jsPDF("l", "mm", "a4");
 

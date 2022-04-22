@@ -10,13 +10,14 @@ div.main.loading {
   overflow: hidden;
 }
 
-div.main > div.sidebar {
+div.main>div.sidebar {
   width: 20%;
   min-width: 300px;
   /* height: 100%; */
 }
 
-div.main > div.body {
-  width: -webkit-fill-available;
+div.main>div.body {
+  width: 100%;
+  /* width: -webkit-fill-available; */
   /* height: 100%; */
 }

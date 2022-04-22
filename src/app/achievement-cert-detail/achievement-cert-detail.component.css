@@ -511,7 +511,7 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
 
 
 #printableArea {
-  min-width: 1024px !important;
+  /* min-width: 1024px !important; */
   position: absolute;
 }
 

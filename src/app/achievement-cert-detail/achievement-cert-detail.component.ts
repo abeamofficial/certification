@@ -21,7 +21,6 @@ import moment from "moment";
 export class AchievementCertDetailComponent implements OnInit {
   value;
 
-  pdf = null;
   isLoading = false;
   constructor(
     private route: ActivatedRoute,
@@ -49,22 +48,7 @@ export class AchievementCertDetailComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    html2canvas(document.querySelector("#printableArea")).then((canvas) => {
-      var imgData = canvas.toDataURL("image/png");
-      var doc = new jsPDF("l", "mm", "a4");
-
-      var width = doc.internal.pageSize.getWidth();
-      var height = doc.internal.pageSize.getHeight();
-      doc.addImage(imgData, "PNG", 0, 0, width, height);
-
-      // doc.save("test.pdf"); // save / download
-      // doc.output("dataurlnewwindow"); // just open it
-
-      this.pdf = doc.output("bloburl").toString();
-      window.open(doc.output("bloburl").toString(), "_blank");
-    });
-  }
+  ngOnInit() {}
 
   getDate(value) {
     return moment(value).format("ll");
@@ -109,24 +93,27 @@ export class AchievementCertDetailComponent implements OnInit {
     // document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   }
 
-  onDownloadFile() {
-    if (this.pdf) {
-      window.open(this.pdf, "_blank");
-    } else {
-      this.isLoading = true;
-      const element = document.querySelector("#appBody");
-      element.classList.add("stop-scroll");
-      html2canvas(document.querySelector("#printableArea")).then((canvas) => {
-        this.isLoading = false;
-        element.classList.remove("stop-scroll");
-        var imgData = canvas.toDataURL("image/png");
-        var doc = new jsPDF("l", "mm", "a4");
-        var width = doc.internal.pageSize.getWidth();
-        var height = doc.internal.pageSize.getHeight();
-        doc.addImage(imgData, "PNG", 0, 0, width, height);
-        window.open(doc.output("bloburl").toString(), "_blank");
-      });
-    }
+  async onDownloadFile() {
+    this.isLoading = true;
+
+    const element = document.querySelector("#appBody");
+    element.classList.add("stop-scroll");
+
+    html2canvas(document.querySelector("#printableArea")).then((canvas) => {
+      this.isLoading = false;
+      element.classList.remove("stop-scroll");
+      var imgData = canvas.toDataURL("image/png");
+      var doc = new jsPDF("l", "mm", "a4");
+
+      var width = doc.internal.pageSize.getWidth();
+      var height = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, width, height);
+
+      doc.save("test.pdf"); // save / download
+      // doc.output("dataurlnewwindow"); // just open it
+
+      // window.open(doc.output("bloburl").toString(), "_blank");
+    });
   }
 
   // imageDownload() {

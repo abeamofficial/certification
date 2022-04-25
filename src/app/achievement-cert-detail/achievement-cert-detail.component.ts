@@ -13,6 +13,7 @@ import jsPDF from "jspdf";
 
 import moment from "moment";
 
+import * as FileSaver from "file-saver";
 @Component({
   selector: "app-achievement-cert-detail",
   templateUrl: "./achievement-cert-detail.component.html",
@@ -115,14 +116,7 @@ export class AchievementCertDetailComponent implements OnInit {
             navigator.userAgent.toLowerCase()
           )
         ) {
-          // window.open(doc.output("bloburl").toString(), "_blank");
-          window.open(doc.output("bloburl").toString());
-          var a = document.createElement("a");
-          a.href = doc.output("bloburl").toString();
-          a.target = "_blank";
-          a.download = "bill.pdf";
-          document.body.appendChild(a);
-          a.click();
+          FileSaver.saveAs(doc.output("bloburl"), "Document-.pdf");
         } else {
           doc.save("test.pdf");
         }

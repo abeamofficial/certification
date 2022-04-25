@@ -21,7 +21,7 @@ export class ParticipantTemplateComponent implements OnInit {
 
     setTimeout(() => {
       this.calElementSize();
-    }, 1000);
+    }, 500);
   }
 
   ngAfterViewInit() {
@@ -30,7 +30,7 @@ export class ParticipantTemplateComponent implements OnInit {
 
   calElementSize() {
     this.fitText(document.getElementsByClassName("d-text-1"), 2.25);
-    this.fitText(document.getElementsByClassName("d-text-2"), 4);
+    this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
     this.fitText(document.getElementsByClassName("d-text-3"), 3);
     this.fitText(document.getElementsByClassName("d-text-4"), 4.5);
   }
@@ -53,7 +53,7 @@ export class ParticipantTemplateComponent implements OnInit {
         minFontSize: -1 / 0,
         maxFontSize: 1 / 0,
       },
-      1
+      options
     );
 
     if (el.length)

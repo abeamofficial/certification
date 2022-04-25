@@ -60,7 +60,6 @@ import { AchievementTemplateComponent } from "./achievement-template/achievement
 import { ParticipantTemplateComponent } from "./participant-template/participant-template.component";
 import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
 
-import { AngularFittextModule } from "angular-fittext";
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 // }
@@ -123,7 +122,6 @@ import { AngularFittextModule } from "angular-fittext";
     RecaptchaModule,
     RecaptchaFormsModule,
     MatProgressSpinnerModule,
-    AngularFittextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -9,10 +9,8 @@
       position: isLoading ? 'relative' : 'unset'
     }"
   >
-    <div style="position: absolute; z-index: -1; left: 0; top: 0">
-      <app-achievement-template-print id="printableArea" [value]="value">
-      </app-achievement-template-print>
-    </div>
+    <app-achievement-template-print id="printableArea" [value]="value">
+    </app-achievement-template-print>
 
     <div style="z-index: 1">
       <section class="header">

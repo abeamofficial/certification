@@ -122,7 +122,22 @@ export class AchievementCertDetailComponent implements OnInit {
             navigator.userAgent.toLowerCase()
           )
         ) {
-          FileSaver.saveAs(doc.output("bloburl"), filename);
+          // FileSaver.saveAs(doc.output("bloburl"), filename);
+
+          const file = new Blob([doc.output("blob")], {
+            type: "application/pdf",
+          });
+          const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
+            file
+          );
+          const fileName = "Whatever.pdf";
+
+          const downloadLink = document.createElement("a");
+          downloadLink.href = fileURL;
+          downloadLink.download = fileName;
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
         } else {
           doc.save(filename);
         }

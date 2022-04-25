@@ -49,14 +49,14 @@
                 <div>
                   <p style="color: red">Date Expired</p>
                   <div style="color: red">
-                    {{ getDate(value.cert_expired_date) }}
+                    {{ value.cert_expired_date | date: "MMM d, y" }}
                   </div>
                 </div>
               </ng-container>
               <ng-template #approvedDate>
                 <div>
                   <p>Approved Date</p>
-                  <div>{{ getDate(value.cert_approved_date) }}</div>
+                  <div>{{ value.cert_approved_date | date: "MMM d, y" }}</div>
                 </div>
               </ng-template>
 
@@ -176,9 +176,11 @@
         [isView]="false"
       ></app-module-template>
     </div>
-    <div style="position: absolute; top: 0">
-      <app-achievement-template-print id="printableArea" [value]="value">
-      </app-achievement-template-print>
+    <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 200%">
+      <app-achievement-template
+        id="printableArea"
+        [value]="value"
+      ></app-achievement-template>
     </div>
   </div>
 </ng-container>

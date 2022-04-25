@@ -110,7 +110,24 @@ export class AchievementCertDetailComponent implements OnInit {
         var height = doc.internal.pageSize.getHeight();
         doc.addImage(imgData, "PNG", 0, 0, width, height);
 
-        doc.save("test.pdf"); // save / download
+        if (
+          /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+            navigator.userAgent.toLowerCase()
+          )
+        ) {
+          // window.open(doc.output("bloburl").toString(), "_blank");
+          window.open(doc.output("bloburl").toString());
+          var a = document.createElement("a");
+          a.href = doc.output("bloburl").toString();
+          a.target = "_blank";
+          a.download = "bill.pdf";
+          document.body.appendChild(a);
+          a.click();
+        } else {
+          doc.save("test.pdf");
+        }
+
+        // doc.save("test.pdf"); // save / download
         // doc.output("dataurlnewwindow"); // just open it
 
         // window.open(doc.output("bloburl").toString(), "_blank");

@@ -121,24 +121,24 @@ export class AchievementCertDetailComponent implements OnInit {
 
         doc.addImage(imgData, "PNG", 0, 0, width, height);
 
-        if (
-          /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-            navigator.userAgent.toLowerCase()
-          )
-        ) {
-          // FileSaver.saveAs(doc.output("bloburl"), filename);
+        // if (
+        //   /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+        //     navigator.userAgent.toLowerCase()
+        //   )
+        // ) {
+        // FileSaver.saveAs(doc.output("bloburl"), filename);
 
-          const file = new Blob([doc.output("blob")], {
-            type: "application/pdf",
-          });
-          const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
-            file
-          );
+        //   const file = new Blob([doc.output("blob")], {
+        //     type: "application/pdf",
+        //   });
+        //   const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
+        //     file
+        //   );
 
-          window.open(fileURL, "_blank");
-        } else {
-          doc.save(filename);
-        }
+        //   window.open(fileURL, "_blank");
+        // } else {
+        doc.save(filename);
+        // }
 
         // doc.save("test.pdf"); // save / download
         // doc.output("dataurlnewwindow"); // just open it

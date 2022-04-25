@@ -104,6 +104,12 @@ export class AchievementCertDetailComponent implements OnInit {
       (canvas) => {
         this.isLoading = false;
         element.classList.remove("stop-scroll");
+
+        let filename =
+          this.authenticationService.currentUserValue.first_name +
+          "-" +
+          "certificate" +
+          ".pdf";
         var imgData = canvas.toDataURL("image/png");
         var doc = new jsPDF("l", "mm", "a4");
 
@@ -116,21 +122,9 @@ export class AchievementCertDetailComponent implements OnInit {
             navigator.userAgent.toLowerCase()
           )
         ) {
-          // FileSaver.saveAs(doc.output("bloburl"), "Document-.pdf");
-
-          var downloadUrl = doc.output("bloburl").toString();
-          var newWindow = null;
-
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            // var bdata = btoa(downloadUrl);
-            // var datauri = "data:" + "application/pdf" + ";base64," + bdata;
-            // window.open(datauri);
-            newWindow = window.open(downloadUrl);
-          };
-          reader.readAsBinaryString(doc.output("blob"));
+          FileSaver.saveAs(doc.output("bloburl"), filename);
         } else {
-          doc.save("test.pdf");
+          doc.save(filename);
         }
 
         // doc.save("test.pdf"); // save / download

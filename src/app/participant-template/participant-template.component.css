@@ -37,7 +37,7 @@ section {
 .text-cert .d-text-1 {
   text-align: center;
   font-size: 100%;
-  line-height: 175%;
+  /* line-height: 175%; */
 }
 
 .text-cert .d-text-2 {
@@ -60,6 +60,6 @@ section {
 
 .text-cert .d-text-4 {
   text-align: center;
-  font-size: 100%;
-  line-height: 150%;
+  /* font-size: 100%;
+  line-height: 150%; */
 }

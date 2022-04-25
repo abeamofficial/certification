@@ -1,0 +1,106 @@
+<section [ngClass]="{ disabled: !value.active }">
+  <div *ngIf="!value.active" class="watermark">
+    <div>certificate expired</div>
+  </div>
+  <img
+    src="https://digitech.sut.ac.th/certification-img/certificate/{{
+      value.img_file_name
+    }}"
+    class="bg-cert"
+  />
+  <div class="inner-cert">
+    <div class="logo">
+      <img
+        src="https://digitech.sut.ac.th/certification-img/sut-logo.png"
+        class="sut-logo-cert"
+      />
+    </div>
+
+    <div class="text-cert">
+      <div class="text">
+        <div>
+          <div class="c-text-1">
+            {{ value.cert_type_id ? "สัมฤทธิบัตรเกียรตินิยม" : "สัมฤทธิบัตร" }}
+          </div>
+          <div class="c-text-2">มหาวิทยาลัยเทคโนโลยีสุรนารี</div>
+        </div>
+        <div style="padding: 1% 0">
+          <div class="c-text-3">มอบสัมฤทธิบัตรฉบับนี้แก่</div>
+          <div class="name">{{ value.first_name + " " + value.last_name }}</div>
+        </div>
+        <div style="padding: 1% 0">
+          <div class="c-text-3">
+            เพื่อแสดงว่าได้มีสัมฤทธิผลตามเกณฑ์มาตรฐานของหลักสูตร
+          </div>
+          <div class="name">{{ value.name_th }}</div>
+        </div>
+        <div style="padding: 1% 0">
+          <div class="c-text-3">
+            ให้ไว้ ณ วันที่ {{ value.cert_approved_thai_date }}
+          </div>
+        </div>
+
+        <div style="width: 85%; margin: 7.5% 0">
+          <img
+            class="text-cert-sign"
+            src="https://digitech.sut.ac.th/certification-img/signer/{{
+              value.signer_img
+            }}"
+          />
+
+          <div class="c-text-4">
+            {{
+              "(" +
+                value.signer_prefixname +
+                " " +
+                value.signer_firstname +
+                " " +
+                value.signer_lastname +
+                ")"
+            }}
+          </div>
+          <div class="c-text-4">{{ value.signer_position }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="badge-cert">
+      <ng-container *ngIf="value.is_show_degree_badge; else module_badge">
+        <div class="single-badge">
+          <img
+            src="https://digitech.sut.ac.th/certification-img/badge/{{
+              value.cert_type_path
+            }}/{{ value.badge_file_name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-template #module_badge>
+        <div class="module-badge">
+          <ng-container
+            *ngFor="let item of value.badge | keyvalue; let i = index"
+          >
+            <ng-container
+              *ngIf="value.badge.length % 2 == 1 && i == 0; else even"
+            >
+              <div>
+                <img
+                  src="https://digitech.sut.ac.th/certification-img/badge/{{
+                    item.value.badge_type_path
+                  }}/{{ item.value.badge_file_name }}"
+                />
+              </div>
+            </ng-container>
+            <ng-template #even>
+              <img
+                src="https://digitech.sut.ac.th/certification-img/badge/{{
+                  item.value.badge_type_path
+                }}/{{ item.value.badge_file_name }}"
+              />
+            </ng-template>
+          </ng-container>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="text-cert-qr" #qrcode></div>
+</section>

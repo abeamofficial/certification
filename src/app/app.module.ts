@@ -59,6 +59,7 @@ import { ModuleTemplateComponent } from "./module-template/module-template.compo
 import { AchievementTemplateComponent } from "./achievement-template/achievement-template.component";
 import { ParticipantTemplateComponent } from "./participant-template/participant-template.component";
 import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
+import { AchievementTemplatePrintComponent } from './achievement-template-print/achievement-template-print.component';
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -100,6 +101,7 @@ import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
     AchievementTemplateComponent,
     ParticipantTemplateComponent,
     CertPreviewComponent,
+    AchievementTemplatePrintComponent,
   ],
   imports: [
     EllipsisModule,

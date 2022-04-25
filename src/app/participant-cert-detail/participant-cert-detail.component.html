@@ -9,12 +9,6 @@
       position: isLoading ? 'relative' : 'unset'
     }"
   >
-    <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 100%">
-      <app-participant-template
-        id="printableArea"
-        [value]="value"
-      ></app-participant-template>
-    </div>
     <div style="z-index: 1">
       <section class="header">
         <div>
@@ -80,6 +74,13 @@
         [value]="value.module_detail"
         [isView]="false"
       ></app-module-template>
+    </div>
+
+    <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 200%">
+      <app-participant-template
+        id="printableArea"
+        [value]="value"
+      ></app-participant-template>
     </div>
   </div>
 </ng-container>

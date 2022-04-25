@@ -18,7 +18,7 @@ import moment from "moment";
 export class ParticipantCertDetailComponent implements OnInit {
   value;
   isLoading = false;
-
+  file_id;
   constructor(
     private route: ActivatedRoute,
     private certificateService: CertificateService,
@@ -31,6 +31,7 @@ export class ParticipantCertDetailComponent implements OnInit {
       if (params.id) {
         this.route.params.subscribe((params) => {
           if (params.id) {
+            this.file_id = params.id;
             this.certificateService
               .getCertificateOfParticipantById(
                 this.authenticationService.currentUserValue.id,
@@ -82,19 +83,32 @@ export class ParticipantCertDetailComponent implements OnInit {
     const element = document.querySelector("#appBody");
     element.classList.add("stop-scroll");
 
-    html2canvas(document.querySelector("#printableArea")).then((canvas) => {
-      this.isLoading = false;
-      element.classList.remove("stop-scroll");
+    html2canvas(document.querySelector("#printableArea"), { scrollY: 0 }).then(
+      (canvas) => {
+        this.isLoading = false;
+        element.classList.remove("stop-scroll");
 
-      var imgData = canvas.toDataURL("image/png");
-      var doc = new jsPDF("l", "mm", "a4");
+        let filename =
+          this.authenticationService.currentUserValue.first_name +
+          "-" +
+          this.file_id +
+          "certificate" +
+          ".pdf";
+        var imgData = canvas.toDataURL("image/png");
+        var doc = new jsPDF("l", "mm", "a4");
 
-      var width = doc.internal.pageSize.getWidth();
-      var height = doc.internal.pageSize.getHeight();
-      doc.addImage(imgData, "PNG", 0, 0, width, height);
+        var width = doc.internal.pageSize.getWidth();
+        var height = doc.internal.pageSize.getHeight();
 
-      doc.save("test.pdf"); // save / download
-      // window.open(doc.output("bloburl").toString(), "_blank");
-    });
+        doc.addImage(imgData, "PNG", 0, 0, width, height);
+
+        doc.save(filename);
+
+        // doc.save("test.pdf"); // save / download
+        // doc.output("dataurlnewwindow"); // just open it
+
+        // window.open(doc.output("bloburl").toString(), "_blank");
+      }
+    );
   }
 }

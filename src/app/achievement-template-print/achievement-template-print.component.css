@@ -4,7 +4,7 @@ section {
     top: 0;
     font-family: "sutregular";
     /* font-size: 100%; */
-    width: 1000px;
+    min-width: 1000px;
 }
 
 section.disabled {

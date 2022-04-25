@@ -9,9 +9,6 @@
       position: isLoading ? 'relative' : 'unset'
     }"
   >
-    <app-achievement-template-print id="printableArea" [value]="value">
-    </app-achievement-template-print>
-
     <div style="z-index: 1">
       <section class="header">
         <div>
@@ -178,6 +175,10 @@
         [value]="value.module_detail"
         [isView]="false"
       ></app-module-template>
+    </div>
+    <div style="position: absolute; top: 0">
+      <app-achievement-template-print id="printableArea" [value]="value">
+      </app-achievement-template-print>
     </div>
   </div>
 </ng-container>

@@ -118,6 +118,7 @@ export class AchievementCertDetailComponent implements OnInit {
 
         var width = doc.internal.pageSize.getWidth();
         var height = doc.internal.pageSize.getHeight();
+
         doc.addImage(imgData, "PNG", 0, 0, width, height);
 
         if (
@@ -125,12 +126,16 @@ export class AchievementCertDetailComponent implements OnInit {
             navigator.userAgent.toLowerCase()
           )
         ) {
-          FileSaver.saveAs(doc.output("bloburl"), filename);
+          // FileSaver.saveAs(doc.output("bloburl"), filename);
 
-          // const file = new Blob([doc.output()], { type: "application/pdf" });
-          // const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
-          //   file
-          // );
+          const file = new Blob([doc.output("blob")], {
+            type: "application/pdf",
+          });
+          const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
+            file
+          );
+
+          window.open(fileURL, "_blank");
         } else {
           doc.save(filename);
         }

@@ -23,6 +23,7 @@ export class AchievementCertDetailComponent implements OnInit {
   value;
 
   isLoading = false;
+  file_id;
   constructor(
     private route: ActivatedRoute,
     private certificateService: CertificateService,
@@ -32,6 +33,7 @@ export class AchievementCertDetailComponent implements OnInit {
   ) {
     this.route.params.subscribe((params) => {
       if (params.id) {
+        this.file_id = params.id;
         this.certificateService
           .getCertificateOfAchievementById(
             this.authenticationService.currentUserValue.id,
@@ -108,6 +110,7 @@ export class AchievementCertDetailComponent implements OnInit {
         let filename =
           this.authenticationService.currentUserValue.first_name +
           "-" +
+          this.file_id +
           "certificate" +
           ".pdf";
         var imgData = canvas.toDataURL("image/png");
@@ -122,22 +125,12 @@ export class AchievementCertDetailComponent implements OnInit {
             navigator.userAgent.toLowerCase()
           )
         ) {
-          // FileSaver.saveAs(doc.output("bloburl"), filename);
+          FileSaver.saveAs(doc.output("bloburl"), filename);
 
-          const file = new Blob([doc.output("blob")], {
-            type: "application/pdf",
-          });
-          const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
-            file
-          );
-          const fileName = "Whatever.pdf";
-
-          const downloadLink = document.createElement("a");
-          downloadLink.href = fileURL;
-          downloadLink.download = fileName;
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          document.body.removeChild(downloadLink);
+          // const file = new Blob([doc.output()], { type: "application/pdf" });
+          // const fileURL = (window.URL || window["webkitURL"]).createObjectURL(
+          //   file
+          // );
         } else {
           doc.save(filename);
         }

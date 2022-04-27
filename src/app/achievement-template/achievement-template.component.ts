@@ -27,9 +27,9 @@ export class AchievementTemplateComponent implements OnInit {
     //   !document.getElementsByClassName("c-text-1").length
     // ) {
 
-    setTimeout(() => {
-      this.calElementSize();
-    }, 2000);
+    // setTimeout(() => {
+    this.calElementSize();
+    // }, 1000);
     // }
   }
 

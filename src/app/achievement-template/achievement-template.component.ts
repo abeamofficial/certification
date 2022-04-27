@@ -33,6 +33,7 @@ export class AchievementTemplateComponent implements OnInit {
         navigator.userAgent
       )
     ) {
+      console.log("ios");
       time = 0;
     }
 

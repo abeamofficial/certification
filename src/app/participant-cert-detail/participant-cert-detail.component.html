@@ -9,6 +9,12 @@
     position: isLoading ? 'relative' : 'unset'
   }"
 >
+  <div style="left: 0; top: 0; width: 1000px">
+    <app-participant-template
+      id="printableArea"
+      [value]="value"
+    ></app-participant-template>
+  </div>
   <section class="header">
     <div>
       <span>Certificate of Participant in</span>
@@ -71,11 +77,4 @@
     [value]="value.module_detail"
     [isView]="false"
   ></app-module-template>
-
-  <div style="left: 0; top: 0; width: 1000px">
-    <app-participant-template
-      id="printableArea"
-      [value]="value"
-    ></app-participant-template>
-  </div>
 </div>

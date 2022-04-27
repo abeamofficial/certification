@@ -27,18 +27,18 @@ export class AchievementTemplateComponent implements OnInit {
     //   !document.getElementsByClassName("c-text-1").length
     // ) {
 
-    // let time = 1000;
-    // if (
-    //   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    //     navigator.userAgent
-    //   )
-    // ) {
-    //   time = 0;
-    // }
+    let time = 1000;
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      time = 0;
+    }
 
-    // setTimeout(() => {
-    this.calElementSize();
-    // }, time);
+    setTimeout(() => {
+      this.calElementSize();
+    }, time);
     // }
   }
 

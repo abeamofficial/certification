@@ -31,18 +31,19 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    // let time = 1000;
-    // if (
-    //   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    //     navigator.userAgent
-    //   )
-    // ) {
-    //   time = 0;
-    // }
+    let time = 1000;
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      // console.log("ios");
+      time = 0;
+    }
 
-    // setTimeout(() => {
-    this.calElementSize();
-    // }, time);
+    setTimeout(() => {
+      this.calElementSize();
+    }, time);
   }
 
   ngAfterViewInit() {
@@ -68,13 +69,13 @@ export class ParticipantTemplateComponent implements OnInit {
 
   fitText(el, compressor) {
     // let el = document.getElementsByClassName(className);
-    let options = 1;
+    // let options = 1;
     var settings = this.extend(
       {
         minFontSize: -1 / 0,
         maxFontSize: 1 / 0,
       },
-      options
+      1
     );
 
     if (el.length)

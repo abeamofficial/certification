@@ -37,7 +37,7 @@ export class ParticipantTemplateComponent implements OnInit {
         navigator.userAgent
       )
     ) {
-      // time = ;
+      time = 0;
     }
 
     setTimeout(() => {

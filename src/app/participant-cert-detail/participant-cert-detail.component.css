@@ -88,6 +88,7 @@ section.cert {
 section.cert div.cert {
   display: flex;
   min-width: 900px;
+  width: 100%;
   row-gap: 2.5%;
   column-gap: 2.5%;
 }

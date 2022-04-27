@@ -90,7 +90,7 @@ div.data-list>div.list>div.detail>div.date>span>p {
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
 
   div.data-list>div.list {
-    padding: 12px;
+    padding: 20px;
     display: block;
   }
 

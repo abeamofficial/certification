@@ -64,7 +64,7 @@ export class ParticipantTemplateComponent implements OnInit {
   fitText(el, compressor) {
     // let el = document.getElementsByClassName(className);
     // let options = 1;
-    let options = { minFontSize: "1px", maxFontSize: "40px" };
+    let options = { minFontSize: "1px", maxFontSize: "100px" };
     var settings = this.extend(
       {
         minFontSize: -1 / 0,

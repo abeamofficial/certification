@@ -27,11 +27,11 @@ export class AchievementTemplateComponent implements OnInit {
     //   !document.getElementsByClassName("c-text-1").length
     // ) {
 
-    let time = this.isMobile() ? 0 : 1000;
+    // let time = this.isMobile() ? 0 : 1000;
 
-    setTimeout(() => {
-      this.calElementSize();
-    }, time);
+    // setTimeout(() => {
+    //   this.calElementSize();
+    // }, time);
     // }
   }
 

@@ -90,8 +90,7 @@ export class ParticipantTemplateComponent implements OnInit {
             parseFloat(settings.maxFontSize)
           ),
           parseFloat(settings.minFontSize)
-        ) + "px";
-      // el.style.lineHeight = Math.max(Math.min(el.clientWidth / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + "px";
+        ).toFixed(2) + "px";
     };
 
     // Call once to set.

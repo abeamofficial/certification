@@ -1,4 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild, Input } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  Input,
+  HostListener,
+} from "@angular/core";
 
 import moment from "moment";
 
@@ -11,6 +18,11 @@ export class ParticipantTemplateComponent implements OnInit {
   @Input() value: any;
 
   constructor() {}
+
+  @HostListener("window:orientationchange", ["$event"])
+  onOrientationChange(event) {
+    this.calElementSize();
+  }
 
   ngOnInit() {
     if (this.value) {
@@ -25,7 +37,7 @@ export class ParticipantTemplateComponent implements OnInit {
         navigator.userAgent
       )
     ) {
-      time = 0;
+      // time = ;
     }
 
     setTimeout(() => {

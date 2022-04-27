@@ -46,14 +46,14 @@
             <div>
               <p style="color: red">Date Expired</p>
               <div style="color: red">
-                {{ value.cert_expired_date | date: "MMM d, y" }}
+                {{ getDate(value.cert_expired_date) }}
               </div>
             </div>
           </ng-container>
           <ng-template #approvedDate>
             <div>
               <p>Approved Date</p>
-              <div>{{ value.cert_approved_date | date: "MMM d, y" }}</div>
+              <div>{{ getDate(value.cert_approved_date) }}</div>
             </div>
           </ng-template>
 

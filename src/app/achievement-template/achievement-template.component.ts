@@ -114,7 +114,7 @@ export class AchievementTemplateComponent implements OnInit {
             parseFloat(settings.maxFontSize)
           ),
           parseFloat(settings.minFontSize)
-        ) + "px";
+        ).toFixed(2) + "px";
       // el.style.lineHeight = Math.max(Math.min(el.clientWidth / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + "px";
     };
 

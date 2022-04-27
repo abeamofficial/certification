@@ -89,15 +89,19 @@ div.data-list>div.list>div.detail>div.date>span>p {
 /* ----------- Portrait iPhone ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
 
+  div.data-list>div.list {
+    padding: 12px;
+    display: block;
+  }
+
   div.data-list>div.list>div.img {
-    width: calc(200px + 0.25vw);
+    width: 100%;
     min-width: unset;
     display: flex;
   }
 
-
-  div.data-list>div.list {
-    padding: 10px;
+  div.data-list>div.list>div.detail {
+    padding: 2.5% 0 0 0;
   }
 
   div.data-list>div.list>div.detail>p {
@@ -118,4 +122,11 @@ div.data-list>div.list>div.detail>div.date>span>p {
 
 
 /* ----------- Landscape iPhone  ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {}
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+  div.data-list>div.list>div.img {
+    width: 350px;
+    min-width: unset;
+  }
+
+}

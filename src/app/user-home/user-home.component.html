@@ -6,7 +6,7 @@
     <div class="name">
       <p>{{ user.first_name + " " + user.last_name }}</p>
       <span
-        >เข้าร่วมเมื่อ {{ user.joined_date | date: "yyyy" }}
+        >เข้าร่วมเมื่อ {{ getYear(user.joined_date) }}
 
         <ng-container *ngIf="credit">
           / {{ credit }} หน่วยกิตสะสม

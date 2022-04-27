@@ -5,6 +5,8 @@ import { Router } from "@angular/router";
 import { AuthenticationService } from "../services/authentication.service";
 import { AttendanceService } from "../services/attendance.service";
 
+import moment from "moment";
+
 @Component({
   selector: "app-user-home",
   templateUrl: "./user-home.component.html",
@@ -43,6 +45,10 @@ export class UserHomeComponent implements OnInit {
     document
       .getElementsByClassName("mat-tab-header-pagination-after")[0]
       .remove();
+  }
+
+  getYear(value) {
+    return moment(value).format("yyyy");
   }
 
   change($event) {

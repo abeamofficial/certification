@@ -9,74 +9,72 @@
       position: isLoading ? 'relative' : 'unset'
     }"
   >
-    <div style="z-index: 1">
-      <section class="header">
-        <div>
-          <span>Certificate of Participant in</span>
-          <h1>{{ value.module_name_en }}</h1>
-          <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ value.module_name_th }}</p>
+    <section class="header">
+      <div>
+        <span>Certificate of Participant in</span>
+        <h1>{{ value.module_name_en }}</h1>
+        <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ value.module_name_th }}</p>
+      </div>
+    </section>
+    <section class="breadcrumb">
+      <p [routerLink]="['']">Home</p>
+      <span>></span>
+      <p>Certificate of Participant in {{ value.module_name_en }}</p>
+    </section>
+    <section class="cert">
+      <div class="cert">
+        <div class="cert-paper">
+          <app-participant-template [value]="value"></app-participant-template>
         </div>
-      </section>
-      <section class="breadcrumb">
-        <p [routerLink]="['']">Home</p>
-        <span>></span>
-        <p>Certificate of Participant in {{ value.module_name_en }}</p>
-      </section>
-      <section class="cert">
-        <div class="cert">
-          <div class="cert-paper">
-            <app-participant-template
-              [value]="value"
-            ></app-participant-template>
+        <div class="cert-detail">
+          <div class="title">
+            <hr />
+            <p>This certificate is awarded to</p>
+            <hr />
           </div>
-          <div class="cert-detail">
-            <div class="title">
-              <hr />
-              <p>This certificate is awarded to</p>
-              <hr />
-            </div>
-            <div class="cert-detail-name">
-              <p>{{ value.first_name + " " + value.last_name }}</p>
-            </div>
-            <div class="detail">
-              <div>
-                <p>Approved By</p>
-                <div>{{ value.diploma_approved }}</div>
-              </div>
-              <div>
-                <p>Approved Date</p>
-                <div>{{ getDate(value.diploma_approved_date) }}</div>
-              </div>
-              <hr />
-              <p>Offered By</p>
-              <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-                <p>
-                  Suranaree University of Technology
-                  <i class="material-icons">open_in_new</i>
-                </p>
-              </span>
-              <span>
-                <span>Nakhon ratchasima</span>
-                <span>•</span>
-                <span>Thailand</span>
-              </span>
-            </div>
-            <button (click)="onDownloadFile()">
-              <p>Download</p>
-              <i class="material-icons">file_download</i>
-            </button>
+          <div class="cert-detail-name">
+            <p>{{ value.first_name + " " + value.last_name }}</p>
           </div>
+          <div class="detail">
+            <div>
+              <p>Approved By</p>
+              <div>{{ value.diploma_approved }}</div>
+            </div>
+            <div>
+              <p>Approved Date</p>
+              <div>{{ getDate(value.diploma_approved_date) }}</div>
+            </div>
+            <hr />
+            <p>Offered By</p>
+            <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
+              <p>
+                Suranaree University of Technology
+                <i class="material-icons">open_in_new</i>
+              </p>
+            </span>
+            <span>
+              <span>Nakhon ratchasima</span>
+              <span>•</span>
+              <span>Thailand</span>
+            </span>
+          </div>
+          <button (click)="onDownloadFile()">
+            <p>Download</p>
+            <i class="material-icons">file_download</i>
+          </button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <app-module-template
-        *ngIf="value.module_detail"
-        [value]="value.module_detail"
-        [isView]="false"
-      ></app-module-template>
-    </div>
+    <app-module-template
+      *ngIf="value.module_detail"
+      [value]="value.module_detail"
+      [isView]="false"
+    ></app-module-template>
 
-    <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 200%">
+    <div
+      style="position: absolute; z-index: -1; left: 0; top: 0; width: 1000px"
+    >
       <app-participant-template
         id="printableArea"
         [value]="value"

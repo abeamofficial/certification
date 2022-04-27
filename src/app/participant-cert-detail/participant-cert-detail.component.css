@@ -105,9 +105,7 @@ section.cert div.cert>div.cert-paper>img {
   width: 100%;
 }
 
-section.cert div.cert>div.cert-detail {
-  width: 30%;
-}
+section.cert div.cert>div.cert-detail {}
 
 section.cert div.cert>div.cert-detail>div.title {
   display: flex;
@@ -514,7 +512,7 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
 
 #printableArea {
   /* min-width: 1024px !important; */
-  position: absolute;
+  /* position: absolute; */
 }
 
 

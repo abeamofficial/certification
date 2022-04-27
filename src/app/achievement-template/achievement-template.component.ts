@@ -29,7 +29,7 @@ export class AchievementTemplateComponent implements OnInit {
 
     setTimeout(() => {
       this.calElementSize();
-    }, 1000);
+    }, 2000);
     // }
   }
 

@@ -39,7 +39,9 @@ export class AchievementTemplateComponent implements OnInit {
 
   calElementSize() {
     this.fitText(document.getElementsByClassName("c-text-1"), 1.525);
-    this.fitText(document.getElementsByClassName("c-text-2"), 1.225);
+    document.getElementsByClassName("c-text-2")
+      ? this.fitText(document.getElementsByClassName("c-text-2"), 1.225)
+      : console.log("c-text-2");
     this.fitText(document.getElementsByClassName("c-text-3"), 2.35);
     this.fitText(document.getElementsByClassName("name"), 1.85);
     this.fitText(document.getElementsByClassName("c-text-4"), 2.5);

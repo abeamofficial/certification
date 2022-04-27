@@ -88,6 +88,7 @@ section.cert {
 section.cert div.cert {
   display: flex;
   min-width: 900px;
+  width: 100%;
   row-gap: 2.5%;
   column-gap: 2.5%;
 }
@@ -106,7 +107,7 @@ section.cert div.cert>div.cert-paper>img {
 }
 
 section.cert div.cert>div.cert-detail {
-  width: 30%;
+  /* width: 30%; */
 }
 
 section.cert div.cert>div.cert-detail>div.title {

@@ -1,186 +1,191 @@
 <div class="spinner" *ngIf="isLoading">
   <mat-spinner></mat-spinner>
 </div>
-<ng-container *ngIf="value">
-  <div
-    class="main"
-    [ngStyle]="{
-      overflow: isLoading ? 'hidden' : 'auto',
-      position: isLoading ? 'relative' : 'unset'
-    }"
-  >
-    <div style="z-index: 1">
-      <section class="header">
-        <div>
-          <span>Certificate of Achievement in</span>
-          <h1>{{ value.name_en }}</h1>
-          <p>{{ value.name_th }}</p>
+<div
+  *ngIf="value"
+  class="main"
+  [ngStyle]="{
+    overflow: isLoading ? 'hidden' : 'auto',
+    position: isLoading ? 'relative' : 'unset'
+  }"
+>
+  <section class="header">
+    <div>
+      <span>Certificate of Achievement in</span>
+      <h1>{{ value.name_en }}</h1>
+      <p>{{ value.name_th }}</p>
+    </div>
+  </section>
+  <section class="breadcrumb">
+    <p [routerLink]="['']">Home</p>
+    <span>></span>
+    <p>Certificate of Achievement in {{ value.name_en }}</p>
+  </section>
+
+  <section class="cert">
+    <div class="cert">
+      <div class="cert-paper">
+        <app-achievement-template [value]="value"></app-achievement-template>
+      </div>
+      <div class="cert-detail">
+        <div class="title">
+          <hr />
+          <p>This certificate is awarded to</p>
+          <hr />
         </div>
-      </section>
-      <section class="breadcrumb">
-        <p [routerLink]="['']">Home</p>
-        <span>></span>
-        <p>Certificate of Achievement in {{ value.name_en }}</p>
-      </section>
-
-      <section class="cert">
-        <div class="cert">
-          <div class="cert-paper">
-            <app-achievement-template
-              [value]="value"
-            ></app-achievement-template>
-          </div>
-          <div class="cert-detail">
-            <div class="title">
-              <hr />
-              <p>This certificate is awarded to</p>
-              <hr />
-            </div>
-            <div class="cert-detail-name">
-              <p>{{ value.first_name + " " + value.last_name }}</p>
-            </div>
-            <div class="detail">
-              <div>
-                <p>Approved By</p>
-                <div>{{ value.cert_approved }}</div>
-              </div>
-
-              <ng-container *ngIf="!value.active; else approvedDate">
-                <div>
-                  <p style="color: red">Date Expired</p>
-                  <div style="color: red">
-                    {{ value.cert_expired_date | date: "MMM d, y" }}
-                  </div>
-                </div>
-              </ng-container>
-              <ng-template #approvedDate>
-                <div>
-                  <p>Approved Date</p>
-                  <div>{{ value.cert_approved_date | date: "MMM d, y" }}</div>
-                </div>
-              </ng-template>
-
-              <hr />
-              <p>Offered By</p>
-              <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
-                <p>
-                  Suranaree University of Technology
-                  <i class="material-icons">open_in_new</i>
-                </p>
-              </span>
-              <span>
-                <span>Nakhon ratchasima</span>
-                <span>•</span>
-                <span>Thailand</span>
-              </span>
-            </div>
-            <button *ngIf="value.active" (click)="onDownloadFile()">
-              <p>Download</p>
-              <i class="material-icons">file_download</i>
-            </button>
-          </div>
+        <div class="cert-detail-name">
+          <p>{{ value.first_name + " " + value.last_name }}</p>
         </div>
-      </section>
-      <section class="badge-of-cert" *ngIf="value.badge">
-        <div class="header">
+        <div class="detail">
           <div>
-            <hr />
-            <p>Certificate Badge</p>
+            <p>Approved By</p>
+            <div>{{ value.cert_approved }}</div>
           </div>
-          <div></div>
-        </div>
 
-        <div class="body" id="about">
-          <div
-            class="list"
-            *ngFor="let item of value.badge | keyvalue"
-            [ngClass]="{ disabled: !item.value.active }"
-          >
-            <div class="bg"></div>
-            <div class="img">
-              <img
-                src="https://digitech.sut.ac.th/certification-img/badge/{{
-                  item.value.badge_type_path
-                }}/{{ item.value.badge_file_name }}"
-              />
-            </div>
-            <div class="badge-name" ellipsis>
-              {{ item.value.course_name_en }}
-            </div>
-            <p>( {{ item.value.course_credit }} credits )</p>
-
-            <!-- percent bar -->
-            <div class="level-bar">
-              <div class="full-bar">
-                <div
-                  class="percent-bar"
-                  [ngClass]="
-                    getScoreLevel([
-                      item.value.objective_score,
-                      item.value.practice_score
-                    ])
-                  "
-                  [ngStyle]="{
-                    width:
-                      getSummaryScore([
-                        item.value.objective_score,
-                        item.value.practice_score
-                      ]) + '%'
-                  }"
-                >
-                  {{
-                    getSummaryScore([
-                      item.value.objective_score,
-                      item.value.practice_score
-                    ])
-                  }}%
-                </div>
-              </div>
-              <div class="percent-level">
-                <p
-                  [ngClass]="
-                    getScoreLevel([
-                      item.value.objective_score,
-                      item.value.practice_score
-                    ])
-                  "
-                >
-                  {{
-                    getCompetencyLevel(
-                      getSummaryScore([
-                        item.value.objective_score,
-                        item.value.practice_score
-                      ])
-                    )
-                  }}
-                </p>
+          <ng-container *ngIf="!value.active; else approvedDate">
+            <div>
+              <p style="color: red">Date Expired</p>
+              <div style="color: red">
+                {{ value.cert_expired_date | date: "MMM d, y" }}
               </div>
             </div>
-
-            <div class="detail" ellipsis>
-              {{ item.value.course_detail_th }}
+          </ng-container>
+          <ng-template #approvedDate>
+            <div>
+              <p>Approved Date</p>
+              <div>{{ value.cert_approved_date | date: "MMM d, y" }}</div>
             </div>
+          </ng-template>
 
-            <div class="button-area">
-              <button [routerLink]="['/badge-detail/' + item.value.id]">
-                Detail
-              </button>
+          <hr />
+          <p>Offered By</p>
+          <span class="link" (click)="onNavigate('http://www.sut.ac.th')">
+            <p>
+              Suranaree University of Technology
+              <i class="material-icons">open_in_new</i>
+            </p>
+          </span>
+          <span>
+            <span>Nakhon ratchasima</span>
+            <span>•</span>
+            <span>Thailand</span>
+          </span>
+        </div>
+        <button *ngIf="value.active" (click)="onDownloadFile()">
+          <p>Download</p>
+          <i class="material-icons">file_download</i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="badge-of-cert" *ngIf="value.badge">
+    <div class="header">
+      <div>
+        <hr />
+        <p>Certificate Badge</p>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="body" id="about">
+      <div
+        class="list"
+        *ngFor="let item of value.badge | keyvalue"
+        [ngClass]="{ disabled: !item.value.active }"
+      >
+        <div class="bg"></div>
+        <div class="img">
+          <img
+            src="https://digitech.sut.ac.th/certification-img/badge/{{
+              item.value.badge_type_path
+            }}/{{ item.value.badge_file_name }}"
+          />
+        </div>
+        <div class="badge-name" ellipsis>
+          {{ item.value.course_name_en }}
+        </div>
+        <p>( {{ item.value.course_credit }} credits )</p>
+
+        <!-- percent bar -->
+        <div class="level-bar">
+          <div class="full-bar">
+            <div
+              class="percent-bar"
+              [ngClass]="
+                getScoreLevel([
+                  item.value.objective_score,
+                  item.value.practice_score
+                ])
+              "
+              [ngStyle]="{
+                width:
+                  getSummaryScore([
+                    item.value.objective_score,
+                    item.value.practice_score
+                  ]) + '%'
+              }"
+            >
+              {{
+                getSummaryScore([
+                  item.value.objective_score,
+                  item.value.practice_score
+                ])
+              }}%
             </div>
           </div>
+          <div class="percent-level">
+            <p
+              [ngClass]="
+                getScoreLevel([
+                  item.value.objective_score,
+                  item.value.practice_score
+                ])
+              "
+            >
+              {{
+                getCompetencyLevel(
+                  getSummaryScore([
+                    item.value.objective_score,
+                    item.value.practice_score
+                  ])
+                )
+              }}
+            </p>
+          </div>
         </div>
-      </section>
 
-      <app-module-template
-        *ngIf="value.module_detail"
-        [value]="value.module_detail"
-        [isView]="false"
-      ></app-module-template>
+        <div class="detail" ellipsis>
+          {{ item.value.course_detail_th }}
+        </div>
+
+        <div class="button-area">
+          <button [routerLink]="['/badge-detail/' + item.value.id]">
+            Detail
+          </button>
+        </div>
+      </div>
     </div>
-    <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 200%">
-      <app-achievement-template
-        id="printableArea"
-        [value]="value"
-      ></app-achievement-template>
-    </div>
+  </section>
+
+  <app-module-template
+    *ngIf="value.module_detail"
+    [value]="value.module_detail"
+    [isView]="false"
+  ></app-module-template>
+
+  <div
+    style="
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      width: 200%;
+      overflow-x: hidden;
+    "
+  >
+    <app-achievement-template
+      id="printableArea"
+      [value]="value"
+    ></app-achievement-template>
   </div>
-</ng-container>
+</div>

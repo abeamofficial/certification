@@ -14,7 +14,9 @@ export class AchievementTemplateComponent implements OnInit {
   @Input() value: any;
   qrgen = false;
 
-  constructor() {}
+  constructor() {
+    this.calElementSize();
+  }
 
   ngOnInit() {
     if (this.value) {
@@ -29,9 +31,9 @@ export class AchievementTemplateComponent implements OnInit {
 
     // let time = this.isMobile() ? 0 : 1000;
 
-    // setTimeout(() => {
-    //   this.calElementSize();
-    // }, time);
+    setTimeout(() => {
+      this.calElementSize();
+    }, 1000);
     // }
   }
 

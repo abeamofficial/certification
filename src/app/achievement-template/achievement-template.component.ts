@@ -31,11 +31,11 @@ export class AchievementTemplateComponent implements OnInit {
 
     this.calElementSize();
 
-    if (!this.isMobile()) {
-      setTimeout(() => {
-        this.calElementSize();
-      }, 1000);
-    }
+    // if (!this.isMobile()) {
+    setTimeout(() => {
+      this.calElementSize();
+    }, 1000);
+    // }
 
     // }
   }

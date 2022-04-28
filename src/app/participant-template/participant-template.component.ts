@@ -31,11 +31,11 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    this.calElementSize();
+    // this.calElementSize();
 
-    setTimeout(() => {
-      this.calElementSize();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.calElementSize();
+    // }, 1000);
   }
 
   ngAfterViewInit() {

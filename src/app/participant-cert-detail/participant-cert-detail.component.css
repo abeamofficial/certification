@@ -106,9 +106,7 @@ section.cert div.cert>div.cert-paper>img {
   width: 100%;
 }
 
-section.cert div.cert>div.cert-detail {
-  /* width: 30%; */
-}
+section.cert div.cert>div.cert-detail {}
 
 section.cert div.cert>div.cert-detail>div.title {
   display: flex;

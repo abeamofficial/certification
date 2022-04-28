@@ -1,4 +1,4 @@
-<!-- <div class="spinner" *ngIf="isLoading">
+<div class="spinner" *ngIf="isLoading">
   <mat-spinner></mat-spinner>
 </div>
 <div
@@ -72,22 +72,10 @@
     [isView]="false"
   ></app-module-template>
 
-  <div style="left: 0; top: 0; width: 500px">
+  <div style="left: 0; top: 0; width: 100%">
     <app-participant-template
       id="printableArea"
       [value]="value"
     ></app-participant-template>
   </div>
-</div> -->
-
-<div style="left: 0; top: 0" *ngIf="value" style="width: 500px">
-  <app-participant-template
-    id="printableArea"
-    [value]="value"
-  ></app-participant-template>
 </div>
-
-<button (click)="onDownloadFile()">
-  <p>Download</p>
-  <i class="material-icons">file_download</i>
-</button>

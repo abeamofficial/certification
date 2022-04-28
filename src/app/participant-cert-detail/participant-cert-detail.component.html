@@ -11,16 +11,17 @@
 >
   <section class="header">
     <div>
-      <span>Certificate of Participant in</span>
-      <h1>{{ value.module_name_en }}</h1>
-      <p>หนังสือรับรองการเข้าร่วมหลักสูตร{{ value.module_name_th }}</p>
+      <span>Certificate of Achievement in</span>
+      <h1>{{ value.name_en }}</h1>
+      <p>{{ value.name_th }}</p>
     </div>
   </section>
   <section class="breadcrumb">
     <p [routerLink]="['']">Home</p>
     <span>></span>
-    <p>Certificate of Participant in {{ value.module_name_en }}</p>
+    <p>Certificate of Achievement in {{ value.name_en }}</p>
   </section>
+
   <section class="cert">
     <div class="cert">
       <div class="cert-paper">
@@ -38,11 +39,12 @@
         <div class="detail">
           <div>
             <p>Approved By</p>
-            <div>{{ value.diploma_approved }}</div>
+            <div>{{ value.cert_approved }}</div>
           </div>
+
           <div>
             <p>Approved Date</p>
-            <div>{{ getDate(value.diploma_approved_date) }}</div>
+            <div>{{ getDate(value.cert_approved_date) }}</div>
           </div>
           <hr />
           <p>Offered By</p>
@@ -65,6 +67,94 @@
       </div>
     </div>
   </section>
+  <section class="badge-of-cert" *ngIf="value.badge">
+    <div class="header">
+      <div>
+        <hr />
+        <p>Certificate Badge</p>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="body" id="about">
+      <div
+        class="list"
+        *ngFor="let item of value.badge | keyvalue"
+        [ngClass]="{ disabled: !item.value.active }"
+      >
+        <div class="bg"></div>
+        <div class="img">
+          <img
+            src="https://digitech.sut.ac.th/certification-img/badge/{{
+              item.value.badge_type_path
+            }}/{{ item.value.badge_file_name }}"
+          />
+        </div>
+        <div class="badge-name" ellipsis>
+          {{ item.value.course_name_en }}
+        </div>
+        <p>( {{ item.value.course_credit }} credits )</p>
+
+        <!-- percent bar -->
+        <div class="level-bar">
+          <div class="full-bar">
+            <div
+              class="percent-bar"
+              [ngClass]="
+                getScoreLevel([
+                  item.value.objective_score,
+                  item.value.practice_score
+                ])
+              "
+              [ngStyle]="{
+                width:
+                  getSummaryScore([
+                    item.value.objective_score,
+                    item.value.practice_score
+                  ]) + '%'
+              }"
+            >
+              {{
+                getSummaryScore([
+                  item.value.objective_score,
+                  item.value.practice_score
+                ])
+              }}%
+            </div>
+          </div>
+          <div class="percent-level">
+            <p
+              [ngClass]="
+                getScoreLevel([
+                  item.value.objective_score,
+                  item.value.practice_score
+                ])
+              "
+            >
+              {{
+                getCompetencyLevel(
+                  getSummaryScore([
+                    item.value.objective_score,
+                    item.value.practice_score
+                  ])
+                )
+              }}
+            </p>
+          </div>
+        </div>
+
+        <div class="detail" ellipsis>
+          {{ item.value.course_detail_th }}
+        </div>
+
+        <div class="button-area">
+          <button [routerLink]="['/badge-detail/' + item.value.id]">
+            Detail
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <app-module-template
     *ngIf="value.module_detail"
@@ -72,7 +162,7 @@
     [isView]="false"
   ></app-module-template>
 
-  <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 100%">
+  <div style="position: absolute; z-index: -1; left: 0; top: 0; width: 1000px">
     <app-participant-template
       id="printableArea"
       [value]="value"

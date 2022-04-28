@@ -32,7 +32,7 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    this.calElementSize();
+    // this.calElementSize();
 
     setTimeout(() => {
       this.calElementSize();
@@ -45,9 +45,9 @@ export class ParticipantTemplateComponent implements OnInit {
 
   calElementSize() {
     this.fitText(document.getElementsByClassName("d-text-1"), 2.25);
-    this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
-    this.fitText(document.getElementsByClassName("d-text-3"), 3);
-    this.fitText(document.getElementsByClassName("d-text-4"), 4.75);
+    // this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
+    // this.fitText(document.getElementsByClassName("d-text-3"), 3);
+    // this.fitText(document.getElementsByClassName("d-text-4"), 4.75);
   }
 
   addEvent(el, type, fn) {

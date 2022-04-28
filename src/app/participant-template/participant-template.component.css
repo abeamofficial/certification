@@ -46,19 +46,19 @@ section {
   width: 100%;
 }
 
-.text-cert .d-text-1 {
+.text-cert .abeam-1 {
   text-align: center;
   font-size: 100%;
   /* line-height: 175%; */
 }
 
-.text-cert .d-text-2 {
+.text-cert .abeam-2 {
   text-align: center;
   /* font-size: 100%; */
   /* line-height: 125%; */
 }
 
-.text-cert .d-text-3 {
+.text-cert .abeam-3 {
   text-align: center;
   font-size: 100%;
   padding: 1.25% 0;
@@ -79,7 +79,7 @@ section {
   display: flex;
 }
 
-.d-text-4 {
+.abeam-4 {
   text-align: center;
   /* font-size: 100%;
   line-height: 150%; */

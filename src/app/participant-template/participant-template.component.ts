@@ -32,7 +32,7 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    // this.calElementSize();
+    this.calElementSize();
 
     setTimeout(() => {
       this.calElementSize();
@@ -40,7 +40,7 @@ export class ParticipantTemplateComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // this.calElementSize();
+    this.calElementSize();
   }
 
   calElementSize() {

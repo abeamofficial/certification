@@ -34,6 +34,7 @@ export class ParticipantTemplateComponent implements OnInit {
 
     const wait_until_element_appear = setInterval(() => {
       if (document.getElementsByClassName("d-text-1").length !== 0) {
+        this.calElementSize();
         clearInterval(wait_until_element_appear);
       }
     }, 100);

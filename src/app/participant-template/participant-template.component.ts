@@ -32,11 +32,15 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    this.calElementSize();
+    const wait_until_element_appear = setInterval(() => {
+      if (document.getElementsByClassName("d-text-1").length !== 0) {
+        clearInterval(wait_until_element_appear);
+      }
+    }, 100);
 
-    setTimeout(() => {
-      this.calElementSize();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.calElementSize();
+    // }, 1000);
   }
 
   ngAfterViewInit() {
@@ -44,11 +48,10 @@ export class ParticipantTemplateComponent implements OnInit {
   }
 
   calElementSize() {
-    console.log("calElementSize");
     this.fitText(document.getElementsByClassName("d-text-1"), 2.25);
-    // this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
-    // this.fitText(document.getElementsByClassName("d-text-3"), 3);
-    // this.fitText(document.getElementsByClassName("d-text-4"), 4.5);
+    this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
+    this.fitText(document.getElementsByClassName("d-text-3"), 3);
+    this.fitText(document.getElementsByClassName("d-text-4"), 4.5);
   }
 
   addEvent(el, type, fn) {
@@ -135,7 +138,7 @@ export class ParticipantTemplateComponent implements OnInit {
     for (let i = 0; i < strYear.length; i++) {
       strYearThai += strThai[strYear[i]];
     }
-    console.log(strDayThai + " " + strMonthThai + " พ.ศ." + " " + strYearThai);
+
     return strDayThai + " " + strMonthThai + " พ.ศ." + " " + strYearThai;
   }
 

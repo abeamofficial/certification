@@ -19,10 +19,11 @@ export class ParticipantTemplateComponent implements OnInit {
 
   constructor() {}
 
-  @HostListener("window:orientationchange", ["$event"])
-  onOrientationChange(event) {
-    this.calElementSize();
-  }
+  // @HostListener("window:orientationchange", ["$event"])
+  // onOrientationChange(event) {
+  //   console.log("onOrientationChange");
+  //   this.calElementSize();
+  // }
 
   ngOnInit() {
     if (this.value) {
@@ -31,11 +32,11 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    // this.calElementSize();
+    this.calElementSize();
 
-    // setTimeout(() => {
-    //   this.calElementSize();
-    // }, 1000);
+    setTimeout(() => {
+      this.calElementSize();
+    }, 1000);
   }
 
   ngAfterViewInit() {
@@ -43,8 +44,9 @@ export class ParticipantTemplateComponent implements OnInit {
   }
 
   calElementSize() {
+    console.log("calElementSize");
     this.fitText(document.getElementsByClassName("d-text-1"), 2.25);
-    this.fitText(document.getElementsByClassName("d-text-2"), 3.5);
+    this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
     this.fitText(document.getElementsByClassName("d-text-3"), 3);
     this.fitText(document.getElementsByClassName("d-text-4"), 4.5);
   }

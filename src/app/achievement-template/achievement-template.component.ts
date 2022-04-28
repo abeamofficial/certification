@@ -27,17 +27,11 @@ export class AchievementTemplateComponent implements OnInit {
     //   !document.getElementsByClassName("c-text-1").length
     // ) {
 
-    // let time = this.isMobile() ? 0 : 1000;
-
     this.calElementSize();
 
-    // if (!this.isMobile()) {
     setTimeout(() => {
       this.calElementSize();
     }, 1000);
-    // }
-
-    // }
   }
 
   ngAfterViewInit() {

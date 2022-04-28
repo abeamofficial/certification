@@ -32,7 +32,7 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    this.calElementSize();
+    // this.calElementSize();
 
     setTimeout(() => {
       this.calElementSize();
@@ -135,7 +135,6 @@ export class ParticipantTemplateComponent implements OnInit {
     for (let i = 0; i < strYear.length; i++) {
       strYearThai += strThai[strYear[i]];
     }
-
     return strDayThai + " " + strMonthThai + " พ.ศ." + " " + strYearThai;
   }
 

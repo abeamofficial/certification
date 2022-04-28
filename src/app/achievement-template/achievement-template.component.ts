@@ -30,7 +30,7 @@ export class AchievementTemplateComponent implements OnInit {
     // this.calElementSize();
 
     const wait_until_element_appear = setInterval(() => {
-      if (document.getElementsByClassName("c-text-1").length !== 0) {
+      if (document.getElementsByClassName("c-text-1").length == 3) {
         this.calElementSize();
         clearInterval(wait_until_element_appear);
       }

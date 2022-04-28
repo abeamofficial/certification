@@ -34,10 +34,6 @@ export class ParticipantTemplateComponent implements OnInit {
 
     this.calElementSize();
 
-    this.calElementSize();
-    this.calElementSize();
-    this.calElementSize();
-
     setTimeout(() => {
       this.calElementSize();
     }, 1000);

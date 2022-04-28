@@ -80,11 +80,13 @@
   </div>
 </div> -->
 
-<div style="left: 0; top: 0; width: 500px" *ngIf="value">
-  <app-participant-template
-    id="printableArea"
-    [value]="value"
-  ></app-participant-template>
+<div style="width: 500px">
+  <div style="left: 0; top: 0" *ngIf="value" style="width: 100%">
+    <app-participant-template
+      id="printableArea"
+      [value]="value"
+    ></app-participant-template>
+  </div>
 </div>
 
 <button (click)="onDownloadFile()">

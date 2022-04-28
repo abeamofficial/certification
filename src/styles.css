@@ -181,7 +181,7 @@ select {
   body {
     min-width: unset !important;
     /* width: 100vw !important; */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   html::-webkit-scrollbar,

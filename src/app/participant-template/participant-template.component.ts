@@ -40,7 +40,7 @@ export class ParticipantTemplateComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.calElementSize();
+    // this.calElementSize();
   }
 
   calElementSize() {
@@ -135,6 +135,7 @@ export class ParticipantTemplateComponent implements OnInit {
     for (let i = 0; i < strYear.length; i++) {
       strYearThai += strThai[strYear[i]];
     }
+    console.log(strDayThai + " " + strMonthThai + " พ.ศ." + " " + strYearThai);
     return strDayThai + " " + strMonthThai + " พ.ศ." + " " + strYearThai;
   }
 

@@ -32,14 +32,15 @@ export class ParticipantTemplateComponent implements OnInit {
       );
     }
 
-    this.calElementSize();
+    // this.calElementSize();
 
     setTimeout(() => {
-      this.calElementSize();
+      // this.calElementSize();
     }, 1000);
   }
 
   ngAfterViewInit() {
+    console.log("after view");
     this.calElementSize();
   }
 

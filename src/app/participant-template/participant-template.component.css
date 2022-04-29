@@ -1,4 +1,4 @@
-section {
+/* section {
   position: relative;
   font-family: "sutregular";
   width: 100%;
@@ -31,7 +31,6 @@ section {
 .sut-logo-cert {
   margin: 0 auto;
   height: 100%;
-  /* height: 10%; */
 }
 
 .text-cert {
@@ -48,38 +47,52 @@ section {
 .text-cert .d-text-1 {
   text-align: center;
   font-size: 100%;
-  /* line-height: 175%; */
 }
 
 .text-cert .d-text-2 {
   text-align: center;
-  /* font-size: 100%; */
-  /* line-height: 125%; */
 }
 
 .text-cert .d-text-3 {
   text-align: center;
   font-size: 100%;
   padding: 1.25% 0;
-  /* line-height: 200%; */
 }
 
 .text-signer {
   height: 25%;
   width: 100%;
-  /* box-sizing: border-box;
-  padding: 2.5% 0; */
 }
 
 .text-cert-sign {
   height: 50%;
-  /* padding: 0.5% 0; */
   margin: 0 auto;
   display: flex;
 }
 
 .d-text-4 {
   text-align: center;
-  /* font-size: 100%;
-  line-height: 150%; */
+} */
+
+
+section {
+  position: relative;
+  font-family: "sutregular";
+  width: 100%;
+  height: min-content;
+}
+
+.bg-cert {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inner-cert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
 }

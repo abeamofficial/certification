@@ -1,4 +1,4 @@
-<div class="spinner" *ngIf="isLoading">
+<!-- <div class="spinner" *ngIf="isLoading">
   <mat-spinner></mat-spinner>
 </div>
 <div
@@ -78,4 +78,11 @@
       [value]="value"
     ></app-participant-template>
   </div>
+</div> -->
+
+<div style="left: 0; top: 0; width: 500px" *ngIf="value">
+  <app-participant-template
+    id="printableArea"
+    [value]="value"
+  ></app-participant-template>
 </div>

@@ -51,10 +51,10 @@ export class ParticipantTemplateComponent implements OnInit {
   }
 
   calElementSize() {
-    this.fitText(document.getElementsByClassName("d-text-1"), 2.25);
-    this.fitText(document.getElementsByClassName("d-text-2"), 3.75);
+    this.fitText(document.getElementsByClassName("d-text-1"), 1);
+    this.fitText(document.getElementsByClassName("d-text-2"), 2);
     this.fitText(document.getElementsByClassName("d-text-3"), 3);
-    this.fitText(document.getElementsByClassName("d-text-4"), 4.75);
+    this.fitText(document.getElementsByClassName("d-text-4"), 4);
   }
 
   addEvent(el, type, fn) {
@@ -81,24 +81,13 @@ export class ParticipantTemplateComponent implements OnInit {
 
     if (el.length)
       for (var i = 0; i < el.length; i++) this.fit(el[i], settings, compressor);
-    // else this.fit(el, settings, compressor);
+    else this.fit(el, settings, compressor);
 
     // return set of elements
     return el;
   }
 
   fit(el, settings, compressor) {
-    console.log(
-      el,
-      compressor,
-      Math.max(
-        Math.min(
-          el.clientWidth / (compressor * 10),
-          parseFloat(settings.maxFontSize)
-        ),
-        parseFloat(settings.minFontSize)
-      ).toFixed(2)
-    );
     var resizer = function () {
       el.style.fontSize =
         Math.max(

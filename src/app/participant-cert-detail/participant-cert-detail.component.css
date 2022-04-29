@@ -1,0 +1,926 @@
+/* ----- header template ----- */
+
+.main {
+  /* position: relative; */
+  height: 100%;
+  width: 100%;
+}
+
+
+section.header {
+  box-sizing: border-box;
+  padding: 0 15%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  height: 150px;
+  display: flex;
+}
+
+section.header>div {
+  margin: auto 0;
+  height: fit-content;
+}
+
+section.header>div>span {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header>div>h1 {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 26px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.header>div>p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  color: #3c5981;
+}
+
+/* ----- END header template ----- */
+
+/* ----- breadcrumb template ----- */
+
+section.breadcrumb {
+  padding: 20px 15% 35px 15%;
+  display: flex;
+  gap: 10px;
+}
+
+section.breadcrumb>p,
+section.breadcrumb>span {
+  margin: 0;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 14px;
+  color: #212121;
+}
+
+section.breadcrumb>p {
+  cursor: pointer;
+}
+
+section.breadcrumb>p:hover {
+  color: var(--blue);
+}
+
+/* ----- END breadcrumb template ----- */
+
+/* ----- body template ----- */
+
+/* ----- END body template ----- */
+
+section.cert {
+  padding: 0 15%;
+  margin: 0 0 100px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+section.cert div.cert {
+  display: flex;
+  min-width: 900px;
+  width: 100%;
+  row-gap: 2.5%;
+  column-gap: 2.5%;
+}
+
+section.cert div.cert>div.cert-paper {
+  width: 70%;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  padding: 20px;
+  height: fit-content;
+}
+
+section.cert div.cert>div.cert-paper>img {
+  width: 100%;
+}
+
+section.cert div.cert>div.cert-detail {}
+
+section.cert div.cert>div.cert-detail>div.title {
+  display: flex;
+  height: 35px;
+  /* gap: 10px; */
+}
+
+section.cert div.cert>div.cert-detail>div.title>hr {
+  margin: auto 0;
+  width: 15%;
+  border: 0;
+  border-top: 1px solid #adadad;
+  /* width: 100%; */
+}
+
+section.cert div.cert>div.cert-detail>div.title>p {
+  margin: auto;
+  text-align: center;
+  font-family: "sutregular";
+  font-size: calc(2px + 1vw);
+  width: 70%;
+}
+
+section.cert div.cert>div.cert-detail>div.cert-detail-name {
+  background-color: #073c83;
+  border-radius: 3px;
+  display: flex;
+  width: 100%;
+  height: 65px;
+}
+
+section.cert div.cert>div.cert-detail>div.cert-detail-name>p {
+  margin: auto;
+  font-family: "sutregular";
+  font-size: calc(12px + 1vw);
+  color: #fff;
+}
+
+section.cert div.cert>div.cert-detail>div.detail {
+  border-radius: 3px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: var(--box-shadow);
+  margin: 15px 0;
+  padding: 20px 25px;
+  width: 100%;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>div {
+  display: flex;
+  gap: 10px;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>div>p {
+  width: 40%;
+  min-width: max-content;
+  margin: 0 0 auto 0;
+  font-family: "sutbold";
+  font-size: 22px;
+  color: var(--dark-blue);
+}
+
+section.cert div.cert>div.cert-detail>div.detail>div>div {
+  margin: 0.25rem 0 auto 0;
+  width: 100%;
+  font-family: "sutregular";
+  font-weight: 100;
+  font-size: 18px;
+  color: var(--soft-black);
+}
+
+section.cert div.cert>div.cert-detail>div.detail>hr {
+  border: 0;
+  border-top: 1px solid #e2e2e2;
+  margin: 15px 0;
+  width: 100%;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>p {
+  font-family: "sutbold";
+  font-size: 22px;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>span {
+  display: flex;
+  gap: 5px;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>span>p {
+  font-family: "sutregular";
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>span.link {
+  color: var(--soft-blue);
+  cursor: pointer;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>span.link:hover>p {
+  text-decoration: underline;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>span.link>p>i {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+
+section.cert div.cert>div.cert-detail>div.detail>span>span {
+  font-family: "sutregular";
+  font-size: 16px;
+  font-weight: 100;
+}
+
+section.cert div.cert>div.cert-detail>button {
+  display: flex;
+  background-color: #51af5f;
+  color: #ffffff;
+  padding: 6px 24px;
+  border: 0;
+  gap: 5px;
+  border-radius: 3px;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+section.cert div.cert>div.cert-detail>button:hover {
+  background-color: #42a351;
+}
+
+section.cert div.cert>div.cert-detail>button>p {
+  font-family: "sutbold";
+  font-size: 20px;
+  margin: auto 0;
+}
+
+section.cert div.cert>div.cert-detail>button>i {
+  margin: auto;
+  font-size: 20px;
+}
+
+/* ==================== badge of cert ==================== */
+
+section.badge-of-cert {
+  margin: 100px 0;
+  padding: 100px 15%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/*  badge of cert  >  header  */
+
+section.badge-of-cert>div.header {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+section.badge-of-cert>div.header>div {
+  background-color: #f2f1f0;
+  width: 70%;
+  padding: 15px 0 15px 15%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15px;
+}
+
+section.badge-of-cert>div.header>div>hr {
+  height: 90%;
+  width: 4px;
+  margin: auto 0;
+  border: unset;
+  background-color: var(--dark-blue);
+}
+
+section.badge-of-cert>div.header>div>p {
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 25px;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+section.badge-of-cert>div.header>div:last-of-type {
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+  margin-left: -1px;
+  width: 200px;
+}
+
+/*  badge of cert  >  body  */
+
+section.badge-of-cert>div.body {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  justify-content: center;
+}
+
+section.badge-of-cert>div.body>div.list {
+  /* background-color: white; */
+  width: 19%;
+  min-height: 400px;
+  min-width: 250px;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 16px 32px;
+  position: relative;
+}
+
+section.badge-of-cert>div.body>div.list>div.bg {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+section.badge-of-cert>div.body>div.list.disabled {
+  /* background-color: #eaeaea !important; */
+}
+
+section.badge-of-cert>div.body>div.list.disabled>div.bg {
+  background-color: #eaeaea !important;
+}
+
+section.badge-of-cert>div.body>div.list.disabled>div.img {
+  filter: grayscale(100%);
+}
+
+section.badge-of-cert>div.body>div.list>div.img {
+  width: 100%;
+  height: 200px;
+  display: flex;
+}
+
+section.badge-of-cert>div.body>div.list>div.img>img {
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+section.badge-of-cert>div.body>div.list>div.badge-name {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "sutregular";
+  font-weight: 600;
+  line-height: 20px;
+  margin: 10px 0 0 0;
+}
+
+section.badge-of-cert>div.body>div.list>p {
+  width: 100%;
+  text-align: center;
+  color: #848484;
+  font-size: 14px;
+  font-family: "sutregular";
+  margin: 0;
+}
+
+/*  badge of cert  >  body  > badge */
+
+section.badge-of-cert>div.body>div.list>div.level-bar {
+  font-family: "sutregular";
+  margin: 25px 0 10px 0;
+  display: flex;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar-disabled {
+  filter: grayscale(100%) !important;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>div.full-bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-radius: 50px;
+}
+
+section.badge-of-cert>div.body>div.list.disabled>div.level-bar>div.full-bar {
+  background-color: #cccccc;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>.full-bar>.percent-bar {
+  box-sizing: border-box;
+  height: 12px;
+  width: 50%;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>div.full-bar .gold {
+  background-color: #edb037;
+}
+
+section.badge-of-cert>div.body>div.list.disabled>div.level-bar>div.full-bar .gold {
+  background-color: #b5b5b5;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>.full-bar>.silver {
+  background-color: #999999;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level {
+  width: fit-content;
+  padding: 0 0 0 10px;
+  display: flex;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level>p {
+  margin: auto;
+  font-size: 12px;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level .gold {
+  color: #edb037;
+}
+
+section.badge-of-cert>div.body>div.list.disabled>div.level-bar>div.percent-level .gold {
+  color: #b5b5b5;
+}
+
+section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level .silver {
+  color: #999999;
+}
+
+section.badge-of-cert>div.body>div.list>div.detail {
+  height: 50px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "sutregular";
+  font-weight: 100;
+  text-align: center;
+  margin: 10px 0;
+}
+
+section.badge-of-cert>div.body>div.list>div.button-area {
+  width: 100%;
+  display: flex;
+}
+
+section.badge-of-cert>div.body>div.list>div.button-area>button {
+  border-radius: 3px;
+  border: none;
+  background-color: #eaf3ff;
+  margin: 15px auto 5px auto;
+  font-family: "sutregular";
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--soft-blue);
+  box-sizing: border-box;
+  padding: 4px 24px;
+  cursor: pointer;
+}
+
+section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
+  background-color: #d7e3f1;
+}
+
+
+
+/* ==================== END badge of cert ==================== */
+
+/*  spinner */
+
+.spinner {
+  position: fixed;
+  display: flex;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.spinner mat-spinner {
+  margin: auto;
+}
+
+::ng-deep .mat-progress-spinner circle,
+::ng-deep .mat-spinner circle {
+  stroke: var(--dark-blue);
+}
+
+
+#printableArea {
+  /* min-width: 1024px !important; */
+  /* position: absolute; */
+  /* width: 200%; */
+}
+
+
+/* ----------- Portrait iPhone ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  section.header {
+    padding: 2.5% 5%;
+    height: fit-content;
+    min-height: 85px;
+  }
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+  section.cert {
+    padding: 0 5%;
+    margin: 0 0 50px 0;
+  }
+
+  section.cert div.cert {
+    display: block;
+    min-width: unset;
+    row-gap: unset;
+    column-gap: unset;
+  }
+
+  section.cert div.cert>div.cert-paper {
+    width: 100%;
+  }
+
+  section.cert div.cert>div.cert-detail {
+    width: 100%;
+    padding: 2.5% 0;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title {
+    height: 35px;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title>hr {
+    width: 20%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title>p {
+    font-size: calc(12px + 0.25vw);
+    width: 60%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.cert-detail-name {
+    height: 45px;
+  }
+
+  section.cert div.cert>div.cert-detail>div.cert-detail-name>p {
+    margin: auto;
+    font-family: "sutregular";
+    font-size: calc(18px + 0.25vw);
+    color: #fff;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail {
+    margin: 15px 0;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>hr {
+    margin: 10px 0;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>div>p {
+    width: 35%;
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>div>div {
+    font-size: calc(12px + 0.25vw);
+    margin: 0.25vh 0 auto 0;
+    width: 60%;
+  }
+
+
+  section.cert div.cert>div.cert-detail>div.detail>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span>p {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span.link>p>i {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>button>p {
+
+    font-size: 16px;
+
+  }
+
+  section.cert div.cert>div.cert-detail>button>i {
+
+    font-size: 14px;
+  }
+
+
+  /* ==================== badge of cert ==================== */
+
+  section.badge-of-cert {
+    padding: 50px 5% 0px;
+    margin: 50px 0;
+  }
+
+  section.badge-of-cert>div.header>div {
+    padding: 10px 0 10px 5%;
+    gap: 10px;
+  }
+
+  section.badge-of-cert>div.header>div>p {
+    font-size: calc(18px + 0.25vw);
+  }
+
+  /*  badge of cert  >  body  */
+  section.badge-of-cert>div.body {
+    column-gap: 1%;
+  }
+
+  section.badge-of-cert>div.body>div.list {
+    padding: 2%;
+    width: 24%;
+    min-height: unset;
+    min-width: unset;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.img {
+    height: auto;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.img>img {
+    height: auto;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.badge-name {
+    width: 100%;
+    height: calc(30px + 1vw);
+    font-size: calc(8px + 0.25vw);
+    line-height: 115%;
+    margin: 1vh 0 0 0;
+  }
+
+  section.badge-of-cert>div.body>div.list>p {
+    font-size: calc(8px + 0.25vw);
+  }
+
+  section.badge-of-cert>div.body>div.list>div.detail {
+    height: calc(35px + 1vw);
+    font-size: calc(6px + 0.25vw);
+    line-height: 115%;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar {
+    margin: 1vh 0;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar>.full-bar>.percent-bar {
+    height: calc(6px + 0.25vw);
+    font-size: calc(6px + 0.25vw);
+    padding-left: 5px;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level {
+    padding: 0 0 0 5px;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level>p {
+    font-size: calc(4px + 0.25vw);
+  }
+
+  section.badge-of-cert>div.body>div.list>div.button-area>button {
+    font-size: 10px;
+    padding: 4px 16px;
+    margin: 5% auto;
+  }
+
+
+
+}
+
+/* ----------- Landscape iPhone  ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  section.header {
+    padding: 2.5% 5%;
+    height: fit-content;
+    min-height: 85px;
+  }
+
+
+  section.header>div>span {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.header>div>h1 {
+    font-size: calc(16px + 0.25vw);
+  }
+
+  section.header>div>p {
+    font-size: calc(14px + 0.25vw);
+  }
+
+  section.breadcrumb {
+    padding: 10px 5%;
+  }
+
+  section.breadcrumb>p,
+  section.breadcrumb>span {
+    font-size: 12px;
+  }
+
+  section.cert {
+    padding: 0 5%;
+    margin: 0 0 50px 0;
+  }
+
+  section.cert div.cert {
+    min-width: unset;
+    row-gap: 2.5%;
+    column-gap: 2.5%;
+  }
+
+  section.cert div.cert>div.cert-paper {
+    width: 60%;
+    padding: 10px;
+  }
+
+  section.cert div.cert>div.cert-detail {
+    width: 40%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title {
+    height: 35px;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title>hr {
+    width: 15%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.title>p {
+    font-size: calc(10px + 0.25vw);
+    width: 70%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.cert-detail-name {
+    height: 30px;
+  }
+
+  section.cert div.cert>div.cert-detail>div.cert-detail-name>p {
+    margin: auto;
+    font-family: "sutregular";
+    font-size: calc(16px + 0.25vw);
+    color: #fff;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail {
+    margin: 10px 0;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>hr {
+    margin: 10px 0;
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>div>p {
+    width: 45%;
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>div>div {
+    font-size: calc(10px + 0.25vw);
+    margin: 0.25vh 0 auto 0;
+  }
+
+
+  section.cert div.cert>div.cert-detail>div.detail>p {
+    font-size: calc(12px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span>p {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span.link>p>i {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>div.detail>span>span {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.cert div.cert>div.cert-detail>button>p {
+    font-size: 14px;
+  }
+
+  section.cert div.cert>div.cert-detail>button>i {
+    font-size: 12px;
+  }
+
+
+  /* ==================== badge of cert ==================== */
+
+  section.badge-of-cert {
+    padding: 50px 5% 0px;
+    margin: 50px 0;
+  }
+
+  section.badge-of-cert>div.header>div {
+    padding: 10px 0 10px 5%;
+    gap: 10px;
+  }
+
+  section.badge-of-cert>div.header>div>p {
+    font-size: calc(18px + 0.25vw);
+  }
+
+  /*  badge of cert  >  body  */
+  section.badge-of-cert>div.body {
+    column-gap: 1%;
+  }
+
+  section.badge-of-cert>div.body>div.list {
+    padding: 2%;
+    width: 24%;
+    min-height: unset;
+    min-width: unset;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.img {
+    height: auto;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.img>img {
+    height: auto;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.badge-name {
+    width: 100%;
+    height: calc(35px + 1vw);
+    font-size: calc(10px + 0.25vw);
+    line-height: 115%;
+    margin: 1vh 0 0 0;
+  }
+
+  section.badge-of-cert>div.body>div.list>p {
+    font-size: calc(10px + 0.25vw);
+  }
+
+  section.badge-of-cert>div.body>div.list>div.detail {
+    height: calc(35px + 1vw);
+    font-size: calc(8px + 0.25vw);
+    line-height: 115%;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar {
+    margin: 1vh 0;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar>.full-bar>.percent-bar {
+    height: calc(8px + 0.25vw);
+    font-size: calc(8px + 0.25vw);
+    padding-left: 5px;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level {
+    padding: 0 0 0 5px;
+  }
+
+  section.badge-of-cert>div.body>div.list>div.level-bar>div.percent-level>p {
+    font-size: calc(8px + 0.25vw);
+  }
+
+  section.badge-of-cert>div.body>div.list>div.button-area>button {
+    font-size: 12px;
+    padding: 4px 16px;
+    margin: 5% auto;
+  }
+
+
+}

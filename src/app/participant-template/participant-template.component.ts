@@ -37,10 +37,16 @@ export class ParticipantTemplateComponent implements OnInit {
     // setTimeout(() => {
     // this.calElementSize();
     // }, 1000);
+
+    let timerId = setInterval(() => {
+      if (document.getElementsByClassName("d-text-1").length) {
+        this.calElementSize();
+        clearInterval(timerId);
+      }
+    }, 500);
   }
 
   ngAfterViewInit() {
-    console.log("after view");
     this.calElementSize();
   }
 

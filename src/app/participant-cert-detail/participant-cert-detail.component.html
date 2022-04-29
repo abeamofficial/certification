@@ -24,7 +24,7 @@
   <section class="cert">
     <div class="cert">
       <div class="cert-paper">
-        <app-participant-template [value]="value"></app-participant-template>
+        <!-- <app-participant-template [value]="value"></app-participant-template> -->
       </div>
       <div class="cert-detail">
         <div class="title">
@@ -72,10 +72,10 @@
     [isView]="false"
   ></app-module-template>
 
-  <!-- <div style="left: 0; top: 0; width: 500px"> -->
-  <app-participant-template
-    id="printableArea"
-    [value]="value"
-  ></app-participant-template>
-  <!-- </div> -->
+  <div style="left: 0; top: 0; width: 500px">
+    <app-participant-template
+      id="printableArea"
+      [value]="value"
+    ></app-participant-template>
+  </div>
 </div>

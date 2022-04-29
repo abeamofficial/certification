@@ -44,6 +44,13 @@ export class ParticipantTemplateComponent implements OnInit {
         clearInterval(timerId);
       }
     }, 500);
+    this.calElementSize();
+    this.calElementSize();
+    this.calElementSize();
+    this.calElementSize();
+    this.calElementSize();
+    this.calElementSize();
+    this.calElementSize();
   }
 
   ngAfterViewInit() {

@@ -27,11 +27,11 @@ export class AchievementTemplateComponent implements OnInit {
     //   !document.getElementsByClassName("c-text-1").length
     // ) {
 
-    this.calElementSize();
+    // this.calElementSize();
 
-    setTimeout(() => {
-      this.calElementSize();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.calElementSize();
+    // }, 1000);
   }
 
   ngAfterViewInit() {

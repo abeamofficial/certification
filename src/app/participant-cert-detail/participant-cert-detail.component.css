@@ -560,7 +560,7 @@ section.badge-of-cert>div.body>div.list>div.button-area>button:hover {
   }
 
   section.cert div.cert>div.cert-paper {
-    width: 100%;
+    width: 200%;
   }
 
   section.cert div.cert>div.cert-detail {

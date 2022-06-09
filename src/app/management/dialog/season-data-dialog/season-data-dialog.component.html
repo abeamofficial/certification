@@ -1,0 +1,98 @@
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>
+        {{
+          data.isEdit
+            ? id
+              ? "แก้ไขข้อมูลรุ่น"
+              : "เพิ่มข้อมูลรุ่น"
+            : "ข้อมูลรุ่น"
+        }}
+      </h1>
+      <button
+        *ngIf="id && !data.isEdit"
+        (click)="data.isEdit = true"
+        class="edit"
+      >
+        <i class="material-icons">edit</i>
+        แก้ไข
+      </button>
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal(false)">close</i>
+  </div>
+  <hr />
+
+  <ng-container *ngIf="!id || data.isEdit; else view">
+    <div class="body">
+      <form [formGroup]="seasonForm">
+        <div class="input">
+          <p>หลักสูตร</p>
+          <mat-form-field>
+            <mat-select
+              formControlName="m_id"
+              placeholder="เลือกชุดวิชา"
+              #singleSelect
+            >
+              <mat-option>
+                <ngx-mat-select-search
+                  [formControl]="moduleFilterCtrl"
+                  placeholderLabel="ค้นหาชุดวิชา"
+                  noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
+                ></ngx-mat-select-search>
+              </mat-option>
+
+              <mat-option
+                *ngFor="let module of filteredModule | async"
+                [value]="module.m_id"
+              >
+                {{ module.module_id + " " + module.module_name_th }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <p>รุ่น</p>
+          <input formControlName="season" />
+        </div>
+        <div class="input">
+          <p>วันที่</p>
+          <input type="date" formControlName="create_date" />
+        </div>
+      </form>
+    </div>
+
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
+      <button class="submit" (click)="onSave()">บันทึก</button>
+    </div>
+  </ng-container>
+  <ng-template #view>
+    <div class="body">
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาไทย</p>
+        <span>{{ data.value.name_th }}</span>
+      </div>
+      <div class="input">
+        <p>ชื่อสัมฤทธิบัตร ภาษาอังกฤษ</p>
+        <span>{{ data.value.name_en }}</span>
+      </div>
+      <div class="input">
+        <p>ชุดวิชา</p>
+        <span>{{
+          data.value.module_id + " ชุดวิชา" + data.value.module_name_th
+        }}</span>
+      </div>
+      <div class="input">
+        <p>ประเภทสัมฤทธิบัตร</p>
+        <span>{{ getDegreeName(data.value.degree_of_module_id) }}</span>
+      </div>
+
+      <!-- getdegreeName -->
+    </div>
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal(false)">กลับ</button>
+    </div>
+  </ng-template>
+</section>

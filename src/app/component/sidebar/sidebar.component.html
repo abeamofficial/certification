@@ -44,5 +44,24 @@
     >
       <p>สรุปผลสัมฤทธิบัตร</p>
     </div>
+    <hr />
+    <div
+      [ngClass]="{ active: isActiveRouter('/student-data-management') }"
+      (click)="onNavigateByRouter('/student-data-management')"
+    >
+      <p>ข้อมูลผู้เรียน</p>
+    </div>
+    <div
+      [ngClass]="{ active: isActiveRouter('/season-data-management') }"
+      (click)="onNavigateByRouter('/season-data-management')"
+    >
+      <p>ข้อมูลการเปิดหลักสูตร</p>
+    </div>
+    <div
+      [ngClass]="{ active: isActiveRouter('/enroll-data-management') }"
+      (click)="onNavigateByRouter('/enroll-data-management')"
+    >
+      <p>ข้อมูลการลงทะเบียนเรียน</p>
+    </div>
   </div>
 </section>

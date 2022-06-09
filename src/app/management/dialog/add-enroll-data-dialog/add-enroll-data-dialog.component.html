@@ -1,0 +1,63 @@
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>เพิ่มข้อมูล</h1>
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal(false)">close</i>
+  </div>
+  <hr />
+  <div class="body">
+    <div class="example-text">
+      <p>รูปแบบการกรอก :</p>
+      <div>
+        <p>รหัสผู้เรียน (13 หลัก)</p>
+        <div>
+          <p>ตัวอย่าง</p>
+          <div>
+            <p>1234567890123</p>
+            <p>3210987654321</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-file">
+      <input
+        type="file"
+        style="visibility: hidden; width: 0px"
+        class="file-input"
+      />
+      <span>
+        <p>{{ inputFileName }}</p>
+        <button class="input-file-button">
+          <i class="material-icons">upload_file</i>
+          เลือกไฟล์
+        </button>
+      </span>
+    </div>
+    <div class="input-textarea">
+      <textarea
+        id="enrollInputText"
+        placeholder="{{
+          enrollInputText
+            ? ''
+            : 'กรอกรหัสผู้เรียน หรือ upload ไฟล์ (.xlsx .xls)'
+        }}"
+      ></textarea>
+      <div class="input-file">
+        <div class="input">
+          <p>วิชา</p>
+          <select></select>
+        </div>
+        <div class="input">
+          <p>รุ่น</p>
+          <select></select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
+    <button class="submit" (click)="onSaveSigner()">บันทึก</button>
+  </div>
+</section>

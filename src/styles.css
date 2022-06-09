@@ -82,6 +82,8 @@ select {
   background-size: 0.65em auto, 100%;
 }
 
+
+
 /* -------- pagination ---------- */
 .ngx-pagination {
   display: flex;

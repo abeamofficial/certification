@@ -1,0 +1,203 @@
+section.dialog {
+    /* padding: 0 15px; */
+    height: 100%;
+    position: relative;
+}
+
+section.dialog>hr {
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+/* ----- dialog > header ----- */
+
+section.dialog>div.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+
+section.dialog>div.header>div {
+    display: flex;
+    gap: 30px;
+}
+
+section.dialog>div.header h1 {
+    font-family: "sutbold";
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+section.dialog>div.header button.edit {
+    box-sizing: border-box;
+    padding: 3px 10px;
+    font-family: "sutregular";
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+section.dialog>div.header button.edit i {
+    font-size: 0.75rem;
+    vertical-align: middle;
+}
+
+section.dialog>div.header i {
+    margin: auto 0;
+    cursor: pointer;
+}
+
+/* ----- dialog > body ----- */
+
+section.dialog>div.body {
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+
+
+section.dialog>div.body .example-text {
+    display: flex;
+    font-size: 1.15rem;
+}
+
+section.dialog>div.body .example-text>p {
+    margin: 0;
+    display: flex;
+    font-family: "sutbold";
+}
+
+section.dialog>div.body .example-text>div {
+    display: block;
+    margin: 0 0.5rem;
+    font-family: "sutregular";
+}
+
+section.dialog>div.body .example-text>div>p {
+    margin: 0;
+}
+
+section.dialog>div.body .example-text>div>div {
+    display: flex;
+}
+
+section.dialog>div.body .example-text>div>div>p {
+    margin-top: 0.25rem;
+}
+
+section.dialog>div.body .example-text>div>div>div {
+    display: block;
+    padding: 0.25rem 1rem;
+    background-color: #f9f6f6;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0.75rem;
+}
+
+section.dialog>div.body .example-text>div>div>div>p {
+    margin: 0;
+}
+
+section.dialog>div.body .input-file {
+    display: flex;
+    width: 100%;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+section.dialog>div.body .input-file span {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 0.5em;
+}
+
+section.dialog>div.body .input-file span>p {
+    margin-bottom: 0;
+    margin-top: auto;
+    padding: 0 1rem;
+}
+
+section.dialog>div.body .input-file span .input-file-button {
+    display: flex;
+    gap: 5px;
+    font-family: "sutbold";
+    cursor: pointer;
+    font-size: 1.15rem;
+    padding: 5px 24px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    margin-top: 0.5rem;
+    background-color: #2ba62c;
+
+}
+
+section.dialog>div.body .input-file span .input-file-button>p {
+    margin: auto 0;
+}
+
+section.dialog>div.body .input-file span .input-file-button>i.material-icons {
+    font-size: 1.25rem;
+    margin: auto;
+}
+
+section.dialog>div.body .input-textarea {}
+
+section.dialog>div.body .input-textarea textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 20rem;
+    resize: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    overflow-y: auto;
+    padding: 0.25rem 0.5rem;
+    font-family: "sutregular";
+    border-color: rgb(230 230 230);
+}
+
+
+
+/* ----- dialog > footer ----- */
+section.dialog>div.footer {
+    display: flex;
+    padding: 30px;
+    justify-content: flex-end;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
+}
+
+section.dialog>div.footer button {
+    box-sizing: border-box;
+    padding: 8px 24px;
+    font-family: "sutbold";
+    font-size: 1.15rem;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 125px;
+}
+
+section.dialog>div.footer button.submit {
+    color: #fff;
+    background-color: #51af5f;
+}
+
+
+
+
+
+
+/* -------- dialog ---------- */
+::ng-deep .mat-dialog-container {
+    padding: 0;
+}

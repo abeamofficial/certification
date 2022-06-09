@@ -1,0 +1,99 @@
+<section class="container">
+  <section class="breadcrumb">
+    <p [routerLink]="['']">หน้าแรก</p>
+    <span>></span>
+    <p>จัดการข้อมูลการเปิดหลักสูตร</p>
+  </section>
+  <section class="body">
+    <h1>ข้อมูลการเปิดหลักสูตร</h1>
+    <div class="search-area">
+      <span>
+        <input
+          placeholder="ค้นหา"
+          [(ngModel)]="keyword"
+          (input)="onSearching()"
+        />
+        <ng-container *ngIf="!keyword; else close">
+          <i class="material-icons">search</i></ng-container
+        >
+        <ng-template #close>
+          <i class="material-icons searching" (click)="onClearSearching()"
+            >close</i
+          >
+        </ng-template>
+      </span>
+      <button class="add" (click)="onOpenSeasonDialog(true, null)">
+        <i class="material-icons">add</i> เพิ่มรุ่น
+      </button>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <th style="width: 5%"><p>ลำดับ</p></th>
+
+          <th style="width: 30%"><p>หลักสูตร</p></th>
+          <th style="width: 10%"><p>รุ่น</p></th>
+          <th style="width: 15%"><p>วันที่เริ่ม</p></th>
+          <th style="width: 15%"><p>วันที่อนุมัติ</p></th>
+          <th style="width: 25%"></th>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of filter_value
+                | paginate: { itemsPerPage: itemsPerPage, currentPage: p };
+              let i = index
+            "
+          >
+            <td (click)="onOpenCertificateDialog(false, item)">
+              {{ absoluteIndex(i + 1) }}
+            </td>
+
+            <td (click)="onOpenCertificateDialog(false, item)">
+              {{ item.module_name_th }}
+            </td>
+            <td (click)="onOpenCertificateDialog(false, item)">
+              {{ item.season }}
+            </td>
+            <td (click)="onOpenCertificateDialog(false, item)">
+              {{ getDate(item.create_date) }}
+            </td>
+            <td (click)="onOpenCertificateDialog(false, item)">
+              {{ getDate(item.public_date) }}
+            </td>
+            <td>
+              <button
+                mat-icon-button
+                [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu"
+              >
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button
+                  mat-menu-item
+                  class="menu"
+                  (click)="onOpenCertificateDialog(true, item)"
+                >
+                  <mat-icon>edit</mat-icon>
+                  <span>แก้ไข</span>
+                </button>
+                <button
+                  mat-menu-item
+                  class="menu"
+                  (click)="onOpenDeleteDialog(item)"
+                >
+                  <mat-icon>delete</mat-icon>
+                  <span>ลบ</span>
+                </button>
+              </mat-menu>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,114 @@
+@import url("./../management-style.css");
+
+/* ----- body > table ----- */
+
+section.body>div.table {
+    position: relative;
+    width: 100%;
+    min-height: 85%;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+section.body>div.table table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+section.body>div.table table th {
+    background-color: rgb(238, 238, 238);
+    padding: 10px;
+    text-align: left;
+}
+
+section.body>div.table table th p {
+    margin: 0;
+    font-family: "sutbold";
+    font-size: 1.05rem;
+}
+
+section.body>div.table table tr {
+    cursor: pointer;
+}
+
+section.body>div.table table tr:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+section.body>div.table table tr td {
+    font-size: 1rem;
+    font-family: "sutregular";
+    padding: 8px 10px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+section.body>div.table table th:first-of-type,
+section.body>div.table table tr td:first-of-type {
+    text-align: center;
+}
+
+section.body>div.table table tr td:last-of-type {
+    text-align: right;
+}
+
+section.body>div.table table tr td>button {
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+section.body>div.table table tr td>button .material-icons {
+    font-size: 1.25rem;
+}
+
+button.menu {
+    font-family: "sutregular";
+    font-size: 1rem;
+}
+
+button.menu>.mat-icon {
+    font-size: 1.25rem;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+button.menu.mat-menu-item {
+    height: 35px;
+    line-height: unset;
+}
+
+/* section.body > div.table table tr td > div.table-button {
+  display: flex;
+  gap: 10px;
+}
+
+section.body > div.table table tr td > div.table-button button {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-family: "sutregular";
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 1rem;
+  color: #3b3b3b;
+}
+
+section.body > div.table table tr td > div.table-button button i {
+  font-size: 0.85rem;
+  margin: auto;
+  vertical-align: middle;
+} */
+
+/* ----- body > pagination ----- */
+section.body>div.pagination {
+    /* position: absolute;
+  bottom: 0;
+  width: inherit; */
+}
+
+/* ----- END body ----- */

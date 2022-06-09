@@ -59,6 +59,13 @@ import { ModuleTemplateComponent } from "./module-template/module-template.compo
 import { AchievementTemplateComponent } from "./achievement-template/achievement-template.component";
 import { ParticipantTemplateComponent } from "./participant-template/participant-template.component";
 import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
+import { StudentDataComponent } from './management/student-data/student-data.component';
+import { StudentDataDialogComponent } from './management/dialog/student-data-dialog/student-data-dialog.component';
+import { AddStudentDataDialogComponent } from './management/dialog/add-student-data-dialog/add-student-data-dialog.component';
+import { SeasonDataComponent } from './management/season-data/season-data.component';
+import { SeasonDataDialogComponent } from './management/dialog/season-data-dialog/season-data-dialog.component';
+import { EnrollDataComponent } from './management/enroll-data/enroll-data.component';
+import { AddEnrollDataDialogComponent } from './management/dialog/add-enroll-data-dialog/add-enroll-data-dialog.component';
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -100,6 +107,13 @@ import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
     AchievementTemplateComponent,
     ParticipantTemplateComponent,
     CertPreviewComponent,
+    StudentDataComponent,
+    StudentDataDialogComponent,
+    AddStudentDataDialogComponent,
+    SeasonDataComponent,
+    SeasonDataDialogComponent,
+    EnrollDataComponent,
+    AddEnrollDataDialogComponent,
   ],
   imports: [
     EllipsisModule,

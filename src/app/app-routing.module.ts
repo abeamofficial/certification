@@ -22,6 +22,13 @@ import { ConfirmDeleteDialogComponent } from "./management/dialog/confirm-delete
 import { PloProgressComponent } from "./plo-progress/plo-progress.component";
 import { CompetencyLevelDialogComponent } from "./competency-level-dialog/competency-level-dialog.component";
 import { CertPreviewComponent } from "./cert-preview/cert-preview.component";
+import { StudentDataComponent } from "./management/student-data/student-data.component";
+import { StudentDataDialogComponent } from "./management/dialog/student-data-dialog/student-data-dialog.component";
+import { AddStudentDataDialogComponent } from "./management/dialog/add-student-data-dialog/add-student-data-dialog.component";
+import { SeasonDataComponent } from "./management/season-data/season-data.component";
+import { SeasonDataDialogComponent } from "./management/dialog/season-data-dialog/season-data-dialog.component";
+import { EnrollDataComponent } from "./management/enroll-data/enroll-data.component";
+import { AddEnrollDataDialogComponent } from "./management/dialog/add-enroll-data-dialog/add-enroll-data-dialog.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
@@ -88,6 +95,9 @@ const routes: Routes = [
     component: CertificateSummaryComponent,
   },
   { path: "certificate-publishing", component: CertificatePublishingComponent },
+  { path: "student-data-management", component: StudentDataComponent },
+  { path: "season-data-management", component: SeasonDataComponent },
+  { path: "enroll-data-management", component: EnrollDataComponent },
   { path: "plo-progress", component: PloProgressComponent },
   {
     path: "cpw",
@@ -113,6 +123,10 @@ const routes: Routes = [
     CertificatePublishingDialogComponent,
     ConfirmDeleteDialogComponent,
     CompetencyLevelDialogComponent,
+    StudentDataDialogComponent,
+    AddStudentDataDialogComponent,
+    SeasonDataDialogComponent,
+    AddEnrollDataDialogComponent,
   ],
 })
 export class AppRoutingModule {}

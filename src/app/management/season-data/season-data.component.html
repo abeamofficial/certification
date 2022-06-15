@@ -45,20 +45,20 @@
               let i = index
             "
           >
-            <td (click)="onOpenCertificateDialog(false, item)">
+            <td>
               {{ absoluteIndex(i + 1) }}
             </td>
 
-            <td (click)="onOpenCertificateDialog(false, item)">
+            <td>
               {{ item.module_name_th }}
             </td>
-            <td (click)="onOpenCertificateDialog(false, item)">
+            <td>
               {{ item.season }}
             </td>
-            <td (click)="onOpenCertificateDialog(false, item)">
+            <td>
               {{ getDate(item.create_date) }}
             </td>
-            <td (click)="onOpenCertificateDialog(false, item)">
+            <td>
               {{ getDate(item.public_date) }}
             </td>
             <td>
@@ -70,14 +70,14 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                <button
+                <!-- <button
                   mat-menu-item
                   class="menu"
                   (click)="onOpenCertificateDialog(true, item)"
                 >
                   <mat-icon>edit</mat-icon>
                   <span>แก้ไข</span>
-                </button>
+                </button> -->
                 <button
                   mat-menu-item
                   class="menu"

@@ -37,6 +37,7 @@
     </div>
     <div class="input-textarea">
       <textarea
+        [(ngModel)]="studentInputText"
         id="enrollInputText"
         placeholder="{{
           enrollInputText
@@ -45,19 +46,59 @@
         }}"
       ></textarea>
       <div class="input-file">
-        <div class="input">
-          <p>วิชา</p>
-          <select></select>
-        </div>
-        <div class="input">
-          <p>รุ่น</p>
-          <select></select>
-        </div>
+        <form [formGroup]="enrollForm">
+          <div class="input">
+            <p>วิชา</p>
+            <mat-form-field>
+              <mat-select
+                (selectionChange)="getSeason($event)"
+                placeholder="เลือกชุดวิชา"
+                #singleSelect
+              >
+                <mat-option>
+                  <ngx-mat-select-search
+                    [formControl]="moduleFilterCtrl"
+                    placeholderLabel="ค้นหาชุดวิชา"
+                    noEntriesFoundLabel="ไม่พบชุดวิชาที่ค้นหา"
+                  ></ngx-mat-select-search>
+                </mat-option>
+
+                <mat-option
+                  *ngFor="let module of filteredModule | async"
+                  [value]="module"
+                >
+                  {{ module.module_id + " " + module.module_name_th }}
+                </mat-option>
+                <mat-option
+                  *ngFor="let course of filteredCourse | async"
+                  [value]="course"
+                >
+                  {{ course.course_id + " " + course.course_name_th }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <p>รุ่น</p>
+            <select formControlName="season_id">
+              <option value="null" disabled [selected]="true">
+                กรุณาระบุรุ่น
+              </option>
+              <option
+                *ngFor="let item of season"
+                value="{{ item.season }}"
+                [disabled]="item.public"
+              >
+                {{ item.season }}
+              </option>
+            </select>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <div class="footer">
     <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
-    <button class="submit" (click)="onSaveSigner()">บันทึก</button>
+    <button class="submit" (click)="onSave()">บันทึก</button>
   </div>
 </section>

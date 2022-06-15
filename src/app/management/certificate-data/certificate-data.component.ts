@@ -49,7 +49,9 @@ export class CertificateDataComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.getCertificateData();
+        this.getCertificateData().then(() => {
+          this.onSearching();
+        });
       }
     });
   }
@@ -75,23 +77,25 @@ export class CertificateDataComponent implements OnInit {
       .deleteCertificateById(id)
       .then((result) => {
         if (result) {
-          this.getCertificateData();
+          this.getCertificateData().then(() => {
+            this.onSearching();
+          });
         } else {
         }
       });
   }
 
   onSearching() {
-    const value = JSON.parse(JSON.stringify(this.value));
-
     if (this.keyword && this.keyword.length) {
+      const value = JSON.parse(JSON.stringify(this.value));
       this.filter_value = value.filter(
         (item) =>
           item.name_th.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1 ||
           item.name_en.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1
       );
     } else {
-      this.filter_value = value;
+      JSON.parse(JSON.stringify(this.value));
+      this.filter_value = JSON.parse(JSON.stringify(this.value));
     }
   }
 

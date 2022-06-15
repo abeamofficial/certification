@@ -1,3 +1,69 @@
-<p>
-  student-data-dialog works!
-</p>
+<section class="dialog">
+  <div class="header">
+    <div>
+      <h1>
+        {{ data.isEdit ? "เพิ่มข้อมูลสัมฤทธิบัตร" : "ข้อมูลสัมฤทธิบัตร" }}
+      </h1>
+      <button *ngIf="!data.isEdit" (click)="data.isEdit = true" class="edit">
+        <i class="material-icons">edit</i>
+        แก้ไข
+      </button>
+    </div>
+
+    <i class="material-icons close" (click)="onCloseModal(false)">close</i>
+  </div>
+  <hr />
+
+  <ng-container *ngIf="data.isEdit; else view">
+    <div class="body">
+      <form [formGroup]="studentForm">
+        <div class="input">
+          <p>รหัสผู้เรียน</p>
+          <span>{{ data.value.id }}</span>
+        </div>
+        <div class="input">
+          <p>คำนำหน้า</p>
+          <input formControlName="nametitle" />
+        </div>
+        <div class="input">
+          <p>ชื่อ</p>
+          <input formControlName="firstname" />
+        </div>
+        <div class="input">
+          <p>นามสกุล</p>
+          <input formControlName="lastname" />
+        </div>
+      </form>
+    </div>
+
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
+      <button class="submit" (click)="onSave()">บันทึก</button>
+    </div>
+  </ng-container>
+  <ng-template #view>
+    <div class="body">
+      <div class="input">
+        <p>รหัสผู้เรียน</p>
+        <span>{{ data.value.id }}</span>
+      </div>
+      <div class="input">
+        <p>คำนำหน้า</p>
+        <span>{{ data.value.nametitle }}</span>
+      </div>
+      <div class="input">
+        <p>ชื่อ</p>
+        <span>{{ data.value.firstname }}</span>
+      </div>
+      <div class="input">
+        <p>นามสกุล</p>
+        <span>{{ data.value.lastname }}</span>
+      </div>
+
+      <!-- getdegreeName -->
+    </div>
+    <div class="footer">
+      <button class="cancel" (click)="onCloseModal(false)">กลับ</button>
+    </div>
+  </ng-template>
+</section>

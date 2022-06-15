@@ -14,6 +14,7 @@ import {
 } from "@angular/material/dialog";
 
 import { ModuleService } from "src/app/services/module.service";
+import { SeasonService } from "src/app/services/season.service";
 
 import { MatSelect } from "@angular/material/select";
 import { ReplaySubject, Subject } from "rxjs";
@@ -50,6 +51,7 @@ export class SeasonDataDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<SeasonDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private moduleService: ModuleService,
+    private seasonService: SeasonService,
     private fb: FormBuilder
   ) {}
 
@@ -117,6 +119,15 @@ export class SeasonDataDialogComponent implements OnInit {
           module.module_name_en.toLowerCase().indexOf(search) > -1
       )
     );
+  }
+  onSave() {
+    this.seasonService.addSeason(this.seasonForm.value).then((result) => {
+      if (result) {
+        this.onCloseModal(true);
+      } else {
+        //
+      }
+    });
   }
 
   onCloseModal(isModify) {

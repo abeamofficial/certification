@@ -100,6 +100,8 @@ section.dialog>div.body .example-text>div>div>div>p {
     margin: 0;
 }
 
+
+
 section.dialog>div.body .input-file {
     display: flex;
     width: 100%;
@@ -147,10 +149,12 @@ section.dialog>div.body .input-file span .input-file-button>i.material-icons {
     margin: auto;
 }
 
-
-section.dialog>div.body .input-file:last-of-type {
+section.dialog>div.body .input-file:last-of-type form {
+    width: 100%;
+    display: flex;
     gap: 15px;
 }
+
 
 section.dialog>div.body .input-file:last-of-type div.input:first-of-type {
     /* margin: 20px 30px; */
@@ -236,4 +240,85 @@ section.dialog>div.footer button.submit {
 /* -------- dialog ---------- */
 ::ng-deep .mat-dialog-container {
     padding: 0;
+}
+
+
+/* mat-form-field */
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: unset;
+    opacity: 0;
+}
+
+.mat-form-field {
+    /* display: block; */
+    width: -webkit-fill-available;
+    /* min-width: 258px; */
+    margin: 0;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: "sutregular";
+    min-height: 21px;
+    /* resize: vertical; */
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix,
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+::ng-deep .mat-form-field,
+::ng-deep .mat-select,
+::ng-deep .mat-select-panel .mat-optgroup-label,
+::ng-deep .mat-select-panel .mat-option,
+::ng-deep .mat-select-search-inner {
+    font-family: "sutregular";
+    line-height: normal;
+}
+
+::ng-deep .mat-form-field-label-wrapper,
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label,
+::ng-deep .mat-form-field-type-mat-select .mat-form-field-label {
+    top: 0;
+    padding: 0;
+    /* line-height: normal; */
+}
+
+::ng-deep .mat-select-panel .mat-optgroup-label,
+::ng-deep .mat-select-panel .mat-option {
+    line-height: 2em !important;
+    height: 2em !important;
+}
+
+::ng-deep .mat-select-panel-wrap {
+    /* margin-top: 1rem; */
+}
+
+::ng-deep .mat-select-search-inner {
+    top: -1rem !important;
+}
+
+::ng-deep .mat-select-search-inside-mat-option .mat-select-search-input {
+    border: 1px solid #e7e7e7;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 0;
+}
+
+::ng-deep .mat-select-arrow {
+    border: unset !important;
+    margin: auto !important;
+    width: 15px !important;
+    height: 7px !important;
+    background-image: url("/assets/images/arrow-down.svg");
+    background-repeat: no-repeat, repeat;
+    background-position: right 0em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
 }

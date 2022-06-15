@@ -28,8 +28,15 @@
         class="file-input"
       />
       <span>
-        <p ng-if="inputFileName">{{ inputFileName }}</p>
-        <button class="input-file-button">
+        <p *ngIf="inputFileName">{{ inputFileName }}</p>
+        <input
+          #file
+          type="file"
+          (change)="onFileChange($event)"
+          style="display: none"
+          accept=".csv,application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        />
+        <button class="input-file-button" #upload (click)="file.click()">
           <i class="material-icons">upload_file</i>
           <p>เลือกไฟล์</p>
         </button>
@@ -37,7 +44,7 @@
     </div>
     <div class="input-textarea">
       <textarea
-        id="studentInputText"
+        [(ngModel)]="studentInputText"
         placeholder="{{
           studentInputText
             ? ''
@@ -48,6 +55,6 @@
   </div>
   <div class="footer">
     <button class="cancel" (click)="onCloseModal(false)">ยกเลิก</button>
-    <button class="submit" (click)="onSaveSigner()">บันทึก</button>
+    <button class="submit" (click)="onSave()">บันทึก</button>
   </div>
 </section>

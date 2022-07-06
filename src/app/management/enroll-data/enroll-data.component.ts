@@ -61,4 +61,6 @@ export class EnrollDataComponent implements OnInit {
     //   }
     // });
   }
+
+  onSearching() {}
 }

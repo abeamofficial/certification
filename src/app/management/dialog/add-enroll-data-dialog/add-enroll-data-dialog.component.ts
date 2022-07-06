@@ -42,6 +42,7 @@ export class AddEnrollDataDialogComponent implements OnInit {
   season;
   inputFileName;
   studentInputText;
+  enrollInputText;
 
   enrollForm = this.fb.group({
     enroll: null,

@@ -28,10 +28,17 @@
         class="file-input"
       />
       <span>
-        <p>{{ inputFileName }}</p>
-        <button class="input-file-button">
+        <p *ngIf="inputFileName">{{ inputFileName }}</p>
+        <input
+          #file
+          type="file"
+          (change)="onFileChange($event)"
+          style="display: none"
+          accept=".csv,application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        />
+        <button class="input-file-button" #upload (click)="file.click()">
           <i class="material-icons">upload_file</i>
-          เลือกไฟล์
+          <p>เลือกไฟล์</p>
         </button>
       </span>
     </div>

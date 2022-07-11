@@ -244,6 +244,10 @@ export class AddEnrollDataDialogComponent implements OnInit {
     } else {
       this.season = null;
     }
+
+    this.enrollForm.patchValue({
+      season_id: null,
+    });
   }
 
   async getSeasonByModuleId(value) {
@@ -259,34 +263,32 @@ export class AddEnrollDataDialogComponent implements OnInit {
     if (value) {
       if ("m_id" in this.enrollForm.get(["course"]).value) {
         const value_ = {
-          course_id: this.enrollForm.get(["course"]).value,
-          enroll: value,
-          season_id: this.enrollForm.get(["season_id"]).value,
-        };
-
-        console.log(value_);
-        // this.enrollService.createEnrollByCourseId(value_).then((result) => {
-        //   if (result) {
-        //     this.onCloseModal(true);
-        //   } else {
-        //     //
-        //   }
-        // });
-      } else if ("c_id" in this.enrollForm.get(["course"]).value) {
-        const value_ = {
           module_id: this.enrollForm.get(["course"]).value,
           enroll: value,
           season_id: this.enrollForm.get(["season_id"]).value,
         };
 
-        console.log(value_);
-        // this.enrollService.createEnrollByModuleId(value_).then((result) => {
-        //   if (result) {
-        //     this.onCloseModal(true);
-        //   } else {
-        //     //
-        //   }
-        // });
+        this.enrollService.createEnrollByModuleId(value_).then((result) => {
+          if (result) {
+            this.onCloseModal(true);
+          } else {
+            //
+          }
+        });
+      } else if ("c_id" in this.enrollForm.get(["course"]).value) {
+        const value_ = {
+          course_id: this.enrollForm.get(["course"]).value,
+          enroll: value,
+          season_id: this.enrollForm.get(["season_id"]).value,
+        };
+
+        this.enrollService.createEnrollByCourseId(value_).then((result) => {
+          if (result) {
+            this.onCloseModal(true);
+          } else {
+            //
+          }
+        });
       } else {
         return;
       }

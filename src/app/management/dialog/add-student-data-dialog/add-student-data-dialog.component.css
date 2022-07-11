@@ -123,7 +123,7 @@ section.dialog>div.body .input-file span>p {
 section.dialog>div.body .input-file span .input-file-button {
     display: flex;
     gap: 5px;
-    font-family: "sutbold";
+    font-family: "sutregular";
     cursor: pointer;
     font-size: 1.15rem;
     padding: 5px 24px;
@@ -134,7 +134,7 @@ section.dialog>div.body .input-file span .input-file-button {
     min-width: -moz-fit-content;
     min-width: fit-content;
     margin-top: 0.5rem;
-    background-color: #2ba62c;
+    background-color: #0649a3;
 
 }
 
@@ -143,7 +143,7 @@ section.dialog>div.body .input-file span .input-file-button>p {
 }
 
 section.dialog>div.body .input-file span .input-file-button>i.material-icons {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin: auto;
 }
 

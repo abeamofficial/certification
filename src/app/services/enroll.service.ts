@@ -31,7 +31,7 @@ export class EnrollService {
     let result = await this.http
       .post<any>(
         this.pathConfigService.apiPath + "createEnrollByCourseId.php",
-        null,
+        value,
         {
           headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -51,7 +51,7 @@ export class EnrollService {
     let result = await this.http
       .post<any>(
         this.pathConfigService.apiPath + "createEnrollByModuleId.php",
-        null,
+        value,
         {
           headers: {
             "Content-Type": "application/json; charset=utf-8",

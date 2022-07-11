@@ -46,9 +46,9 @@ export class EnrollDataComponent implements OnInit {
     });
   }
 
-  onOpenSeasonDialog(isEdit, value) {
+  onOpenCreateSeasonDialog() {
     const dialogRef = this.matDialog.open(AddEnrollDataDialogComponent, {
-      data: { isEdit: isEdit, ...(value && { value: value }) },
+      // data: { isEdit: isEdit, ...(value && { value: value }) },
       height: "70%",
       width: "40%",
       minHeight: "500px",
